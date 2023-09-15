@@ -16,11 +16,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Build
+      - name: Setup Deno
         uses: denoland/setup-deno@v1
-        run: deno task --cwd src/deno build
         with:
           deno-version: v1.x
+
+      - name: Build Deno
+        run: deno task --cwd src/deno build
 
       - name: Publish
         uses: cloudflare/pages-action@v1
