@@ -133,16 +133,16 @@ tasks.push(
 tasks.push(
   (async () => {
     const headersPath = path.resolve(pwd, `../templates/_headers`);
-    let toml = await Deno.readTextFile(headersPath);
-    toml = toml.replace(
+    let headers = await Deno.readTextFile(headersPath);
+    headers = headers.replace(
       /script-src 'self' 'sha256-[^']+?'/g,
       `script-src 'self' 'sha256-${headHash}'`
     );
-    toml = toml.replace(
+    headers = headers.replace(
       /style-src 'self' 'sha256-[^']+?'/g,
       `style-src 'self' 'sha256-${cssHash}'`
     );
-    Deno.writeTextFile(path.join(buildDir, `_headers`), toml).then(() => {
+    Deno.writeTextFile(path.join(buildDir, `_headers`), headers).then(() => {
       console.log(`★ Updated headers`);
     });
   })()
