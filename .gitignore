@@ -1,4 +1,9 @@
 /*
+!.github
+.github/*
+!.github/workflows
+.github/workflows/*
+!.github/workflows/*.yml
 !.devcontainer
 .devcontainer/labels
 !.gitattributes
