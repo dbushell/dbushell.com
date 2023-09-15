@@ -1,0 +1,9 @@
+.Footer {
+  margin: calc((36 / 16) * 1rem) 0;
+
+  & small {
+    column-gap: 1ch;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

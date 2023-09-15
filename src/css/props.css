@@ -1,0 +1,105 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1920,19,1.333,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+  --step-s: calc((14 / 16) * 1rem);
+}
+
+@media (min-width: calc((600 / 16) * 1rem)) {
+  :root {
+    --step-s: calc((15 / 16) * 1rem);
+  }
+}
+
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1920;
+
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
+  );
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
+  }
+}
+
+:root {
+  --f-0-min: 16;
+  --f-0-max: 19;
+  --step-0: calc(
+    ((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) *
+      var(--fluid-bp)
+  );
+
+  --f-1-min: 18;
+  --f-1-max: 26;
+  --step-1: calc(
+    ((var(--f-1-min) / 16) * 1rem) + (var(--f-1-max) - var(--f-1-min)) *
+      var(--fluid-bp)
+  );
+
+  --f-2-min: 20;
+  --f-2-max: 34;
+  --step-2: calc(
+    ((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) *
+      var(--fluid-bp)
+  );
+
+  --f-3-min: 22;
+  --f-3-max: 46;
+  --step-3: calc(
+    ((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) *
+      var(--fluid-bp)
+  );
+
+  --f-4-min: 26;
+  --f-4-max: 60;
+  --step-4: calc(
+    ((var(--f-4-min) / 16) * 1rem) + (var(--f-4-max) - var(--f-4-min)) *
+      var(--fluid-bp)
+  );
+
+  --f-5-min: 28;
+  --f-5-max: 80;
+  --step-5: calc(
+    ((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) *
+      var(--fluid-bp)
+  );
+}
+
+:root {
+  --page-margin-mid: calc(((100 / 1920) * 100) * 1dvw);
+  --page-margin-min: calc((20 / 16) * 1rem);
+  --page-margin-max: calc((100 / 16) * 1rem);
+  --page-margin: clamp(
+    var(--page-margin-min),
+    var(--page-margin-mid),
+    var(--page-margin-max)
+  );
+  --page-max: calc((var(--fluid-max-width) / 16) * 1rem);
+}
+
+:root {
+  --db-light: 98.62% 0.014 84.58; /* 40, 100%, 97%; /* 255, 250, 240; */
+  --db-dark: 40.05% 0.014 17.74; /* 0, 7%, 29%; /* 80, 70, 70; */
+  --db-pink: 70.27% 0.192 13.7; /* 350, 100%, 69%; /* 255, 100, 125; */
+  --db-red: 57.82% 0.19 16.36; /* 350, 63%, 52%; /* 210, 55, 80; */
+  --db-green: 86.59% 0.088 168.12; /* 157, 61%, 75%; /* 150, 230, 200; */
+  --db-blue: 62.78% 0.12 226; /* 194, 82%, 41%; /* 20, 150, 190; */
+  --db-blue2: 52.78% 0.1 226; /* 194, 82%, 31%; /* 15, 110, 155; */
+  --db-yellow: 97.25% 0.0767 103; /* 55, 100%, 87%; /* 255, 250, 190; */
+  --db-white: 100% 0 0; /* 0, 0%, 100%; /* 255, 255, 255; */
+  --db-black: 31.55% 0.009 17.62; /* 0, 5%, 20%; /* 55, 50, 50; */
+}
+
+@media (color-gamut: p3) {
+  :root {
+    --db-pink: 72.27% 0.222 13.7;
+    --db-blue: 62.78% 0.158 226;
+    --db-blue2: 52.78% 0.12 226;
+  }
+}

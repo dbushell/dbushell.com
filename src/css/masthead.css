@@ -1,0 +1,51 @@
+.Masthead {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-block-end: 50%;
+  }
+
+  &::after {
+    background: oklch(var(--masthead-primary));
+    background-image: url('/assets/images/masthead-pattern.svg');
+    background-size: calc((300 / 16) * 1rem) auto;
+    border-radius: 100%;
+    content: '';
+    display: block;
+    height: 140%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-67%) rotateZ(-8deg);
+    width: 110%;
+    z-index: 1;
+  }
+
+  & .Logo {
+    position: absolute;
+    top: 21%;
+    right: calc(17% + 0.5 * var(--page-margin));
+    width: 75%;
+    z-index: 2;
+  }
+
+  & .Sign {
+    position: absolute;
+    top: 5%;
+    right: calc(0.5 * var(--page-margin));
+    width: 30%;
+    z-index: 3;
+  }
+}
+
+@container app (inline-size < calc((400 / 16) * 1rem)) {
+  .Masthead {
+    &::after {
+      height: 150%;
+      width: 125%;
+    }
+  }
+}

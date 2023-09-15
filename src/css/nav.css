@@ -1,0 +1,30 @@
+.Nav {
+  & ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc((-4.5 / 16) * 1rem) calc((-9 / 16) * 1rem);
+  }
+
+  & li {
+    flex: 0 0 auto;
+    margin: 0;
+  }
+
+  & a {
+    align-items: center;
+    display: flex;
+    font-size: var(--step-s);
+    font-weight: 700;
+    letter-spacing: calc((0.5 / 16) * 1rem);
+    margin: 0 calc((4.5 / 16) * 1rem);
+    min-height: 100%;
+    padding: calc((4.5 / 16) * 1rem);
+    text-transform: uppercase;
+    outline-offset: calc((-2.25 / 16) * 1rem);
+
+    &[aria-current='page'] {
+      --anchor-opacity: 0;
+      color: oklch(var(--color-secondary2));
+    }
+  }
+}

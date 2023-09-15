@@ -1,0 +1,112 @@
+import * as path from 'path';
+import * as async from 'async';
+import * as svelte from 'svelte/compiler';
+import * as esbuild from 'esbuild';
+import {denoPlugins} from 'esbuild_deno_loader';
+import type {SSRComponent} from './types.ts';
+
+export const {VERSION: version} = svelte;
+
+const pwd = path.dirname(new URL(import.meta.url).pathname);
+
+const ssrMap = new Map<string, SSRComponent>();
+const renderMap = new Map<string, async.Deferred<void>>();
+
+const svelteSSRPlugin: esbuild.Plugin = {
+  name: 'svelte',
+  setup(build) {
+    build.onLoad({filter: /\.svelte$/}, async (args) => {
+      let src = await Deno.readTextFile(args.path);
+      src = svelte.compile(src, {generate: 'ssr'}).js.code;
+      return {
+        contents: src
+      };
+    });
+  }
+};
+
+export const svelteDOMPlugin: esbuild.Plugin = {
+  name: 'svelte',
+  setup(build) {
+    build.onLoad({filter: /\.svelte$/}, async (args) => {
+      let src = await Deno.readTextFile(args.path);
+      src = svelte.compile(src, {generate: 'dom'}).js.code;
+      return {
+        contents: src
+      };
+    });
+  }
+};
+
+export const ssrComponent = async (
+  container: string,
+  options: esbuild.BuildOptions = {},
+  bypassCache = false
+) => {
+  if (renderMap.has(container)) {
+    await renderMap.get(container)!;
+  }
+  if (!bypassCache && ssrMap.has(container)) {
+    return ssrMap.get(container)!;
+  }
+  const deferred = async.deferred<void>();
+  renderMap.set(container, deferred);
+  const outPath = path.resolve(pwd, `../.cache/svelte/${container}.js`);
+  const dirPath = path.resolve(pwd, `../svelte/containers`);
+  await esbuild.build({
+    ...options,
+    entryPoints: [path.resolve(dirPath, `${container}.svelte`)],
+    outfile: outPath,
+    format: 'esm',
+    target: 'esnext',
+    bundle: true,
+    minify: false,
+    plugins: [svelteSSRPlugin],
+    external: ['svelte', 'svelte/internal']
+  });
+  // TODO: import from memory?
+  const component = (await import(`${outPath}?v=${Date.now()}`))
+    .default as SSRComponent;
+  ssrMap.set(container, component);
+  deferred.resolve();
+  renderMap.delete(container);
+  return component;
+};
+
+export const bundle = async (buildDir: string) => {
+  console.log('✧ Bundling');
+  const now = performance.now();
+  try {
+    // TODO: single pass / fix plugins working together?
+    // Pass one (svelte)
+    await esbuild.build({
+      entryPoints: [path.resolve(pwd, `../svelte/app.js`)],
+      outfile: path.join(buildDir, `assets/js/app.min.js`),
+      external: ['svelte', 'svelte/internal'],
+      plugins: [svelteDOMPlugin],
+      format: 'esm',
+      target: 'esnext',
+      bundle: true,
+      minify: false,
+      allowOverwrite: true
+    });
+    // Pass two (bundle)
+    await esbuild.build({
+      entryPoints: [path.join(buildDir, `assets/js/app.min.js`)],
+      outfile: path.join(buildDir, `assets/js/app.min.js`),
+      plugins: [
+        ...denoPlugins({
+          configPath: path.resolve(pwd, `deno.json`)
+        })
+      ],
+      format: 'esm',
+      target: 'esnext',
+      bundle: true,
+      minify: true,
+      allowOverwrite: true
+    });
+  } catch (err) {
+    console.log(err);
+  }
+  console.log(`✹ Bundled in ${Math.round(performance.now() - now)}ms`);
+};

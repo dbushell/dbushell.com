@@ -1,0 +1,33 @@
+{
+  "tasks": {
+    "build": "deno run --allow-all mod.ts",
+    "serve": "deno run --allow-all serve.ts",
+    "dev": "deno task serve"
+  },
+  "imports": {
+    "io": "https://deno.land/std@0.200.0/io/mod.ts",
+    "fs": "https://deno.land/std@0.200.0/fs/mod.ts",
+    "path": "https://deno.land/std@0.200.0/path/mod.ts",
+    "toml": "https://deno.land/std@0.200.0/toml/mod.ts",
+    "async": "https://deno.land/std@0.200.0/async/mod.ts",
+    "base64": "https://deno.land/std@0.200.0/encoding/base64.ts",
+    "front_matter": "https://deno.land/std@0.200.0/front_matter/any.ts",
+    "file_server": "https://deno.land/std@0.200.0/http/file_server.ts",
+    "datetime": "https://deno.land/std@0.200.0/datetime/mod.ts",
+    "esbuild": "https://deno.land/x/esbuild@v0.19.2/mod.js",
+    "esbuild_deno_loader": "https://deno.land/x/esbuild_deno_loader@0.8.1/mod.ts",
+    "svelte": "npm:svelte",
+    "svelte/compiler": "npm:svelte/compiler",
+    "svelte/internal": "npm:svelte/internal",
+    "svelte/internal/disclose-version": "npm:svelte/internal/disclose-version",
+    "postcss": "npm:postcss",
+    "postcss-nesting": "npm:postcss-nesting",
+    "cssnano": "npm:cssnano",
+    "cssnano-preset-lite": "npm:cssnano-preset-lite",
+    "striptags": "npm:striptags",
+    "marked": "npm:marked",
+    "marked-highlight": "npm:marked-highlight",
+    "marked-smartypants": "npm:marked-smartypants",
+    "marked-gfm-heading-id": "npm:marked-gfm-heading-id"
+  }
+}

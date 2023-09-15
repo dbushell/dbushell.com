@@ -1,0 +1,10 @@
+.Logo {
+  display: block;
+  text-decoration: none;
+
+  & img,
+  & svg {
+    max-width: none;
+    width: 100%;
+  }
+}

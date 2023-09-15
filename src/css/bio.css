@@ -1,0 +1,49 @@
+.Bio {
+  align-items: flex-start;
+  display: flex;
+
+  & figure,
+  & img {
+    height: calc((80 / 16) * 1rem);
+    width: calc((80 / 16) * 1rem);
+  }
+
+  & figure {
+    flex: 0 0 calc((80 / 16) * 1rem);
+    margin: 0 0 calc((9 / 16) * 1rem) 0;
+    margin-inline-start: calc((18 / 16) * 1rem);
+    order: 2;
+  }
+
+  & div {
+    flex: 1 1 auto;
+  }
+
+  & img {
+    border: calc((2 / 16) * 1rem) solid oklch(var(--color-secondary));
+    border-radius: 100%;
+  }
+}
+
+@supports (shape-outside: circle(50%)) {
+  .Bio {
+    display: block;
+
+    & figure {
+      float: right;
+      shape-outside: circle(50%);
+
+      [dir='rtl'] & {
+        float: left;
+      }
+    }
+  }
+}
+
+@supports (shape-outside: circle(50%)) and (float: inline-end) {
+  .Bio {
+    & figure {
+      float: inline-end !important;
+    }
+  }
+}

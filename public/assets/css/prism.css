@@ -1,0 +1,221 @@
+/**
+ * PrismJS 1.14.0
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+/*
+* Dracula Theme for Prism.JS
+*
+* @author Gustavo Costa
+* e-mail: gusbemacbe@gmail.com
+*
+* @contributor Jon Leopard
+* e-mail: jonlprd@gmail.com
+*
+* @license MIT 2016-2020
+*/
+
+:root {
+  --prism-cyan: #8be9fd;
+  --prism-green: #50fa7b;
+  --prism-orange: #ffb86c;
+  --prism-pink: #ff79c6;
+  --prism-purple: #bd93f9;
+  --prism-red: #ff5555;
+  --prism-yellow: #f1fa8c;
+
+  --prism-background: oklch(var(--db-dark));
+  --prism-comment: oklch(var(--db-light) / 0.5);
+  --prism-foreground: oklch(var(--db-light));
+}
+
+.token {
+  color: var(--prism-pink);
+}
+
+.token.script {
+  color: var(--prism-foreground);
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.atrule,
+.token.attr-name,
+.token.attr-value {
+  color: var(--prism-green);
+}
+
+.token.boolean {
+  color: var(--prism-purple);
+}
+
+.token.builtin,
+.token.class-name {
+  color: var(--prism-cyan);
+}
+
+.token.comment {
+  color: var(--prism-comment);
+}
+
+.token.constant {
+  color: var(--prism-purple);
+}
+
+.token.entity {
+  color: var(--prism-pink);
+}
+
+.token.function {
+  color: var(--prism-green);
+}
+
+.token.important,
+.token.keyword {
+  color: var(--prism-pink);
+}
+
+.token.parameter {
+  color: var(--prism-orange);
+}
+
+.token.prolog {
+  color: var(--prism-foreground);
+}
+
+.token.property {
+  color: var(--prism-orange);
+}
+
+.token.punctuation {
+  color: var(--prism-foreground);
+}
+
+.token.selector {
+  color: var(--prism-pink);
+}
+
+.token.regex {
+  color: var(--prism-pink);
+}
+
+.token.string {
+  color: var(--prism-yellow);
+}
+
+.token.tag {
+  color: var(--prism-pink);
+}
+
+.token.url {
+  color: var(--prism-cyan);
+}
+
+.token.variable {
+  color: var(--prism-foreground);
+}
+
+.token.number {
+  color: var(--prism-purple);
+}
+
+.token.operator {
+  color: var(--prism-cyan);
+}
+
+.token.char {
+  color: var(--prism-pink);
+}
+
+.token.symbol {
+  color: var(--prism-orange);
+}
+
+.token.deleted {
+  color: var(--prism-pink);
+}
+
+.token.namespace {
+  color: var(--prism-pink);
+}
+
+[class*='language-'] {
+  color: var(--prism-foreground);
+}
+
+.language-diff .token.deleted * {
+  color: var(--prism-pink);
+}
+
+.language-diff .token.inserted * {
+  color: var(--prism-green);
+}
+
+.language-css .token {
+  color: var(--prism-pink);
+}
+
+.language-css .token.comment {
+  color: var(--prism-comment);
+}
+
+.language-css .token.entity {
+  color: var(--prism-green);
+}
+
+.language-css .token.rule {
+  color: var(--prism-foreground);
+}
+
+.language-css .token.atrule,
+.language-css .token.atrule > .token.rule {
+  color: var(--prism-purple);
+}
+
+.language-css .token.function {
+  color: var(--prism-cyan);
+}
+
+.language-css .token.property {
+  color: var(--prism-cyan);
+}
+
+.language-css .token.punctuation {
+  color: var(--prism-orange);
+}
+
+.language-css .token.selector {
+  color: var(--prism-green);
+}
+
+.language-css .token.url {
+  color: var(--prism-orange);
+}
+
+.language-markup .token.punctuation {
+  color: var(--prism-foreground);
+}
+
+.language-markup .token.attr-value {
+  color: var(--prism-yellow);
+}
+
+.language-markup .token.entity.named-entity {
+  color: var(--prism-purple);
+}
+
+.language-markup .token.entity:not(.named-entity) {
+  color: var(--prism-pink);
+}
+
+.language-javascript .token.constant {
+  color: var(--prism-orange);
+  font-style: italic;
+}

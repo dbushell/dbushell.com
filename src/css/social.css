@@ -1,0 +1,40 @@
+.Social {
+  --social-color: oklch(var(--color-background));
+  align-items: center;
+  display: flex;
+  margin-block-start: calc((18 / 16) * 1rem);
+  margin-inline-end: calc((-4.5 / 16) * 1rem);
+
+  & svg {
+    border-radius: calc((5 / 16) * 1rem);
+    box-shadow: calc((1.5 / 16) * 1rem) calc((1.5 / 16) * 1rem) 0 0
+      oklch(var(--db-black) / 0.1);
+    fill: currentColor;
+    height: calc((24 / 16) * 1rem);
+    transform: var(--transform);
+    transition: transform 150ms;
+    width: auto;
+  }
+
+  & .Button {
+    margin-inline-end: auto;
+    white-space: nowrap;
+  }
+
+  & a:not(.Button) {
+    display: block;
+    padding: calc((4.5 / 16) * 1rem);
+    perspective: 50px;
+    position: relative;
+    text-decoration: none;
+    --transform: rotateY(5deg) rotateX(10deg) rotateZ(5deg);
+
+    &:hover {
+      --transform: scale(1.1);
+    }
+
+    &:focus {
+      outline-offset: 0;
+    }
+  }
+}

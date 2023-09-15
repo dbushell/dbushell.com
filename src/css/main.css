@@ -1,0 +1,10 @@
+.Main {
+  container-name: main;
+  container-type: inline-size;
+  margin: 0 auto calc((36 / 16) * 1rem) auto;
+  width: 100%;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+}

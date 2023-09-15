@@ -1,0 +1,29 @@
+{
+  "image": "ghcr.io/dbushell/docker-debian/base",
+  "features": {
+    "ghcr.io/dbushell/docker-debian/deno:latest": {
+      "version": "1.36.3"
+    }
+  },
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  },
+  "runArgs": [
+    "--name",
+    "dbushell",
+    "--network",
+    "traefik",
+    "--label-file",
+    ".devcontainer/labels"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "esbenp.prettier-vscode",
+        "denoland.vscode-deno",
+        "svelte.svelte-vscode"
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.Form {
+  & ul {
+    list-style: none;
+  }
+
+  & li {
+    margin-block-end: calc((36 / 16) * 1rem);
+
+    &::before {
+      display: none;
+    }
+  }
+
+  & label {
+    display: block;
+    font-size: var(--step-0);
+
+    &:not(:last-child) {
+      margin-block-end: calc((9 / 16) * 1rem);
+    }
+  }
+}
+
+.Privacy {
+  align-items: center;
+  display: flex;
+
+  & svg {
+    fill: currentColor;
+    margin-inline-end: calc((9 / 16) * 1rem);
+  }
+}
+
+@container main (inline-size >= calc((400 / 16) * 1rem)) {
+  & .Form {
+    column-gap: calc((27 / 16) * 1rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    & li {
+      grid-column: auto / span 1;
+
+      &:nth-of-type(1n + 3) {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}

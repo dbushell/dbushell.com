@@ -1,0 +1,16 @@
+/*
+!.devcontainer
+.devcontainer/labels
+!.gitattributes
+!.gitignore
+!netlify.toml
+!README.md
+!src
+src/.cache
+src/deno/deno.lock
+!public
+public/*
+!public/assets
+!public/images
+!public/manifest.webmanifest
+!public/robots.txt

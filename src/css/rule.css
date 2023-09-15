@@ -1,0 +1,13 @@
+.Rule,
+.Prose > hr {
+  background: oklch(var(--color-quaternary));
+  border: none;
+  height: calc((1 / 16) * 1rem);
+  margin: 0;
+  outline: none;
+  width: 100%;
+}
+
+.Prose > hr {
+  margin: calc((36 / 16) * 1rem) 0;
+}

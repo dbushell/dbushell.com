@@ -1,0 +1,24 @@
+.Pagination {
+  display: flex;
+  justify-content: space-between;
+
+  & .Button {
+    align-items: center;
+    display: flex;
+
+    & svg {
+      fill: currentColor;
+      height: calc((12 / 16) * 1rem);
+      stroke: currentColor;
+      width: calc((12 / 16) * 1rem);
+
+      &:first-child {
+        margin-inline: calc((-4 / 16) * 1rem) calc((6 / 16) * 1rem);
+      }
+
+      &:last-child {
+        margin-inline: calc((6 / 16) * 1rem) calc((-4 / 16) * 1rem);
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.Crane {
+  align-items: center;
+  display: grid;
+  grid-gap: calc((18 / 16) * 1rem);
+  grid-template-columns: 100%;
+  margin-block-end: calc((36 / 16) * 1rem);
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  & img {
+    margin: auto;
+    transform: translateX(-5%);
+    width: auto;
+
+    .Darkmode & {
+      filter: saturate(0.9) brightness(0.8) contrast(1.1) hue-rotate(35deg);
+    }
+  }
+}
+
+@container main (inline-size < calc((400 / 16) * 1rem)) {
+  .Crane {
+    & img {
+      max-width: 50%;
+    }
+
+    & .List,
+    & .Button {
+      display: block;
+      margin-inline-start: auto;
+      margin-inline-end: auto;
+      max-width: max-content;
+    }
+  }
+}
+
+@container main (inline-size >= calc((400 / 16) * 1rem)) {
+  .Crane {
+    grid-template-columns: minmax(auto, 50%) auto;
+  }
+}
+
+@container main (inline-size >= calc((600 / 16) * 1rem)) {
+  .Crane {
+    grid-gap: calc((36 / 16) * 1rem);
+  }
+}
