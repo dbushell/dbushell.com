@@ -55,16 +55,3 @@ export interface SSRComponent {
     html: string;
   };
 }
-
-export interface NetlifyTOMLHeaderValues {
-  [key: string]: string;
-}
-
-export interface NetlifyTOMLHeader {
-  for: string;
-  values: NetlifyTOMLHeaderValues;
-}
-
-export interface NetlifyTOML {
-  headers: NetlifyTOMLHeader[];
-}

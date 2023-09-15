@@ -129,11 +129,11 @@ tasks.push(
   })()
 );
 
-// Netlify content security policy headers
+// Update content security policy headers
 tasks.push(
   (async () => {
-    const tomlPath = path.resolve(pwd, `../../netlify.toml`);
-    let toml = await Deno.readTextFile(tomlPath);
+    const headersPath = path.resolve(pwd, `../templates/_headers`);
+    let toml = await Deno.readTextFile(headersPath);
     toml = toml.replace(
       /script-src 'self' 'sha256-[^']+?'/g,
       `script-src 'self' 'sha256-${headHash}'`
@@ -142,7 +142,7 @@ tasks.push(
       /style-src 'self' 'sha256-[^']+?'/g,
       `style-src 'self' 'sha256-${cssHash}'`
     );
-    Deno.writeTextFile(tomlPath, toml).then(() => {
+    Deno.writeTextFile(path.join(buildDir, `_headers`), toml).then(() => {
       console.log(`★ Updated headers`);
     });
   })()
