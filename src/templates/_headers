@@ -1,4 +1,5 @@
 /*
+  access-control-allow-origin: https://dbushell.com
   x-frame-options: DENY
   x-xss-protection: 1; mode=block
   x-content-type-options: nosniff
