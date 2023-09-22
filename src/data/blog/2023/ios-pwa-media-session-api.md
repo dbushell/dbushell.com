@@ -101,3 +101,15 @@ These actions allow me to customise the seek duration when skipping forward and 
 Once all this works it'll be a huge quality of life improvement. When I built "v1" almost 2 years ago nothing like this was possible. iOS didn't even show the seek buttons.
 
 It's good to see Safari development improving. Standards support is even leading in some cases. Updates and bug fixes are released at a quicker cadence. It's probably the only Apple software that is getting better. The quality elsewhere, especially on macOS, is declining.
+
+### Update for 22nd September 2023
+
+At some point my artwork stopped working in iOS. Now Safari 17 is out and it still does not work properly.
+
+I've found that if you provide a small image, 96×96 for example, it will appear on the small player (like the screenshot above). If you tap the image it transitions to the fullscreen player. However, the image becomes pixellated; it does not swap to a larger image.
+
+If you only provide a large image, like 512×512, the small player is a grey box (no image). Only after you tap to enlarge the player does the image appear. It then remains in place.
+
+So basically the only way to guarantee an image is to use a small one.
+
+Just Safari things!
