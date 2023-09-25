@@ -2,7 +2,7 @@
   "image": "ghcr.io/dbushell/docker-debian/base",
   "features": {
     "ghcr.io/dbushell/docker-debian/deno:latest": {
-      "version": "1.36.3"
+      "version": "1.37.0"
     }
   },
   "otherPortsAttributes": {
