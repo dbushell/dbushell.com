@@ -25,10 +25,8 @@
       <p class="Large">
         I design and build websites with a focus on standards, performance, and
         accessibility. With a decade of professional experience — in-house and
-        remote — I've delivered for all types of organisations. Whether it's
-        WordPress, <abbr title="JavaScript, API, and Markup">JAM</abbr>Stack, or
-        <abbr title="Progressive Web Apps">PWAs</abbr>, I have the know-how to
-        help you.
+        remote — I've delivered for everyone. Whether it's
+        <abbr title="Progressive Web Apps">PWAs</abbr>, WordPress, or full-stack frameworks, I have the know-how to help.
       </p>
       <div class="Crane">
         <img

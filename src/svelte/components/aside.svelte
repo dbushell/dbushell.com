@@ -35,7 +35,7 @@
       </p>
     </Card>
     <Card href="/showcase/" title="My Portfolio" subtitle="See my work!">
-      <p>Find out what I've been up too and see my design portfolio.</p>
+      <p>Find out what I've been coding and see my design portfolio.</p>
     </Card>
     <Rule />
     {#if articles}

@@ -32,7 +32,3 @@ On the web I'm self-taught. Programming has fascinated me since the days of dial
 * [Send me an email](/contact/) — I'll get back to you in reasonable time!
 
 <a href="/contact/" class="Button">Get in Touch</a>
-
-* * *
-
-💤 On March 1st 2013 I spoke at the [Responsive Day Out](/2012/12/07/responsive-day-out/) conference in Brighton, UK. My profile photo was taken by [Marc Thiele](http://www.flickr.com/photos/marcthiele/8519276774) during my talk.

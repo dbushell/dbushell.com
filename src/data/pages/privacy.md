@@ -14,7 +14,7 @@ This website does not use 3rd party scripts for analytics nor tracking.
 
 #### Where data is stored
 
-When you contact me using the [contact form](/contact/) data is sent to and stored in a secure [Proton Mail](https://proton.me/mail/security) inbox using PGP encryption. This inbox is encrypted with a very strong password and two-factor authentication. Proton Mail servers are based in Switzerland.
+When you contact me using the [contact form](/contact/) data is sent to and stored in a secure [Proton Mail](https://proton.me/mail/security) inbox using [PGP encryption](/2023/07/14/pgp-email-encryption-aws-cloudflare-worker/). This inbox is encrypted with a very strong password and two-factor authentication. Proton Mail servers are based in Switzerland.
 
 #### What data is used for
 
