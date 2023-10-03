@@ -19,7 +19,7 @@
   <Masthead />
   <Main>
     <Nav current="/" />
-    <Heading title={h1} />
+    <Heading title={h1} balance={false} />
     <h3 class="Cursive">I make websites</h3>
     <div class="Prose">
       <p class="Large">

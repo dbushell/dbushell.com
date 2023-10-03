@@ -149,6 +149,10 @@
   }
 }
 
+.Balance {
+  text-wrap: balance;
+}
+
 .Large {
   font-size: var(--step-1);
 }

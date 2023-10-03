@@ -1,8 +1,13 @@
 <script>
   export let title;
-  const innerHTML = title.replace(/(-)/g, `<span class="Hyphen">$1</span>`);
+  export let balance = true;
+  const innerHTML = title.replaceAll('-', '<span class="Hyphen">-</span>');
+  let className = 'Comic';
+  if (balance) {
+    className = `${className} Balance`;
+  }
 </script>
 
-<h1 class="Comic">
+<h1 class={className}>
   {@html innerHTML}
 </h1>

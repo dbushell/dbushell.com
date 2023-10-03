@@ -4,7 +4,7 @@
   --step-s: calc((14 / 16) * 1rem);
 }
 
-@media (min-width: calc((600 / 16) * 1rem)) {
+@media (width >= calc((600 / 16) * 1rem)) {
   :root {
     --step-s: calc((15 / 16) * 1rem);
   }
@@ -21,7 +21,7 @@
   );
 }
 
-@media (min-width: 1920px) {
+@media (width >= calc((1920 / 16) * 1rem)) {
   :root {
     --fluid-screen: calc(var(--fluid-max-width) * 1px);
   }
