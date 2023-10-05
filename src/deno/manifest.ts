@@ -5,7 +5,7 @@ import type {Props, Manifest} from './types.ts';
 
 export const title = 'David Bushell – Freelance Web Design (UK)';
 
-export const version = '10.0.0';
+export const version = '10.0.1';
 
 export const generator = `deno ${Deno.version.deno} | svelte ${
   svelte.version

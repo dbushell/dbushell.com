@@ -11,7 +11,13 @@
     target="_blank"
   >
     <span class="Hidden">Mastodon</span>
-    <svg aria-label="Mastodon" role="img" viewBox="0 0 512 512">
+    <svg
+      aria-label="Mastodon"
+      role="img"
+      viewBox="0 0 512 512"
+      width="24"
+      height="24"
+    >
       <path d="M0 0h512v512H0z" />
       <path
         fill="var(--social-color)"
@@ -29,7 +35,13 @@
     target="_blank"
   >
     <span class="Hidden">Twitter</span>
-    <svg aria-label="Twitter" role="img" viewBox="0 0 512 512">
+    <svg
+      aria-label="Twitter"
+      role="img"
+      viewBox="0 0 512 512"
+      width="24"
+      height="24"
+    >
       <rect width="512" height="512" rx="15%" />
       <path
         fill="var(--social-color)"
@@ -44,7 +56,13 @@
     target="_blank"
   >
     <span class="Hidden">GitHub</span>
-    <svg aria-label="GitHub" role="img" viewBox="0 0 512 512">
+    <svg
+      aria-label="GitHub"
+      role="img"
+      viewBox="0 0 512 512"
+      width="24"
+      height="24"
+    >
       <rect width="512" height="512" rx="15%" />
       <path
         fill="var(--social-color)"
@@ -59,7 +77,13 @@
     target="_blank"
   >
     <span class="Hidden">CodePen</span>
-    <svg aria-label="CodePen" role="img" viewBox="0 0 512 512">
+    <svg
+      aria-label="CodePen"
+      role="img"
+      viewBox="0 0 512 512"
+      width="24"
+      height="24"
+    >
       <rect width="512" height="512" rx="15%" />
       <g
         fill="none"
@@ -79,7 +103,13 @@
     target="_blank"
   >
     <span class="Hidden">RSS Feed</span>
-    <svg aria-label="RSS Feed" role="img" viewBox="0 0 512 512">
+    <svg
+      aria-label="RSS Feed"
+      role="img"
+      viewBox="0 0 512 512"
+      width="24"
+      height="24"
+    >
       <rect width="512" height="512" rx="15%" />
       <circle cx="145" cy="367" r="35" fill="var(--social-color)" />
       <path

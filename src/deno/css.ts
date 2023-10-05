@@ -1,10 +1,6 @@
 import * as path from 'path';
-import * as base64 from 'base64';
-import * as io from 'io';
-import postcss from 'postcss';
-import postcssNesting from 'postcss-nesting';
-import cssnano from 'cssnano';
-import cssNanoLite from 'cssnano-preset-lite';
+import {encodeBase64} from 'base64';
+import {TextLineStream} from 'streams';
 
 const pwd = path.dirname(new URL(import.meta.url).pathname);
 const cssPath = path.resolve(pwd, `../css/_stylesheet.css`);
@@ -14,8 +10,12 @@ export const process = async (buildDir: string) => {
 
   const cssDir = path.dirname(cssPath);
   const cssFile = await Deno.open(cssPath);
+  const cssLines = cssFile.readable
+    .pipeThrough(new TextDecoderStream())
+    .pipeThrough(new TextLineStream());
+
   let css = '';
-  for await (const line of io.readLines(cssFile)) {
+  for await (const line of cssLines) {
     const match = line.match(/^@import ['|"](.+?)['|"];\s*?$/);
     if (match) {
       css += `/* ${line} */\n`;
@@ -24,28 +24,11 @@ export const process = async (buildDir: string) => {
       css += `${line}\n`;
     }
   }
-  cssFile.close();
-
-  const postcssConfig = {from: undefined};
-  const cssnanoConfig: cssnano.Options = {preset: [cssNanoLite, {}]};
-
-  const preprocess = (css: string): Promise<string> => {
-    return new Promise((resolve) => {
-      postcss([postcssNesting, cssnano(cssnanoConfig)])
-        .process(css, postcssConfig)
-        .then((result: {css: string}) => {
-          resolve(result.css);
-        });
-    });
-  };
-
-  css = await preprocess(css);
 
   // Remove excess whitespace
-  css = css.replaceAll(/,\s*?\n\s*?/gm, ',');
-  css = css.trim();
+  css = css.replaceAll(/\s+/g, ' ').trim();
 
-  const cssHash = base64.encode(
+  const cssHash = encodeBase64(
     new Uint8Array(
       await crypto.subtle.digest('sha-256', new TextEncoder().encode(css))
     )

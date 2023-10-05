@@ -1,18 +1,3 @@
-export interface DateProps {
-  unix: number;
-  ISO: string;
-  IMF: string;
-  dddd: string;
-  ddd: string;
-  DD: string;
-  D: number;
-  MMMM: string;
-  MMM: string;
-  MM: string;
-  M: number;
-  YYYY: number;
-}
-
 export interface FrontProps {
   title: string;
   slug: string;
@@ -28,7 +13,7 @@ export interface Props {
   container: string;
   changefreq: 'weekly' | 'monthly';
   priority: '1.0' | '0.9' | '0.8' | '0.7' | '0.6' | '0.5';
-  date?: DateProps;
+  date?: Date;
   description?: string;
   latest?: Props[];
   articles?: Props[];

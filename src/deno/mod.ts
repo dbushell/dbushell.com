@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as base64 from 'base64';
+import {encodeBase64} from 'base64';
 import * as esbuild from 'esbuild';
 import * as css from './css.ts';
 import * as svelte from './svelte.ts';
@@ -49,7 +49,7 @@ const headData = await Deno.readTextFile(
   (data) =>
     `;window.dbushell={version: '${MANIFEST.meta.version}'};${data.trim()}`
 );
-const headHash = base64.encode(
+const headHash = encodeBase64(
   new Uint8Array(
     await crypto.subtle.digest('sha-256', new TextEncoder().encode(headData))
   )

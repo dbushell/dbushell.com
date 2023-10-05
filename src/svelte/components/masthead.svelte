@@ -13,6 +13,7 @@
       width="540"
       height="325"
       loading="lazy"
-      src="/assets/images/dbushell-for-hire.svg" />
+      src="/assets/images/dbushell-for-hire.svg"
+    />
   </a>
 </div>

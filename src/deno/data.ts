@@ -2,11 +2,24 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as front_matter from 'front_matter';
 import striptags from 'striptags';
-import * as utils from './utils.ts';
 import markdown from './markdown.ts';
 import type {FrontProps, Props} from './types.ts';
 
 const pwd = path.dirname(new URL(import.meta.url).pathname);
+
+// Generate excerpt from body
+export const excerptProp = (body: string): string => {
+  let excerpt = body.replace(/<pre[^>]*>.+?<\/pre>/gs, '');
+  excerpt = excerpt.replace(/<picture[^>]*>.+?<\/picture>/gs, '');
+  excerpt = excerpt.replace(/<figure[^>]*>.+?<\/figure>/gs, '');
+  excerpt = striptags(excerpt);
+  const words = excerpt.split(' ');
+  if (words.length >= 55) {
+    excerpt = `${words.slice(0, 55).join(' ')} […]`;
+  }
+  excerpt = excerpt.trim();
+  return excerpt;
+};
 
 export const readProps = async (srcPath: string): Promise<Props> => {
   // Parse front matter
@@ -38,19 +51,19 @@ export const readProps = async (srcPath: string): Promise<Props> => {
 
   // Pass body through Marked for full HTML
   props.body = markdown(props.body);
-  props.excerpt = utils.excerptProps(props.body);
+  props.excerpt = excerptProp(props.body);
 
   // Blog date and slug
   if (matter.attrs.date) {
     props.container = 'article';
     props.priority = '0.6';
-    props.date = utils.dateProps(new Date(matter.attrs.date));
+    props.date = new Date(matter.attrs.date);
     props.href =
       '/' +
       [
-        props.date.YYYY.toString(),
-        props.date.MM.toString(),
-        props.date.DD.toString(),
+        props.date.getFullYear(),
+        `${props.date.getMonth() + 1}`.padStart(2, '0'),
+        `${props.date.getDate()}`.padStart(2, '0'),
         matter.attrs.slug
       ].join('/') +
       '/';
@@ -78,7 +91,9 @@ export const readGlob = async (glob: string): Promise<Props[]> => {
 export const readArticles = async (): Promise<Props[]> => {
   console.log('✧ Reading articles');
   const arr = await readGlob(`${pwd}/../data/blog/**/*.md`);
-  arr.sort((a, b) => ((a.date?.unix ?? 0) < (b.date?.unix ?? 0) ? 1 : -1));
+  arr.sort((a, b) =>
+    (a.date?.valueOf() ?? 0) < (b.date?.valueOf() ?? 0) ? 1 : -1
+  );
   console.log(`✦ Read ${arr.length} articles`);
   return arr;
 };

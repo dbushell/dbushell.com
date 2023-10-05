@@ -1,5 +1,4 @@
 import * as path from 'path';
-import * as utils from './utils.ts';
 import {Manifest, Props} from './types.ts';
 
 const url = 'https://dbushell.com';
@@ -36,11 +35,11 @@ export const render = (articles: Props[]) => {
     xml = xml.replace(`{{title}}`, item.title);
     xml = xml.replace(`{{description}}`, item.excerpt);
     xml = xml.replace(/{{link}}/g, item.href);
-    xml = xml.replace(`{{pubDate}}`, item.date!.IMF);
+    xml = xml.replace(`{{pubDate}}`, item.date!.toUTCString());
     return xml;
   });
   let xml = template;
-  xml = xml.replace(`{{lastBuildDate}}`, utils.dateProps().IMF);
+  xml = xml.replace(`{{lastBuildDate}}`, new Date().toUTCString());
   xml = xml.replace(`{{entries}}`, entries.join(''));
   return xml;
 };

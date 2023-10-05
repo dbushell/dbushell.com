@@ -42,7 +42,7 @@
       <Card title="The Blog" href="/blog/">
         <p>I write about website design and development.</p>
         <ul class="List">
-          {#each articles as item (item.date.unix)}
+          {#each articles as item (item.href)}
             <li>
               <a href={item.href}>{@html item.title}</a>
             </li>

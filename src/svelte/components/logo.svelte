@@ -6,15 +6,11 @@
   let img;
   let svg;
 
-  onMount(() => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', img.src, true);
-    xhr.send();
-    xhr.addEventListener('loadend', (response) => {
-      if (response.target.status === 200) {
-        svg = response.target.responseText;
-      }
-    });
+  onMount(async () => {
+    const response = await fetch(img.src);
+    if (response.ok) {
+      svg = await response.text();
+    }
   });
 </script>
 

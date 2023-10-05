@@ -20,7 +20,7 @@
     <Nav />
     <Heading {title} />
     {#if date}
-      <Time {...date} />
+      <Time {date} />
     {/if}
     <Prose innerHTML={body} />
   </Main>

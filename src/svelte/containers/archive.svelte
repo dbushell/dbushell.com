@@ -20,8 +20,8 @@
   <Main>
     <Nav current="/blog/" />
     <Heading {title} />
-    {#each articles as item (item.date.unix)}
-      <Article key={item.date.unix} {...item} />
+    {#each articles as item (item.href)}
+      <Article {...item} />
     {/each}
     {#if next || prev}
       <div class="Pagination">
