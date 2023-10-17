@@ -9,4 +9,5 @@
   referrer-policy: same-origin
 
 /*.xml
+  ! access-control-allow-origin
   access-control-allow-origin: *
