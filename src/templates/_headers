@@ -7,3 +7,6 @@
   content-security-policy: default-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'; connect-src 'self'; img-src 'self' data:; script-src 'self' 'sha256-SCRIPT'; style-src 'self' 'sha256-STYLE' 'sha256-p0lVhHvjWu1bucdPJXr5SjN6e3hVy6Jv4paG9r+Nsbc=';
   permissions-policy: browsing-topics=(),interest-cohort=()
   referrer-policy: same-origin
+
+/*.xml
+  access-control-allow-origin: *
