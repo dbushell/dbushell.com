@@ -58,7 +58,7 @@ The `tailLines` function is an async generator similar to `readLines`. It iterat
 ```javascript
 import {tailLines} from 'https://deno.land/x/tail_lines/mod.ts';
 const file = await Deno.open(path);
-for await (const line of tailLines('example.log')) {
+for await (const line of tailLines(file)) {
   // Do something...
 }
 file.close();

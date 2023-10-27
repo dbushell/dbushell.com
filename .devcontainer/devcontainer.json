@@ -1,9 +1,7 @@
 {
   "image": "ghcr.io/dbushell/docker-debian/base",
   "features": {
-    "ghcr.io/dbushell/docker-debian/deno:latest": {
-      "version": "1.37.0"
-    }
+    "ghcr.io/dbushell/docker-debian/deno:latest": {}
   },
   "otherPortsAttributes": {
     "onAutoForward": "ignore"
