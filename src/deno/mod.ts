@@ -11,11 +11,9 @@ import {Props} from './types.ts';
 
 const pwd = path.dirname(new URL(import.meta.url).pathname);
 export const buildDir = path.resolve(pwd, `../../public`);
-export const cacheDir = path.resolve(pwd, `../.cache`);
 
 // Prep directories
 await fs.ensureDir(buildDir);
-await fs.ensureDir(cacheDir);
 const staticPaths = ['assets', 'images', 'manifest.webmanifest', 'robots.txt'];
 for await (const dirEntry of Deno.readDir(buildDir)) {
   if (staticPaths.includes(dirEntry.name)) {
@@ -24,7 +22,7 @@ for await (const dirEntry of Deno.readDir(buildDir)) {
   await Deno.remove(path.join(buildDir, dirEntry.name), {recursive: true});
 }
 
-export const MANIFEST = await generateManifest(cacheDir);
+export const MANIFEST = await generateManifest();
 
 console.log(`🖨️ ${MANIFEST.meta.generator}`);
 

@@ -51,22 +51,24 @@ export const ssrComponent = async (
   }
   const deferred = async.deferred<void>();
   renderMap.set(container, deferred);
-  const outPath = path.resolve(pwd, `../.cache/svelte/${container}.js`);
   const dirPath = path.resolve(pwd, `../svelte/containers`);
-  await esbuild.build({
+  const result = await esbuild.build({
     ...options,
     entryPoints: [path.resolve(dirPath, `${container}.svelte`)],
-    outfile: outPath,
     format: 'esm',
     target: 'esnext',
     bundle: true,
     minify: false,
     plugins: [svelteSSRPlugin],
-    external: ['svelte', 'svelte/internal']
+    external: ['svelte', 'svelte/internal'],
+    write: false
   });
-  // TODO: import from memory?
-  const component = (await import(`${outPath}?v=${Date.now()}`))
-    .default as SSRComponent;
+  const blob = new Blob([result.outputFiles[0].text], {
+    type: 'text/javascript'
+  });
+  const url = URL.createObjectURL(blob);
+  const component = (await import(url)).default as SSRComponent;
+  URL.revokeObjectURL(url);
   ssrMap.set(container, component);
   deferred.resolve();
   renderMap.delete(container);
