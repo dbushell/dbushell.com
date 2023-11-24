@@ -1,5 +1,4 @@
 import * as path from 'path';
-import * as async from 'async';
 import * as svelte from 'svelte/compiler';
 import * as esbuild from 'esbuild';
 import {denoPlugins} from 'esbuild_deno_loader';
@@ -9,8 +8,11 @@ export const {VERSION: version} = svelte;
 
 const pwd = path.dirname(new URL(import.meta.url).pathname);
 
+// TODO: fix with ReturnType<>?
+const resolvers = Promise.withResolvers();
+const renderMap = new Map<string, typeof resolvers>();
+
 const ssrMap = new Map<string, SSRComponent>();
-const renderMap = new Map<string, async.Deferred<void>>();
 
 const svelteSSRPlugin: esbuild.Plugin = {
   name: 'svelte',
@@ -44,12 +46,12 @@ export const ssrComponent = async (
   bypassCache = false
 ) => {
   if (renderMap.has(container)) {
-    await renderMap.get(container)!;
+    await renderMap.get(container)!.promise;
   }
   if (!bypassCache && ssrMap.has(container)) {
     return ssrMap.get(container)!;
   }
-  const deferred = async.deferred<void>();
+  const deferred = Promise.withResolvers();
   renderMap.set(container, deferred);
   const dirPath = path.resolve(pwd, `../svelte/containers`);
   const result = await esbuild.build({
@@ -70,7 +72,7 @@ export const ssrComponent = async (
   const component = (await import(url)).default as SSRComponent;
   URL.revokeObjectURL(url);
   ssrMap.set(container, component);
-  deferred.resolve();
+  deferred.resolve(0);
   renderMap.delete(container);
   return component;
 };
