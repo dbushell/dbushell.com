@@ -1,0 +1,73 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.translated-rtl {
+  direction: rtl;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg,
+video {
+  border: 0;
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+button {
+  background: transparent;
+  appearance: none;
+  border: none;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+abbr {
+  &[title] {
+    border: none;
+    text-decoration: none;
+  }
+}
+
+small,
+figcaption {
+  font-size: var(--step-s);
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,52 @@
+pre,
+code {
+  font-family: 'Fira Code Light', 'Fira Code', monospace;
+  font-size: var(--step-s);
+  font-weight: 300;
+}
+
+:not(pre) > code {
+  background-image: linear-gradient(
+    to right,
+    oklch(var(--color-secondary) / 0.2) 1ch,
+    transparent 1ch
+  );
+  background-position: bottom 5% left;
+  background-repeat: repeat-x;
+  background-size: 1.5ch 10%;
+  color: oklch(var(--color-secondary2));
+  display: inline;
+  font-size: 90%;
+  font-weight: 500;
+}
+
+pre {
+  color: oklch(var(--db-light));
+  background: oklch(var(--db-dark));
+  direction: ltr;
+  height: auto;
+  -webkit-hyphens: none;
+  hyphens: none;
+  line-height: 1.5;
+  margin: calc((36 / 16) * 1rem) 0;
+  margin-inline-start: calc((-18 / 16) * 1rem);
+  overflow: auto;
+  padding: calc((18 / 16) * 1rem);
+  -moz-tab-size: 2;
+  tab-size: 2;
+  text-align: left;
+  text-shadow: none;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+@container app (inline-size < calc((400 / 16) * 1rem)) {
+  pre {
+    margin-inline-end: calc(-1 * var(--page-margin));
+    margin-inline-start: calc(-1 * var(--page-margin));
+    padding-inline-end: var(--page-margin);
+    padding-inline-start: var(--page-margin);
+  }
+}

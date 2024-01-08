@@ -56,7 +56,7 @@
     &:focus,
     &:hover {
       --lightbulb-stroke: oklch(var(--db-yellow));
-      --lightbulb-fill: oklch(var(--db-yellow / 0.5));
+      --lightbulb-fill: oklch(var(--db-yellow) / 0.5);
       --lightbulb-rays: 1;
     }
   }

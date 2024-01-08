@@ -1,32 +1,47 @@
 import * as path from 'path';
+import * as lcss from 'lightningcss';
 import {encodeBase64} from 'base64';
-import {TextLineStream} from 'streams';
+// import {TextLineStream} from 'streams';
 
 const pwd = path.dirname(new URL(import.meta.url).pathname);
 const cssPath = path.resolve(pwd, `../css/_stylesheet.css`);
 
+const cssOptions: lcss.BundleOptions<lcss.CustomAtRules> = {
+  filename: cssPath,
+  minify: true,
+  sourceMap: false,
+  include: lcss.Features.Nesting
+};
+
 export const process = async (buildDir: string) => {
   console.log('✧ Processing CSS');
 
-  const cssDir = path.dirname(cssPath);
-  const cssFile = await Deno.open(cssPath);
-  const cssLines = cssFile.readable
-    .pipeThrough(new TextDecoderStream())
-    .pipeThrough(new TextLineStream());
+  // const cssDir = path.dirname(cssPath);
+  // const cssFile = await Deno.open(cssPath);
+  // const cssLines = cssFile.readable
+  //   .pipeThrough(new TextDecoderStream())
+  //   .pipeThrough(new TextLineStream());
 
-  let css = '';
-  for await (const line of cssLines) {
-    const match = line.match(/^@import ['|"](.+?)['|"];\s*?$/);
-    if (match) {
-      css += `/* ${line} */\n`;
-      css += await Deno.readTextFile(path.resolve(cssDir, match[1]));
-    } else {
-      css += `${line}\n`;
-    }
-  }
+  const stat = await Deno.stat(cssOptions.filename);
+  console.log(stat);
 
-  // Remove excess whitespace
-  css = css.replaceAll(/\s+/g, ' ').trim();
+  const {code} = lcss.bundle(cssOptions);
+  let css = new TextDecoder().decode(code);
+  css = css.replace(/\/\*[\s\S]*?\*\//g, '').trim();
+
+  // let css = '';
+  // for await (const line of cssLines) {
+  //   const match = line.match(/^@import ['|"](.+?)['|"];\s*?$/);
+  //   if (match) {
+  //     css += `/* ${line} */\n`;
+  //     css += await Deno.readTextFile(path.resolve(cssDir, match[1]));
+  //   } else {
+  //     css += `${line}\n`;
+  //   }
+  // }
+
+  // // Remove excess whitespace
+  // css = css.replaceAll(/\s+/g, ' ').trim();
 
   const cssHash = encodeBase64(
     new Uint8Array(
