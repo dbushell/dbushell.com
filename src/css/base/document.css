@@ -11,9 +11,6 @@
 
 @media screen {
   .Lightmode {
-    --star: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill="oklch(70.27% 0.192 13.7)" d="M9.625 5.375L15 7.5 9.625 9.625 7.5 15 5.375 9.625 0 7.5l5.375-2.125L7.5 0z"/></svg>');
-    --check: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.75" viewBox="0 0 14 10.75"><path fill="oklch(62.78% 0.117 226.03)" d="M12.28 0a1.71 1.71 0 00-1.22.5L5 6.59l-2-2A1.73 1.73 0 00.56 7.03l3.25 3.25a1.73 1.73 0 002.44 0l7.31-7.31a1.73 1.73 0 000-2.44A1.71 1.71 0 0012.28 0z"/></svg>');
-
     --color-background: var(--db-light);
     --color-background2: var(--db-white);
     --color-foreground: var(--db-dark);
@@ -30,9 +27,6 @@
   }
 
   .Darkmode {
-    --star: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill="oklch(86.59% 0.088 168.12)" d="M9.625 5.375L15 7.5 9.625 9.625 7.5 15 5.375 9.625 0 7.5l5.375-2.125L7.5 0z"/></svg>');
-    --check: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.75" viewBox="0 0 14 10.75"><path fill="oklch(97.25% 0.0767 103)" d="M12.28 0a1.71 1.71 0 00-1.22.5L5 6.59l-2-2A1.73 1.73 0 00.56 7.03l3.25 3.25a1.73 1.73 0 002.44 0l7.31-7.31a1.73 1.73 0 000-2.44A1.71 1.71 0 0012.28 0z"/></svg>');
-
     --color-background: var(--db-dark);
     --color-background2: var(--db-black);
     --color-foreground: var(--db-light);

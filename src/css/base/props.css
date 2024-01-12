@@ -103,3 +103,8 @@
     --db-blue2: 52.78% 0.12 226;
   }
 }
+
+:root {
+  --star: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path d="M9.625 5.375L15 7.5 9.625 9.625 7.5 15 5.375 9.625 0 7.5l5.375-2.125L7.5 0z"/></svg>');
+  --check: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.75" viewBox="0 0 14 10.75"><path d="M12.28 0a1.71 1.71 0 00-1.22.5L5 6.59l-2-2A1.73 1.73 0 00.56 7.03l3.25 3.25a1.73 1.73 0 002.44 0l7.31-7.31a1.73 1.73 0 000-2.44A1.71 1.71 0 0012.28 0z"/></svg>');
+}

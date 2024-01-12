@@ -34,8 +34,9 @@
     }
 
     &::after {
-      background: var(--check) center center no-repeat;
-      background-size: 60% auto;
+      background: oklch(var(--color-primary));
+      mask: var(--check) calc((3 / 16) * 1rem) calc((4 / 16) * 1rem) /
+        calc((12 / 16) * 1rem) auto no-repeat;
       box-shadow: none;
       opacity: 0;
       transition: opacity 100ms;

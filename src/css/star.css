@@ -6,10 +6,8 @@
   &::before {
     content: '•';
     color: transparent;
-    background-image: var(--star);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: calc((16 / 16) * 1rem) auto;
+    background: oklch(var(--color-secondary));
+    mask: var(--star) center center / calc((16 / 16) * 1rem) auto no-repeat;
     margin-inline-start: calc((-36 / 16) * 1rem);
     position: absolute;
     width: calc((36 / 16) * 1rem);
@@ -21,8 +19,7 @@
   .List li,
   .Prose :where(ul:not([class*='List'])) li {
     &::before {
-      background-size: calc((12 / 16) * 1rem) auto;
-      background-position: center center;
+      mask-size: calc((12 / 16) * 1rem) auto;
       margin-inline-start: calc((-27 / 16) * 1rem);
       width: calc((27 / 16) * 1rem);
     }

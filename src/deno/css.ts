@@ -22,9 +22,6 @@ export const process = async (buildDir: string) => {
   //   .pipeThrough(new TextDecoderStream())
   //   .pipeThrough(new TextLineStream());
 
-  const stat = await Deno.stat(cssOptions.filename);
-  console.log(stat);
-
   const {code} = lcss.bundle(cssOptions);
   let css = new TextDecoder().decode(code);
   css = css.replace(/\/\*[\s\S]*?\*\//g, '').trim();
