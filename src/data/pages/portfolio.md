@@ -5,15 +5,15 @@ title: 'Portfolio'
 
 📢 I provide [many services](/services/) and fulfil many roles.
 
-It's not easy to showcase my work in a neat package. Instead I prefer to show off singular snippets that best demonstrate my expertise and contributions.
+It's not easy to showcase my work in a neat package as it's spread out across the web.
 
 <h3 class="Cursive">Discover my recent work</h3>
 
-* [Read my blog](/blog/) — I go in-depth on recent case studies and topics
-* [See my projects](/now/) — Find out what I'm working on now
-* [Follow my GitHub](https://github.com/dbushell/) — Where I share open source code
+* [Read my blog](/blog/) — I go in-depth with case studies and topics
+* [See my projects](/now/) — Side projects I'm working on now
+* [Follow my GitHub](https://github.com/dbushell/) — I share open source code
 
-Contact me if you have a project in mind and I can demonstrate related work.
+Contact me if you have a project in mind and I can demonstrate related work. I also have profiles on [Mastodon](https://fosstodon.org/@dbushell), [Twitter](https://twitter.com/dbushell/), and [CodePen](https://codepen.io/dbushell/).
 
 <a href="/contact/" class="Button">Get in Touch</a>
 
@@ -62,7 +62,7 @@ The projects below are from my university degree ([I graduated in 2008](/about/)
 
 It's fun to look back and see just how much the web has changed. Although somewhat outdated I'm still proud of these projects.
 
-Early freelance projects I featured on my blog.
+Early freelance projects I featured on my blog:
 
 * [Step into my Time Machine!](/2020/08/18/step-into-my-time-machine/)
 * [Responsive Design for Uwe Wittwer](/2014/05/07/responsive-design-for-uwe-wittwer/)
@@ -73,13 +73,4 @@ Early freelance projects I featured on my blog.
 * [Tales WordPress theme](/2014/02/17/introducing-tales/)
 * [King’s Transfer](/2013/08/09/responsive-design-for-kings-transfer/)
 
-Web design and front-end development from previous employment.
-
-* [Passenger Focus](/2012/06/17/passenger-focus-responsive-web-design-case-study/)
-* [Gloople](/2013/01/28/gloople-responsive-design-review/)
-* [Atherton Cox](/showcase/atherton-cox/)
-* [Brucar](/showcase/brucar/)
-* [Eden Anglo French](/showcase/eden-anglo-french/)
-* [My Life Listed](/showcase/my-life-listed/)
-* [Peerless AV Europe](/showcase/peerless-av-europe/)
-* [Shane Global](/showcase/shane-global/)
+Web design and front-end from past employment: [Passenger Focus](/2012/06/17/passenger-focus-responsive-web-design-case-study/), [Gloople](/2013/01/28/gloople-responsive-design-review/), [Atherton Cox](/showcase/atherton-cox/), [Brucar](/showcase/brucar/), [Eden Anglo French](/showcase/eden-anglo-french/), [My Life Listed](/showcase/my-life-listed/), [Peerless AV Europe](/showcase/peerless-av-europe/), [Shane Global](/showcase/shane-global/).
