@@ -10,12 +10,10 @@ It's not easy to showcase my work in a neat package. Instead I prefer to show of
 <h3 class="Cursive">Discover my recent work</h3>
 
 * [Read my blog](/blog/) — I go in-depth on recent case studies and topics
-* [Follow my GitHub](https://github.com/dbushell/) — I share side projects and open-source code
-* [Follow my CodePen](https://codepen.io/dbushell/) — I experiment and have fun with code
-* [Follow my Twitter](https://twitter.com/dbushell/) — I stick to web stuff!
+* [See my projects](/now/) — Find out what I'm working on now
+* [Follow my GitHub](https://github.com/dbushell/) — Where I share open source code
 
-
-Contac me if you have a project in mind and I can demonstrate related work.
+Contact me if you have a project in mind and I can demonstrate related work.
 
 <a href="/contact/" class="Button">Get in Touch</a>
 
@@ -23,7 +21,7 @@ Contac me if you have a project in mind and I can demonstrate related work.
 
 ## Graphic Design
 
-The projects below are from my university degree (I graduated in 2008). They include print, advertising, and editorial design. This work shaped my understanding of fundamental design principles. You'll see I had a keen interest in typography and grids.
+The projects below are from my university degree ([I graduated in 2008](/about/)). They include print, advertising, and editorial design. This work shaped my understanding of fundamental design principles. You'll see I had a keen interest in typography and grids.
 
 <ul class="List List--folio">
   <li>

@@ -1,6 +1,7 @@
 ---
 slug: process-and-strategy
 title: 'Process & Strategy'
+features: ['cta']
 ---
 
 The web industry has come a long way and has a bight future. It's crazy to think that monolithic projects were once the norm. Successful websites are ones that get published. They're lightweight, nimble, and reactive.
@@ -13,16 +14,4 @@ Learn about [my philosophy and experience](/about/) to understand how I work. Fi
 
 * * *
 
-<h3 class="Cursive">I also do…</h3>
-
-* [Front-end Development](/front-end-development/)
-* [Responsive Design](/responsive-design/)
-* [WordPress & CMS](/wordpress-and-cms-integration/)
-
-* * *
-
-<h3 class="Cursive">Get a free quote</h3>
-
-Interested in working with me? [Send me an email](/contact/) with your requirements and I’ll happily provide a free quote and let you know my availability.
-
-<a href="/contact/" class="Button">Get in Touch</a>
+💤 [My services](/services/) also include: [front-end development](/front-end-development/), [responsive design](/responsive-design/), and [content management](/wordpress-and-cms-integration/).

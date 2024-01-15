@@ -1,6 +1,7 @@
 ---
 slug: working-with-clients
 title: 'Your Website'
+features: ['cta']
 ---
 📢 Are you looking to get a new website off the ground, or revitalise an existing one?
 
@@ -27,11 +28,3 @@ Every project is unique. Rather than offering a set package my approach to desig
 Learn more about my [web design process](/responsive-design/).
 
 And if you're unsure about the technical stuff I'll help with web hosting and domains to ensure your website gets up and running smoothly.
-
-* * *
-
-<h3 class="Cursive">Get a free quote</h3>
-
-Interested in working with me? [Send me an email](/contact/) with your requirements and I’ll happily provide a free quote and let you know my availability.
-
-<a href="/contact/" class="Button">Get in Touch</a>

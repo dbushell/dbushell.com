@@ -5,7 +5,7 @@
   export let outro = 'A $5 coffee would taste wonderful!';
 </script>
 
-<aside class="Kofi">
+<aside class="Box | Kofi">
   <h2 class="Cursive">{heading}</h2>
   <a
     href="/tip/"

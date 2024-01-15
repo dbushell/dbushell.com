@@ -14,6 +14,12 @@
       <Bio />
       <Social />
     </Card>
+    <Card href="/now/" title="My Projects" subtitle="New and old!">
+      <p>
+        See what I’m <a href="/now/">coding right now</a> and check out my
+        <a href="/showcase/">design portfolio</a>.
+      </p>
+    </Card>
     <Card
       href="/working-with-agencies/"
       title="Web Agencies"
@@ -21,7 +27,7 @@
     >
       <p>
         I’m reliable, flexible, and pride myself in communication and initiative
-        to ensure smooth delivery on time and within budget.
+        to delivery on time and within budget.
       </p>
     </Card>
     <Card
@@ -33,9 +39,6 @@
         Let’s discuss your requirements, share ideas, and figure out what’s best
         for your new website together.
       </p>
-    </Card>
-    <Card href="/showcase/" title="My Portfolio" subtitle="See my work!">
-      <p>Find out what I've been coding and see my design portfolio.</p>
     </Card>
     <Rule />
     {#if articles}

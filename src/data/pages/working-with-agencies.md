@@ -1,6 +1,7 @@
 ---
 slug: working-with-agencies
 title: 'Working with Agencies'
+features: ['cta']
 ---
 📢 Need a reliable hand with design, front-end, or a bit of everything?
 
@@ -23,12 +24,4 @@ Here's how I can help your agency:
 >
 > <cite>Alexandra Adina – SwingVoterz</cite>
 
-See a full overview of [**my services**](/services/) and read more [**about me**](/about/).
-
-* * *
-
-<h3 class="Cursive">Get a free quote</h3>
-
-Interested in working with me? [Send me an email](/contact/) with your requirements and I’ll happily provide a free quote and let you know my availability.
-
-<a href="/contact/" class="Button">Get in Touch</a>
+See a full overview of [my services](/services/) and read more [about me](/about/).

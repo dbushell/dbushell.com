@@ -1,6 +1,7 @@
 ---
 slug: wordpress-and-cms-integration
-title: 'WordPress & CMS'
+title: 'Content Management'
+features: ['cta']
 ---
 
 📢 How useful is a website if it cannot be updated?
@@ -13,20 +14,4 @@ Tempted to utilise something truly cutting-edge? I'll happily embrace modern web
 
 While I'm not a back-end programmer, for the right project I can deliver an all-in-one solution (or otherwise, work with a team to do so).
 
-[Let's talk requirements](/contact/).
-
-* * *
-
-<h3 class="Cursive">I also do…</h3>
-
-* <a href="/front-end-development/">Front-end Development</a>
-* <a href="/responsive-design/">Responsive Design</a>
-* <a href="/process-and-strategy/">Process &amp; Strategy</a>
-
-* * *
-
-<h3 class="Cursive">Get a free quote</h3>
-
-Interested in working with me? [Send me an email](/contact/) with your requirements and I’ll happily provide a free quote and let you know my availability.
-
-<a href="/contact/" class="Button">Get in Touch</a>
+💤 [My services](/services/) also include: [front-end development](/front-end-development/),  [responsive design](/responsive-design/), and [process & strategy](/process-and-strategy/).

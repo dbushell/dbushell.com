@@ -27,6 +27,7 @@ export const readProps = async (srcPath: string): Promise<Props> => {
     await Deno.readTextFile(srcPath)
   );
   const props: Props = {
+    features: matter.attrs.features ?? [],
     href: `/${matter.attrs.slug}/`,
     title: matter.attrs.title,
     body: matter.body,

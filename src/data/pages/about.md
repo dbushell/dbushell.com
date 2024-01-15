@@ -24,11 +24,13 @@ I've worked with just about every type of client and website imaginable. From pu
 
 On the web I'm self-taught. Programming has fascinated me since the days of dial-up modems and floppy disks. My formal education is firmly rooted in the finer arts. I graduated with 1st class honours in Graphic Design at Cumbria University, UK.
 
+
 * * *
 
 <h3 class="Cursive">Any questions?</h3>
 
 * [See my services](/services/) — learn what I can do for you.
 * [Send me an email](/contact/) — I'll get back to you in reasonable time!
+* [See my projects](/now/) — things I'm working on now.
 
 <a href="/contact/" class="Button">Get in Touch</a>

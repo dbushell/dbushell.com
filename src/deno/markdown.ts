@@ -63,6 +63,10 @@ const renderer = {
     if (text.startsWith('💤')) {
       return `<p><small>${text.replace(/^💤/, '').trim()}</small></p>\n`;
     }
+    if (text.startsWith('🖋️')) {
+      return `<p class="Cursive">${text.replace(/^🖋️/, '').trim()}</p>\n`;
+
+    }
     return /^<p[ |>]/.test(text) ? text : `<p>${text}</p>\n`;
   },
 

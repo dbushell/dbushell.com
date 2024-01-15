@@ -1,13 +1,14 @@
 ---
 slug: services
 title: 'Services'
+features: ['cta']
 ---
 
 <h2 class="Star"><a href="/front-end-development/">Front-end Development</a></h2>
 
 Static design mock-ups may look pretty, but you can’t experience true performance in Photoshop. Find out how I deliver [front-end development](/front-end-development/).
 
-<p class="Cursive">Favourite tools and technologies:</p>
+🖋️ Favourite tools and technologies:
 
 <ul class="List List--columns">
   <li>HTML / CSS</li>
@@ -40,18 +41,4 @@ The limitless number of web-accessible devices can be a daunting canvas for desi
 
 * * *
 
-### [Content Management](/wordpress-and-cms-integration/)
-
-I have extensive knowledge of WordPress & Gutenberg development. I’m also proficient in many HTML and JavaScript template languages as well as alternative serverless solutions.
-
-### [Process & Strategy](/process-and-strategy/)
-
-From scoping requirements to planning content — through design and development — collaboration between myself and my clients is paramount.
-
-* * *
-
-<h3 class="Cursive">Get a free quote</h3>
-
-Interested in working with me? <a href="/contact/">Send me an email</a> with your requirements and I’ll happily provide a free quote and let you know my availability.
-
-<a href="/contact/" class="Button">Get in Touch</a>
+💤 My services also include: [content management](/wordpress-and-cms-integration/) and [process & strategy](/process-and-strategy/).

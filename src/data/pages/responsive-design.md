@@ -1,6 +1,7 @@
 ---
 slug: responsive-design
 title: 'Responsive Design'
+features: ['cta']
 ---
 
 The limitless number of web-accessible devices can be a daunting canvas for design without a modern responsive approach. I specialise in embracing the web's ubiquity. It's my job to design for all experiences because successful websites remain accessible to the whole audience.
@@ -31,18 +32,4 @@ I'm proud of my work and love to share it with permission. Here's just a couple 
 
 [Check out my portfolio](/showcase/) for a showcase of work spanning my entire career.
 
-* * *
-
-<h3 class="Cursive">I also do…</h3>
-
-* [Front-end Development](/front-end-development/)
-* [WordPress & CMS](/wordpress-and-cms-integration/)
-* [Process & Strategy](/process-and-strategy/)
-
-* * *
-
-<h3 class="Cursive">Get a free quote</h3>
-
-Interested in working with me? [Send me an email](/contact/) with your requirements and I’ll happily provide a free quote and let you know my availability.
-
-<a href="/contact/" class="Button">Get in Touch</a>
+💤 [My services](/services/) also include: [front-end development](/front-end-development/), [content management](/wordpress-and-cms-integration/), and [process & strategy](/process-and-strategy/).

@@ -15,6 +15,10 @@
       label: 'Services'
     },
     {
+      href: '/now/',
+      label: 'Now'
+    },
+    {
       href: '/blog/',
       label: 'Blog'
     },

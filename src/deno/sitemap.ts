@@ -32,9 +32,6 @@ export const render = (locations: Props[]) => {
     if (item.href === '/404/') {
       return '';
     }
-    if (item.href === '/offline/') {
-      return '';
-    }
     let xml = entry;
     for (const [key, value] of Object.entries(item)) {
       xml = xml.replace(`{{${key}}}`, value);

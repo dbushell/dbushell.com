@@ -3,6 +3,7 @@ export interface FrontProps {
   slug: string;
   date?: string;
   description?: string;
+  features?: string[];
 }
 
 export interface Props {
@@ -13,6 +14,7 @@ export interface Props {
   container: string;
   changefreq: 'weekly' | 'monthly';
   priority: '1.0' | '0.9' | '0.8' | '0.7' | '0.6' | '0.5';
+  features?: string[];
   date?: Date;
   description?: string;
   latest?: Props[];
