@@ -8,6 +8,7 @@
   import Main from '../components/main.svelte';
   import Masthead from '../components/masthead.svelte';
   import Rule from '../components/rule.svelte';
+  import Kofi from '../components/kofi.svelte';
 
   export let latest;
 
@@ -59,6 +60,7 @@
       <h3 class="Cursive">Featured article</h3>
     </div>
     <Article {...latest[0]} />
+    <Kofi intro="Help support my blog and open source projects with a tip." />
   </Main>
   <Aside articles={latest} />
 </App>

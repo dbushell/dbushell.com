@@ -2,6 +2,11 @@
   margin: 0;
   max-width: none;
 
+  &[href] {
+    display: block;
+    width: fit-content;
+  }
+
   & img,
   & video {
     display: block;
@@ -22,6 +27,15 @@
 }
 
 .Image--basic {
+  &[href] {
+    img {
+      border: calc((2 / 16) * 1rem) solid currentColor;
+      border-radius: calc((9 / 16) * 1rem);
+      box-sizing: content-box;
+      overflow: hidden;
+    }
+  }
+
   & img {
     background: transparent;
     border-radius: 0;

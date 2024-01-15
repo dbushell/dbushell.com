@@ -130,18 +130,29 @@ tasks.push(
 // Update content security policy headers
 tasks.push(
   (async () => {
-    const headersPath = path.resolve(pwd, `../templates/_headers`);
-    let headers = await Deno.readTextFile(headersPath);
-    headers = headers.replace(
+    const src = path.resolve(pwd, `../templates/_headers`);
+    let text = await Deno.readTextFile(src);
+    text = text.replace(
       /script-src 'self' 'sha256-[^']+?'/g,
       `script-src 'self' 'sha256-${headHash}'`
     );
-    headers = headers.replace(
+    text = text.replace(
       /style-src 'self' 'sha256-[^']+?'/g,
       `style-src 'self' 'sha256-${cssHash}'`
     );
-    Deno.writeTextFile(path.join(buildDir, `_headers`), headers).then(() => {
+    Deno.writeTextFile(path.join(buildDir, `_headers`), text).then(() => {
       console.log(`★ Updated headers`);
+    });
+  })()
+);
+
+// Update redirects
+tasks.push(
+  (async () => {
+    const src = path.resolve(pwd, `../templates/_redirects`);
+    const text = await Deno.readTextFile(src);
+    Deno.writeTextFile(path.join(buildDir, `_redirects`), text).then(() => {
+      console.log(`★ Updated redirects`);
     });
   })()
 );

@@ -7,6 +7,7 @@
   import Masthead from '../components/masthead.svelte';
   import Prose from '../components/prose.svelte';
   import Time from '../components/time.svelte';
+  import Kofi from '../components/kofi.svelte';
 
   export let body;
   export let date;
@@ -23,6 +24,7 @@
       <Time {date} />
     {/if}
     <Prose innerHTML={body} />
+    <Kofi />
   </Main>
   <Aside articles={latest} />
 </App>

@@ -6,6 +6,7 @@
   import Main from '../components/main.svelte';
   import Masthead from '../components/masthead.svelte';
   import Contact from '../components/contact.svelte';
+  import Kofi from '../components/kofi.svelte';
 
   export let latest;
 </script>
@@ -16,7 +17,8 @@
     <Nav current="/contact/" />
     <Heading title={`Contact`} />
     <div class="Prose">
-      <h3 class="Cursive">I’m here to help</h3>
+      <!-- <h3 class="Cursive">I’m here to help</h3> -->
+      <Kofi intro="Help support my blog and open source projects with a tip." />
       <p class="Large">Need professional help with your website?</p>
       <p class="Large">
         <a href="mailto:hi@dbushell.com"><b>hi@dbushell.com</b></a>
