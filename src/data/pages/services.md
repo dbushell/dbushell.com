@@ -39,6 +39,4 @@ Static design mock-ups may look pretty, but you can’t experience true performa
 
 The limitless number of web-accessible devices can be a daunting canvas for design without a modern responsive approach. I specialise in embracing the web’s ubiquity. It’s my job to design for all experiences because successful websites remain accessible to the whole audience.
 
-* * *
-
 💤 My services also include: [content management](/wordpress-and-cms-integration/) and [process & strategy](/process-and-strategy/).

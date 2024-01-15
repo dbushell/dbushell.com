@@ -29,8 +29,8 @@ On the web I'm self-taught. Programming has fascinated me since the days of dial
 
 <h3 class="Cursive">Any questions?</h3>
 
-* [See my services](/services/) — learn what I can do for you.
-* [Send me an email](/contact/) — I'll get back to you in reasonable time!
-* [See my projects](/now/) — things I'm working on now.
+* [See my services](/services/) — learn what I can do for you
+* [See my projects](/now/) — Side projects I'm working on now
+* [Send me an email](/contact/) — I'll reply in reasonable time!
 
 <a href="/contact/" class="Button">Get in Touch</a>
