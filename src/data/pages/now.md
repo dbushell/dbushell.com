@@ -4,7 +4,7 @@ title: 'My Projects'
 features: ['kofi']
 ---
 
-## Active ✨
+## Active
 
 🖋️ Projects that I'm working on now:
 

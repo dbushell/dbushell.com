@@ -8,7 +8,7 @@
     color: transparent;
     background: oklch(var(--color-secondary));
     mask: var(--star) center center / calc((16 / 16) * 1rem) auto no-repeat;
-    margin-inline-start: calc((-36 / 16) * 1rem);
+    inset-inline-start: calc((-36 / 16) * 1rem);
     position: absolute;
     width: calc((36 / 16) * 1rem);
   }
@@ -20,8 +20,21 @@
   .Prose :where(ul:not([class*='List'])) li {
     &::before {
       mask-size: calc((12 / 16) * 1rem) auto;
-      margin-inline-start: calc((-27 / 16) * 1rem);
+      inset-inline-start: calc((-27 / 16) * 1rem);
       width: calc((27 / 16) * 1rem);
+    }
+  }
+}
+
+@container app (inline-size < calc((500 / 16) * 1rem)) {
+  .Star,
+  .List li,
+  .Prose :where(ul:not([class*='List'])) li {
+    padding-inline-start: calc((16 / 16) * 1rem);
+
+    &::before {
+      inset-inline-start: calc((-6 / 16) * 1rem);
+      width: calc((12 / 16) * 1rem);
     }
   }
 }
