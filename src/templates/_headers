@@ -11,3 +11,6 @@
 /*.xml
   ! access-control-allow-origin
   access-control-allow-origin: *
+
+/rss.xml
+  content-type: application/xml; charset=utf-8
