@@ -1,4 +1,6 @@
-/feed/ /rss.xml
-/rss/ /rss.xml
+/rss /rss/ 308
+/feed /feed/ 308
+/feed/ /rss.xml 307
+/rss/ /rss.xml 307
 /tip /tip/ 308
 /tip/ https://ko-fi.com/dbushell 307
