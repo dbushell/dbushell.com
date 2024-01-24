@@ -84,3 +84,7 @@ I'm using this code alongside DinoSsr for my self-hosted web apps.
 I also have another project I plan to launch very soon. It will start life as a simple blog but I have much larger plans — we'll see! It may not unfold.
 
 Last year I also released the JavaScript libraries: [XML Streamify](/2023/10/20/xml-streamify/), [Deno Tail Lines](/2023/10/27/deno-tail-lines-2/), and [Carriageway](https://github.com/dbushell/carriageway). I'm having a lot of fun writing server-side JavaScript.
+
+### Update for 22nd Jan 2024
+
+I've now launched: [Cotton Coder](/2024/01/24/cotton-coder/)!

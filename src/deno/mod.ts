@@ -53,6 +53,13 @@ const headHash = encodeBase64(
   )
 );
 
+function replace(subject: string, search: string, replace = '', all = false) {
+  let parts = subject.split(search);
+  if (parts.length === 1) return subject;
+  if (!all) parts = [parts.shift()!, parts.join(search)];
+  return parts.join(replace);
+}
+
 export const renderRoute = async (props: Props, bypassCache = false) => {
   // TODO: better way to define globals?
   const Container = await svelte.ssrComponent(
@@ -88,7 +95,7 @@ export const renderRoute = async (props: Props, bypassCache = false) => {
   html = html.replace(/{{description}}/g, description);
   html = html.replace(/{{version}}/g, MANIFEST.meta.version);
   html = html.replace(/{{href}}/g, props.href);
-  html = html.replace(/{{render}}/g, render);
+  html = replace(html, '{{render}}', render);
 
   const buildPath = path.join(buildDir, `${props.href}/index.html`);
   await fs.ensureFile(buildPath);
