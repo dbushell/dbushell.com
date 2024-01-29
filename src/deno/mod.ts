@@ -9,7 +9,9 @@ import * as rss from './rss.ts';
 import {generateManifest} from './manifest.ts';
 import {Props} from './types.ts';
 
+// TODO: use import.meta.dirname?
 const pwd = path.dirname(new URL(import.meta.url).pathname);
+
 export const buildDir = path.resolve(pwd, `../../public`);
 
 // Prep directories

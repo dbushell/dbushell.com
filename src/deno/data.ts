@@ -42,16 +42,16 @@ export const readProps = async (srcPath: string): Promise<Props> => {
   }
 
   // Pass title and description through Marked for smartypants
-  props.title = markdown(props.title);
+  props.title = await markdown(props.title);
   props.title = striptags(props.title).trim();
 
   if (matter.attrs.description) {
-    props.description = markdown(matter.attrs.description);
+    props.description = await markdown(matter.attrs.description);
     props.description = striptags(props.description).trim();
   }
 
   // Pass body through Marked for full HTML
-  props.body = markdown(props.body);
+  props.body = await markdown(props.body);
   props.excerpt = excerptProp(props.body);
 
   // Blog date and slug

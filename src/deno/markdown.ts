@@ -96,6 +96,6 @@ const renderer = {
 
 marked.use({renderer});
 
-const markdown = (md: string): string => marked.parse(md);
+const markdown = async (md: string): Promise<string> => await marked.parse(md);
 
 export default markdown;
