@@ -21,7 +21,7 @@ The first project is a little smaller in scope:
     height="406">
 </figure>
 
-[**VelociRouter**](https://router.dinoear.com/) is a JavaScript HTTP router inspired by [Polka](https://github.com/lukeed/polka) and [Hono](https://hono.dev/). It takes a `Request` and returns a `Response` using the assigned handlers. What makes VelociRouter unique is that it uses the native [URI Pattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API) to match routes.
+[**VelociRouter**](https://ssr.rocks/docs/velocirouter/) is a JavaScript HTTP router inspired by [Polka](https://github.com/lukeed/polka) and [Hono](https://hono.dev/). It takes a `Request` and returns a `Response` using the assigned handlers. What makes VelociRouter unique is that it uses the native [URI Pattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API) to match routes.
 
 For example:
 
@@ -34,7 +34,7 @@ router.get({pathname: '/:name'}, (request, response, {match}) => {
 
 VelociRoute uses native JavaScript objects and does not abstract them in a custom context. This allows you to modify both `request` and `response` as they're passed through matching routes (or return new ones). The project is **beta** status until I finalise the API.
 
-* [VelociRouter documentation](https://router.dinoear.com/)
+* [VelociRouter documentation](https://ssr.rocks/docs/velocirouter/)
 * [VelociRouter source on GitHub](https://github.com/dbushell/velocirouter)
 
 ## DinoSsr
@@ -49,7 +49,7 @@ VelociRoute uses native JavaScript objects and does not abstract them in a custo
     height="406">
 </figure>
 
-[**DinoSsr**](https://ssr.dinoear.com/) is a small web framework built upon VelociRouter. It started as a proof-of-concept for VelociRouter and has taken on a life of its own.
+[**DinoSsr**](https://ssr.rocks/) is a small web framework built upon VelociRouter. It started as a proof-of-concept for VelociRouter and has taken on a life of its own.
 
 * Built for [Deno](https://deno.com/) with [Svelte](https://svelte.dev/) server-side templates
 * File based + URI Pattern API routing
@@ -58,12 +58,12 @@ VelociRoute uses native JavaScript objects and does not abstract them in a custo
 
 Think of it like a lightweight [SvelteKit](https://kit.svelte.dev/) alternative for primarily static websites. DinoSsr is very much **alpha** status. There are plenty of features I'd like to add but I want to solidify core functionality first. I'm already using DinoSsr for my project websites. I hope to finalise a 1.0 realise this year. I think there are some cool ideas here worth exploring. It's never going to compete with the likes of SvelteKit and it purposefully has a smaller scope.
 
-* [DinoSsr documentation](https://ssr.dinoear.com/)
+* [DinoSsr documentation](https://ssr.rocks/)
 * [DinoSsr source on GitHub](https://github.com/dbushell/dinossr)
 
 ## Pattern Library
 
-I'm sick of [Bootstrap](https://getbootstrap.com/) so I started designing my own personal front-end pattern library. If you had a peek at the homepages for [VelociRouter](https://router.dinoear.com/) and [DinoSsr](https://ssr.dinoear.com/) you'll have seen it. This proved to be the perfect project to brush up on [new web standards](/2023/05/15/css-upgrades-spring-2023-edition/).
+I'm sick of [Bootstrap](https://getbootstrap.com/) so I started designing my own personal front-end pattern library. If you had a peek at the homepages for [VelociRouter](https://ssr.rocks/docs/velocirouter/) and [DinoSsr](https://ssr.rocks/) you'll have seen it. This proved to be the perfect project to brush up on [new web standards](/2023/05/15/css-upgrades-spring-2023-edition/).
 
 I'm using this code alongside DinoSsr for my self-hosted web apps.
 

@@ -9,7 +9,7 @@ features: ['kofi']
 🖋️ Projects that I'm working on now:
 
 * [Cotton Coder](https://cottoncoder.com/) — the curated bookmark blog of web dev curiosities
-* [DinoSsr](https://ssr.dinoear.com/) — a minimal web framework for Deno and Svelte fans
+* [DinoSsr](https://ssr.rocks/) — a minimal web framework for Deno and Svelte fans
 * [meSonic²](https://github.com/dbushell/mesonic2) — an experimental media server and web client
 * [dbushell.com](/blog/) — my permanent home and blog
 

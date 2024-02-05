@@ -37,7 +37,7 @@ I think you see the pattern. If you read my blog here at `dbushell.com` I'm sure
 
 ## Tech Stack
 
-[**Cotton Coder**](https://cottoncoder.com/) is built with **Deno** and **Svelte** using my experimental [DinoSsr](https://ssr.dinoear.com/) framework, another of my [new projects for 2024](/2024/01/08/new-projects-for-2024/). At least for now. I can migrate to SvelteKit easily if I need something more mature.
+[**Cotton Coder**](https://cottoncoder.com/) is built with **Deno** and **Svelte** using my experimental [DinoSsr](https://ssr.rocks/) framework, another of my [new projects for 2024](/2024/01/08/new-projects-for-2024/). At least for now. I can migrate to SvelteKit easily if I need something more mature.
 
 The blog is backed by a [Deno KV](https://github.com/denoland/denokv) database. I've implemented GitHub OAuth login to protect the content editing routes and API endpoints. The [source is available](https://github.com/dbushell/cottoncoder.com) on GitHub if you're curious.
 

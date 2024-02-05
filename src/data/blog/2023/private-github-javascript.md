@@ -16,7 +16,7 @@ The GitHub URL is even versioned using a git tag. However, `raw.githubuserconten
 
 If you try to access a private GitHub repo URL you'll see a `?token=` query string attached. These tokens are short-lived, maybe 10 minutes, after which the URL returns 404. It's possible to create a longer lasting token to use with `import` and `fetch`.
 
-*BTW: VelociRouter is now public and published as a [3rd party Deno module](https://deno.land/x/velocirouter@v0.5.1) and as [velocirouter-js on NPM](https://www.npmjs.com/package/velocirouter-js). More on that in another post!*
+*BTW: VelociRouter is now public and published as a [3rd party Deno module](https://deno.land/x/velocirouter) and as [velocirouter-js on NPM](https://www.npmjs.com/package/velocirouter-js). More on that in another post!*
 
 ## GitHub Token
 
