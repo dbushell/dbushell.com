@@ -3,7 +3,7 @@ import {Manifest, Props} from './types.ts';
 
 const url = 'https://dbushell.com';
 
-const template = `<?xml version="1.0" encoding="UTF-8"?>
+const template = `<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/assets/css/rss.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
