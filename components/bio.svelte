@@ -1,6 +1,9 @@
 <div class="Bio">
   <figure>
-    <img alt="David Bushell" loading="lazy" src="/assets/images/avatar.png" />
+    <picture>
+      <source srcset="/assets/images/avatar.avif" type="image/avif">
+      <img alt="David Bushell" loading="lazy" src="/assets/images/avatar.png" />
+    </picture>
     <figcaption class="Hidden">Avatar of David Bushell</figcaption>
   </figure>
   <div>

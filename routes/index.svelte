@@ -45,14 +45,20 @@
         frameworks, I have the know-how to help.
       </p>
       <div class="Crane">
-        <img
-          alt="Origami Crane - Copyright © David Bushell"
-          src="/assets/images/origami-crane.png"
-          width="500"
-          height="520"
-          loading="lazy"
-          role="presentation"
-        />
+        <picture>
+          <source
+            srcset="/assets/images/origami-crane.avif"
+            type="image/avif"
+          />
+          <img
+            alt="Origami Crane - Copyright © David Bushell"
+            src="/assets/images/origami-crane.png"
+            width="500"
+            height="520"
+            loading="lazy"
+            role="presentation"
+          />
+        </picture>
         <div>
           <ul class="List List--large">
             <li><a href="/front-end-development/">Front-end Development</a></li>
