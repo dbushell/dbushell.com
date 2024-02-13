@@ -3,6 +3,11 @@
   "short_name": "dbushell",
   "icons": [
     {
+      "src": "/assets/icons/180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
       "src": "/assets/icons/512x512.png",
       "sizes": "512x512",
       "type": "image/png"
