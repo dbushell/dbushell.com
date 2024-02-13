@@ -85,7 +85,7 @@ export const readGlob = async (glob: string): Promise<Props[]> => {
       })
     );
   }
-  await Promise.all(promises);
+  await Promise.allSettled(promises);
   return arr;
 };
 
