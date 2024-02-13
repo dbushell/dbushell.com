@@ -1,0 +1,26 @@
+{
+  "tasks": {
+    "dev": "deno run -A mod.ts --dev",
+    "prod": "deno run -A mod.ts --prod",
+    "build": "deno run -A mod.ts --build"
+  },
+  "imports": {
+    "dinossr": "https://raw.githubusercontent.com/dbushell/dinossr/v0.18.0/mod.ts",
+    "fs": "https://deno.land/std@0.214.0/fs/mod.ts",
+    "path": "https://deno.land/std@0.214.0/path/mod.ts",
+    "uuid": "https://deno.land/std@0.214.0/uuid/mod.ts",
+    "base64": "https://deno.land/std@0.214.0/encoding/base64.ts",
+    "debounce": "https://deno.land/std@0.214.0/async/debounce.ts",
+    "front_matter": "https://deno.land/std@0.214.0/front_matter/any.ts",
+    "file_server": "https://deno.land/std@0.214.0/http/file_server.ts",
+    "carriageway": "https://deno.land/x/carriageway@v0.8.1/mod.ts",
+    "lightningcss": "npm:lightningcss@1.23.0",
+    "striptags": "npm:striptags@3.2.0",
+    "marked": "npm:marked@11.2.0",
+    "marked-highlight": "npm:marked-highlight@2.1.0",
+    "marked-smartypants": "npm:marked-smartypants@1.1.5",
+    "marked-gfm-heading-id": "npm:marked-gfm-heading-id@3.1.2",
+    "@components/": "./components/",
+    "@src/": "./src/"
+  }
+}
