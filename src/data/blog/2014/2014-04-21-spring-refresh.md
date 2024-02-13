@@ -22,7 +22,7 @@ Practically speaking the logo was unwieldy to design around. If an unimaginativ
 
 I adapted the fixed header concept I first developed for my [Tales WordPress theme](/2014/02/17/introducing-tales/). It provides instant access to navigation and a subtle reminder of who I am. Importantly, it doesn't dominate the top of every page. On larger viewports the website footer becomes a fixed sidebar off to the right. This brings my profile and recent content into view while allowing the current page to lead.
 
-Whilst tidying my web server the other day I noticed that my [original portfolio](/origami.html) from 2008 is still online. Look at how tiny that text is! My eyesight has no doubt deteriorated since, but my respect and understanding for web accessibility has increased at a far greater pace. With each iteration of my website I've strived to improve typography and reduce content density. I reckon this is my best iteration yet.
+Whilst tidying my web server the other day I noticed that my [original portfolio](/showcase/origami-unfolded/) from 2008 is still online. Look at how tiny that text is! My eyesight has no doubt deteriorated since, but my respect and understanding for web accessibility has increased at a far greater pace. With each iteration of my website I've strived to improve typography and reduce content density. I reckon this is my best iteration yet.
 
 ## Coming Soon…
 

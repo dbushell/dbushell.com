@@ -65,7 +65,6 @@ const renderer = {
     }
     if (text.startsWith('🖋️')) {
       return `<p class="Cursive">${text.replace(/^🖋️/, '').trim()}</p>\n`;
-
     }
     return /^<p[ |>]/.test(text) ? text : `<p>${text}</p>\n`;
   },
@@ -76,18 +75,23 @@ const renderer = {
   },
 
   link(href: string, title: string | null | undefined, text: string) {
+    let url: URL;
     try {
-      const url = new URL(href);
-      href = url.href;
-    } catch {
-      // Ignore...
+      url = /^[\/|#]/.test(href)
+        ? new URL(href, 'https://dbushell.com')
+        : new URL(href);
+    } catch (err) {
+      console.warn(`⚠️ Invalid URL: ${href}`);
+      throw err;
     }
-    let out = `<a href="${href}"`;
+    let out = '<a';
+    if (url.hostname === 'dbushell.com') {
+      out += ` href="${url.pathname + url.hash + url.search}"`;
+    } else {
+      out += ` href="${url.href}" rel="noopener noreferrer" target="_blank"`;
+    }
     if (title) {
       out += ` title="${title}"`;
-    }
-    if (!/^[\/|#]/.test(href) && !/dbushell\.com/.test(href)) {
-      out += ` rel="noopener noreferrer" target="_blank"`;
     }
     out += `>${text}</a>`;
     return out;
