@@ -127,7 +127,7 @@ You can browse all the source code right on JSR. On NPM only the `files` listed 
     height="185">
 </figure>
 
-In the screenshot above the first import is my NPM package which I added  manual types with `index.d.ts`. The second import is my JSR package. JSR is delivering this for Node so the TypeScript is compiled to JavaScript without types. JSR boasts:
+In the screenshot above the first import is my NPM package which I added  manual types with `index.d.ts`. The second import is my JSR package. It exists and the code executes but VS Code is getting confused. JSR is delivering this for Node so the TypeScript is compiled to JavaScript without types. JSR boasts:
 
 > Native TypeScript Integration: Write TypeScript natively without the hassle of creating .d.ts files. It’s TypeScript as it’s meant to be—straightforward and efficient.
 
