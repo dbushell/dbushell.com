@@ -6,7 +6,7 @@ export const pattern = '/:slug/';
 
 const ignore = ['blog'];
 
-export const get: DinoHandle = ({request, match}) => {
+export const GET: DinoHandle = ({request, match}) => {
   if (!authorized(request)) {
     return new Response(null, {status: 401});
   }

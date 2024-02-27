@@ -17,7 +17,7 @@ const entry = `<url>
 </url>
 `;
 
-export const get = () => {
+export const GET = () => {
   // Sort by priority for readability
   const locations = Object.values(manifest.routes);
   locations.reverse();

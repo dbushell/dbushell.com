@@ -7,7 +7,7 @@ export const pattern = '/*';
 // After all other routes
 export const order = 999;
 
-export const get: DinoHandle = async ({request, response, platform}) => {
+export const GET: DinoHandle = async ({request, response, platform}) => {
   const url = new URL(request.url);
 
   // Redirect to RSS feed

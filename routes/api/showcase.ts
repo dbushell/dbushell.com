@@ -4,7 +4,7 @@ import type {DinoHandle} from 'dinossr';
 
 export const pattern = '/:slug/';
 
-export const get: DinoHandle = ({request, match}) => {
+export const GET: DinoHandle = ({request, match}) => {
   if (!authorized(request)) {
     return new Response(null, {status: 401});
   }

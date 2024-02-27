@@ -4,7 +4,7 @@ import type {DinoHandle} from 'dinossr';
 export const pattern = '.js';
 export const order = 999;
 
-export const get: DinoHandle = async ({response, platform}) => {
+export const GET: DinoHandle = async ({response, platform}) => {
   if (!(response instanceof Response) || !response.ok) {
     return response;
   }

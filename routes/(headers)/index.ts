@@ -4,7 +4,7 @@ import type {DinoHandle} from 'dinossr';
 export const pattern = '/_headers';
 export const order = 9999;
 
-export const get: DinoHandle = async ({request, response}) => {
+export const GET: DinoHandle = async ({request, response}) => {
   if (!authorized(request)) {
     return null;
   }

@@ -37,7 +37,7 @@ const entry = `<item>
 </item>
 `;
 
-export const get = () => {
+export const GET = () => {
   const {latest} = manifest;
 
   let body = template;

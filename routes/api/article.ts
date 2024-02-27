@@ -4,7 +4,7 @@ import type {DinoHandle} from 'dinossr';
 
 export const pattern = '/:year(\\d+)/:month(\\d+)/:day(\\d+)/:slug/';
 
-export const get: DinoHandle = ({request, match}) => {
+export const GET: DinoHandle = ({request, match}) => {
   if (!authorized(request)) {
     return new Response(null, {status: 401});
   }
