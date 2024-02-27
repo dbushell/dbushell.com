@@ -137,6 +137,10 @@ Is this something I can solve, or JSR can solve? Or does Bun need to implement a
 
 I would like to see Bun added to the **"Works with"** compatibility label at least.
 
+### Update for 27 Feb 2024
+
+Bun has now been added! And apparently types have been fixed for NPM installs. I can see type definition files in the node module directory. VS Code is still giving me an error but that's likely a configuration issue on my part.
+
 ## Finally
 
 Those are my thoughts on the [JSR JavaScript registry](https://jsr.io/) after using it for a couple of days. You can import JSR packages today without access to the invite-only website. Obviously the site will open to the public at some point.
