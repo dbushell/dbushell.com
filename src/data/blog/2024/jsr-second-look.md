@@ -125,7 +125,7 @@ JSR is clearly aimed at being "the Deno registry" in everything but name. Ironic
 
 ## Successful Launch?
 
-JSR uptake has been, dare I suggest, slow? — if that's even a fair statement after less than a week into the launch. What would fast look like? As I type this the 1000th package was published. Quantity is obvious not everything, but that's not many. Let's see if that pace picks up before judging too harshly. JSR has added some cool features. If it continues to improve I can see uptake climbing.
+JSR uptake has been, dare I suggest, slow? — if that's even a fair statement after less than a week into the launch. What would fast look like? As I type this the 1000th package was published. Quantity is obviously not everything, but that's not many. Let's see if that pace picks up before judging too harshly. JSR has added some cool features. If it continues to improve I can see uptake climbing.
 
 Sentiment around JSR seems mixed from my perspective. I've read a fair bit of skepticism and negativity. The same that lingers around discussions of Deno. It's not just that Node is "good enough" or the usual anti-JavaScript crowd. Deno just seems to leave a bad taste in the mouths of many.
 
