@@ -150,3 +150,7 @@ For Deno and TypeScript coders I think JSR will be the place to publish packages
 Will JSR ever usurp NPM? Unlikely, but like Deno did, I hope JSR can light a fire under Node & NPM and push them to modernise faster. Node still does not have first class ESM support without a flag. Is there a future where Node, like Bun, has first class TypeScript support? Will types come to the ECMAScript standard? Now I'm dreaming.
 
 Anyway, JSR is neat. TypeScript support and NPM compatibility are the killer features. Other improvements over NPM are small but welcome.
+
+### Update for 4 Mar 2024
+
+I've blogged: [JSR: Second Look](/2024/03/04/jsr-second-look/) with a lot more to discuss!

@@ -5,7 +5,7 @@
     "build": "deno run -A mod.ts --build"
   },
   "imports": {
-    "dinossr": "jsr:@ssr/dinossr@0.22",
+    "dinossr": "https://raw.githubusercontent.com/dbushell/dinossr/v0.23.0/mod.ts",
     "carriageway": "jsr:@dbushell/carriageway@0.9",
     "fs": "jsr:@std/fs@0.217",
     "path": "jsr:@std/path@0.217",
