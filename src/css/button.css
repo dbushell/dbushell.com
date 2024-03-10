@@ -19,7 +19,9 @@
   padding: calc((7 / 16) * 1rem) calc((16 / 16) * 1rem);
   text-decoration: none;
   text-transform: uppercase;
+  touch-action: manipulation;
   transition: color 200ms, border 200ms, box-shadow 200ms;
+  user-select: none;
 
   &:hover {
     --button-shadow: var(--color-tertiary);
