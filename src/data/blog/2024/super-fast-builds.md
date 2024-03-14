@@ -63,7 +63,7 @@ This fix shredded my build time from 5 minutes to under 10 seconds. It shows the
 
 For convenience [VelociRouter](https://github.com/dbushell/velocirouter) accepts a string input like `/:slug([\\w-]+)/` for routes. This is converted to a `URLPattern` instance before the request is tested:
 
-```js
+```javascript
 pattern = new URLPattern({pathname: input});
 const match = pattern.exec(request.url);
 ```
@@ -76,13 +76,13 @@ Build times were shredded again to under 2 seconds.
 
 If you remember I'm launching a Deno web server locally and fetching all URLs from the manifest. I theorised that calling `fetch` itself had some overhead:
 
-```js
+```javascript
 const response = await fetch('http://localhost:8080' + path);
 ```
 
 Instead I can bypass the web server by calling the DinoSsr router directly:
 
-```js
+```javascript
 const response = await dinossr.router.handle(request);
 ```
 

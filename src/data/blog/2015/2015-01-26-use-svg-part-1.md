@@ -31,7 +31,7 @@ In my opinion [browser support](http://caniuse.com/#feat=svg) is good enough tod
 
 With responsive design, Internet Explorer doesn't scale the `<img>` as one might expect when using SVG. Let's use this common pattern as an example:
 
-````markup
+````html
 <article class="media">
   <img class="media__image" src="smile.svg" alt="Smiley">
   <div class="media__body">
@@ -74,7 +74,7 @@ img {
 }
 ````
 
-````markup
+````html
 <article class="media">
   <div class="media__image">
     <img src="smile.svg" alt="Smiley">
@@ -89,7 +89,7 @@ The same idea applies when floating an image to allow text to wrap around:
 
 ![IE SVG Float](/images/blog/2015/IE-svg-float.png)
 
-````markup
+````html
 <article class="prose">
   <img src="smile.svg" class="prose__image">
   <p><strong>Media object with SVG image.</strong> … </p>

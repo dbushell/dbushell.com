@@ -126,7 +126,7 @@ The **edit** function returns a block template that composes the `core/embed` bl
 
 When inserted into the post content (via **save**) the fields block has no HTML render. (I will be using a PHP template for this.) Formatted for readability:
 
-```markup
+```html
 <!-- wp:theme/feature-video -->
 
 <!-- wp:embed {"url":"https://www.youtube.com/watch?v=dQw4w9WgXcQ","type":"video","providerNameSlug":"youtube"} -->

@@ -57,7 +57,7 @@ Naming conventions aside, this is WordPress/PHP basics. But a big problem arises
 
 On my production server the code above is replaced with:
 
-````markup
+````html
 <esi:include src="<?php bloginfo('template_url'); ?>/blog.esi.php"/>
 ````
 

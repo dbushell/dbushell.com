@@ -8,7 +8,7 @@ Things are moving fast over in [Denoland](https://deno.land). When I last checke
 
 If you view my page source you might see:
 
-```markup
+```html
 <meta name="generator" content="deno 1.8 | svelte 3.35.0">
 ```
 
@@ -78,7 +78,7 @@ I could just build locally and upload static files. However, pushing source to G
   command = "./src/deno/netlify.sh"
 ```
 
-```bash
+```shell
 #!/bin/bash
 curl -fsSL https://deno.land/x/install/install.sh | sh
 /opt/buildhome/.deno/bin/deno --version

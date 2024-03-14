@@ -138,7 +138,7 @@ const data = await window.navigator.credentials.get({
 
 Works in Chrome-like browsers. Fails elsewhere. If the password cannot be retrieved via the method above, or is incorrect, I fall back to a sign-in form.
 
-```markup
+```html
 <input
   required
   autocomplete="current-password"

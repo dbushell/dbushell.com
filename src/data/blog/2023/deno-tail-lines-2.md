@@ -12,7 +12,7 @@ The Deno standard library has a new [`TextLineStream`](https://deno.land/std@0.2
 ```javascript
 import {TextLineStream} from 'https://deno.land/std/streams/mod.ts';
 let lines: string[] = [];
-const file = await Deno.open('example.log’);
+const file = await Deno.open('example.log');
 const lines = file.readable
   .pipeThrough(new TextDecoderStream())
   .pipeThrough(new TextLineStream());

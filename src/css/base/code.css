@@ -21,8 +21,13 @@ code {
 }
 
 pre {
+  --background-color: var(--db-dark);
+  --background-alt: var(--db-midnight);
+  --block-padding: calc((12 / 16) * 1rem);
+  --inline-padding: calc((18 / 16) * 1rem);
+  background: oklch(var(--background-color));
   color: oklch(var(--db-light));
-  background: oklch(var(--db-dark));
+  counter-reset: line-counter;
   direction: ltr;
   height: auto;
   -webkit-hyphens: none;
@@ -31,7 +36,9 @@ pre {
   margin: calc((36 / 16) * 1rem) 0;
   margin-inline-start: calc((-18 / 16) * 1rem);
   overflow: auto;
-  padding: calc((18 / 16) * 1rem);
+  overscroll-behavior-inline: contain;
+  padding: var(--block-padding) var(--inline-padding);
+  position: relative;
   -moz-tab-size: 2;
   tab-size: 2;
   text-align: left;
@@ -40,13 +47,122 @@ pre {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
+
+  &[data-lang] {
+    &::before {
+      content: attr(data-lang);
+      color: oklch(var(--db-yellow));
+      display: block;
+      font-family: 'Comic Neue', 'Raleway', sans-serif;
+      font-size: calc((12 / 16) * 1rem);
+      font-style: italic;
+      inset-inline-start: 0;
+      line-height: 1;
+      transform: translateX(var(--inline-padding))
+        translateY(calc(-1 * var(--block-padding)));
+      margin-block-end: calc((-24 / 16) * 1rem);
+      padding: calc((6 / 16) * 1rem);
+      position: sticky;
+      pointer-events: none;
+      text-align: end;
+      text-transform: uppercase;
+      z-index: 1;
+    }
+  }
+
+  & > code {
+    display: grid;
+    grid-template-columns: auto;
+
+    & :is(.space, .tab) {
+      display: inline-block;
+      position: relative;
+
+      &:nth-child(2n + 1) {
+        &::before {
+          border-inline: 1px solid transparent;
+          border-inline-start-color: currentColor;
+        }
+      }
+
+      &::before {
+        content: '·';
+        inset: 0;
+        opacity: 0.15;
+        position: absolute;
+        pointer-events: none;
+        user-select: none;
+      }
+    }
+
+    & :not(.space) ~ .space::before {
+      border-inline-start-color: transparent;
+    }
+
+    & :is(.tab) {
+      &::before {
+        content: '→';
+      }
+    }
+
+    &:has(:nth-child(3 of .line)) {
+      line-height: 1.75;
+
+      & .line {
+        counter-increment: line-counter;
+        position: relative;
+        z-index: 1;
+
+        &::after {
+          background: oklch(var(--background-alt) / 0.15);
+          content: '';
+          display: none;
+          inset: 0 calc((-18 / 16) * 1rem);
+          position: absolute;
+          z-index: -1;
+        }
+
+        &::before {
+          content: counter(line-counter);
+          color: oklch(var(--db-yellow));
+          display: inline-block;
+          inline-size: 2ch;
+          margin-inline-end: calc((14 / 16) * 1rem);
+          margin-inline-start: calc((-6 / 16) * 1rem);
+          text-align: end;
+          user-select: none;
+        }
+
+        &:nth-child(odd) {
+          &::after {
+            display: block;
+          }
+        }
+
+        &:hover {
+          &::after {
+            background: oklch(var(--db-yellow) / 0.05);
+            display: block;
+          }
+
+          &::before {
+            color: oklch(var(--db-light));
+          }
+        }
+      }
+    }
+  }
+
+  :where(.Darkmode) & {
+    --background-color: var(--db-midnight);
+    --background-alt: var(--db-dark);
+  }
 }
 
 @container app (inline-size < calc((400 / 16) * 1rem)) {
   pre {
+    --inline-padding: var(--page-margin);
     margin-inline-end: calc(-1 * var(--page-margin));
     margin-inline-start: calc(-1 * var(--page-margin));
-    padding-inline-end: var(--page-margin);
-    padding-inline-start: var(--page-margin);
   }
 }

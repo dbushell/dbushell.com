@@ -9,7 +9,7 @@ description: 'The one where I redesign my PWA and dive head first into Android S
 
 It's run from the command line:
 
-```bash
+```shell
 bubblewrap init --manifest "https://muteswan.dbushell.com/manifest.webmanifest"
 ```
 
@@ -81,7 +81,7 @@ I've an old Nexus 7, and a new Fire 7 — which feels like the 7 year-old device
 
 After connecting via USB run:
 
-```bash
+```shell
 adb install app/release/app-release.apk
 ```
 

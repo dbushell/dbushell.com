@@ -63,7 +63,7 @@ Y5Au0gc=
 
 Encrypting an email with the `openpgp` library is simple. The example code below is inside a `POST` request handler. In my case, that's a [Cloudflare Worker](https://developers.cloudflare.com/workers/).
 
-```js
+```javascript
 import * as openpgp from 'openpgp';
 
 // TODO: server-side validation...
@@ -108,7 +108,7 @@ Only my private key can decrypted it — and that's a secret!
 
 Sending this via AWS SES is just as easy. Assuming you've got everything configured on the AWS side… which is far from easy.
 
-```js
+```javascript
 const client = new SESv2Client({
   region: env.AWS_REGION,
   credentials: {

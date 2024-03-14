@@ -23,11 +23,19 @@ export const GET: DinoHandle = async ({request, response, platform}) => {
     platform.serverData.pageHeaders as [string, string][]
   );
 
+  const styles = platform.serverData.styles as Array<{
+    css: string;
+    hash: string;
+  }>;
+  let stylesHTML = '';
+  for (const {css, hash} of styles) {
+    stylesHTML += `<style data-hash="${hash}">${css}</style>\n`;
+  }
+
   if (response.headers.get('content-type')?.includes('text/html')) {
     let body = await response.text();
     body = replace(body, '%DEPLOY_HASH%', platform.deployHash, true);
-    body = replace(body, '/*%CSS_MIN%*/', platform.serverData.cssMin as string);
-    body = replace(body, '%CSS_HASH%', platform.serverData.cssHash as string);
+    body = replace(body, '%STYLES%', stylesHTML);
     response = new Response(body, response);
   }
   return response;

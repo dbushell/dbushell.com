@@ -77,7 +77,7 @@ For the infinite scroll to work you first implement the blog with standard “Pr
 
 These selectors match the HTML structure I’ve used for blog listings and pagination:
 
-```markup
+```html
 <div class="grid grid--infinite">
   <div class="grid__item grid__item--infinite">
     <article class="article"> ... </article>

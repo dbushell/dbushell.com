@@ -40,7 +40,7 @@ I've written a solution:
 
 The basic implementation looks like this:
 
-````markup
+````html
 <a class="socialite twitter" href="http://twitter.com/share" data-url="http://socialitejs.com" data-via="dbushell">
 Share on Twitter
 </a>

@@ -153,7 +153,7 @@ Finally, to ensure the service worker is installed I've added a `<script>` to th
 /var/www/html/admin/scripts/pi-hole/php/footer.php
 ```
 
-```markup
+```html
 <script>
 if ('serviceWorker' in window.navigator) {
   window.navigator.serviceWorker.register('/admin/sw.js');

@@ -86,7 +86,7 @@ If I had multiple inline sources a more robust solution might be sensible to gen
 
 As for my website hosted on GitHub Pages I would need to use a meta tag:
 
-```markup
+```html
 <meta http-equiv="Content-Security-Policy" content=" ... ">
 ```
 

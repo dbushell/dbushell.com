@@ -95,7 +95,7 @@ const update = debounce(async (ev: Deno.FsEvent) => {
   controller.abort();
   await dinossr.server.finished;
   if (css) await rebuildCSS();
-  if (data) await rebuildManifest();
+  if (css || data) await rebuildManifest();
   start();
 }, 1000);
 

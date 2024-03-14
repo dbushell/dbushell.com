@@ -8,13 +8,13 @@ title: Are You Sure? The UX of Confirmations
 
 Imagine for a minute your web app has a "Delete" action. In HTML it takes this form:
 
-````markup
+````html
 <a class="delete" href="#">Delete Item</a>
 ````
 
 The anchor is styled up with sexy CSS3 and functionality is implemented with an asynchronous JavaScript API call. Because we all care about accessibility (and standards) we provide a "no-JS" fallback:
 
-````markup
+````html
 <a class="delete" href="/item/delete/1/">Delete Item</a>
 ````
 
@@ -34,7 +34,7 @@ Replace `confirm()` with your fancy dialog of choice. The function `[window.co
 
 That's quite nice but searching the whole DOM for links is fairly intensive. There will also be the initial delay of execution while we wait for the `DOMContentLoaded` event. Users will quick trigger fingers will be able to click "Delete" and see no confirmation request. We also have the issue of microcopy hardcoded in our script (not the best place for it). We could mess around with additional `data-*` attributes but I have a better idea...
 
-````markup
+````html
 <a class="delete" href="/message/delete/1/"
    onclick="return confirm('Are you sure?')">Delete Item</a>
 ````
@@ -81,7 +81,7 @@ First we check the `window` object, old Internet Explorer will find an event chi
 
 My final implementation with extended functionality looks a little something like this:
 
-````markup
+````html
 <a onclick="return confirm('Are you sure?')" href="/action/">Delete Item</a>
 ````
 

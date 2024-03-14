@@ -20,7 +20,7 @@ To truly understand how things works I've been experimenting. I created a si
 
 See the full source below (scroll past for explanation and findings).
 
-````markup
+````html
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="90" viewBox="0 0 30 90">
 
 <!-- define gradients used in "smile" icon -->
@@ -95,7 +95,7 @@ An `<img>` element looks subjectively neater but the icon can't be styled with C
 
 While you can't use external CSS you can create multiple `view` and `use` combos inside the sprite that reference the same `symbol`. Then style those:
 
-````markup
+````html
 <view id="smile-view-face-r" viewBox="0 30 30 30" />
 <view id="smile-view-face-b" viewBox="0 60 30 30" />
 <use style="fill:red;" xlink:href="#smile-face" width="30" height="30" x="0" y="30"></use>

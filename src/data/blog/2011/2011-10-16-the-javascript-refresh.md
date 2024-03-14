@@ -22,7 +22,7 @@ This means that the whole DOM has loaded and is ready to be manipulated. Sadly f
 
 The solution? Add a **`.no-js`** class to your opening `html` element, then remove it as soon as possible with JavaScript. In your `head` write:
 
-````markup
+````html
 <script type="text/javascript">
 docHTML = document.getElementsByTagName('html')[0];
 docHTML.className = docHTML.className.replace(/\bno-js\b/, '') + ' js';

@@ -46,7 +46,7 @@ By the way. As you probably know, I'm [statically generating](/2017/02/13/react-
 
 If you open the dev console and type:
 
-```js
+```javascript
 dbushell.universal();
 ```
 

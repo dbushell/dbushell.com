@@ -73,7 +73,7 @@ By default they're stacked vertically (I may progressively enhance to a fancy ca
 
 My HTML is as you'd expect, ignoring possible semantic choices like `section` or `article` elements. I may not even need an extra `div` to style my features:
 
-````markup
+````html
 <div class="grid home-features">
     <div class="grid-unit"><!-- feature 1 --></div>
     <div class="grid-unit"><!-- feature 2 --></div>

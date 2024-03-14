@@ -11,7 +11,7 @@ I'm currently using [ProtonVPN](https://protonvpn.com/) and [Protonwire](https:/
 
 My Docker compose starts with:
 
-```yml
+```yaml
 services:
   protonvpn:
     container_name: protonvpn
@@ -26,7 +26,7 @@ services:
 
 The `vpn` network is an external [overlay network](https://docs.docker.com/network/overlay/) referenced in the config:
 
-```yml
+```yaml
 networks:
   vpn:
     external: true
@@ -42,7 +42,7 @@ A `bridge` network can work if the containers are on a single machine. An `overl
 
 Containers on the same bridge or overlay network can add:
 
-```yml
+```yaml
     network_mode: "container:protonvpn"
 ```
 
@@ -52,7 +52,7 @@ Using the VPN is not limited to other containers.
 
 In the same `docker-compose.yml` config I added a proxy service:
 
-```yml
+```yaml
   socks5:
     image: serjs/go-socks5-proxy
     container_name: socks5

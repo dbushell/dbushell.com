@@ -50,7 +50,7 @@ Once a partial template is assigned, and on subsequent region editing, Perch pre
 
 The partial template used for this region looks like this:
 
-````markup
+````html
 <img src="<perch:content type="image" id="image" label="Image" />" alt="<perch:content type="text" id="alt" label="Description" required="true" title="true" />">
 ````
 
@@ -78,7 +78,7 @@ The blog comes with a default set of templates as an example but blog content is
 
 This was very easy to implement in my global footer include:
 
-````markup
+````html
 <h2>From the blog…</h2>
 <?php
 perch_blog_custom(array(
@@ -100,7 +100,7 @@ WordPress is particularly notorious for the amount of hard-coded HTML it likes t
 
 Perch handles these situations a lot better. The blog app provides the function [perch_blog_categories()](http://docs.grabaperch.com/docs/blog/page-functions/perch-blog-categories/) which utilises a default partial template:
 
-````markup
+````html
 <perch:before>
 <h3>Categories</h3>
 <ul>

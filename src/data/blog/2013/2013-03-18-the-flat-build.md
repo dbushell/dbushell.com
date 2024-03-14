@@ -52,7 +52,7 @@ I decided to build my own from scratch. I know, I know, I do actually have a cli
 
 It follows Hammer's include syntax:
 
-````markup
+````html
 <!-- @include _header.html -->
 <main role="main">
     <p>Hello World!</p>
@@ -62,7 +62,7 @@ It follows Hammer's include syntax:
 
 It can perform multiple passes (to find includes within includes). Includes are matched via name first or path second if you specify a directory:
 
-````markup
+````html
 <!-- @include blog/_header.html -->
 ````
 

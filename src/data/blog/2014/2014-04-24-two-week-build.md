@@ -66,7 +66,7 @@ I've built many websites with font icons, many others with SVG sprites, but I'm 
 
 For example, I can reference my navigation icon:
 
-````markup
+````html
 <a class="nav-open" href="#nav">
     <span>Menu</span>
     <svg viewbox="0 0 35 35"><use xlink:href="#svg--nav"></use></svg>

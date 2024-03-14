@@ -49,7 +49,7 @@ If you're keeping the core blocks — which is advisable — you'll also want th
 
 The `core/columns` HTML is very simple. Looking at the _"30 / 70 — Two columns; one-third, two-thirds split"_ for example:
 
-```markup
+```html
 <div class="wp-block-columns">
   <div class="wp-block-column" style="flex-basis:33.33%">
     <p>Column one inner blocks</p>

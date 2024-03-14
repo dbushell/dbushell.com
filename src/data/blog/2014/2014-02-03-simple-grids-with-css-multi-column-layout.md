@@ -14,7 +14,7 @@ The image below shows a very minimal design for my website's footer (menu and co
 
 The HTML (sans class attributes for readability) is basic:
 
-````markup
+````html
 <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/about/">About</a></li>

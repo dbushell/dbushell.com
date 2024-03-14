@@ -91,7 +91,7 @@ With content and templates in place my website could be built once again. I chec
 
 Now all that was missing was an XML sitemap. To generate this I wrote a Metalsmith plugin inspired by ExtraHop’s [metalsmith-sitemap](https://github.com/ExtraHop/metalsmith-sitemap). A simple solution that uses Handlebars to populate XML templates:
 
-```markup
+```html
 <url>
   <loc>{{loc}}</loc>{{#if lastmod}}
   <lastmod>{{lastmod}}</lastmod>{{/if}}{{#if changefreq}}

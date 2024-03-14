@@ -52,7 +52,7 @@ I'm using [**Mustache.js**](https://github.com/janl/mustache.js) for HTML templa
 
 The basket template exists within the document source for initial reference. An abbreviated example would look like this:
 
-```markup
+```html
 <script id="basket-template" type="text/x-mustache-template">
   {{# items }}
   <article class="basket-item">

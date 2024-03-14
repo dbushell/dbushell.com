@@ -42,7 +42,7 @@ For the larger feature page illustrations we're writing SVG directly inline of t
 
 In the PHP template this is outputted straight into the rendered HTML. The page source looks something like this:
 
-````markup
+````html
 <div class="feature-image is-svg" data-no-svg="fallback.png">
   <!--[if (gt IE 8)]><!-->
     <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px">

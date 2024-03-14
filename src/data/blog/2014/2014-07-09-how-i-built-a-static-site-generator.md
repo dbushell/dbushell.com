@@ -17,7 +17,7 @@ Now I have an [army of tools](/2014/06/10/dependency-overload/) at my finger tip
 
 At the time static site generators and templating scared me (still does, in fact). What I wanted was so minimal I was hesitant to invest time into a large set-up. Looking around for options, I liked the way [Hammer for Mac](http://hammerformac.com/docs/tags) implemented tags:
 
-````markup
+````html
 <!-- @include _header.html -->
 ````
 
@@ -68,7 +68,7 @@ templates/
 
 A minimal `base.html` would look like this:
 
-````markup
+````html
 <!DOCTYPE html>
 <html lang="{{lang}}">
 <head>
@@ -99,7 +99,7 @@ Let's say my `base.json` defines navigation like so:
 
 My navigation partial might look like this:
 
-````markup
+````html
 {{#nav}}
 <nav role="navigation">
     {{#items}}

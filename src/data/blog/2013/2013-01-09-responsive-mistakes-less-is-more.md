@@ -36,7 +36,7 @@ Replacement techniques have been around long before responsive design. They're b
 
 The semantic HTML for the nav open button is a normal hyperlink:
 
-````markup
+````html
 <a class="nav-button" href="#nav">Navigation</a>
 ````
 

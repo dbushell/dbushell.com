@@ -27,7 +27,7 @@ I have an SVG sprite for social icons:
 
 These three icons live within a single file (see Sara's guide to [SVG sprites](https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/)). To reused an icon is as simple as referencing it like so:
 
-````markup
+````html
 <svg>
   <use xlink:href="icons.svg#twitter"></use>
 </svg>
@@ -39,7 +39,7 @@ With CSS I can style the size and colour of individual icons, amongst other prop
 
 I checked my SVG sprite source and it looked correct:
 
-````markup
+````html
 <svg xmlns="http://www.w3.org/2000/svg">
     <symbol id="twitter" viewbox="0 0 34 28">
         <!-- [path data] -->
@@ -55,7 +55,7 @@ I checked my SVG sprite source and it looked correct:
 
 I checked my minified SVG sprite source and it looked suspiciously empty:
 
-````markup
+````html
 <svg xmlns="http://www.w3.org/2000/svg">
 </svg>
 ````

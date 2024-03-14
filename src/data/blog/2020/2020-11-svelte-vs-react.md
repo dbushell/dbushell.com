@@ -46,13 +46,13 @@ In **Svelte** this component would be:
 
 Even with this basic example the `export` statements start to feel a little bit verbose. It's necessary to define props in this way so Svelte can do its magic. A minor tedium for the lazy like me. However, defining default props is easier in Svelte:
 
-```js
+```javascript
 export let start = 1;
 ```
 
 Whereas in React I might add:
 
-```js
+```javascript
 const {start = 1} = props;
 ```
 
@@ -192,7 +192,7 @@ Svelte also has shorthand modifiers for directives:
 
 Without the modifier — or similarly in React — I'd do:
 
-```js
+```javascript
 const onSubmit = (ev) => {
   ev.preventDefault();
   console.log('Do something...');
@@ -242,7 +242,7 @@ The Svelte script only runs once when the component is initialized. Unlike the R
 
 To effectively freeze time in React we'd do this:
 
-```js
+```javascript
 const [time] = useState(Date.now());
 ```
 
@@ -250,7 +250,7 @@ Thus making the component behave more like its Svelte counterpart.
 
 Or to make the original Svelte component behave more like React:
 
-```js
+```javascript
 import {beforeUpdate} from 'svelte';
 let time;
 beforeUpdate(() => (time = Date.now()));
@@ -258,7 +258,7 @@ beforeUpdate(() => (time = Date.now()));
 
 I could also do:
 
-```js
+```javascript
 $: time = Date.now() || count;
 ```
 
@@ -276,7 +276,7 @@ A less obvious difference in my examples is the `onClick` event handler function
 
 React has the `useCallback` hook to improve efficiency.
 
-```js
+```javascript
 const onClick = useCallback(() => setCount(count => count + 1), []);
 ```
 

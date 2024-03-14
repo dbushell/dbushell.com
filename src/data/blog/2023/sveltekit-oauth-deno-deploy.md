@@ -57,13 +57,13 @@ Then you can run `deno task dev`. Or just `deno run...` directly without the fil
 
 VS Code development is not perfect if you're using TypeScript. If you toggle the `deno.enable` for the [Deno extension setting](https://deno.com/manual@v1.34.3/references/vscode_deno#configuring-the-extension) you'll get import errors. Module import errors can be "fixed" with the `npm:` prefix:
 
-```js
+```javascript
 import {json} from 'npm:@sveltejs/kit';
 ```
 
 This fixes typing even though it's not actually necessary because `deno` is run with `--node-modules-dir`. There are still errors with generated types like:
 
-```js
+```javascript
 import type {PageLoad} from './$types';
 import {PUBLIC_ORIGIN} from '$env/static/public';
 ```
@@ -72,7 +72,7 @@ I read up on [how SvelteKit does this](https://svelte.dev/blog/zero-config-type-
 
 It's possible to add internal Deno types to SvelteKit. In the project root run:
 
-```sh
+```shell
 deno --unstable types > src/deno.d.ts
 ```
 

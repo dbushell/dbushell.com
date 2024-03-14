@@ -24,13 +24,13 @@ There is no magic way to know how many lines there are until the entire file is 
 
 There is a unix command called `head`:
 
-```bash
+```shell
 head -n 1 example.log
 ```
 
 And the accompanying `tail`:
 
-```bash
+```shell
 tail -n 1 example.log
 ```
 

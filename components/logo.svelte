@@ -38,14 +38,6 @@
       }
     });
 
-    // Handle syntax highlighting
-    if (document.querySelector('pre')) {
-      const $prism = document.createElement('link');
-      $prism.rel = 'stylesheet';
-      $prism.href = `/assets/css/prism.css?v=${deployHash}`;
-      document.head.appendChild($prism);
-    }
-
     // Handle monospace font
     if (document.querySelector('code')) {
       var fira = new FontFace(

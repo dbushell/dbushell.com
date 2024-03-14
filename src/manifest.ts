@@ -1,4 +1,6 @@
 import * as data from '@src/data.ts';
+import {cssMin, cssHash} from '@src/css.ts';
+import {syntaxCSS} from '@src/markdown.ts';
 import type {Props, Manifest} from './types.ts';
 
 export const getProps = async (
@@ -19,9 +21,18 @@ export const getProps = async (
 };
 
 export const generateManifest = async () => {
+  const now = performance.now();
+  console.log('Manifesting...');
+
   const manifest: Manifest = {
     routes: {},
-    latest: []
+    latest: [],
+    styles: [
+      {
+        css: cssMin,
+        hash: cssHash
+      }
+    ]
   };
 
   manifest.routes['/'] = {
@@ -81,6 +92,10 @@ export const generateManifest = async () => {
     };
     manifest.routes[href] = props;
   }
+
+  manifest.styles.push(await syntaxCSS());
+
+  console.log(`Manifested in ${(performance.now() - now).toFixed(2)}ms`);
 
   return manifest;
 };

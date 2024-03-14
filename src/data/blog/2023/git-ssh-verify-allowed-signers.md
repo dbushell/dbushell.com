@@ -13,7 +13,7 @@ After doing that I wanted to verify commit signatures locally.
 
 There is a command for that:
 
-```sh
+```shell
 git log --show-signature
 ```
 

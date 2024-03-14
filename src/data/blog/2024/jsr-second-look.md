@@ -24,7 +24,7 @@ The issues I had with types for Node & Bun are reportedly fixed.
 
 JSR has a new [Node CLI](https://github.com/jsr-io/jsr-npm) which is now the recommended way to install JSR packages for Node:
 
-```sh
+```shell
 npx jsr add @dbushell/carriageway
 ```
 

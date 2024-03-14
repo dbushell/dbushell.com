@@ -24,7 +24,7 @@ Today I've added the Spotify Play Button to [Socialite.js](http://socialitejs.co
 
 The crucial thing being that all the hefty loading was done _after_ the main content. Deferring external resources isn't the only benefit of Socialite. Instead of ugly iframes and empty placeholder elements, Socialite allows for more accessible and usable defaults, such as the normal link used above:
 
-````markup
+````html
 <a href="http://open.spotify.com/track/2EZ2KXLqs9zdRVVMMz1IsH" class="socialite spotify-play" title="Listen to LMFAO!">
 	Listen to "Sexy And I Know It" on Spotify
 </a>

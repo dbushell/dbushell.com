@@ -12,7 +12,7 @@ The recent [Clown Car Technique](http://coding.smashingmagazine.com/2013/06/02/
 
 When I build web pages I generally come to the conclusion that using a single image is a sensible bet. Nothing fancy, just a good ol' accessible image element:
 
-````markup
+````html
 <img src="handshake.jpg" alt="an ethnically diverse handshake">
 ````
 

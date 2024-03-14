@@ -29,4 +29,5 @@ export interface Manifest {
   routes: {
     [key: string]: Props;
   };
+  styles: Array<{css: string; hash: string}>;
 }

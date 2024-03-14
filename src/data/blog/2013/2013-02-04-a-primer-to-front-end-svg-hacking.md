@@ -10,7 +10,7 @@ Using [SVG](https://developer.mozilla.org/en/docs/SVG) (Scalable Vector Graphics
 
 💤 _* Quick fire question: at which corner does this right-angle triangle point?_
 
-````markup
+````html
 <polygon points="0,100 0,0 100,0 "/>
 ````
 
@@ -20,7 +20,7 @@ I'm going to walk you through many conceivable implementations:
 
 Basic usage is as simple as swapping out a regular raster graphic — PNG, JPEG, or GIF — with an SVG file. Here's an example in HTML:
 
-````markup
+````html
 <img src="image.svg">
 ````
 
@@ -28,7 +28,7 @@ According to the [can I use](http://caniuse.com/#search=SVG) compatibility tab
 
 With client side fallbacks we can't avoid the initial download. We could swap out the element source with JavaScript if there's an error:
 
-````markup
+````html
 <img src="image.svg" onerror="this.onerror=null; this.src='image.png'">
 ````
 
@@ -45,7 +45,7 @@ if (!Modernizr.svg) {
 
 **Ben Howdle** and **Jack Smith** have written [SVGeezy](http://benhowdle.im/svgeezy/) that does this without Modernizr or jQuery dependencies. Though if you do include [Modernizr](http://modernizr.com/) detection in the `<head>` of your HTML document you can do a nicer — read: less noticeable — "switcheroo" with CSS.
 
-````markup
+````html
 <div id="logo">
     <img src="logo.svg">
 </div>
@@ -102,7 +102,7 @@ It may not be immediately obvious but my pseudo code above is not a valid data U
 
 If you were experimenting with SVG a couple of years ago like I was you'll be more familiar with the object element:
 
-````markup
+````html
 <object type="image/svg+xml" data="image.svg">
     <img src="fallback.png">
 </object>
@@ -110,7 +110,7 @@ If you were experimenting with SVG a couple of years ago like I was you'll be mo
 
 This is the oldest method we have. And of course, data URIs are possible here too:
 
-````markup
+````html
 <object type="image/svg+xml" data="data:image/svg+xml;base64,[data]">
     <img src="fallback.png">
 </object>
@@ -118,7 +118,7 @@ This is the oldest method we have. And of course, data URIs are possible here to
 
 If the browser doesn't recognise the object element's MIME type it won't download the SVG file but the "fallback" image inside is always downloaded. Again, we're not doing things quite right. There is a better solution and those crafty devils at [ClearLeft](http://clearleft.com/) are sporting it in their logo markup. The answer? Simply use CSS to apply the fallback image:
 
-````markup
+````html
 <object id="logo" type="image/svg+xml" data="logo.svg">
     <div>logo description</div>
 </object>
@@ -140,7 +140,7 @@ With the methods highlighted above we actually lose a lot of SVG's potential. Fo
 
 To unleash full power you either need to view an SVG file directly in the browser (not very handy for website development), or write it inline of HTML:
 
-````markup
+````html
 <!--[if (gt IE 8)]><!--><svg></svg><!--<![endif]-->
 ````
 

@@ -1,32 +1,37 @@
+import {encodeBase64} from 'base64';
 import {marked} from 'marked';
-import {markedHighlight} from 'marked-highlight';
 import {markedSmartypants} from 'marked-smartypants';
 import {gfmHeadingId as markedHeaderIds} from 'marked-gfm-heading-id';
+import * as shiki from 'shiki';
+import {transformerRenderWhitespace} from 'shiki-transformers';
+import {replace} from '@src/shared.ts';
 
-const prismModule = `https://cdn.skypack.dev/prismjs`;
+const transformers = [transformerRenderWhitespace()];
 
-await import(prismModule);
+export const cssMap = new Map<string, string>();
+const styleAttr = /style=(["'])(.*?)\1/g;
 
-await import(`${prismModule}/components/prism-jsx.js`);
-await import(`${prismModule}/components/prism-markup-templating.js`);
-await import(`${prismModule}/components/prism-php.js`);
-await import(`${prismModule}/components/prism-diff.js`);
-await import(`${prismModule}/components/prism-bash.js`);
-await import(`${prismModule}/components/prism-json.js`);
-await import(`${prismModule}/components/prism-toml.js`);
-await import(`${prismModule}/components/prism-yaml.js`);
-await import(`${prismModule}/components/prism-scss.js`);
-await import(`${prismModule}/components/prism-sql.js`);
-await import(`${prismModule}/components/prism-typescript.js`);
-await import(`https://cdn.skypack.dev/prism-svelte`);
+/** Strip `<code>` inline styles and map to class */
+const stripStyles = (code: string) => {
+  return code.replace(styleAttr, (...args: Array<string>) => {
+    if (!cssMap.has(args[2])) {
+      cssMap.set(args[2], `syntax-${cssMap.size}`);
+    }
+    return `class="${cssMap.get(args[2])}"`;
+  });
+};
 
-// TODO: real types?
-declare global {
-  const Prism: {
-    languages: {[key: string]: string};
-    highlight(code: string, language: string): string;
-  };
-}
+/** Get code syntax CSS and CSP hash */
+export const syntaxCSS = async () => {
+  let css = [...cssMap.entries()].map(([k, v]) => `.${v}{${k};}`).join('');
+  css = `@layer syntax{${css}}`;
+  const hash = encodeBase64(
+    new Uint8Array(
+      await crypto.subtle.digest('sha-256', new TextEncoder().encode(css))
+    )
+  );
+  return {css, hash};
+};
 
 // TODO: silence only deprecated warnings
 marked.use({
@@ -41,19 +46,42 @@ marked.use(
 
 marked.use(markedSmartypants());
 
-marked.use(
-  markedHighlight({
-    langPrefix: 'language-',
-    highlight: (code: string, language: string) => {
-      if (Object.keys(Prism.languages).includes(language)) {
-        code = Prism.highlight(code, Prism.languages[language]);
-      } else if (language) {
-        console.log(`⚠ Unknown prism "${language}"`);
-      }
+marked.use({
+  async: true,
+  async walkTokens(token) {
+    if (token.type !== 'code') {
+      return;
+    }
+    if (!token.lang) {
+      return token.text;
+    }
+    if (!Object.hasOwn(shiki.bundledLanguages, token.lang)) {
+      console.log(`⚠ Unknown lang: ${token.lang}`);
+      return;
+    }
+    let code = await shiki.codeToHtml(token.text, {
+      lang: token.lang,
+      theme: 'dracula',
+      colorReplacements: {
+        '#6272a4': '#a3b5eb', // Grey
+        '#ff79c6': '#ff93ce', // Pink
+        '#bd93f9': '#caa7ff' // Purple
+      },
+      transformers
+    });
+    // Remove default Shiki classes
+    code = stripStyles(code);
+    code = replace(code, 'class="shiki dracula"', `data-lang="${token.lang}"`);
+    code = replace(code, 'class="syntax-0"', '');
+    token.escaped = true;
+    token.text = code;
+  },
+  renderer: {
+    code(code: string, _infostring: string | undefined, _escaped: boolean) {
       return code;
     }
-  })
-);
+  }
+});
 
 const renderer = {
   paragraph(text: string) {

@@ -39,7 +39,7 @@ The only permission you need to select is *"Contents"* with *"Access: Read-only"
 
 You can test it with <code>curl</code>:
 
-```bash
+```shell
 curl -H "Authorization: Bearer github_pat_XXX" https://raw.githubusercontent.com/.../code.js
 ```
 
@@ -57,7 +57,7 @@ const response = await fetch(url, {
 
 Deno has the `DENO_AUTH_TOKENS` env variable. See [Private Modules and Repositories](https://docs.deno.com/runtime/manual/basics/modules/private) for documentation. This can be added to the shell environment:
 
-```bash
+```shell
 export DENO_AUTH_TOKENS="github_pat_XXX@raw.githubusercontent.com"
 ```
 
