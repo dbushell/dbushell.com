@@ -89,15 +89,24 @@ Button focus state can be improved with two tricks:
 
 ```css
 .button {
+  /*
+  // Removed – see update below!
   &:focus {
     outline: none;
   }
+  */
   &:focus-visible {
     outline: 2px solid magenta;
     outline-offset: 2px;
   }
 }
 ```
+
+<div class="Box">
+ <h4>Update for 20th March 2024</h4>
+
+[It's been noted](https://hachyderm.io/@hi_mayank/112124624184257324) that removing the default `:focus` state is unnecessary.
+</div>
 
 First, I replace the default `focus` pseudo-class with `focus-visible`. MDN has a long section on [focus vs focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible#focus_vs_focus-visible). Basically it's what the original should have been in hindsight.
 
@@ -132,9 +141,6 @@ All together the button styles I've discussed here are:
 }
 
 * {
-  &:focus {
-    outline: none;
-  }
   &:focus-visible {
     outline: 2px solid magenta;
     outline-offset: 2px;

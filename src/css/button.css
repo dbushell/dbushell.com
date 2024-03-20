@@ -30,7 +30,7 @@
     cursor: pointer;
   }
 
-  &:focus {
+  &:focus-visible {
     outline: var(--outline);
     outline-offset: calc((4 / 16) * 1rem);
   }

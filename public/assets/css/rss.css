@@ -31,11 +31,8 @@ a:hover {
   text-decoration: none;
 }
 
-a:focus {
-  color: oklch(var(--db-pink));
-}
-
 a:focus-visible {
+  color: oklch(var(--db-pink));
   outline: 0.125rem solid oklch(var(--db-pink));
   outline-offset: 0.125rem;
 }
