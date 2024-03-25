@@ -19,7 +19,7 @@
 
     // Handle service worker
     if ('serviceWorker' in window.navigator) {
-      window.navigator.serviceWorker.register('/sw.js');
+      window.navigator.serviceWorker.register(`/sw.js?v=${deployHash}`);
     }
 
     // Handle dark mode
@@ -42,7 +42,7 @@
     if (document.querySelector('code')) {
       var fira = new FontFace(
         'Fira Code Light',
-        "url('/assets/fonts/fira-code-light.woff2') format('woff2')",
+        `url('/assets/fonts/fira-code-light.woff2?v=${deployHash}') format('woff2')`,
         {weight: '300', unicodeRange: 'U+0020-007F'}
       );
       Promise.all([fira.load()]).then((fonts) => {

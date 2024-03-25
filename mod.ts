@@ -67,6 +67,9 @@ const start = async () => {
 
 await start();
 
+await rebuildCSS(dinossr!.deployHash);
+await rebuildManifest();
+
 if (BUILD) {
   await build(dinossr!);
   Deno.exit(0);
@@ -94,7 +97,7 @@ const update = debounce(async (ev: Deno.FsEvent) => {
   if (!refresh) return;
   controller.abort();
   await dinossr.server.finished;
-  if (css) await rebuildCSS();
+  if (css) await rebuildCSS(dinossr.deployHash);
   if (css || data) await rebuildManifest();
   start();
 }, 1000);

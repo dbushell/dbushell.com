@@ -1,16 +1,10 @@
 const CACHE = '%DEPLOY_HASH%';
 
 const PRECACHE = [
-  '/assets/fonts/komika-title.woff2',
-  '/assets/fonts/raleway-variable.woff2',
-  '/assets/fonts/comic-neue-bold-italic.woff2',
-  '/assets/images/dbushell-logotype.svg?v=%DEPLOY_HASH%',
-  '/',
-  '/now/',
-  '/about/',
-  '/blog/',
-  '/contact/',
-  '/services/'
+  '/assets/fonts/komika-title.woff2?v=%DEPLOY_HASH%',
+  '/assets/fonts/raleway-variable.woff2?v=%DEPLOY_HASH%',
+  '/assets/fonts/comic-neue-bold-italic.woff2?v=%DEPLOY_HASH%',
+  '/assets/images/dbushell-logotype.svg?v=%DEPLOY_HASH%'
 ];
 
 self.addEventListener('install', (ev) => {
@@ -30,7 +24,38 @@ self.addEventListener('activate', (ev) => {
   ev.waitUntil(clearCaches());
 });
 
-self.addEventListener('fetch', async (ev) => {
+const handleFetch = async (ev) => {
+  // Try cache first
+  const cache = await caches.open(CACHE);
+  let response = await cache.match(ev.request);
+  if (response?.headers.has('x-sw-cache')) {
+    const date = new Date(response.headers.get('x-sw-cache') ?? 0);
+    const age = Date.now() - date.getTime();
+    if (age < 1000 * 60 * 60 * 24) {
+      return response;
+    }
+  }
+  // Try fetch and cache
+  response = await fetch(ev.request);
+  if (!response.ok || response.status !== 200 || response.type !== 'basic') {
+    return response;
+  }
+  const copy = response.clone();
+  const {status, statusText} = copy;
+  const headers = new Headers(copy.headers);
+  headers.set('x-sw-cache', new Date().toISOString());
+  await cache.put(
+    ev.request,
+    new Response(await copy.arrayBuffer(), {
+      status,
+      statusText,
+      headers
+    })
+  );
+  return response;
+};
+
+self.addEventListener('fetch', (ev) => {
   if (ev.request.method !== 'GET') {
     return;
   }
@@ -39,7 +64,10 @@ self.addEventListener('fetch', async (ev) => {
   if (PRECACHE.includes(url.pathname)) {
     cachable = true;
   }
-  if (url.pathname.startsWith('/assets/')) {
+  if (url.pathname.startsWith('/_/immutable/')) {
+    cachable = true;
+  }
+  if (url.searchParams.get('v') === '%DEPLOY_HASH%') {
     cachable = true;
   }
   if (url.pathname.startsWith('/images/')) {
@@ -48,19 +76,6 @@ self.addEventListener('fetch', async (ev) => {
   if (!cachable) {
     return;
   }
-  // Try cache first
-  const cache = await caches.open(CACHE);
-  let response = await cache.match(ev.request);
-  if (response) {
-    ev.respondWith(response);
-    return;
-  }
-  // Try fetch and cache
-  response = await fetch(ev.request);
-  if (!response.ok || response.status !== 200 || response.type !== 'basic') {
-    ev.respondWith(response);
-    return;
-  }
-  await cache.put(ev.request, response.clone());
-  ev.respondWith(response);
+  ev.respondWith(handleFetch(ev));
 });
+

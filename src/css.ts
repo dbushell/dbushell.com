@@ -1,6 +1,7 @@
 import * as path from 'path';
 import * as lcss from 'lightningcss';
 import {encodeBase64} from 'base64';
+import {replace} from '@src/shared.ts';
 
 const srcPath = path.join(Deno.cwd(), 'src/css/_stylesheet.css');
 
@@ -14,9 +15,10 @@ const cssOptions: lcss.BundleOptions<lcss.CustomAtRules> = {
 let cssMin: string;
 let cssHash: string;
 
-export const rebuildCSS = async () => {
+export const rebuildCSS = async (deployHash: string) => {
   const {code} = lcss.bundle(cssOptions);
   cssMin = new TextDecoder().decode(code);
+  cssMin = replace(cssMin, '%DEPLOY_HASH%', deployHash, true);
   cssMin = cssMin.replace(/\/\*[\s\S]*?\*\//g, '').trim();
   cssHash = encodeBase64(
     new Uint8Array(
@@ -24,7 +26,5 @@ export const rebuildCSS = async () => {
     )
   );
 };
-
-await rebuildCSS();
 
 export {cssMin, cssHash};

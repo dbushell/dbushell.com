@@ -106,6 +106,4 @@ export const rebuildManifest = async () => {
   manifest = await generateManifest();
 };
 
-await rebuildManifest();
-
 export {manifest};
