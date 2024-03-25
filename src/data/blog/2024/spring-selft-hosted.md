@@ -44,13 +44,13 @@ That's a total of £154 GBP (~$194 USD). Similar cost to the ZimaBlade for a "us
     <figcaption>Raspberry Pi 5 with NVMe Base</figcaption>
 </figure>
 
-I hacked the Pi 5 case to fit the NVMe underneath. I literally used a tiny hack saw through the SD card slot to make space for the ribbon cable to flow. Quite a tidy mod! An SD card still fits if needed — I used that to prepare the bootable NVMe. The PCIe is offically rated Gen 2 speeds but can run at Gen 3 — that's faster than the ZimaBlade. Check out [Jeff Geerling's blog](https://www.jeffgeerling.com/blog/2023/nvme-ssd-boot-raspberry-pi-5) for a guide.
+I hacked the Pi 5 case to fit the NVMe underneath. I literally used a tiny hack saw through the SD card slot to make space for the ribbon cable to flow. Quite a tidy mod! An SD card still fits if needed — I used that to prepare the bootable NVMe. The PCIe is officially rated Gen 2 speeds but can run at Gen 3 — that's faster than the ZimaBlade. Check out [Jeff Geerling's blog](https://www.jeffgeerling.com/blog/2023/nvme-ssd-boot-raspberry-pi-5) for a guide.
 
 I'll be using these alongside my current devices:
 
 ## MacMini
 
-In my [last self-hosted update](/2023/08/08/adventures-in-windows-proxmox-virtualisation/) I was playing around with Proxmox on a 2018 MacMini. I'm using it to run containers and virtual machines for all my self-hosted services. Although Proxmox runs fine it was taking minutes to boot. An uncomfortable wait. I managed to build a custom kernel based on [this project](https://github.com/AdityaGarg8/pve-edge-kernel-t2) and [t2linux](https://wiki.t2linux.org/). I didn't actually fix things like Bluetooth — don't need it anyway — but I did get it booting faster. Unforunately I still have repeated issues with every Proxmox update.
+In my [last self-hosted update](/2023/08/08/adventures-in-windows-proxmox-virtualisation/) I was playing around with Proxmox on a 2018 MacMini. I'm using it to run containers and virtual machines for all my self-hosted services. Although Proxmox runs fine it was taking minutes to boot. An uncomfortable wait. I managed to build a custom kernel based on [this project](https://github.com/AdityaGarg8/pve-edge-kernel-t2) and [t2linux](https://wiki.t2linux.org/). I didn't actually fix things like Bluetooth — don't need it anyway — but I did get it booting faster. Unfortunately I still have repeated issues with every Proxmox update.
 
 ## Beelink
 
