@@ -37,6 +37,7 @@ I raised a question around the curious omission of Bun. Now Bun has been added a
 <figure class="Image">
   <img
     loading="lazy"
+    decoding="async"
     fetchpriority="low"
     src="/images/blog/2024/jsr-runtimes.avif"
     alt="JSR runtime support"
@@ -61,6 +62,7 @@ JSR wants to solve that and package score may be one factor:
 <figure class="Image">
   <img
     loading="lazy"
+    decoding="async"
     fetchpriority="low"
     src="/images/blog/2024/jsr-score.avif"
     alt="JSR score card example"

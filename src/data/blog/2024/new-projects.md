@@ -14,6 +14,7 @@ The first project is a little smaller in scope:
 <figure class="Image">
   <img
     loading="lazy"
+    decoding="async"
     fetchpriority="low"
     src="/images/blog/2024/velocirouter-banner.avif"
     alt="VelociRouter website banner"
@@ -42,6 +43,7 @@ VelociRoute uses native JavaScript objects and does not abstract them in a custo
 <figure class="Image">
   <img
     loading="lazy"
+    decoding="async"
     fetchpriority="low"
     src="/images/blog/2024/dinossr-banner.avif"
     alt="DinoSsr website banner"
@@ -70,6 +72,7 @@ I'm using this code alongside DinoSsr for my self-hosted web apps.
 <figure class="Image">
   <img
     loading="lazy"
+    decoding="async"
     fetchpriority="low"
     src="/images/blog/2024/homedeck-app.avif"
     alt="smart light control web app"

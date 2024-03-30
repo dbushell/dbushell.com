@@ -13,6 +13,7 @@ I'm trying something new this year. In exchange for over a decade of continued [
   target="_blank">
   <img
     loading="lazy"
+    decoding="async"
     fetchpriority="low"
     src="/images/blog/2024/kofi_tag.png"
     alt="Support me on Ko-fi"

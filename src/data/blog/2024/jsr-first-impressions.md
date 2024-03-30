@@ -78,6 +78,7 @@ TypeScript packages are automatically compiled to run under Node. This looks lik
 <figure class="Image">
   <img
     loading="lazy"
+    decoding="async"
     fetchpriority="low"
     src="/images/blog/2024/jsr-package-compatibility.avif"
     alt="JSR package compatibility icons"
@@ -102,6 +103,7 @@ JSR packages can be linked and published from a GitHub repo. See my [Carriageway
 <figure class="Image">
   <img
     loading="lazy"
+    decoding="async"
     fetchpriority="low"
     src="/images/blog/2024/jsr-package-documentation.avif"
     alt="JSR package documentation"
@@ -120,6 +122,7 @@ You can browse all the source code right on JSR. On NPM only the `files` listed 
 <figure class="Image">
   <img
     loading="lazy"
+    decoding="async"
     fetchpriority="low"
     src="/images/blog/2024/jsr-package-bun-ts.avif"
     alt="JSR package in a Bun typescript file"
