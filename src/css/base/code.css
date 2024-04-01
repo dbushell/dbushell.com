@@ -6,18 +6,15 @@ code {
 }
 
 :not(pre) > code {
-  background-image: linear-gradient(
-    to right,
-    oklch(var(--color-secondary) / 0.2) 1ch,
-    transparent 1ch
-  );
-  background-position: bottom 5% left;
-  background-repeat: repeat-x;
-  background-size: 1.5ch 10%;
+  background: oklch(var(--color-background2));
+  border: calc((1 / 16) * 1rem) solid oklch(var(--color-quaternary));
   color: oklch(var(--color-secondary2));
   display: inline;
   font-size: 90%;
   font-weight: 500;
+  line-height: 1;
+  padding:  calc((2 / 16) * 1rem) calc((4 / 16) * 1rem);
+  text-decoration: none;
 }
 
 pre {

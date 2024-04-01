@@ -84,6 +84,16 @@ marked.use({
 });
 
 const renderer = {
+   html(html: string, block: boolean | undefined) {
+    if (!block) return html;
+    const img = /(<img[^>]+?src=")([^"]+?)("[^>]*?>)/gs.exec(html);
+    if (img) {
+      const src = new URL(img[2], 'https://dbushell.com');
+      html = replace(html, img[0], `${img[1]}${src}${img[3]}`);
+    }
+    return html;
+  },
+
   paragraph(text: string) {
     if (text.startsWith('📢')) {
       return `<p class="Large">${text.replace(/^📢/, '').trim()}</p>\n`;
