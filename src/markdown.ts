@@ -99,7 +99,16 @@ const renderer = {
 
   image(href: string, _title: string | null, text: string) {
     text = typeof text === 'string' ? text : 'no description';
-    return `<p class="Image"><img src="${href}" loading="lazy" alt="${text}"></p>\n`;
+    let url: URL;
+    try {
+      url = /^[\/|#]/.test(href)
+        ? new URL(href, 'https://dbushell.com')
+        : new URL(href);
+    } catch (err) {
+      console.warn(`⚠️ Invalid URL: ${href}`);
+      throw err;
+    }
+    return `<p class="Image"><img src="${url.href}" loading="lazy" alt="${text}"></p>\n`;
   },
 
   link(href: string, title: string | null | undefined, text: string) {
@@ -114,7 +123,7 @@ const renderer = {
     }
     let out = '<a';
     if (url.hostname === 'dbushell.com') {
-      out += ` href="${url.pathname + url.hash + url.search}"`;
+      out += ` href="${url.href}"`;
     } else {
       out += ` href="${url.href}" rel="noopener noreferrer" target="_blank"`;
     }

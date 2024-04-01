@@ -15,7 +15,7 @@ const url = new URL('/rss.xml', meta.url);
 
 const template = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="/assets/css/rss.xsl" type="text/xsl"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>{{meta.name}}</title>
     <description>{{meta.description}}</description>
@@ -34,6 +34,7 @@ const entry = `<item>
   <link>{{link}}</link>
   <guid isPermaLink="true">{{guid}}</guid>
   <pubDate>{{pubDate}}</pubDate>
+  <content:encoded><![CDATA[{{html}}]]></content:encoded>
 </item>
 `;
 
@@ -53,12 +54,11 @@ export const GET = () => {
 
   const entries = latest.map((bookmark) => {
     let xml = entry;
-    let html = bookmark.excerpt;
-    html = striptags(html);
     const pubDate = new Date(bookmark.date!).toUTCString();
     const guid = new URL(bookmark.href, meta.url);
     xml = replace(xml, `{{title}}`, bookmark.title);
-    xml = replace(xml, `{{description}}`, html);
+    xml = replace(xml, `{{description}}`, striptags(bookmark.excerpt));
+    xml = replace(xml, `{{html}}`, bookmark.body);
     xml = replace(xml, `{{link}}`, guid.href);
     xml = replace(xml, `{{guid}}`, guid.href);
     xml = replace(xml, `{{pubDate}}`, pubDate);

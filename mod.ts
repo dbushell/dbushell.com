@@ -5,6 +5,7 @@ import {middleware} from '@src/middleware.ts';
 import {build} from '@src/build.ts';
 import {rebuildCSS} from '@src/css.ts';
 import {rebuildManifest} from '@src/manifest.ts';
+import {replace} from '@src/shared.ts';
 
 // Only required for live Deno server
 Deno.env.set('SSR_API_KEY', Deno.env.get('SSR_API_KEY') ?? '1');
@@ -63,6 +64,21 @@ const start = async () => {
     );
     return new Response(response.body, {status: 404});
   };
+
+  if (DEV) {
+    // Rewrite relative URLs for local development
+    dinossr.router.get('*', async ({response}) => {
+      if (
+        response?.ok &&
+        response.body &&
+        response.headers.get('content-type')?.startsWith('text/html')
+      ) {
+        let body = await response.text();
+        body = replace(body, 'https://dbushell.com/', '/', true);
+        return new Response(body, response);
+      }
+    });
+  }
 };
 
 await start();
