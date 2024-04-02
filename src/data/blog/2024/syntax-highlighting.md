@@ -1,5 +1,5 @@
 ---
-date: 2024-03-14 09:00:00+00:00
+date: 2024-03-14 10:00:00+00:00
 slug: better-syntax-highlighting
 title: 'Better Syntax Highlighting'
 description: 'The one where I style lines of code with pretty colours'

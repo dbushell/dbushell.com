@@ -1,5 +1,5 @@
 ---
-date: 2024-01-19 09:00:00+00:00
+date: 2024-01-19 10:00:00+00:00
 slug: svg-icons-with-css-masks
 title: 'SVG Icons with CSS Masks'
 description: 'The one where I combines the powers of CSS and SVG'
