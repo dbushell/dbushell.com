@@ -9,8 +9,8 @@ features: ['kofi']
 🖋️ Projects that I'm working on now:
 
 * [Cotton Coder](https://cottoncoder.com/) — the curated bookmark blog of web dev curiosities
+* [sauroPod](https://github.com/dbushell/sauroPod) — self-hosted podcast and audiobook media server and web app
 * [DinoSsr](https://ssr.rocks/) — a minimal web framework for Deno and Svelte fans
-* [meSonic²](https://github.com/dbushell/mesonic2) — an experimental media server and web client
 * [dbushell.com](/blog/) — my permanent home and blog
 
 These side projects keep me busy when I'm not working with clients. Not listed here are the regular workouts and running I enjoy to stay healthy.

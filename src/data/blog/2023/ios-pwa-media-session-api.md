@@ -113,3 +113,7 @@ If you only provide a large image, like 512×512, the small player is a grey box
 So basically the only way to guarantee an image is to use a small one.
 
 Just Safari things!
+
+### Update for 2nd April 2024
+
+Generating images can now be done with the [Offscreen Canvas API](/2024/04/02/offscreen-canvas-and-web-workers/) which is available in Web Workers — neat!
