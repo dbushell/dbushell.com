@@ -1,7 +1,4 @@
-export const appendHeaders = (
-  response: Response,
-  headers: [string, string][]
-) => {
+export const appendHeaders = (response: Response, headers: [string, string][]) => {
   try {
     headers.forEach(([name, value]) => {
       response.headers.append(name, value);
@@ -15,8 +12,7 @@ export const appendHeaders = (
 export const authorized = (request: Request) => {
   if (
     request.method === 'GET' &&
-    request.headers.get('authorization') ===
-      `Bearer ${Deno.env.get('SSR_API_KEY')}`
+    request.headers.get('authorization') === `Bearer ${Deno.env.get('SSR_API_KEY')}`
   ) {
     return true;
   }
@@ -32,14 +28,63 @@ export const redirect = (location: string | URL, status = 302) => {
   });
 };
 
-export const replace = (
-  subject: string,
-  search: string,
-  replace = '',
-  all = false
-) => {
+export const replace = (subject: string, search: string, replace = '', all = false) => {
   let parts = subject.split(search);
   if (parts.length === 1) return subject;
   if (!all) parts = [parts.shift()!, parts.join(search)];
   return parts.join(replace);
+};
+
+// Complete list of self-closing void tags to remove
+const voidTags = [
+  'area',
+  'base',
+  'br',
+  'col',
+  'embed',
+  'hr',
+  'img',
+  'input',
+  'link',
+  'meta',
+  'param',
+  'source',
+  'track',
+  'wbr'
+];
+
+// Bespoke list of "contentless" elements to remove
+const emptyTags = [
+  'audio',
+  'canvas',
+  'figure',
+  'iframe',
+  'picture',
+  'pre',
+  'script',
+  'table',
+  'video'
+];
+
+export const striptags = (html: string) => {
+  const voidRegex = new RegExp(`(<(?:${voidTags.join('|')})[^>]*?>)`, 'gs');
+  const voidMatch = voidRegex.exec(html);
+  if (voidMatch) {
+    html = replace(html, voidMatch[1], '', true);
+    html = striptags(html);
+  }
+  const regex = /<([\w-]+)[^>]*?>(.*?)<\/\1>/gs;
+  const match = regex.exec(html);
+  if (match) {
+    let replacement = match[2];
+    if (match[1] === 'q') {
+      replacement = `“${replacement}”`;
+    }
+    if (emptyTags.includes(match[1])) {
+      replacement = '';
+    }
+    html = replace(html, match[0], replacement, true);
+    html = striptags(html);
+  }
+  return html;
 };

@@ -1,6 +1,5 @@
-import striptags from 'striptags';
 import {manifest} from '@src/manifest.ts';
-import {replace} from '@src/shared.ts';
+import {replace, striptags} from '@src/shared.ts';
 
 export const pattern = '.xml';
 
@@ -43,11 +42,7 @@ export const GET = () => {
 
   let body = template;
   body = replace(body, `{{url}}`, url.href);
-  body = replace(
-    body,
-    `{{lastBuildDate}}`,
-    new Date(latest[0].date!).toUTCString()
-  );
+  body = replace(body, `{{lastBuildDate}}`, new Date(latest[0].date!).toUTCString());
   for (const [key, value] of Object.entries(meta)) {
     body = body.replaceAll(`{{meta.${key}}}`, value);
   }

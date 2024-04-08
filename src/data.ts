@@ -1,18 +1,15 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as front_matter from 'front_matter';
-import striptags from 'striptags';
+import * as frontMatter from 'front-matter';
 import markdown from '@src/markdown.ts';
+import {striptags} from '@src/shared.ts';
 import type {FrontProps, Props} from './types.ts';
 
 const dataPath = path.resolve(Deno.cwd(), 'src/data');
 
 // Generate excerpt from body
 export const excerptProp = (body: string): string => {
-  let excerpt = body.replace(/<pre[^>]*>.+?<\/pre>/gs, '');
-  excerpt = excerpt.replace(/<picture[^>]*>.+?<\/picture>/gs, '');
-  excerpt = excerpt.replace(/<figure[^>]*>.+?<\/figure>/gs, '');
-  excerpt = striptags(excerpt);
+  let excerpt = striptags(body);
   const words = excerpt.split(' ');
   if (words.length >= 55) {
     excerpt = `${words.slice(0, 55).join(' ')} […]`;
@@ -23,9 +20,7 @@ export const excerptProp = (body: string): string => {
 
 export const readProps = async (srcPath: string): Promise<Props> => {
   // Parse front matter
-  const matter = front_matter.extract<FrontProps>(
-    await Deno.readTextFile(srcPath)
-  );
+  const matter = frontMatter.extract<FrontProps>(await Deno.readTextFile(srcPath));
   const props: Props = {
     features: matter.attrs.features ?? [],
     href: `/${matter.attrs.slug}/`,
@@ -91,9 +86,7 @@ export const readGlob = async (glob: string): Promise<Props[]> => {
 
 export const readArticles = async (): Promise<Props[]> => {
   const arr = await readGlob(path.join(dataPath, `blog/**/*.md`));
-  arr.sort((a, b) =>
-    (a.date?.valueOf() ?? 0) < (b.date?.valueOf() ?? 0) ? 1 : -1
-  );
+  arr.sort((a, b) => ((a.date?.valueOf() ?? 0) < (b.date?.valueOf() ?? 0) ? 1 : -1));
   return arr;
 };
 

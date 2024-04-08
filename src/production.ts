@@ -1,5 +1,5 @@
 import * as path from 'path';
-import {serveDir, serveFile} from 'file_server';
+import {serveDir, serveFile} from 'file-server';
 
 const rootDir = path.resolve(Deno.cwd(), 'build');
 
