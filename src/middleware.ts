@@ -1,7 +1,8 @@
-import {manifest} from '@src/manifest.ts';
 import type {DinoHandle} from 'dinossr';
+import type {Data, ServerData} from '@src/types.ts';
+import {manifest} from '@src/manifest.ts';
 
-export const middleware: DinoHandle = ({request, platform}) => {
+export const middleware: DinoHandle<Data> = ({request, platform}) => {
   const url = new URL(request.url);
 
   // Setup DinoSsr platform data
@@ -15,7 +16,7 @@ export const middleware: DinoHandle = ({request, platform}) => {
   }
 
   // Known security policy headers
-  const pageHeaders = [
+  const pageHeaders: ServerData['pageHeaders'] = [
     ['x-frame-options', 'DENY'],
     ['x-xss-protection', '1; mode=block'],
     ['x-content-type-options', 'nosniff'],
@@ -43,10 +44,7 @@ export const middleware: DinoHandle = ({request, platform}) => {
 
   // Add strict security headers
   if (request.url.startsWith(Deno.env.get('ORIGIN')!)) {
-    pageHeaders.push([
-      'strict-transport-security',
-      'max-age=63072000; includeSubDomains; preload'
-    ]);
+    pageHeaders.push(['strict-transport-security', 'max-age=63072000; includeSubDomains; preload']);
   }
   platform.serverData.pageHeaders = pageHeaders;
 };

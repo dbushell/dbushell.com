@@ -1,3 +1,4 @@
+import type {Data} from '@src/types.ts';
 import * as path from 'path';
 import {debounce} from 'debounce';
 import {DinoSsr} from 'dinossr';
@@ -21,13 +22,13 @@ if (PROD) {
 }
 
 const dir = new URL('./', import.meta.url).pathname;
-let dinossr: DinoSsr;
+let dinossr: DinoSsr<Data>;
 let controller: AbortController;
 
 const start = async () => {
   controller = new AbortController();
 
-  dinossr = new DinoSsr(dir, {
+  dinossr = new DinoSsr<Data>(dir, {
     dev: DEV || BUILD,
     static: 'public',
     deployHash: DEV ? 'dev' : undefined,

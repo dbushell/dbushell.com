@@ -1,4 +1,6 @@
-export const appendHeaders = (response: Response, headers: [string, string][]) => {
+import type {ServerData} from '@src/types.ts';
+
+export const appendHeaders = (response: Response, headers: ServerData['pageHeaders']) => {
   try {
     headers.forEach(([name, value]) => {
       response.headers.append(name, value);

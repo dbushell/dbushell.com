@@ -1,10 +1,11 @@
-import {authorized, replace} from '@src/shared.ts';
 import type {DinoHandle} from 'dinossr';
+import type {Data} from '@src/types.ts';
+import {authorized, replace} from '@src/shared.ts';
 
 export const pattern = '/_headers';
 export const order = 9999;
 
-export const GET: DinoHandle = async ({request, response}) => {
+export const GET: DinoHandle<Data> = async ({request, response}) => {
   if (!authorized(request)) {
     return null;
   }
@@ -13,8 +14,7 @@ export const GET: DinoHandle = async ({request, response}) => {
   }
   const home = await fetch(new URL('/', request.url));
   await home.body?.cancel();
-  const csp =
-    home.headers.get('content-security-policy') ?? `default-src 'self'`;
+  const csp = home.headers.get('content-security-policy') ?? `default-src 'self'`;
   let body = await response.text();
   body = replace(body, '%CONTENT_SECURITY_POLICY%', csp);
   response = new Response(body, response);

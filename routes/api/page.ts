@@ -1,12 +1,13 @@
+import type {DinoHandle} from 'dinossr';
+import type {Data} from '@src/types.ts';
 import {authorized} from '@src/shared.ts';
 import {manifest} from '@src/manifest.ts';
-import type {DinoHandle} from 'dinossr';
 
 export const pattern = '/:slug/';
 
 const ignore = ['blog'];
 
-export const GET: DinoHandle = ({request, match}) => {
+export const GET: DinoHandle<Data> = ({request, match}) => {
   if (!authorized(request)) {
     return new Response(null, {status: 401});
   }

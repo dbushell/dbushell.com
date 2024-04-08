@@ -1,3 +1,5 @@
+import type {DinoHandle} from 'dinossr';
+import type {Data} from '@src/types.ts';
 import {manifest} from '@src/manifest.ts';
 import {replace, striptags} from '@src/shared.ts';
 
@@ -37,7 +39,7 @@ const entry = `<item>
 </item>
 `;
 
-export const GET = () => {
+export const GET: DinoHandle<Data> = () => {
   const {latest} = manifest;
 
   let body = template;

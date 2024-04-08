@@ -1,8 +1,9 @@
+import type {DinoServer} from 'dinossr';
+import type {Data} from '@src/types.ts';
 import * as fs from 'fs';
 import * as path from 'path';
 import {Queue} from 'carriageway';
 import {manifest} from '@src/manifest.ts';
-import type {DinoServer} from 'dinossr';
 
 const buildPath = path.resolve(Deno.cwd(), 'build');
 const staticPath = path.resolve(Deno.cwd(), 'public');
@@ -11,7 +12,7 @@ const extra = ['/sitemap.xml', '/rss.xml', '/_headers', '/sw.js'];
 
 const fetchQueue = new Queue({concurrency: 10});
 
-export const build = async (server: DinoServer) => {
+export const build = async (server: DinoServer<Data>) => {
   const now = performance.now();
   console.log('Building...');
 
@@ -65,10 +66,7 @@ export const build = async (server: DinoServer) => {
         await fs.ensureFile(routePath);
         const url = new URL(key, 'http://127.0.0.1:8000');
         const request = new Request(url);
-        request.headers.set(
-          'authorization',
-          `Bearer ${Deno.env.get('SSR_API_KEY')}`
-        );
+        request.headers.set('authorization', `Bearer ${Deno.env.get('SSR_API_KEY')}`);
         // const response = await fetch(request);
         const response = await server.router.handle(request, {
           info: {
@@ -79,8 +77,8 @@ export const build = async (server: DinoServer) => {
             }
           },
           cookies: new Map(),
-          publicData: {},
-          serverData: {},
+          publicData: {} as Data['publicData'],
+          serverData: {} as Data['serverData'],
           deployHash: server.deployHash
         });
         if (response.status !== 200 || !response.body) {

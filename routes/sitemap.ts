@@ -1,3 +1,5 @@
+import type {DinoHandle} from 'dinossr';
+import type {Data} from '@src/types.ts';
 import {manifest} from '@src/manifest.ts';
 import {replace} from '@src/shared.ts';
 
@@ -17,13 +19,11 @@ const entry = `<url>
 </url>
 `;
 
-export const GET = () => {
+export const GET: DinoHandle<Data> = () => {
   // Sort by priority for readability
   const locations = Object.values(manifest.routes);
   locations.reverse();
-  locations.sort(
-    (a, b) => Number.parseFloat(a.priority) - Number.parseFloat(b.priority)
-  );
+  locations.sort((a, b) => Number.parseFloat(a.priority) - Number.parseFloat(b.priority));
   locations.reverse();
 
   let body = template;

@@ -31,3 +31,19 @@ export interface Manifest {
   };
   styles: Array<{css: string; hash: string}>;
 }
+
+export type PublicData = {
+  deployHash: string;
+  title: string;
+};
+
+export type ServerData = {
+  pageHeaders: Array<[string, string]>;
+  props: Props;
+  styles: Array<{css: string; hash: string}>;
+};
+
+export type Data = {
+  publicData: PublicData;
+  serverData: ServerData;
+};

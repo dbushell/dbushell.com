@@ -1,5 +1,6 @@
-import {appendHeaders, replace, redirect} from '@src/shared.ts';
 import type {DinoHandle} from 'dinossr';
+import type {Data} from '@src/types.ts';
+import {appendHeaders, replace, redirect} from '@src/shared.ts';
 
 // Match all routes
 export const pattern = '/*';
@@ -7,7 +8,7 @@ export const pattern = '/*';
 // After all other routes
 export const order = 999;
 
-export const GET: DinoHandle = async ({request, response, platform}) => {
+export const GET: DinoHandle<Data> = async ({request, response, platform}) => {
   const url = new URL(request.url);
 
   // Redirect to RSS feed
@@ -18,15 +19,9 @@ export const GET: DinoHandle = async ({request, response, platform}) => {
     return response;
   }
 
-  appendHeaders(
-    response,
-    platform.serverData.pageHeaders as [string, string][]
-  );
+  appendHeaders(response, platform.serverData.pageHeaders);
 
-  const styles = platform.serverData.styles as Array<{
-    css: string;
-    hash: string;
-  }>;
+  const styles = platform.serverData.styles;
   let stylesHTML = '';
   for (const {css, hash} of styles) {
     stylesHTML += `<style data-hash="${hash}">${css}</style>\n`;

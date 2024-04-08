@@ -1,10 +1,11 @@
-import {replace} from '@src/shared.ts';
 import type {DinoHandle} from 'dinossr';
+import type {Data} from '@src/types.ts';
+import {replace} from '@src/shared.ts';
 
 export const pattern = '.js';
 export const order = 999;
 
-export const GET: DinoHandle = async ({response, platform}) => {
+export const GET: DinoHandle<Data> = async ({response, platform}) => {
   if (!(response instanceof Response) || !response.ok) {
     return response;
   }
