@@ -13,10 +13,8 @@
     background-color: oklch(var(--db-black) / 0.2);
     border-radius: calc((3 / 16) * 1rem);
     border: calc((2 / 16) * 1rem) solid oklch(var(--color-background));
-    box-shadow: calc((-4 / 16) * 1rem) 0 0 calc((-2 / 16) * 1rem)
-        oklch(var(--color-secondary)),
-      calc((4 / 16) * 1rem) calc((4 / 16) * 1rem) 0 0
-        oklch(var(--db-black) / 0.2);
+    box-shadow: calc((-4 / 16) * 1rem) 0 0 calc((-2 / 16) * 1rem) oklch(var(--color-secondary)),
+      calc((4 / 16) * 1rem) calc((4 / 16) * 1rem) 0 0 oklch(var(--db-black) / 0.2);
     margin: calc((36 / 16) * 1rem) 0;
     position: relative;
   }

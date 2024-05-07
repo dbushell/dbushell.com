@@ -31,43 +31,37 @@
   --f-0-min: 16;
   --f-0-max: 19;
   --step-0: calc(
-    ((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) *
-      var(--fluid-bp)
+    ((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) * var(--fluid-bp)
   );
 
   --f-1-min: 18;
   --f-1-max: 26;
   --step-1: calc(
-    ((var(--f-1-min) / 16) * 1rem) + (var(--f-1-max) - var(--f-1-min)) *
-      var(--fluid-bp)
+    ((var(--f-1-min) / 16) * 1rem) + (var(--f-1-max) - var(--f-1-min)) * var(--fluid-bp)
   );
 
   --f-2-min: 20;
   --f-2-max: 34;
   --step-2: calc(
-    ((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) *
-      var(--fluid-bp)
+    ((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) * var(--fluid-bp)
   );
 
   --f-3-min: 22;
   --f-3-max: 46;
   --step-3: calc(
-    ((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) *
-      var(--fluid-bp)
+    ((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) * var(--fluid-bp)
   );
 
   --f-4-min: 26;
   --f-4-max: 60;
   --step-4: calc(
-    ((var(--f-4-min) / 16) * 1rem) + (var(--f-4-max) - var(--f-4-min)) *
-      var(--fluid-bp)
+    ((var(--f-4-min) / 16) * 1rem) + (var(--f-4-max) - var(--f-4-min)) * var(--fluid-bp)
   );
 
   --f-5-min: 28;
   --f-5-max: 80;
   --step-5: calc(
-    ((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) *
-      var(--fluid-bp)
+    ((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) * var(--fluid-bp)
   );
 }
 
@@ -75,11 +69,7 @@
   --page-margin-mid: calc(((100 / 1920) * 100) * 1dvw);
   --page-margin-min: calc((20 / 16) * 1rem);
   --page-margin-max: calc((100 / 16) * 1rem);
-  --page-margin: clamp(
-    var(--page-margin-min),
-    var(--page-margin-mid),
-    var(--page-margin-max)
-  );
+  --page-margin: clamp(var(--page-margin-min), var(--page-margin-mid), var(--page-margin-max));
   --page-max: calc((var(--fluid-max-width) / 16) * 1rem);
 }
 

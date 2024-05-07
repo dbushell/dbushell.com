@@ -17,10 +17,9 @@
       border-top: 0;
       border-left: 0;
       border-radius: calc((5 / 16) * 1rem);
-      box-shadow: calc((-1 / 16) * 1rem) calc((-1 / 16) * 1rem) 0
-          calc((1 / 16) * 1rem) oklch(var(--color-primary) / 0.5),
-        calc((2 / 16) * 1rem) calc((2 / 16) * 1rem) 0 0
-          oklch(var(--db-black) / 0.1);
+      box-shadow: calc((-1 / 16) * 1rem) calc((-1 / 16) * 1rem) 0 calc((1 / 16) * 1rem)
+          oklch(var(--color-primary) / 0.5),
+        calc((2 / 16) * 1rem) calc((2 / 16) * 1rem) 0 0 oklch(var(--db-black) / 0.1);
       content: '';
       cursor: pointer;
       display: block;
@@ -35,8 +34,8 @@
 
     &::after {
       background: oklch(var(--color-primary));
-      mask: var(--check) calc((3 / 16) * 1rem) calc((4 / 16) * 1rem) /
-        calc((12 / 16) * 1rem) auto no-repeat;
+      mask: var(--check) calc((3 / 16) * 1rem) calc((4 / 16) * 1rem) / calc((12 / 16) * 1rem) auto
+        no-repeat;
       box-shadow: none;
       opacity: 0;
       transition: opacity 100ms;

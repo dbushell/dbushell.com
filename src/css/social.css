@@ -7,8 +7,7 @@
 
   & svg {
     border-radius: calc((5 / 16) * 1rem);
-    box-shadow: calc((1.5 / 16) * 1rem) calc((1.5 / 16) * 1rem) 0 0
-      oklch(var(--db-black) / 0.1);
+    box-shadow: calc((1.5 / 16) * 1rem) calc((1.5 / 16) * 1rem) 0 0 oklch(var(--db-black) / 0.1);
     fill: currentColor;
     height: calc((24 / 16) * 1rem);
     transform: var(--transform);

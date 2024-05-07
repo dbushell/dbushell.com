@@ -7,8 +7,7 @@ a {
   text-decoration-skip-ink: all;
   text-decoration-color: oklch(var(--anchor-color) / var(--anchor-opacity));
   text-underline-offset: 0.15em;
-  transition: color 200ms, background 200ms, text-decoration-color 200ms,
-    text-decoration 200ms;
+  transition: color 200ms, background 200ms, text-decoration-color 200ms, text-decoration 200ms;
 
   &:hover {
     --anchor-color: var(--color-tertiary);

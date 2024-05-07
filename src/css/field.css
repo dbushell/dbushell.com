@@ -6,8 +6,8 @@
   border-top: 0;
   border-left: 0;
   border-radius: calc((5 / 16) * 1rem);
-  box-shadow: calc((-1 / 16) * 1rem) calc((-1 / 16) * 1rem) 0
-      calc((1 / 16) * 1rem) var(--field-shadow),
+  box-shadow: calc((-1 / 16) * 1rem) calc((-1 / 16) * 1rem) 0 calc((1 / 16) * 1rem)
+      var(--field-shadow),
     calc((2 / 16) * 1rem) calc((2 / 16) * 1rem) 0 0 oklch(var(--db-black) / 0.1);
   color: oklch(var(--color-foreground));
   display: block;

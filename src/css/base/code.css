@@ -3,6 +3,7 @@ code {
   font-family: 'Fira Code Light', 'Fira Code', monospace;
   font-size: var(--step-s);
   font-weight: 300;
+  -webkit-text-size-adjust: 100%;
 }
 
 :not(pre) > code {
@@ -13,7 +14,7 @@ code {
   font-size: 90%;
   font-weight: 500;
   line-height: 1;
-  padding:  calc((2 / 16) * 1rem) calc((4 / 16) * 1rem);
+  padding: calc((2 / 16) * 1rem) calc((4 / 16) * 1rem);
   text-decoration: none;
 }
 
@@ -55,8 +56,7 @@ pre {
       font-style: italic;
       inset-inline-start: 0;
       line-height: 1;
-      transform: translateX(var(--inline-padding))
-        translateY(calc(-1 * var(--block-padding)));
+      transform: translateX(var(--inline-padding)) translateY(calc(-1 * var(--block-padding)));
       margin-block-end: calc((-24 / 16) * 1rem);
       padding: calc((6 / 16) * 1rem);
       position: sticky;
