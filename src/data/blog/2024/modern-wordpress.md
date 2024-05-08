@@ -254,3 +254,13 @@ Unfortunately for me WordPress development has been my bread and butter. That is
 WP Studio is an Electron app that manages the web stack and bootstraps new projects. My initial impressions are positive. It creates an SQLite database right in the project directory. A default `.gitignore` file would be helpful.
 
 You can spin up and get coding on a WordPress site in seconds. Good stuff. Give it a try and poke around the flagship theme 😬
+
+### Update for 8th May 2024
+
+I guess I spoke too soon praising WordPress Studio!
+
+Yesterday I started a new project on WP 6.5.2. Today I woke up to the WordPress Admin prompting me with the 6.5.3 update. I tried to update. The database seems to have corrupted itself. Beyond repair? I've opened a [GitHub issue](https://github.com/Automattic/studio/issues/100).
+
+Luckily I had nothing set up so I can start a new site project on 6.5.3. Do I roll the dice?
+
+I'm giving this app one last chance before I bin it for good.
