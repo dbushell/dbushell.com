@@ -1,15 +1,6 @@
 .Form {
-  & ul {
-    list-style: none;
-  }
-
-  & li {
-    margin-block-end: calc((36 / 16) * 1rem);
-
-    &::before {
-      display: none;
-    }
-  }
+  display: grid;
+  row-gap: calc((36 / 16) * 1rem);
 
   & label {
     display: block;
@@ -34,7 +25,6 @@
 @container main (inline-size >= calc((400 / 16) * 1rem)) {
   & .Form {
     column-gap: calc((27 / 16) * 1rem);
-    display: grid;
     grid-template-columns: 1fr 1fr;
 
     & li {

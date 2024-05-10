@@ -1,6 +1,6 @@
 .Star,
 .List li,
-.Prose :where(ul:not([class*='List'])) li {
+.Prose :where(ul:not([class*='List'], [class*='Form'])) li {
   position: relative;
 
   &::before {
@@ -17,7 +17,7 @@
 @container app (inline-size < calc((800 / 16) * 1rem)) {
   .Star,
   .List li,
-  .Prose :where(ul:not([class*='List'])) li {
+  .Prose :where(ul:not([class*='List'], [class*='Form'])) li {
     &::before {
       mask-size: calc((12 / 16) * 1rem) auto;
       inset-inline-start: calc((-27 / 16) * 1rem);
@@ -29,7 +29,7 @@
 @container app (inline-size < calc((500 / 16) * 1rem)) {
   .Star,
   .List li,
-  .Prose :where(ul:not([class*='List'])) li {
+  .Prose :where(ul:not([class*='List'], [class*='Form'])) li {
     padding-inline-start: calc((16 / 16) * 1rem);
 
     &::before {
