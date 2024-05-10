@@ -25,7 +25,7 @@ Although I'm SSH-ing into the Pi I figured a small display would be nice. I'm us
 
 As you can see, I've done a decent job hacking a hole into the cover. Shame about the screws. Also, ignore those scratch marks. I could have glued the board on the inside without drilling. Nevermind! The cases are cheap enough.
 
-# e-Paper
+## e-Paper
 
 The display itself is the [**Waveshare 1.54inch e-Paper module**](http://www.waveshare.com/wiki/1.54inch_e-Paper_Module).
 
