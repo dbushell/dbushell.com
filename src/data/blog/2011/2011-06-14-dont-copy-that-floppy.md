@@ -3,7 +3,7 @@ date: 2011-06-14 15:30:47+00:00
 excerpt: None
 slug: dont-copy-that-floppy
 template: single.html
-title: Don't copy that floppy!
+title: Don’t copy that floppy!
 ---
 
 I've written a new article for **Smashing Magazine** entitled [Understanding Copyright & Licenses](http://www.smashingmagazine.com/2011/06/14/understanding-copyright-and-licenses/). It's a primer for web designers and developers. Give it a read, let me know what you think.

@@ -3,7 +3,7 @@ date: 2015-02-04 13:52:25+00:00
 excerpt: None
 slug: i-dont-do-angular-is-that-ok
 template: single.html
-title: I don't do Angular, is that OK?
+title: I don’t do Angular, is that OK?
 ---
 
 I've never been one to care for job titles. One or two words can't adequately explain the extent of our roles. I try to avoid giving myself a strict title on this website.

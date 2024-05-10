@@ -3,7 +3,7 @@ date: 2012-08-27 21:11:31+00:00
 excerpt: None
 slug: im-bored-with-code
 template: single.html
-title: I'm bored with code
+title: I’m bored with code
 ---
 
 The state of the browser defines our freedom as website makers. Browsers are a constant source of frustration. For every step forward they take so does the horizon. New possibilities emerge; expectations are raised. What is seen as "modern" is always just beyond our ability. It has always been my desire to deliver websites at this frontier. Doing anything else would be outdated and a rather dull existence.

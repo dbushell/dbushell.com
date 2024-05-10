@@ -3,7 +3,7 @@ date: 2012-02-19 11:35:53+00:00
 excerpt: None
 slug: designing-operating-systems
 template: single.html
-title: Designing OS's
+title: Designing OS’s
 ---
 
 Earlier this week Apple announced OS X [Mountain Lion](http://www.apple.com/macosx/mountain-lion/) which brings closer unity between itself and iOS for mobile. Both in user experience and—sadly—user interface.

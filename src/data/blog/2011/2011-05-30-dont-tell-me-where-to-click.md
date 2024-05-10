@@ -3,7 +3,7 @@ date: 2011-05-30 12:01:42+00:00
 excerpt: None
 slug: dont-tell-me-where-to-click
 template: single.html
-title: Don't tell me where to click
+title: Don’t tell me where to click
 ---
 
 ![Click Here - Apple's Magic Mouse](/images/blog/2011/clickhere.jpg)

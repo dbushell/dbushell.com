@@ -3,7 +3,7 @@ date: 2012-05-15 07:09:04+00:00
 excerpt: None
 slug: were-hiring
 template: single.html
-title: We're Hiring!
+title: We’re Hiring!
 ---
 
 ![Browser London](/images/blog/2012/browser-logo.svg)
