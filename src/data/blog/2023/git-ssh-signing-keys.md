@@ -17,7 +17,7 @@ It's good practice to use unique SSH keys per machine for authorisation. I think
 
 I then updated the global `~/.gitconfig` in my home directory:
 
-```
+```ini
 [user]
   signingkey = /path/to/home/.ssh/signingkey.pub
 [gpg]
@@ -28,7 +28,7 @@ It's also possible to update local `.git/config` files for repo-specific changes
 
 In the same global config I checked to make sure Git is signing stuff:
 
-```
+```ini
 [commit]
   gpgsign = true
 [tag]

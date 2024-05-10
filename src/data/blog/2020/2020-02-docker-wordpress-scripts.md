@@ -15,7 +15,7 @@ One problem has been a thorn in my side.
 
 Only one container can listen on localhost port 80 so you end up with:
 
-```
+```console
 my-blog.localhost:8081
 acme-corp.localhost:8082
 127.0.0.1:8090
@@ -43,7 +43,7 @@ DWS helps manage:
 
 When I start a new WordPress project I can just run:
 
-```
+```sh
 $ dws up
 
 🐹 Success: WordPress is up and running!

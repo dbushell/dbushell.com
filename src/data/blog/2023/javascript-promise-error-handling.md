@@ -57,7 +57,7 @@ Ready?
 
 The script outputs:
 
-```
+```console
 catch 1
 catch 2
 catch 3

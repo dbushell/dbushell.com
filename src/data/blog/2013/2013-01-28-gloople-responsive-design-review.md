@@ -42,7 +42,7 @@ For the larger feature page illustrations we're writing SVG directly inline of t
 
 In the PHP template this is outputted straight into the rendered HTML. The page source looks something like this:
 
-````html
+```html
 <div class="feature-image is-svg" data-no-svg="fallback.png">
   <!--[if (gt IE 8)]><!-->
     <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px">
@@ -50,7 +50,7 @@ In the PHP template this is outputted straight into the rendered HTML. The page 
     </svg>
   <!--<![endif]-->
 </div>
-````
+```
 
 [Conditional comments](http://www.quirksmode.org/css/condcom.html) hide the SVG element from IE<8 to avoid parsing errors. In this scenario I'm using [Modernizr's](http://modernizr.com/docs/#features-misc) inline SVG detection to replace with fallback PNG images if required.
 

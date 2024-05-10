@@ -35,13 +35,13 @@ CSP from what I understand is the new "standard" that overrides the first three 
 
 Naturally, when I deployed this update and refreshed my PWA it was broken. There was no CSS being applied despite the CSS being right there; inlined within a `<style>` element. This was because the `default-src 'self'` directive only allows same domain sources and blocks inline. I could extend this to read:
 
-```
+```console
 default-src 'self'; style-src 'unsafe-inline';
 ```
 
 As the directive suggests this is considered "unsafe". [Further research](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src) suggests one of the safest and coolest options is to add a cryptographic hash:
 
-```
+```console
 default-src 'self'; style-src 'sha256-[hash]';
 ```
 
@@ -67,7 +67,7 @@ const hash = crypto
 
 From here the CSS is written within a style element `<style>${css}</style>` ensuring no additional whitespace between the tags. The CSP header is also updated with the new hash, for example:
 
-```
+```console
 style-src 'sha256-QpACKkYqaJasYCFZA51jC7LHJJVCHbb1h0Uc5eMvurQ=';
 ```
 

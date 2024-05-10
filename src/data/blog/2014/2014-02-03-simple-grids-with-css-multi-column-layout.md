@@ -14,7 +14,7 @@ The image below shows a very minimal design for my website's footer (menu and co
 
 The HTML (sans class attributes for readability) is basic:
 
-````html
+```html
 <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/about/">About</a></li>
@@ -24,7 +24,7 @@ The HTML (sans class attributes for readability) is basic:
     <li><a href="/contact/">Contact</a></li>
 </ul>
 <p><small>Copyright &copy; David Bushell</small></p>
-````
+```
 
 I'm building this website with a "mobile-first" mentality — I'll assume you know how _media queries_ work — so as the screen width increases I want my footer menu to align to three columns:
 
@@ -34,12 +34,12 @@ If I was building on top of a framework or grid system I might be inclined to ov
 
 In this situation [CSS Multi-column Layout](http://www.w3.org/TR/css3-multicol/) is the perfect solution.
 
-````css
+```css
 .footer-menu {
     column-count: 3;
     column-gap: 1.75em;
 }
-````
+```
 
 Two declarations are all I need to style the menu. List items will naturally flow into the three columns regardless of how many there may be in future.
 
@@ -53,7 +53,7 @@ In this final layout the copyright notice spans 2-of-6 columns (⅓), and the me
 
 Sounds complicated but the CSS isn't. Here's one way:
 
-````css
+```css
 .footer {
     overflow: hidden;
 }
@@ -68,7 +68,7 @@ Sounds complicated but the CSS isn't. Here's one way:
     column-count: 3;
     column-gap: 1.75em;
 }
-````
+```
 
 Good old floats!
 

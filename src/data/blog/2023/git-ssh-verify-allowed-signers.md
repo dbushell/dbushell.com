@@ -19,26 +19,26 @@ git log --show-signature
 
 But I got this error:
 
-```
+```console
 error: gpg.ssh.allowedSignersFile needs to be configured and exist for ssh signature verification
 ```
 
 To fix this I updated the global `~/.gitconfig` in my home directory:
 
-```
+```ini
 [gpg "ssh"]
 	allowedSignersFile = ~/.ssh/allowed_signers
 ```
 
 The "allowed signers" file can be anywhere but I stuck it alongside my SSH keys. The format is one `[email address] [public key]` per line with the emails matching those of the git commits. For example:
 
-```
+```console
 user@example.com ssh-ed25519 AAAAC3Nza[...]
 ```
 
 Running `git log --show-signature` again is now successful:
 
-```
+```console
 commit efef7e84d910b6ada7a0382b1271bed9cd769299
 Good "git" signature for user@example.com with ED25519 key SHA256:Sj5Af[...]
 ```

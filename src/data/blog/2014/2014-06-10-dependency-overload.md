@@ -16,7 +16,7 @@ I've always considering the matter one of personal preference and ability. It's 
 
 My aforementioned tools are all based on [Node](http://nodejs.org/) modules. The dependency tree for my [Tales WordPress theme](/2014/02/17/introducing-tales/) set-up looks like this:
 
-````
+```console
 wp-Tales@1.0.0
 ├─┬ connect@3.0.0
 │ ├── debug@0.8.1
@@ -256,7 +256,7 @@ wp-Tales@1.0.0
     │ └── esprima@1.0.4
     ├── sax@0.6.0
     └── whet.extend@0.9.9
-````
+```
 
 That's 238 modules, i.e. 41mb worth of dependencies to help build less than 1mb of HTML, CSS, and JavaScript. Initially I wasn't sure how to interpret this. On first impression it seems rather excessive.
 

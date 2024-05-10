@@ -28,9 +28,9 @@ To address my client's design ideas I'd prefer to use [viewport percentage unit
 
 Browsers will repaint the page as fast as possible when resized. Is there ever a scenario where it would be beneficial to add a transitional effect here? I've often seen this idea mocked as if only web developers resize their browser. Obviously not true. But then this:
 
-````css
+```css
 * { transition: all 500ms ease; }
-````
+```
 
 _is_ pretty stupid. All that does it fight against the browsers attempt to render the page. It thrashes the internal layout calculations meaning we're unlikely to stay above 30 FPS required for a smooth transition. Ultimately pointless. With JavaScript — and _a lot_ thereof — this can be controlled, see [Isotope](http://isotope.metafizzy.co/) for example, but is a resize transition really worth the effort? Not in my opinion. However, the idea shouldn't be a developer taboo. There is substance here regardless of implementation practicality.
 

@@ -36,13 +36,13 @@ Replacement techniques have been around long before responsive design. They're b
 
 The semantic HTML for the nav open button is a normal hyperlink:
 
-````html
+```html
 <a class="nav-button" href="#nav">Navigation</a>
-````
+```
 
 In CSS I use an [image replacement](http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/) technique:
 
-````css
+```css
 .nav-button {
     display: block;
     overflow: hidden;
@@ -52,7 +52,7 @@ In CSS I use an [image replacement](http://www.zeldman.com/2012/03/01/replacing
     height: 1.875em;
     background: url("img/nav-icon.svg");
 }
-````
+```
 
 Basic stuff, but this has more profound implications.
 
@@ -70,7 +70,7 @@ As long as content can be discovered it can be temporarily hidden and even shape
 
 If you absolutely have to hide elements or need to reveal them later, I would advise using the `.visuallyhidden` class technique from HTML5 boilerplate (inspired by [Jonathon Snook](http://snook.ca/archives/html_and_css/hiding-content-for-accessibility)):
 
-````css
+```css
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -81,7 +81,7 @@ If you absolutely have to hide elements or need to reveal them later, I would ad
     position: absolute;
     width: 1px;
 }
-````
+```
 
 ## A final word
 

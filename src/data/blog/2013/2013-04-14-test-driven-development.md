@@ -22,7 +22,7 @@ In fairness, It's probably the least impressive API one could possibly developme
 
 For this I've used [Mocha](http://visionmedia.github.io/mocha/) to write a series of tests for my API. Each test calls the API and then checks the returning data. For example, to make sure `/api/lists` is returning an array:
 
-````javascript
+```javascript
 describe('Lists', function() {
     it('should return an array of lists', function(done) {
         macaqueAPI('/api/lists', function(data) {
@@ -33,7 +33,7 @@ describe('Lists', function() {
         });
    });
 });
-````
+```
 
 When I run all tests from the command line:
 

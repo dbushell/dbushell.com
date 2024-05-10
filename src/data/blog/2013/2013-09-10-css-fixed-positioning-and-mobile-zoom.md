@@ -10,15 +10,15 @@ title: CSS Fixed Positioning and Mobile Zoom
 
 Mobile web browsers, unless otherwise informed, will assume a website has been designed for larger screens. They'll render on a large canvas and zoom out. Responsive websites use the [meta viewport tag](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) to tell browsers: "Hey, render at the device width and don't scale please."
 
-````html
+```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
-````
+```
 
 While the user no longer needs to zoom & pan they still have this ability should they desire it. It _can_ effectively be disabled with the meta tag:
 
-````html
+```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-````
+```
 
 But this degrades accessibility for no good reason. **Don't do it.**
 

@@ -53,7 +53,7 @@ I pointed a spare domain name at my public IP and forwarded ports `80` and `443`
 
 **Second thing** — a change to the Web Manifest file. Pi-hole has one  but it needs a small amendment. Depending on your install you may find the location at:
 
-```
+```console
 /var/www/html/admin/img/favicons/manifest.json
 ```
 
@@ -62,11 +62,12 @@ Ensure the `start_url` property is set:
 ```json
 "start_url": "/admin/"
 ```
+
 **The third and final thing** – a [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API). This is a JavaScript file that can do a lot or a little depending on what's desired. For Pi-hole I've erred on the side of caution and added a minimum viable service worker.
 
 The location:
 
-```
+```console
 /var/www/html/admin/sw.js
 ```
 
@@ -149,7 +150,7 @@ Now that I've done this, I wonder if an empty JavaScript file would have been en
 
 Finally, to ensure the service worker is installed I've added a `<script>` to the bottom of `footer.php` before the closing tags:
 
-```
+```console
 /var/www/html/admin/scripts/pi-hole/php/footer.php
 ```
 
@@ -162,6 +163,7 @@ if ('serviceWorker' in window.navigator) {
 </body>
 </html>
 ```
+
 With these three things in place the Pi-hole admin dashboard now meets the requirements for PWA installation.
 
 🍾 yay!

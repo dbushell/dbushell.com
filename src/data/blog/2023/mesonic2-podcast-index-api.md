@@ -15,7 +15,7 @@ All in all v2 is a big improvement. There are issues I'll correct in due course,
 
 My app runs in a Docker container. The log was flooding with this error:
 
-```
+```console
 02/09/2023 07:22:00 Error: 401 Unauthorized
     at fetchFromFresh (file:///mesonic/server/cache/worker.ts:254:11)
     at eventLoopTick (ext:core/01_core.js:183:11)

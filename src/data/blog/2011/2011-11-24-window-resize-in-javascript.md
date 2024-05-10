@@ -8,7 +8,7 @@ title: Window Resize in JS
 
 I will write a full article on responsive website design & JavaScript soon, but for now here's a quick snippet! (With a little help from jQuery, naturally.)
 
-````javascript
+```javascript
 var resizeTimeout, win = $(window);
 win.bind('resize', function()
 {
@@ -19,7 +19,7 @@ win.bind('resize', function()
 		/* do responsive stuff... */
 	}, 100);
 });
-````
+```
 
 The basic idea is that you don't want to be hammering the window resize event because it gets fired repeatedly when a user manually resizes their browser. Instead you should use a short timeout to wait for resizing to end.
 

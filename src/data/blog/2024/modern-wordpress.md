@@ -142,6 +142,7 @@ Modern themes have a `theme.json` file; the new hotness. The [flagship theme exa
         }
       }
 ```
+
 Is that partial CSS with the `&` [nesting selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Nesting_selector)? Who's the parent? I'm not sure yet. Some styles use custom properties whilst others have hard-coded values. I can't even find where that `"ref"` leads to.
 
 Where is the `--wp--preset--font-size--small` custom property defined? I'm guessing from this array that's three levels deep:

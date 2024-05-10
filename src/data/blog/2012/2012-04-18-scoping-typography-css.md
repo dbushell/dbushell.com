@@ -10,10 +10,10 @@ _I'm writing a very long article on front-end dev builds, this is a quick prelud
 
 It's common practice to define **global typography style** early in a stylesheet. This makes a lot of sense. After all, a good design has consistent typography with a clear hierarchy throughout. When writing this CSS, [type selectors](http://www.w3.org/TR/CSS2/selector.html#type-selectors) like:
 
-````css
+```css
 h1 { font-weight: bold; }
 p { font-size: 1em; line-height: 1.5em; }
-````
+```
 
 are necessary; adding classes to every text element isn't feasible when you consider content managed websites and WYSIWYG editors. You'd have to be a nutter to do `<p class="paragraph">` everywhere. Global styles are great but there are a few catches:
 
@@ -24,10 +24,10 @@ The first example can easily be solved with small "modifier" classes like `<p cl
 
 The more your website resembles an **application** over a document, the more global typography styles become a pain to build upon. Even heavily content-based websites seem more like an app in the modern world of responsive design. The solution? Just scope typographic styles:
 
-````css
+```css
 .text h1 { font-weight: bold; }
 .text p { font-size: 1em; line-height: 1.5em; }
-````
+```
 
 Simply choose a class that makes sense — I swing between `.text` and `.content` — and add it to any element that contains text-based content. This frees the rest of your HTML document from CSS pollution and effectively scopes the typographic style.
 

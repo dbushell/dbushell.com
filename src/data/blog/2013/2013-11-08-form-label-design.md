@@ -28,12 +28,12 @@ See the Pen [ruDAb](http://codepen.io/dbushell/pen/ruDAb) by David Bushell ([@db
 
 The HTML is very simple so providing fall back styles for older browsers should be easy (IE9 and below don't support `placeholder` attributes).
 
-````html
+```html
 <div class="field">
   <label class="field__label" for="form-name">Name</label>
   <input class="field__input" required type="text" placeholder="Name…" id="form-name">
 </div>
-````
+```
 
 ## The Need for JavaScript
 

@@ -20,7 +20,7 @@ To truly understand how things works I've been experimenting. I created a si
 
 See the full source below (scroll past for explanation and findings).
 
-````html
+```html
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="90" viewBox="0 0 30 90">
 
 <!-- define gradients used in "smile" icon -->
@@ -67,7 +67,7 @@ See the full source below (scroll past for explanation and findings).
 <use xlink:href="#smile-features" width="30" height="30" x="0" y="60"></use>
 
 </svg>
-````
+```
 
 ## What's what?
 
@@ -95,12 +95,12 @@ An `<img>` element looks subjectively neater but the icon can't be styled with C
 
 While you can't use external CSS you can create multiple `view` and `use` combos inside the sprite that reference the same `symbol`. Then style those:
 
-````html
+```html
 <view id="smile-view-face-r" viewBox="0 30 30 30" />
 <view id="smile-view-face-b" viewBox="0 60 30 30" />
 <use style="fill:red;" xlink:href="#smile-face" width="30" height="30" x="0" y="30"></use>
 <use style="fill:blue;" xlink:href="#smile-face" width="30" height="30" x="0" y="60"></use>
-````
+```
 
 Not too much redundancy, but I prefer my CSS is one place.
 
@@ -118,9 +118,9 @@ While none of these techniques are perfect. I find it very interesting that it's
 
 I was really hoping that browsers would allow this:
 
-````css
+```css
 background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="sprite.svg#smile-face"></use></svg>');
-````
+```
 
 but alas, no luck! SVG data URIs work fine, just not xlink references.
 

@@ -17,9 +17,9 @@ Now I have an [army of tools](/2014/06/10/dependency-overload/) at my finger tip
 
 At the time static site generators and templating scared me (still does, in fact). What I wanted was so minimal I was hesitant to invest time into a large set-up. Looking around for options, I liked the way [Hammer for Mac](http://hammerformac.com/docs/tags) implemented tags:
 
-````html
+```html
 <!-- @include _header.html -->
-````
+```
 
 That looked neat, so as a Friday afternoon project I wrote a cheap and cheerful Grunt task called ["htmlizr"](https://github.com/dbushell/dbushell-Origin/blob/d4d38b2893b372c7620bcc5fd75a649a89766a00/tasks/htmlizr.js) to achieve a similar effect. I've been using that for almost a year now, stitching together websites big and small.
 
@@ -50,7 +50,7 @@ Checkout **[dbushell-grunt-Mustatic](https://github.com/dbushell/dbushell-grunt
 
 My `templates` directory follows this structure:
 
-````
+```console
 templates/
   +-- base.html
   +-- base.json
@@ -64,11 +64,11 @@ templates/
         +-- footer.html
         +-- nav.html
 
-````
+```
 
 A minimal `base.html` would look like this:
 
-````html
+```html
 <!DOCTYPE html>
 <html lang="{{lang}}">
 <head>
@@ -79,7 +79,7 @@ A minimal `base.html` would look like this:
 {{>content}}
 </body>
 </html>
-````
+```
 
 The three variables: `lang`, `charset`, and `title`, can be first defined in `base.json`. The `title` variable can then be overridden in the template-specific `index.json`.
 
@@ -87,7 +87,7 @@ This solves my requirement for includes (or "partials") with varying data, but w
 
 Let's say my `base.json` defines navigation like so:
 
-````javascript
+```javascript
 "nav": {
     "items": [
         { "name": "Home", "url": "index.html" },
@@ -95,11 +95,11 @@ Let's say my `base.json` defines navigation like so:
         { "name": "Design", "url": "services/design.html" }
     ]
 }
-````
+```
 
 My navigation partial might look like this:
 
-````html
+```html
 {{#nav}}
 <nav role="navigation">
     {{#items}}
@@ -107,7 +107,7 @@ My navigation partial might look like this:
     {{/items}}
 </nav>
 {{/nav}}
-````
+```
 
 Notice the additional `class` variable that is not defined in our data. This can be added automatically as each page is rendered. If the `url` matches the current page; add an "active" HTML class. I've written a *pre-render* function to address this scenario.
 

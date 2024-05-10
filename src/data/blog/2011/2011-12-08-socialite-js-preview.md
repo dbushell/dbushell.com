@@ -40,29 +40,29 @@ I've written a solution:
 
 The basic implementation looks like this:
 
-````html
+```html
 <a class="socialite twitter" href="http://twitter.com/share" data-url="http://socialitejs.com" data-via="dbushell">
 Share on Twitter
 </a>
-````
+```
 
 At the end of your document include `<script src="socialite.js"></script>` and in further scripts — when you're ready — activate buttons like so:
 
-````javascript
+```javascript
 Socialite.load();
-````
+```
 
 Or be more specific with a context:
 
-````javascript
+```javascript
 Socialite.load(document.getElementById('social-buttons'));
-````
+```
 
 Or activate a single button directly:
 
-````javascript
+```javascript
 Socialite.activate(document.getElementById('like-button'), 'facebook');
-````
+```
 
 If you're using JavaScript elsewhere (I'm guessing jQuery?) you can run `Socialite.load` at the end of your `$(document).ready()` function, or after any event. On "ready" may still start downloading button resources while your page resources are coming in. You could activate buttons on article hover like [TechCrunch](http://techcrunch.com/) (which has a very primitive implementation of what Socialite does).
 

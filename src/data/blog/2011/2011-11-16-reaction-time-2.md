@@ -14,10 +14,10 @@ I'm using a technique based on Ariel Flesler's excellent [jQuery scrollTo plugin
 
 The simplest jQuery implementation would look like this:
 
-````javascript
+```javascript
 var target = $('#target');
 $(window).scrollTo(target, { duration: 500 });
-````
+```
 
 That will do exactly what I want, once bound to a click event — why go any further?
 
@@ -29,7 +29,7 @@ That constant 500 millisecond duration is lazy and unresponsive. The distance I
 
 Here's a generic evolution of my JavaScript:
 
-````javascript
+```javascript
 var target = $('#target');
 
 /* get the document height and window height */
@@ -64,7 +64,7 @@ if (distance) {
 		);
 	}, 500);
 }
-````
+```
 
 The `setTimeout` delay is purely for my benefit because other actions need to happen before scrolling is initiated. The magic number `2` is simply a multiplier to slow things down. What's important is that the animation always starting with a duration *relative* to the distance.
 

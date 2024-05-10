@@ -10,9 +10,9 @@ Using [SVG](https://developer.mozilla.org/en/docs/SVG) (Scalable Vector Graphics
 
 💤 _* Quick fire question: at which corner does this right-angle triangle point?_
 
-````html
+```html
 <polygon points="0,100 0,0 100,0 "/>
-````
+```
 
 I'm going to walk you through many conceivable implementations:
 
@@ -20,38 +20,38 @@ I'm going to walk you through many conceivable implementations:
 
 Basic usage is as simple as swapping out a regular raster graphic — PNG, JPEG, or GIF — with an SVG file. Here's an example in HTML:
 
-````html
+```html
 <img src="image.svg">
-````
+```
 
 According to the [can I use](http://caniuse.com/#search=SVG) compatibility table only Internet Explorer 8 and lower, and Android Browser 2 lack support. They will download and fail to render the image.
 
 With client side fallbacks we can't avoid the initial download. We could swap out the element source with JavaScript if there's an error:
 
-````html
+```html
 <img src="image.svg" onerror="this.onerror=null; this.src='image.png'">
-````
+```
 
 That's cute but I can't imagine many circumstances where it would be the best solution. You can achieve similar results with feature detection:
 
-````javascript
+```javascript
 if (!Modernizr.svg) {
     $('img[src$=".svg"]').each(function()
     {
         $(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
     });
 }
-````
+```
 
 **Ben Howdle** and **Jack Smith** have written [SVGeezy](http://benhowdle.im/svgeezy/) that does this without Modernizr or jQuery dependencies. Though if you do include [Modernizr](http://modernizr.com/) detection in the `<head>` of your HTML document you can do a nicer — read: less noticeable — "switcheroo" with CSS.
 
-````html
+```html
 <div id="logo">
     <img src="logo.svg">
 </div>
-````
+```
 
-````css
+```css
 .lt-ie9 #logo,
 .no-svg #logo {
     background: url("logo.png");
@@ -62,7 +62,7 @@ if (!Modernizr.svg) {
     opacity: 0;
     filter: alpha(opacity=0);
 }
-````
+```
 
 You'll notice I've used the "lt-ie9" class. You can apply this to the `<html>` element using [conditional comments](http://www.quirksmode.org/css/condcom.html). That provides an extra fail-safe if somehow JavaScript is disabled in old IE. Oh, and the `_background-image` and GIF — that's an IE6 transparency fix! Totally optional.
 
@@ -72,27 +72,27 @@ With the techniques above the worse case scenario is that two assets are downloa
 
 Like I mentioned, you can use SVG anywhere images are permitted:
 
-````css
+```css
 .illustration {
     background-image: url('image.svg');
 }
-````
+```
 
 And just like raster graphics, you can base64 encode them right into the stylesheet to help reduce HTTP requests:
 
-````css
+```css
 .illustration {
     background-image: url('data:image/svg+xml;base64,[data]');
 }
-````
+```
 
 To aid readability you may even attempt such audacity as this:
 
-````css
+```css
 .illustration {
     background-image: url('data:image/svg+xml;charset=utf-8,<svg></svg>');
 }
-````
+```
 
 I've thrown up a [UTF-8 test case](/demos/svg/utf8uri/test2.html) and the results from quick testing show only Webkit based Safari and Chrome are happy with this arrangement. But this isn't quite right…
 
@@ -102,35 +102,35 @@ It may not be immediately obvious but my pseudo code above is not a valid data U
 
 If you were experimenting with SVG a couple of years ago like I was you'll be more familiar with the object element:
 
-````html
+```html
 <object type="image/svg+xml" data="image.svg">
     <img src="fallback.png">
 </object>
-````
+```
 
 This is the oldest method we have. And of course, data URIs are possible here too:
 
-````html
+```html
 <object type="image/svg+xml" data="data:image/svg+xml;base64,[data]">
     <img src="fallback.png">
 </object>
-````
+```
 
 If the browser doesn't recognise the object element's MIME type it won't download the SVG file but the "fallback" image inside is always downloaded. Again, we're not doing things quite right. There is a better solution and those crafty devils at [ClearLeft](http://clearleft.com/) are sporting it in their logo markup. The answer? Simply use CSS to apply the fallback image:
 
-````html
+```html
 <object id="logo" type="image/svg+xml" data="logo.svg">
     <div>logo description</div>
 </object>
-````
+```
 
-````css
+```css
 #logo div {
     width: 300px;
     height: 50px;
     background-image: url("logo.png");
 }
-````
+```
 
 The object element effectively replaces it's default content with the SVG data. Only if the browser doesn't support SVG does the element inside get styled. This to my knowledge is the best way to use SVG without any overhead.
 
@@ -140,9 +140,9 @@ With the methods highlighted above we actually lose a lot of SVG's potential. Fo
 
 To unleash full power you either need to view an SVG file directly in the browser (not very handy for website development), or write it inline of HTML:
 
-````html
+```html
 <!--[if (gt IE 8)]><!--><svg></svg><!--<![endif]-->
-````
+```
 
 This is something I've [recently experimented](/2013/01/28/gloople-responsive-design-review/) with to reduce HTTP requests. One drawback is that the browser can't cache the image to be used across multiple locations. It does however mean you can [style SVG with CSS](https://developer.mozilla.org/en-US/docs/CSS/Getting_Started/SVG_and_CSS) — and via the document stylesheet too which is a maintainability bonus.
 

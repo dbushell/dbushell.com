@@ -33,7 +33,7 @@ Following a small design refresh of [**Mute Swan**](https://muteswan.dbushell.co
 
 I could use Bubblewrap again to re-generate the icons but that wouldn't fix the clipping. I found the offending assets in this directory:
 
-```
+```console
 app/src/main/res
 ```
 

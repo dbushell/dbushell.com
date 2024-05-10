@@ -36,7 +36,7 @@ The standard `text-decoration: underline;` is too obtrusive and `border-bottom` 
 
 In the past I've opted to [scope typographic styles](/2012/04/18/scoping-typography-css/). Nowadays I'm in two minds as to whether the pros outweigh the cons. However, in developing this website I've found that only scoping advanced styles is a nice balance. This effect is applied after web fonts have loaded to ensure the background position is correct.
 
-````css
+```css
 .wf-active .prose a {
   text-shadow: 2px 0 0 #f2f0e6, -2px 0 0 #f2f0e6;
   background-image: linear-gradient(to left, rgba(61, 156, 204, 0.5), rgba(61, 156, 204, 0.5));
@@ -44,7 +44,7 @@ In the past I've opted to [scope typographic styles](/2012/04/18/scoping-typogr
   background-repeat: repeat-x;
   background-size: 1px 1px;
 }
-````
+```
 
 That's some verbose CSS required to restyle against varying background colours (not to mention font size). For this reason I'm using the technique sparingly. At smaller sizes, like the copyright notice, a standard underline suffices.
 
@@ -66,16 +66,16 @@ I've built many websites with font icons, many others with SVG sprites, but I'm 
 
 For example, I can reference my navigation icon:
 
-````html
+```html
 <a class="nav-open" href="#nav">
     <span>Menu</span>
     <svg viewbox="0 0 35 35"><use xlink:href="#svg--nav"></use></svg>
 </a>
-````
+```
 
 And I can apply CSS like so:
 
-````css
+```css
 .nav-open svg {
     fill: #b3b0aa;
 }
@@ -83,7 +83,7 @@ And I can apply CSS like so:
     background-image: url("../img/nav.png");
 }
 
-````
+```
 
 With feature detection and [automation](/2013/06/10/updates-to-origin/) it takes little effort to provide a fallback PNG.
 

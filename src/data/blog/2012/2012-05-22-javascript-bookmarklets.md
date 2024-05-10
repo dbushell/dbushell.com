@@ -12,43 +12,43 @@ They're [fun to play with](/2012/05/15/pageshift-removing-the-refresh/) and a g
 
 A bookmarklet begins with the following shell:
 
-````javascript
+```javascript
 javascript:(function(){
     // code...
 }());
-````
+```
 
 Here we're enclosing a [self-invoking function](http://sarfraznawaz.wordpress.com/2012/01/26/javascript-self-invoking-functions/) within a basic [URI scheme](http://en.wikipedia.org/wiki/URI_scheme) that all browsers understand. When a user clicks the bookmark the browser sees the `javascript:` prefix and executes the code on the current page.
 
 Remember that **jQuery might not be available**. Bookmarklets should be designed to run on any website (or as many as possible), so don't use jQuery in the actual bookmarklet code. I'd suggest using this as an opportunity to learn actual JavaScript rather than relying on libraries and plugins. Either way, you'll need to load in your own external stylesheets and scripts:
 
-````javascript
+```javascript
 var script = document.createElement('script');
 script.setAttribute('type', 'text/javascript');
 script.setAttribute('charset', 'UTF-8');
 script.setAttribute('src', 'http://code.jquery.com/jquery-1.7.2.min.js');
 document.documentElement.appendChild(script);
-````
+```
 
 The `charset` attribute is important to avoid encoding issues. If you _are_ loading jQuery, wrap it in this to avoid duplication:
 
-````javascript
+```javascript
 if (!window.jQuery) {
     // load script...
 }
-````
+```
 
 If you're sending a query string to `script.js` with page information make sure to use `encodeURIComponent` like so:
 
-````javascript
+```javascript
 script.setAttribute('src', 'http://example.com/script.js?r=' + Math.random() + '&title=' + encodeURIComponent(document.title));
-````
+```
 
 Another useful trick is to append a random number to the `script.js` URL ensuring — to some extent — that the browser does not load an older version from its cache.
 
 In the event that you need to preload injected scripts, use this pattern:
 
-````javascript
+```javascript
 el.onload = el.onreadystatechange = function () {
     var rs = script.readyState;
     if (!rs || rs === 'loaded' || rs === 'complete') {
@@ -56,7 +56,7 @@ el.onload = el.onreadystatechange = function () {
         // on load code...
     }
 };
-````
+```
 
 This situation may occur if you've written a script for normal usage that requires an `init()` function to be called when the document has loaded. You can then do `myNamespace.init()` on load instead of writing a duplicate script that executes immediately. Using both the `onload` and `onreadystatechange` events ensures legacy cross-browser compatibility.
 
@@ -66,7 +66,7 @@ It's best practice to keep your bookmarklet small. I'm pretty sure browsers don'
 
 Our final bookmarklet boilerplate:
 
-````javascript
+```javascript
 javascript:(function(){
 
 // avoid the bookmarklet activating more than once
@@ -98,7 +98,7 @@ script.onload = script.onreadystatechange = function() {
 };
 
 }());
-````
+```
 
 You could even change the alert message to `window.MyNamespace.bookmarkletUpdate();` for ultimate flexibility. Maybe throw up an "Update Bookmarklet" overlay?
 

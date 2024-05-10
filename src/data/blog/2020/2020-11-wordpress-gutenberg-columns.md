@@ -84,6 +84,7 @@ One trick is to nuke the default styles:
   all: initial;
 }
 ```
+
 This is very effective on the front-end but has issues in the [editor styles](https://developer.wordpress.org/block-editor/developers/themes/theme-support/#editor-styles). (There are Gutenberg styles applied to the same elements.)
 
 ### From Flexbox to Grid

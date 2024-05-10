@@ -99,7 +99,7 @@ On that note the `@db` scope was picked up by the [Deno SQLite](https://jsr.io/@
 
 I published my experimental [DinoSsr](https://ssr.rocks) web framework to JSR a little too soon. It was working fine until the Deno 1.41 update. Now it errors:
 
-```
+```typescript
 error: Uncaught (in promise) TypeError: Importing https://deno.land/x/esbuild@v0.20.0/mod.js blocked.
 JSR packages cannot import non-JSR remote modules for security reasons.
 ```

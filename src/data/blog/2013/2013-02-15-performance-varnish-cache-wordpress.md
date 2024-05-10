@@ -46,30 +46,30 @@ My [new site design](/2013/02/04/a-new-home/) has a _"From the blog…"_ fea
 
 In WordPress you would normally create a template include like so:
 
-````php
+```php
 <?php
 // include "From the blog..." section
 get_template_part('blog.partial');
 ?>
-````
+```
 
 Naming conventions aside, this is WordPress/PHP basics. But a big problem arises when I publish a new article. This include is on every page. Do I purge my entire website? That would mean every page has to be re-cached. It would be beneficial if I can purge this area alone. That's what [edge side includes](https://www.varnish-cache.org/trac/wiki/ESIfeatures) allow.
 
 On my production server the code above is replaced with:
 
-````html
+```html
 <esi:include src="<?php bloginfo('template_url'); ?>/blog.esi.php"/>
-````
+```
 
 It's not quite that simple. Varnish needs a URL to hit to access this document fragment. If you were to try and access any PHP file in the WordPress theme directory it would likely throw an error. [Tim Broder](http://timbroder.com/2012/12/getting-started-with-varnish-edge-side-includes-and-wordpress.html) provides the answer:
 
-````php
+```php
 <?php
 $cwd = getcwd();
 $path = substr($cwd,0,strpos($cwd,'wp-content/'));
 require($path . 'wp-blog-header.php');
 ?>
-````
+```
 
 This ensures my latest posts [WP_Query](http://codex.wordpress.org/Class_Reference/WP_Query) can run when the template include is accessed independently of the theme. The next step is to let Varnish know when to clear the cache for certain URLs.
 
@@ -77,7 +77,7 @@ This ensures my latest posts [WP_Query](http://codex.wordpress.org/Class_Referen
 
 In my WordPress theme `function.php` I have:
 
-````php
+```php
 function mytheme_purge_url($url)
 {
     $c = curl_init($url);
@@ -85,11 +85,11 @@ function mytheme_purge_url($url)
     curl_exec($c);
     curl_close($c);
 }
-````
+```
 
 Using cURL my blog can send a PURGE request to Varnish and clear the cache for a specific URL. From here it's just a matter of hooking into the right admin actions:
 
-````php
+```php
 add_action('save_post', 'mytheme_purge_post_cache');
 add_action('deleted_post', 'mytheme_purge_post_cache');
 
@@ -102,7 +102,7 @@ function mytheme_purge_post_cache($post_ID)
         mytheme_purge_url(bloginfo('template_url') . '/blog.esi.php');
     }
 }
-````
+```
 
 Remember that Varnish needs to be configured to never cache the WordPress admin area (otherwise you'll never get past the login form). Now, after I save or delete a post the URLs for that post, the [blog index](/blog/), and the _"From the blog…"_ include are all purged. They are then cached again on the next request.
 

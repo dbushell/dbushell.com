@@ -27,7 +27,7 @@ If you're using MongoDB behind your API here's a few things I've learnt:
 
 MongoDB's default primary key is an [ObjectId](http://docs.mongodb.org/manual/reference/object-id/) in the `_id` field. Ember Data doesn't like the underscore. Initially I was using [Mongoose](http://mongoosejs.com/docs/guide.html#virtuals) to add virtual `id` properties. It's actually a lot easier to manage this client-side by extending the `RESTAdapter`:
 
-````javascript
+```javascript
 Macaque.RESTAdapter = DS.RESTAdapter.extend({
     url: 'http://localhost:3000',
     namespace: 'api',
@@ -43,7 +43,7 @@ Macaque.Store = DS.Store.extend({
     revision: 12,
     adapter: Macaque.RESTAdapter
 });
-````
+```
 
 In here you can also specify the URL and namespace for the API.
 
@@ -51,15 +51,15 @@ In here you can also specify the URL and namespace for the API.
 
 When the API is called to load a record its ID is serialized in the URL. For example, when a list in Macaque is viewed the `RESTAdapter` loads data from this endpoint:
 
-````
+```console
 http://localhost:3000/api/lists/5175a9dc67a7a40000000003
-````
+```
 
 On rare occasions this will fail and you'll see the ID has been serialized in this format: `5.1755256517945e` — note the numerical notation. What's going on?
 
 The answer lies within the [Serializer](https://github.com/emberjs/data/blob/master/packages/ember-data/lib/system/serializer.js):
 
-````javascript
+```javascript
 /**
     A hook you can use to normalize IDs before adding them to the
     serialized representation.
@@ -75,11 +75,11 @@ The answer lies within the [Serializer](https://github.com/emberjs/data/blob/mas
     if (isNaN(id)) { return id; }
     return +id;
   },
-````
+```
 
 If the ID can be converted to a number in JavaScript it will be. ObjectId's in MongoDB are a [12-byte construct](http://docs.mongodb.org/manual/reference/object-id/). Usually alpha-numeric and thus "is not a number" — but not always. To fix this problem we can extend the `RESTSerializer` further:
 
-````javascript
+```javascript
 Macaque.RESTAdapter = DS.RESTAdapter.extend({
     /* ... */
     serializer: DS.RESTSerializer.extend({
@@ -89,7 +89,7 @@ Macaque.RESTAdapter = DS.RESTAdapter.extend({
         }
     })
 });
-````
+```
 
 💤 (I've removed the previous code for brevity.)
 
@@ -99,7 +99,7 @@ Now our ObjectId values are never inadvertently converted to numbers. With thes
 
 This is something I've been experimenting with so I'm not convinced it's actually the correct approach. I thought it was worth sharing nonetheless because I'd imagine it's a common issue. Anyway, if you have **many-to-many** relationships like I do in Macaque:
 
-````javascript
+```javascript
 Macaque.List = DS.Model.extend({
     /* ... */
     tasks: DS.hasMany('Macaque.Task')
@@ -109,11 +109,11 @@ Macaque.Task = DS.Model.extend({
     /* ... */
     lists: DS.hasMany('Macaque.List')
 });
-````
+```
 
 The API convention is to provide an `*_ids` array like this `GET` response for a list record:
 
-````javascript
+```javascript
 {
     "list": {
         "_id": "5175786e3351480000000006",
@@ -131,11 +131,11 @@ The API convention is to provide an `*_ids` array like this `GET` response for a
         /* task data here... */
     }
 }
-````
+```
 
 In this example I can side-load the three task records by including their data in a `tasks` object in the JSON root. That's cool, but problems arise when I edit and save a record in Ember. When I commit the data a `PUT` request is sent to the API like this:
 
-````javascript
+```javascript
 {
     "list": {
         "_id": "5175786e3351480000000006",
@@ -145,24 +145,24 @@ In this example I can side-load the three task records by including their data i
         "name": "Macaque Testing"
     }
 }
-````
+```
 
 Note the child task IDs are never sent back to the server.
 
 From what I understand the `hasMany` relationships are only serialised in the JSON if you're specifically embedding all data in every request. You can tell Ember Data to do this…
 
-````javascript
+```javascript
 Macaque.RESTAdapter.map('Macaque.Lists', {
     'tasks': { embedded: 'always' }
 });
 Macaque.RESTAdapter.map('Macaque.Tasks', {
     'lists': { embedded: 'always' }
 });
-````
+```
 
 …but it's not very practical; that's a lot of data where an array of IDs would suffice. I've found a workaround is to extend the `RESTSerializer` — once again — to include the ID array:
 
-````javascript
+```javascript
 Macaque.RESTAdapter = DS.RESTAdapter.extend({
     /* ... */
     serializer: DS.RESTSerializer.extend({
@@ -179,7 +179,7 @@ Macaque.RESTAdapter = DS.RESTAdapter.extend({
         }
     })
 });
-````
+```
 
 This will now include the `hasMany` relationships in data sent back to the API.
 

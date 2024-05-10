@@ -61,7 +61,7 @@ lsinitcpio -a /boot/initramfs-linux.img
 
 Look for `btrfs` under the "Included modules:" — it’s probably not listed out of the box. To include it edit `/etc/mkinitcpio.conf` and add `btrfs`:
 
-```
+```ini
 MODULES=(btrfs)
 ```
 

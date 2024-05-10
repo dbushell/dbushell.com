@@ -61,13 +61,13 @@ import * as mod from "jsr:@std/bytes@0.216";
 
 JSR is backwards compatible with Node. You add the registry to `.npmrc`:
 
-```
+```ini
 @jsr:registry=https://npm.jsr.io
 ```
 
 And then use any Node package manager to install from JSR:
 
-```
+```shell
 npm install @jsr/std__bytes
 ```
 

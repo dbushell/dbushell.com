@@ -19,7 +19,7 @@ With Gluetun it's easy to configure [Firewall networking](https://github.com/qdm
 
 For LAN and [Tailscale](https://tailscale.com/kb/1015/100.x-addresses/) networks I added:
 
-```
+```ini
 FIREWALL_OUTBOUND_SUBNETS=192.168.0.0/16,100.64.0.0/10
 ```
 

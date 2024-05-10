@@ -10,9 +10,9 @@ title: Critical CSS and Performance
 
 This week inspired by Scott Jehl's article ["How we make RWD sites load fast as heck"](http://www.filamentgroup.com/lab/performance-rwd.html) and Callum Hart's ["Non-blocking UI's with interface previews"](http://www.callumhart.com/blog/non-blocking-uis-with-interface-previews) I decided to revisit my code and give it another boost. The trick to getting content on screen faster is removing [render-blocking CSS](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery). When the browser sees a stylesheet —
 
-````html
+```html
 <link rel="stylesheet" href="style.css">
-````
+```
 
 — it will not render further until it's downloaded.
 
@@ -20,11 +20,11 @@ By inlining critical CSS the browser can start to render immediately while the 
 
 My page `<head>` now looks something like this:
 
-````html
+```html
 <noscript><link rel="stylesheet" href="combined.css"></noscript>
 <style> /* 10KB of inline CSS */ </style>
 <script> /* ... */ loadCSS('style.css'); </script>
-````
+```
 
 * `<noscript>` as a fallback to provide the original stylesheet
 * 10KB of inline CSS that can be rendered straight away

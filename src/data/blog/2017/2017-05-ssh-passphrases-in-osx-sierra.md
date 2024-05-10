@@ -15,7 +15,7 @@ is not productive.
 
 The solution is two new lines in `~/.ssh/config`:
 
-```
+```console
 Host github.com
     User git
     Hostname github.com

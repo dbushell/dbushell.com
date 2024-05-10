@@ -30,7 +30,7 @@ const tasks = Object.values(state)
   .filter(task =>
     task.unix >= startTime && task.unix < endTime
   );
-````
+```
 
 Using "today" as an example, I start the range at midnight:
 

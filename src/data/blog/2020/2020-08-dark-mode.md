@@ -46,7 +46,7 @@ I should note that some websites are designed dark by default. In those cases th
 
 The first reason might seem a little unfair. I was going to say "browser support" because for the longest time I didn't think Firefox had it. [Browser coverage](https://caniuse.com/#feat=prefers-color-scheme) is actually over 80% including Firefox (since version 67). It just did not work for me because of this setting:
 
-```
+```ini
 privacy.resistFingerprinting = true
 ```
 

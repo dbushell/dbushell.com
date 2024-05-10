@@ -44,7 +44,7 @@ Time for some code!
 
 The email is sent to `hi@dbushell.com` which has this PGP public key:
 
-```
+```console
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 xjMEZFn7ehYJKwYBBAHaRw8BAQdAwqA8sKd0DFi9ZoyG45Bg4nZiEV+V9lZ3
@@ -92,7 +92,7 @@ const encrypted = await openpgp.encrypt({
 
 With that `encrypted.toString()` returns the email body like:
 
-```
+```console
 -----BEGIN PGP MESSAGE-----
 
 wV4DI7BM8eVGeagSAQdAuDJBNL72qJ6MqxHmvmQwDGWmEM2pG1Va84MZ6Qy9

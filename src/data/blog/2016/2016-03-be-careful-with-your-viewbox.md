@@ -27,11 +27,11 @@ I have an SVG sprite for social icons:
 
 These three icons live within a single file (see Sara's guide to [SVG sprites](https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/)). To reused an icon is as simple as referencing it like so:
 
-````html
+```html
 <svg>
   <use xlink:href="icons.svg#twitter"></use>
 </svg>
-````
+```
 
 With CSS I can style the size and colour of individual icons, amongst other properties. At least that is the basic principle. Of course, when your asset pipeline is a mess of custom node scripts, what's eventually rendered in the browser can be a delightful surprise.
 
@@ -39,7 +39,7 @@ With CSS I can style the size and colour of individual icons, amongst other prop
 
 I checked my SVG sprite source and it looked correct:
 
-````html
+```html
 <svg xmlns="http://www.w3.org/2000/svg">
     <symbol id="twitter" viewbox="0 0 34 28">
         <!-- [path data] -->
@@ -51,14 +51,14 @@ I checked my SVG sprite source and it looked correct:
         <!-- [path data] -->
     </symbol>
 </svg>
-````
+```
 
 I checked my minified SVG sprite source and it looked suspiciously empty:
 
-````html
+```html
 <svg xmlns="http://www.w3.org/2000/svg">
 </svg>
-````
+```
 
 If you're using a minifying tool based on [SVGO](https://github.com/svg/svgo) you need to disable a couple of plugins ('cleanupIDs' and 'removeViewBox'). This will ensure the `<symbol>` elements are not removed from your sprite.
 

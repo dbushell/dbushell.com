@@ -61,7 +61,7 @@ As I'm writing this on a Sunday morning and the football doesn't kick off for an
 
 I stick all my block templates in a theme directory like so:
 
-```
+```php
 wp-content/themes/custom-theme/blocks/custom-block.php
 ```
 

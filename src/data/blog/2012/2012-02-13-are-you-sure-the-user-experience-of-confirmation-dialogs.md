@@ -8,25 +8,25 @@ title: Are You Sure? The UX of Confirmations
 
 Imagine for a minute your web app has a "Delete" action. In HTML it takes this form:
 
-````html
+```html
 <a class="delete" href="#">Delete Item</a>
-````
+```
 
 The anchor is styled up with sexy CSS3 and functionality is implemented with an asynchronous JavaScript API call. Because we all care about accessibility (and standards) we provide a "no-JS" fallback:
 
-````html
+```html
 <a class="delete" href="/item/delete/1/">Delete Item</a>
-````
+```
 
 Lovely! It's great to build on top of what works. "Web apps" are still _websites_, after all.
 
 Now, I know what you're thinking, "Delete" is a big commitment! What if the user triggers the link accidentally? What if the user has been conditioned through years of UI exposure to expect a modal window explaining the ramifications, or at least asking for confirmation? We could write a little script (jQuery, naturally) to hijack any element with the class "delete" and throw up a confirmation box. Similar to this:
 
-````javascript
+```javascript
 $('a.delete').on('click', function(e) {
   return confirm('Are you sure?');
 });
-````
+```
 
 Replace `confirm()` with your fancy dialog of choice. The function `[window.confirm](https://developer.mozilla.org/en/DOM/window.confirm)` provides a **native** dialog implemented by the browser. More on that later!
 
@@ -34,10 +34,10 @@ Replace `confirm()` with your fancy dialog of choice. The function `[window.co
 
 That's quite nice but searching the whole DOM for links is fairly intensive. There will also be the initial delay of execution while we wait for the `DOMContentLoaded` event. Users will quick trigger fingers will be able to click "Delete" and see no confirmation request. We also have the issue of microcopy hardcoded in our script (not the best place for it). We could mess around with additional `data-*` attributes but I have a better idea...
 
-````html
+```html
 <a class="delete" href="/message/delete/1/"
    onclick="return confirm('Are you sure?')">Delete Item</a>
-````
+```
 
 Boom! No dependancies, no need to worry about fast fingers, and browser support dates back to **Netscape**. ([Event handler attributes](http://www.w3.org/TR/html5/webappapis.html#event-handler-attributes) like `onclick` are still a big part of HTML5, in case you were wondering.)
 
@@ -55,37 +55,37 @@ Our problem is that the native dialog hangs the browser action in a way that we 
 
 The `onclick` attribute basically creates an event handler like this:
 
-````javascript
+```javascript
 function(event) {
   return confirm('Are you sure?');
 }
-````
+```
 
 Note the `event` parameter. We need to access this object (a [MouseEvent](https://developer.mozilla.org/en/DOM/MouseEvent)) to obtain the original target element and go from there. We could pass it through like this:
 
-````javascript
+```javascript
 <a onclick="return confirm('Are you sure?', event)">
-````
+```
 
 The native version of `confirm` will ignore the second argument (JavaScript isn't fussy). But that's not very clean, and there is a better way! When we redefine `confirm` we can actually access this event object.
 
-````javascript
+```javascript
 window.nativeConfirm = window.confirm;
 window.confirm = function(message) {
   var event = window.event || window.confirm.caller.arguments[0];
   // ...
 };
-````
+```
 
 First we check the `window` object, old Internet Explorer will find an event chillin' there. Other browsers can access the function's caller. If no event exists we just return `window.nativeConfirm(message);` and be done with it. If the event does exist — and we've established that the user experience will be improved with non-native dialogs — we get the target element, read the `href` attribute, pop open a custom dialog with a callback that redirects on success, and `return false` to cancel the default `onclick` action.
 
 My final implementation with extended functionality looks a little something like this:
 
-````html
+```html
 <a onclick="return confirm('Are you sure?')" href="/action/">Delete Item</a>
-````
+```
 
-````javascript
+```javascript
 window.nativeConfirm = window.confirm;
 window.confirm = function(message, event, callback)
 {
@@ -111,7 +111,7 @@ window.confirm = function(message, event, callback)
   // cancel onclick action
   return false;
 };
-````
+```
 
 By including `useNativeConfirm()` we can do some feature detection and browser investigation to determine what type of dialog to display. **For mobile browsers this is essential.** I'm still thinking about the best way to make this decision but a [Modernizr media query test](http://www.modernizr.com/docs/#mq) for small screens is a good start.
 

@@ -30,7 +30,7 @@ There are numerous ways to achieve this. The principle is to align elements as c
 
 I'd be worried if that surprised you but illustrations make a long article look nice. From [experimentation last year](/2012/03/27/introducing-shiro/) I've been using this CSS construct ever since:
 
-````css
+```css
 .grid {
     @include clearfix;
     margin: 0 -1.5em;
@@ -45,7 +45,7 @@ I'd be worried if that surprised you but illustrations make a long article look 
 .layout .grid-unit {
     width: 20%;
 }
-````
+```
 
 The `.grid` class acts as a container for grid units. The unit padding and negative container margins make for very tidy alignment — I'll come back to `.layout` later.
 
@@ -73,18 +73,18 @@ By default they're stacked vertically (I may progressively enhance to a fancy ca
 
 My HTML is as you'd expect, ignoring possible semantic choices like `section` or `article` elements. I may not even need an extra `div` to style my features:
 
-````html
+```html
 <div class="grid home-features">
     <div class="grid-unit"><!-- feature 1 --></div>
     <div class="grid-unit"><!-- feature 2 --></div>
     <div class="grid-unit"><!-- feature 3 --></div>
     <div class="grid-unit"><!-- feature 4 --></div>
 </div>
-````
+```
 
 The additional CSS I need is minimal:
 
-````css
+```css
 @media screen and (min-width: 40em) {
     .home-features .grid-unit {
         width: 50%;
@@ -95,7 +95,7 @@ The additional CSS I need is minimal:
         width: 25%;
     }
 }
-````
+```
 
 In practice it's a bit more complicated because I'm ignoring vertical spacing here but my basic principle still applies: **avoid defining layout until I need it**.
 

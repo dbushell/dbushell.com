@@ -32,9 +32,9 @@ Content on a page is broken down into **editable regions**. Regions can be anyth
 
 In my home page template I replaced the hard-coded content with single functions to inform Perch of the four regions I've sensibly named 'Introduction', 'Image', 'Links', and 'Features'.
 
-````php
+```php
 <?php perch_content('Image'); ?>
-````
+```
 
 Now when I edited the page in the Perch admin area I first select which region I want to edit. This is a tidy solution to avoid one big form:
 
@@ -50,9 +50,9 @@ Once a partial template is assigned, and on subsequent region editing, Perch pre
 
 The partial template used for this region looks like this:
 
-````html
+```html
 <img src="<perch:content type="image" id="image" label="Image" />" alt="<perch:content type="text" id="alt" label="Description" required="true" title="true" />">
-````
+```
 
 You can see the HTML `<img>` element with `src` and `alt` attributes. These attributes contain special [Template Tags](http://docs.grabaperch.com/docs/content/template-tags/) used to define the content within the region. It's these tags that Perch uses to generate the edit form. The type attributes tell Perch what form field to display. (It's even possible to define custom [Field Types](http://docs.grabaperch.com/docs/field-types/) for more complex data input.)
 
@@ -78,7 +78,7 @@ The blog comes with a default set of templates as an example but blog content is
 
 This was very easy to implement in my global footer include:
 
-````html
+```html
 <h2>From the blog…</h2>
 <?php
 perch_blog_custom(array(
@@ -88,7 +88,7 @@ perch_blog_custom(array(
     'template'   => 'post_in_footer.html'
 ));
 ?>
-````
+```
 
 Similar to how partial templates are assigned to regions, the blog app allowed me to define a template I named `post_in_footer.html` in which I have access to special template tags like `<perch:blog id="postTitle" />` within the HTML.
 
@@ -100,7 +100,7 @@ WordPress is particularly notorious for the amount of hard-coded HTML it likes t
 
 Perch handles these situations a lot better. The blog app provides the function [perch_blog_categories()](http://docs.grabaperch.com/docs/blog/page-functions/perch-blog-categories/) which utilises a default partial template:
 
-````html
+```html
 <perch:before>
 <h3>Categories</h3>
 <ul>
@@ -115,7 +115,7 @@ Perch handles these situations a lot better. The blog app provides the function 
 <perch:after>
 </ul>
 </perch:after>
-````
+```
 
 Perch is fully transparent. Wherever I'm listing categories I can opt to style this default template or create and specify my own. All the template variables are there too so I don't need to go hunting through documentation.
 

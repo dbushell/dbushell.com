@@ -26,7 +26,7 @@ When a web browser renders a page it starts drawing pixels to a single bitmap la
 
 Say for example you do:
 
-````css
+```css
 .flyout {
     transform: translate3d(-100%, 0, 0);
     transition: transform 500ms ease;
@@ -34,7 +34,7 @@ Say for example you do:
 .flyout.is-active {
     transform: translate3d(0, 0, 0);
 }
-````
+```
 
 Web browsers paint the `.flyout` element on its own render layer. After certain effects are applied these layers can be re-composited without having to touch the DOM or recalculate layout (an expensive performance hit). In certain situations, like CSS 3d transforms, the layers are rendered once then shipped over to the GPU for future composites. This hardware acceleration is an amazing speed boost. If the viewport resizes, or any other element changes, it's probable that much of the page layout has to be recalculated (producing fresh render layers).
 

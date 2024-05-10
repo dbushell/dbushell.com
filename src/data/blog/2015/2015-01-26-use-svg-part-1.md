@@ -31,20 +31,20 @@ In my opinion [browser support](http://caniuse.com/#feat=svg) is good enough tod
 
 With responsive design, Internet Explorer doesn't scale the `<img>` as one might expect when using SVG. Let's use this common pattern as an example:
 
-````html
+```html
 <article class="media">
   <img class="media__image" src="smile.svg" alt="Smiley">
   <div class="media__body">
     <p><strong>Media object with SVG image.</strong> … </p>
   </div>
 </article>
-````
+```
 
-````css
+```css
 .media__image {
   max-width: 20%;
 }
-````
+```
 
 Testing with both SVG and PNG assets reveals a problem unique to IE (as of today, all SVG supporting versions; 9–11):
 
@@ -54,16 +54,16 @@ Usually, with responsive images, we can just set `max-width` in CSS and they wi
 
 We need to explicitly set a `width` on the image. In this case:
 
-````css
+```css
 .media__image {
   width: 20%;
   max-width: 300px;
 }
-````
+```
 
 Or, we could explicitly set a global default and use a `max-width` on a parent element (requiring extra markup):
 
-````css
+```css
 img {
   display: block;
   width: 100%;
@@ -72,9 +72,9 @@ img {
 .media__image {
   max-width: 20%;
 }
-````
+```
 
-````html
+```html
 <article class="media">
   <div class="media__image">
     <img src="smile.svg" alt="Smiley">
@@ -83,18 +83,18 @@ img {
     <p><strong>Media object with SVG image.</strong> … </p>
   </div>
 </article>
-````
+```
 
 The same idea applies when floating an image to allow text to wrap around:
 
 ![IE SVG Float](/images/blog/2015/IE-svg-float.png)
 
-````html
+```html
 <article class="prose">
   <img src="smile.svg" class="prose__image">
   <p><strong>Media object with SVG image.</strong> … </p>
 </article>
-````
+```
 
 Ideally all we need to use is `.prose__image { max-width: 20%; }` and the image will scale to these conditions:
 

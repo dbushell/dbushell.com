@@ -12,9 +12,9 @@ The recent [Clown Car Technique](http://coding.smashingmagazine.com/2013/06/02/
 
 When I build web pages I generally come to the conclusion that using a single image is a sensible bet. Nothing fancy, just a good ol' accessible image element:
 
-````html
+```html
 <img src="handshake.jpg" alt="an ethnically diverse handshake">
-````
+```
 
 Even at the possible expense of wasted bandwidth and low definition — heck, even up-scaling — this introduces less complexity and concern than any "responsive/adaptive image" technique I've seen to-date. They're all hacks. They all break things. Even the web standard proposals can't decide which image would be appropriate to load. Too many edge cases. Are users even going to notice less than perfect image definition? Does a fast connection and high pixel density mean users even want higher quality? Not likely on [mobile data plans](/2012/10/23/the-real-cost-of-retina/).
 

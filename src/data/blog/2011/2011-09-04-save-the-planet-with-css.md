@@ -16,13 +16,13 @@ I do sometimes. Invoices, receipts, tickets etc. But general content pages? It's
 
 Here's my new print.css:
 
-````css
+```css
 @media only print
 {
 	body * { display: none !important; }
 	body:after { content: "Don't waste paper!"; }
 }
-````
+```
 
 I'll be using something similar on my personal projects (where printing makes no sense). It doesn't make my content any less accessible, and it's easy to bypass if you're really, _really_ set on printing.
 

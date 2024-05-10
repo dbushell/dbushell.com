@@ -16,9 +16,9 @@ Getting to the browser sooner — where changes are fast but welcome — makes t
 
 it used to be the only time I'd do a flat build was post-design. I'd use PHP includes because CMS integration was the main task at hand; the end game.
 
-````php
+```php
 <?php include 'header.php'; ?>
-````
+```
 
 I was coding up PSDs. My only concern was when to introduce CMS template constructs. Too soon and HTML becomes messy to refactor. Too late and time is wasted with repetitive placeholders. Design was not suppose to change and I consider that a real pain in the arse when it inevitably did.
 
@@ -52,19 +52,19 @@ I decided to build my own from scratch. I know, I know, I do actually have a cli
 
 It follows Hammer's include syntax:
 
-````html
+```html
 <!-- @include _header.html -->
 <main role="main">
     <p>Hello World!</p>
 </main>
 <!-- @include _footer.html -->
-````
+```
 
 It can perform multiple passes (to find includes within includes). Includes are matched via name first or path second if you specify a directory:
 
-````html
+```html
 <!-- @include blog/_header.html -->
-````
+```
 
 Which is quite cool to allow for namespacing.
 
