@@ -267,3 +267,7 @@ Luckily I had nothing set up so I can start a new site project on 6.5.3. Do I ro
 ~~I'm giving this app one last chance before I bin it for good.~~
 
 **Update 2:** fool me twice, shame on me. It's binned. I'm back to Docker.
+
+### Update for 13th May 2024
+
+I've written a [small follow-up](/2024/05/13/modern-wordpress-an-update/) to discuss feedback and corrections.
