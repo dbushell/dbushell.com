@@ -6,4 +6,4 @@
 
 * * *
 
-Copyright © 2024 [David Bushell](https://dbushell.com)
+[Copyright © 2024](https://dbushell.com/copyright/) [David Bushell](https://dbushell.com)
