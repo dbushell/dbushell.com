@@ -15,7 +15,7 @@ A lot has changed in 20 years.
 
 Artificial intelligence is the new buzzword. Stretching the definition of "intelligence" beyond meaning. Are we on Web 4.0 now? I'm just mad my free GitHub Copilot access came to an end. It was fun burning GPUs trying to close a `<</div><di</div>`.
 
-I've was thinking about whether or not to don the ["not by AI" badge](https://notbyai.fyi). I decided not to because their 90% rule is a cop-out. Also I feel like their pricing tiers undermine the whole thing. I prefer my moral stances don't come with a monthly subscription. (I don't actually know what they're selling.)
+I was thinking about whether or not to don the ["not by AI" badge](https://notbyai.fyi). I decided not to because their 90% rule is a cop-out. Also I feel like their pricing tiers undermine the whole thing. I prefer my moral stances don't come with a monthly subscription. (I don't actually know what they're selling.)
 
 I considered blocking ["dark visitors"](https://github.com/ai-robots-txt/ai.robots.txt) with `robots.txt`. I decided not to because these robots are explicitly designed to violate copyright law. It would be like carrying an *'opt-out of murder'* card and showing it to a would-be hitman. It's all backwards, you know?
 
