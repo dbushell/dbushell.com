@@ -28,8 +28,7 @@
     <Nav current="/contact/" />
     <Heading title={`Contact`} />
     <div class="Prose">
-      <!-- <h3 class="Cursive">I’m here to help</h3> -->
-      <Kofi intro="Help support my blog and open source projects with a tip." />
+      <h3 class="Cursive">Let’s chat!</h3>
       <p class="Large">Need professional help with your website?</p>
       <p class="Large">
         <a href="mailto:hi@dbushell.com"><b>hi@dbushell.com</b></a>

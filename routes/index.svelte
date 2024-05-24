@@ -38,18 +38,15 @@
     <h3 class="Cursive">I make websites</h3>
     <div class="Prose">
       <p class="Large">
-        I design and build websites with a focus on standards, performance, and
-        accessibility. With a decade of professional experience — in-house and
-        remote — I’ve delivered for everyone. Whether it’s
-        <abbr title="Progressive Web Apps">PWAs</abbr>, WordPress, or full-stack
-        frameworks, I have the know-how to help.
+        I design and build websites with a focus on standards, performance, and accessibility. With
+        a decade of professional experience — in-house and remote — I’ve delivered for everyone.
+        Whether it’s
+        <abbr title="Progressive Web Apps">PWAs</abbr>, WordPress, or full-stack frameworks, I have
+        the know-how to help.
       </p>
       <div class="Crane">
         <picture>
-          <source
-            srcset="/assets/images/origami-crane.avif"
-            type="image/avif"
-          />
+          <source srcset="/assets/images/origami-crane.avif" type="image/avif" />
           <img
             alt="Origami Crane - Copyright © David Bushell"
             src="/assets/images/origami-crane.png"
@@ -71,8 +68,8 @@
       <h3 class="Cursive">What my clients say</h3>
       <blockquote>
         <p>
-          Highly skilled, personable, helpful and dedicated: David exceeded my
-          expectations to deliver for us on a key project.
+          Highly skilled, personable, helpful and dedicated: David exceeded my expectations to
+          deliver for us on a key project.
         </p>
         <p><cite>Frank Fenton – Head of Digital – Dinosaur UK Ltd.</cite></p>
       </blockquote>
@@ -80,6 +77,5 @@
       <h3 class="Cursive">Featured article</h3>
     </div>
     <Article {...latest[0]} />
-    <Kofi intro="Help support my blog and open source projects with a tip." />
   </svelte:fragment>
 </App>
