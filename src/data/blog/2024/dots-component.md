@@ -72,7 +72,7 @@ Screen readers can announce the list numbers which sounds redundant and confusin
 
 I pondered if `<button>` was correct or whether I should use `<a href="#item-1">` allowing for more progressive enhancement. Since I'm not building the entire carousel (yet) I can't assume fragment links are implemented correctly.
 
-[Bootstrap's carousel](https://getbootstrap.com/docs/4.0/components/carousel/) forgoes any interactive element and expects the user the click a three pixel tall `<li>` — oh dear. [Glide carousel](https://glidejs.com/docs/) is unlisted with `<button>` elements that have no label. Neither claim to be accessible and Bootstrap even says *"carousels are generally not compliant with accessibility standards"*. At least they're honest.
+[Bootstrap's carousel](https://getbootstrap.com/docs/4.0/components/carousel/) forgoes any interactive element and expects the user to click a three pixel tall `<li>` — oh dear. [Glide carousel](https://glidejs.com/docs/) is unlisted with `<button>` elements that have no label. Neither claim to be accessible and Bootstrap even says *"carousels are generally not compliant with accessibility standards"*. At least they're honest.
 
 For button labels I considered using `aria-label` instead of the hidden `span`. [W3C's example](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/examples/carousel-2-tablist/) takes this approach. However, W3C also say the [first rule of ARIA](https://www.w3.org/TR/aria-in-html/#rule1) is that you ~~do not talk~~, I mean, let's just quote the doc:
 
