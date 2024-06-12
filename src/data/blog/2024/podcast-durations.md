@@ -28,3 +28,7 @@ I have a feeling the durations will suddenly reappear and I'll never know why!
 [Someone tell me](https://fosstodon.org/@dbushell) I'm not going crazy!
 
 I'll update here if the mystery is ever solved.
+
+### Update for 12th June 2024
+
+**Chris Enns**, editor of ShopTalk Show, [replied on Mastodon](https://mastodon.social/@ichris/112598673087160476). Their podcast plugin requires manual duration entry if it's not calculated automatically and it was missed for that episode. That's part of the mystery solved! I haven't heard back from the others. I'm still curious if there is any correlation. 🤔
