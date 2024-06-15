@@ -2,7 +2,7 @@
 date: 2024-06-12 10:00:00+00:00
 slug: docs-custom-element-web-component
 title: '“Dots” Custom Element (aka Web Component)'
-description: 'There one where I jump on a trend'
+description: 'The one where I jump on a trend'
 ---
 
 Please accept my half-hearted apology for the awkward title. *Web Components* are hot right now but the name is [considered harmful](https://www.mayank.co/blog/web-components-considered-harmful/) according to **Mayank**. I think Mayank makes a strong argument, but I also want the brand recognition and "SEO juice", so I'm being apologetically greedy with the title.
