@@ -58,6 +58,7 @@ const voidTags = [
 // Bespoke list of "contentless" elements to remove
 const emptyTags = [
   'audio',
+  'blockquote',
   'canvas',
   'figure',
   'iframe',

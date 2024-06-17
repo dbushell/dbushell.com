@@ -7,6 +7,7 @@
   content-security-policy: %CONTENT_SECURITY_POLICY%
   permissions-policy: browsing-topics=(),interest-cohort=()
   referrer-policy: same-origin
+  x-robots-tag: noai, noimageai
 
 /*.xml
   ! access-control-allow-origin
