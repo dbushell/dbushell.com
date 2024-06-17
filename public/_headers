@@ -9,6 +9,9 @@
   referrer-policy: same-origin
   x-robots-tag: noai, noimageai
 
+/robots.txt
+  ! x-robots-tag
+
 /*.xml
   ! access-control-allow-origin
   access-control-allow-origin: *
