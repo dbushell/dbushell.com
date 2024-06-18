@@ -183,6 +183,6 @@ These should be self explanatory.
 
 Play around with the [CodePen demo](https://codepen.io/dbushell/pen/xxNXqVW). Send me [feedback](https://fosstodon.org/@dbushell) so I can perfect it. I feel it's in a good place despite being completely useless by itself!
 
-As mentioned I plan to build the other piece(s) of a carousel pattern. I've attempted that before with my [Mostly CSS Responsive Carousel](https://codepen.io/dbushell/pen/mdWGWJZ). That version doesn't use custom elements and the "dots" were an afterthought.
+As mentioned I plan to build the other piece(s) of a carousel pattern. I've attempted that before with my [Mostly CSS Responsive Carousel](https://codepen.io/dbushell/full/mdWGWJZ). That version doesn't use custom elements and the "dots" were an afterthought.
 
 By the way, I'm using the name `<dots-component>` for lack of a better idea. Suggestions are welcome. Have a good day!
