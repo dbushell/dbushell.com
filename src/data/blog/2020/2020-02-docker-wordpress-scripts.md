@@ -57,7 +57,7 @@ The scripts are mostly wrappers for the `docker-compose` command. I no longer ne
 
 ### Work in Progress
 
-This is somewhat of a personal project but it solves a fairly common problem so I'm sharing it for anyone to use and adapt. It's lacking in error feedback and I can't provide much support but [@dbushell](https://twitter.com/dbushell) on the chance I have a quick answer.
+This is somewhat of a personal project but it solves a fairly common problem so I'm sharing it for anyone to use and adapt. It's lacking in error feedback and I can't provide much support but [@dbushell](https://dbushell.com/twitter/) on the chance I have a quick answer.
 
 I'll continue to improve DWS as I work with it in the coming months. The underlying interface with `docker-compose` is rather jury-rigged at the moment but it does the job. There are probably existing APIs I can utilised to improve this part immensely.
 

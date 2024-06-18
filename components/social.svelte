@@ -11,13 +11,7 @@
     target="_blank"
   >
     <span class="Hidden">Ko-fi</span>
-    <svg
-      aria-label="Ko-fi"
-      role="img"
-      viewBox="0 0 512 512"
-      width="24"
-      height="24"
-    >
+    <svg aria-label="Ko-fi" role="img" viewBox="0 0 512 512" width="24" height="24">
       <path d="M0 0h512v512H0z" />
       <path
         fill="var(--social-color)"
@@ -28,17 +22,11 @@
   <a
     rel="me noopener noreferrer"
     title="David Bushell on Mastodon"
-    href="https://fosstodon.org/@dbushell"
+    href="https://dbushell.com/mastodon/"
     target="_blank"
   >
     <span class="Hidden">Mastodon</span>
-    <svg
-      aria-label="Mastodon"
-      role="img"
-      viewBox="0 0 512 512"
-      width="24"
-      height="24"
-    >
+    <svg aria-label="Mastodon" role="img" viewBox="0 0 512 512" width="24" height="24">
       <path d="M0 0h512v512H0z" />
       <path
         fill="var(--social-color)"
@@ -51,46 +39,14 @@
   </a>
   <a
     rel="me noopener noreferrer"
-    title="David Bushell on Twitter"
-    href="https://twitter.com/dbushell/"
-    target="_blank"
-  >
-    <span class="Hidden">Twitter</span>
-    <svg
-      aria-label="Twitter"
-      role="img"
-      viewBox="0 0 512 512"
-      width="24"
-      height="24"
-    >
-      <rect width="512" height="512" rx="15%" />
-      <path
-        fill="var(--social-color)"
-        d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"
-      />
-    </svg>
-  </a>
-  <a
-    rel="me noopener noreferrer"
     title="David Bushell on CodePen"
     href="https://codepen.io/dbushell/"
     target="_blank"
   >
     <span class="Hidden">CodePen</span>
-    <svg
-      aria-label="CodePen"
-      role="img"
-      viewBox="0 0 512 512"
-      width="24"
-      height="24"
-    >
+    <svg aria-label="CodePen" role="img" viewBox="0 0 512 512" width="24" height="24">
       <rect width="512" height="512" rx="15%" />
-      <g
-        fill="none"
-        stroke="var(--social-color)"
-        stroke-width="33"
-        stroke-linejoin="round"
-      >
+      <g fill="none" stroke="var(--social-color)" stroke-width="33" stroke-linejoin="round">
         <path d="M81 198v116l175 117 175-117V198L256 81z" />
         <path d="M81 198l175 116 175-116M256 81v117" />
         <path d="M81 314l175-116 175 116M256 431V314" />
@@ -104,13 +60,7 @@
     target="_blank"
   >
     <span class="Hidden">GitHub</span>
-    <svg
-      aria-label="GitHub"
-      role="img"
-      viewBox="0 0 512 512"
-      width="24"
-      height="24"
-    >
+    <svg aria-label="GitHub" role="img" viewBox="0 0 512 512" width="24" height="24">
       <rect width="512" height="512" rx="15%" />
       <path
         fill="var(--social-color)"
@@ -118,19 +68,9 @@
       />
     </svg>
   </a>
-  <a
-    title="dbushell.com RSS Feed"
-    href="https://dbushell.com/rss.xml"
-    target="_blank"
-  >
+  <a title="dbushell.com RSS Feed" href="https://dbushell.com/rss.xml" target="_blank">
     <span class="Hidden">RSS Feed</span>
-    <svg
-      aria-label="RSS Feed"
-      role="img"
-      viewBox="0 0 512 512"
-      width="24"
-      height="24"
-    >
+    <svg aria-label="RSS Feed" role="img" viewBox="0 0 512 512" width="24" height="24">
       <rect width="512" height="512" rx="15%" />
       <circle cx="145" cy="367" r="35" fill="var(--social-color)" />
       <path

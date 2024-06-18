@@ -50,6 +50,6 @@ If you open the dev console and type:
 dbushell.universal();
 ```
 
-Hit return, it'll fetch in Preact and stuff. Now have a click around. There should no longer be a page refresh. This is still in the experimental stage but it looks to be working as intended! [Tweet me opinions @dbushell](https://twitter.com/dbushell).
+Hit return, it'll fetch in Preact and stuff. Now have a click around. There should no longer be a page refresh. This is still in the experimental stage but it looks to be working as intended! [Tweet me opinions @dbushell](https://dbushell.com/twitter/).
 
 Check back soon for more on that.

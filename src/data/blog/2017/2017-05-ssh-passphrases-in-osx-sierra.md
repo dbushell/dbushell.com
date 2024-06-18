@@ -55,4 +55,4 @@ Despite the struggles I do like using Vim. I don't see it replacing
 Sublime Text 3 for long sessions. At least not any time soon. But it is now my
 go-to for quick edits.
 
-If you have any favoured Vim tips, tweet me a link [@dbushell](http://twitter.com/dbushell)!
+If you have any favoured Vim tips, tweet me a link [@dbushell](https://dbushell.com/twitter/)!

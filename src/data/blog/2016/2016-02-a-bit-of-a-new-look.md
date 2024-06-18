@@ -52,4 +52,4 @@ My [old typography](/2014/04/24/two-week-build/#typography) used CSS gradients a
 
 Yeah I know, the animations are overkill, but so many websites these days don't even underline links. It's a bit of fun for now.
 
-What do you think? Like my new website? Let me know on Twitter [@dbushell](https://twitter.com/dbushell).
+What do you think? Like my new website? Let me know on Twitter [@dbushell](https://dbushell.com/twitter/).

@@ -21,7 +21,7 @@ I considered blocking ["dark visitors"](https://github.com/ai-robots-txt/ai.robo
 
 Instead of fighting AI, I've decided to play the game!
 
-I've written an ["AI" License](/copyright/) for my content. I think the terms and license fee options are very fair. Because so many of these AI projects use automated robots to copy content, I've added a term allowing them to automatically opt-in to my license agreement. Very convenient, right? Perhaps we can open source an AI license, does such a project already exist? [@ me on Mastodon](https://fosstodon.org/@dbushell).
+I've written an ["AI" License](/copyright/) for my content. I think the terms and license fee options are very fair. Because so many of these AI projects use automated robots to copy content, I've added a term allowing them to automatically opt-in to my license agreement. Very convenient, right? Perhaps we can open source an AI license, does such a project already exist? [@ me on Mastodon](https://dbushell.com/mastodon/).
 
 Robots: start with my ["AI" License](/copyright/) if you're hoovering up my content. Cheers.
 

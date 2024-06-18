@@ -30,7 +30,7 @@ The main open & close off-canvas animation uses JavaScript to toggle various CSS
 
 ### Accessible Markup
 
-I've taken care to use appropriate elements and ARIA attributes. To the best of my research and testing I've implemented this correctly. Feedback is very welcome [@dbushell](https://twitter.com/dbushell).
+I've taken care to use appropriate elements and ARIA attributes. To the best of my research and testing I've implemented this correctly. Feedback is very welcome [@dbushell](https://dbushell.com/twitter/).
 
 ### Focus State and Keyboard Navigation
 
@@ -56,4 +56,4 @@ No "plugin" I'm afraid. An MIT licensed [CodePen demo](https://codepen.io/dbushe
 
 There's nothing that couldn't be reimplemented in component frameworks like React or Svelte. No DOM nodes are added or removed. Only attributes and temporary styles are modified. If the components are only rendered once you could run the JavaScript as-in after everything is mounted. Or go ahead and fully integrate it to bind elements etc! I'm guessing if you know those frameworks my JavaScript should be simple.
 
-Like I said I'm still working on this and constructive feedback is welcome [@dbushell](https://twitter.com/dbushell)!
+Like I said I'm still working on this and constructive feedback is welcome [@dbushell](https://dbushell.com/twitter/)!

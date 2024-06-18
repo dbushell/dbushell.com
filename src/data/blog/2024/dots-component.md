@@ -28,7 +28,7 @@ See my ["Dots" prototype on **CodePen**](https://codepen.io/dbushell/full/xxNXqV
 
 Obviously a bunch of dots are useless on their own. I plan to pair them with a carousel component I will create next. Isn't this already a solved problem? I've been researching many carousels all of which are implemented differently. My goal is to build a set of composable elements that can make a carousel or be used elsewhere. Where else can "Dots" be used? I don't know, stop asking hard questions.
 
-I'm looking for feedback, especially on accessibility. [Reach me on Mastodon](https://fosstodon.org/@dbushell).
+I'm looking for feedback, especially on accessibility. [Reach me on Mastodon](https://dbushell.com/mastodon/).
 
 ## Stylin'
 
@@ -97,7 +97,7 @@ The final markup looks like this:
 </dots-component>
 ```
 
-The custom element JavaScript adds & updates the attributes as needed (notes on `tabindex` below). What do you think? [I'm looking for feedback](https://fosstodon.org/@dbushell).
+The custom element JavaScript adds & updates the attributes as needed (notes on `tabindex` below). What do you think? [I'm looking for feedback](https://dbushell.com/mastodon/).
 
 ## Interactive API
 
@@ -181,7 +181,7 @@ These should be self explanatory.
 
 ## Next Step
 
-Play around with the [CodePen demo](https://codepen.io/dbushell/pen/xxNXqVW). Send me [feedback](https://fosstodon.org/@dbushell) so I can perfect it. I feel it's in a good place despite being completely useless by itself!
+Play around with the [CodePen demo](https://codepen.io/dbushell/pen/xxNXqVW). Send me [feedback](https://dbushell.com/mastodon/) so I can perfect it. I feel it's in a good place despite being completely useless by itself!
 
 As mentioned I plan to build the other piece(s) of a carousel pattern. I've attempted that before with my [Mostly CSS Responsive Carousel](https://codepen.io/dbushell/full/mdWGWJZ). That version doesn't use custom elements and the "dots" were an afterthought.
 

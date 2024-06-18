@@ -30,4 +30,4 @@ This new collection exists for two reasons:
 
 I encourage all front-end devs to do something similar. We have to feed those insatiable *"how do I..."* Google and StackOverflow searches!
 
-Follow [@dbushell](https://twitter.com/dbushell) for updates.
+Follow [@dbushell](https://dbushell.com/twitter/) for updates.

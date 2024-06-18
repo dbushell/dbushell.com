@@ -22,7 +22,7 @@ const posts = await Astro.glob('/blog/**/*.md');
 <Layout latest={posts.slice(0, 10)}>
 ```
 
-Duplicating the `glob` seems inefficient and is by far the slowest part of the build. In a React or Svelte app I'd just pass the data down from a higher component. In Astro, page routes are the highest level. Unless I misunderstand? Presumably the `glob` is cached? [Please tell me](https://twitter.com/dbushell) if I'm doing it wrong.
+Duplicating the `glob` seems inefficient and is by far the slowest part of the build. In a React or Svelte app I'd just pass the data down from a higher component. In Astro, page routes are the highest level. Unless I misunderstand? Presumably the `glob` is cached? [Please tell me](https://dbushell.com/twitter/) if I'm doing it wrong.
 
 Anyway, my Astro-ified website takes around **50–60 seconds** to build just shy of 400 pages. Painfully slow by impatient standards.
 

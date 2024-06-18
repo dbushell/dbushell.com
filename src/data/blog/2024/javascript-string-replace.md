@@ -76,6 +76,6 @@ This is probably a silly solution but I can't figure out the best way to escape 
 
 
 
-I feel like there should be a simple one-liner to escape the replacement content. My google-fu is failing me. There has to be an easy escape technique? Surely this is a solve problem! Let me know what I'm missing on [Mastodon](https://fosstodon.org/@dbushell) or [Twitter](https://twitter.com/dbushell).
+I feel like there should be a simple one-liner to escape the replacement content. My google-fu is failing me. There has to be an easy escape technique? Surely this is a solve problem! Let me know what I'm missing on [Mastodon](https://dbushell.com/mastodon/).
 
 I'll update here if I discover the answer.

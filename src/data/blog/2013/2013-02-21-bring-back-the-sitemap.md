@@ -26,7 +26,7 @@ Right now this page is only accessible via a tiny link in the footer. The questi
 
 ![Masthead for dbushell.com](/images/blog/2013/dbushell-masthead.png)
 
-And if so, what icon do I use? [Answers in a tweet](http://twitter.com/dbushell) please.
+And if so, what icon do I use? [Answers in a tweet](https://dbushell.com/twitter/) please.
 
 💤 I may bring back comments at some point this year!
 

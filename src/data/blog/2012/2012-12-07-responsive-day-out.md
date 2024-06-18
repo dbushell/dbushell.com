@@ -18,6 +18,6 @@ Ordinarily, I'm not one for speaking gigs but this was an opportunity I couldn't
 
 It'll be a while before I finalise my 20 minutes (haven't started yet), but it's a sure bet I'll be showing off responsive techniques for common/advanced design patterns. I'll demo the principles and keep the code light (you can inspect that online later).
 
-If you're heading to Brighton [give me a shout](http://twitter.com/dbushell). I'll certainly try to accomodate any specific design/build questions.
+If you're heading to Brighton [give me a shout](https://dbushell.com/twitter/). I'll certainly try to accomodate any specific design/build questions.
 
 If you're wondering what my credentials are my focus for the last two years has been [making](/2012/06/17/passenger-focus-responsive-web-design-case-study/), [blogging](/?s=responsive), and selling to clients all things responsive/device-independent.

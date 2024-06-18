@@ -6,7 +6,7 @@ template: single.html
 title: Design Heroes
 ---
 
-My bookmark blog [Design Heroes](http://designheroes.co.uk) has built quite a following over the last few years — who said RSS was dead? — but being more active on Twitter ([@dbushell](http://twitter.com/dbushell)) has made this blog redundant (and a pain to maintain).
+My bookmark blog [Design Heroes](http://designheroes.co.uk) has built quite a following over the last few years — who said RSS was dead? — but being more active on Twitter ([@dbushell](https://dbushell.com/twitter/)) has made this blog redundant (and a pain to maintain).
 
 ![Design Heroes](/images/blog/2012/design-heroes.png)
 

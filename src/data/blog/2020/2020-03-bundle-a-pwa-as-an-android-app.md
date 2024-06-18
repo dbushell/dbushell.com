@@ -139,7 +139,7 @@ Ideally all browsers would work with the WebAPK approach and Google would allow 
 
 For now, this approach only takes an afternoon.
 
-As for **Mute Swan**, I've actually been dogfooding it for a few weeks now and plan to maintain it. It's free to use! Get in touch [@dbushell](https://twitter.com/dbushell) if you care. I plan to release the source code once I clean it up.
+As for **Mute Swan**, I've actually been dogfooding it for a few weeks now and plan to maintain it. It's free to use! Get in touch [@dbushell](https://dbushell.com/twitter/) if you care. I plan to release the source code once I clean it up.
 
 ## React Native?
 

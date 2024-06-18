@@ -40,4 +40,4 @@ As you can see life is much easier with Flexbox!
 
 There are other ways to change presentation order. For a basic two column layout you can simply `float` the first column `right` and the second column `left`. You could also consider `position: absolute` if an element has known dimensions, using padding or margins on siblings or the parent to make space.
 
-Know of any other techniques? [Send me a tweet](http://twitter.com/dbushell).
+Know of any other techniques? [Send me a tweet](https://dbushell.com/twitter/).

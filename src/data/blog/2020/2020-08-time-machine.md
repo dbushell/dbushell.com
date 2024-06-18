@@ -129,4 +129,4 @@ That leads us to the website you're viewing now. Unless you're from the future. 
 
 During the '00s I would have called myself a designer. I was fully invested in an art & design education. We're now in the '20s and it's fair to say the term "developer" is more accurate. That said, there is still a lot of cross-over building stuff for the web. There's no better opportunity to hone those skills by experimenting with my own website.
 
-Which version do you like best? Let me know [@dbushell](https://twitter.com/dbushell)
+Which version do you like best? Let me know [@dbushell](https://dbushell.com/twitter/)

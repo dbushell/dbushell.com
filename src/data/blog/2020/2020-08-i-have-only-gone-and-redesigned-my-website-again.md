@@ -97,6 +97,6 @@ As I alluded to in the opening paragraph I've kept all the old versions of my we
 
 The one area of my site I'm still not happy with is [my portfolio](/showcase/). Most of my client work in recent years can't really be shown off in this format. For now I'll leave it up as-is until I decide what to do. That and more tweaks to the new design are in the pipeline. I'll be blogging in more detail on certain aspects.
 
-To stay up to date [follow me on Twitter](https://twitter.com/dbushell) or [subscribe to my RSS feed](https://dbushell.com/rss.xml) – yep, that still exists!
+To stay up to date [follow me on Twitter](https://dbushell.com/twitter/) or [subscribe to my RSS feed](https://dbushell.com/rss.xml) – yep, that still exists!
 
 Source code is on [GitHub](https://github.com/dbushell/dbushell.com) as always if you're interested in the custom build process.

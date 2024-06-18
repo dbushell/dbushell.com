@@ -244,7 +244,7 @@ My advice would be to once again ignore all this new stuff and write a good old 
 
 ## Baffled
 
-I just find this whole thing perplexing. How did WordPress get to this state? Modern themes are this weird code-within-code unmaintainable inception that looks like AI LLM generate garbage. I honestly question just *who* is developing themes like this? Is *anyone* out there? Seriously, [@ me on Mastodon](https://fosstodon.org/@dbushell) if you know. From what I see everyone is sticking to PHP templates. I cannot imagine a young developer ever wanting to learn this new nonsense.
+I just find this whole thing perplexing. How did WordPress get to this state? Modern themes are this weird code-within-code unmaintainable inception that looks like AI LLM generate garbage. I honestly question just *who* is developing themes like this? Is *anyone* out there? Seriously, [@ me on Mastodon](https://dbushell.com/mastodon/) if you know. From what I see everyone is sticking to PHP templates. I cannot imagine a young developer ever wanting to learn this new nonsense.
 
 Unfortunately for me WordPress development has been my bread and butter. That is changing. I'm doing a lot less of it lately. Frankly, I hope that trend continues!
 

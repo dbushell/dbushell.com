@@ -87,4 +87,4 @@ If you absolutely have to hide elements or need to reveal them later, I would ad
 
 The Web is a design medium. Like any other we cannot be ignorant of its limitations when planning a website's objectives and content. Neither can we be too quick to look for shortcuts. Assuming "mobile" equates to "less" and hiding content based on viewport size is not a solution. Once you stop thinking in absolutes, content becomes a lot more malleable.
 
-[Follow me on Twitter](http://twitter.com/dbushell) for future updates in this series.
+[Follow me on Twitter](https://dbushell.com/twitter/) for future updates in this series.

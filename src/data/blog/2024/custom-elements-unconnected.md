@@ -262,4 +262,4 @@ It actually gets more complicated. [The HTML standard says](https://html.spec.wh
 
 It also says that `connectedCallback` can be called for *"an element that is no longer connected"* — what a headache!
 
-[I'm on Mastodon](https://fosstodon.org/@dbushell) as always if you have comments or corrections!
+[I'm on Mastodon](https://dbushell.com/mastodon/) as always if you have comments or corrections!

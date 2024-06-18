@@ -155,6 +155,6 @@ Often I will use SVG for icons. Either inline of HTML or inline of the CSS depen
 
 And yes that's native [CSS nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/Nesting_selector)! Although I still use post-processing to flatten selectors. [Lightning CSS](https://lightningcss.dev/) is my current tool of choice. I might have [said goodbye](/2023/05/15/css-upgrades-spring-2023-edition/) to CSS processing a little too early.
 
-Have I missed anything important? [Tell me on Mastodon!](https://fosstodon.org/@dbushell)
+Have I missed anything important? [Tell me on Mastodon!](https://dbushell.com/mastodon/)
 
 And someone [buy me a coffee](/tip/) please, I'm parched!

@@ -32,4 +32,4 @@ Finally, don't get caught up in the "mobile-first" hype without thinking. Look a
 
 Understanding what we're actually designing for is the first hurdle. Over the next few weeks I'll be introducing other responsive design mistakes and how to avoid them — and I've made/overcome a few!
 
-[Follow me on Twitter](http://twitter.com/dbushell) for future updates in this series.
+[Follow me on Twitter](https://dbushell.com/twitter/) for future updates in this series.

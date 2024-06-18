@@ -163,7 +163,7 @@ That's all there is too it. A relatively tidy set of styles that can be tweaked 
 
 I've set up a [CodePen demo](https://codepen.io/dbushell/pen/5bb1dddad83514f8a9a8ed8e39f8a8a7) for this code.
 
-Works ok, right? I'd be interested in feedback and other ideas [@dbushell](https://twitter.com/dbushell).
+Works ok, right? I'd be interested in feedback and other ideas [@dbushell](https://dbushell.com/twitter/).
 
 ## Considerations
 

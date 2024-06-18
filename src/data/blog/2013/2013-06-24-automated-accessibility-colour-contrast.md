@@ -34,4 +34,4 @@ In the screenshot above you can see all the text nodes on my home page — easy 
 
 From here I set the text nodes to have zero opacity so they're invisible but maintain layout. The page is re-rendered and I can inspect the pixel data for each area to get the _exact_ background colour (after all layers of CSS and images have been painted).
 
-It takes a few seconds but preliminary testing has been very accurate. To be honest the browser plugins do a good enough job but this was a fun little project to hack together. I'll work on it further to generate complete reports along with other W3C guidelines and then throw the code on Github. Any suggestions [send me a tweet](http://twitter.com/dbushell)!
+It takes a few seconds but preliminary testing has been very accurate. To be honest the browser plugins do a good enough job but this was a fun little project to hack together. I'll work on it further to generate complete reports along with other W3C guidelines and then throw the code on Github. Any suggestions [send me a tweet](https://dbushell.com/twitter/)!

@@ -36,6 +36,6 @@ I found out via Twitter that [The Typeface Film](http://typeface.kartemquin.com)
 
 The St Bride screening is on the 21st January. Check back here for a field report! So exciting.
 
-In the meantime why not [follow me](http://www.twitter.com/dbushell) on Twitter!
+In the meantime why not [follow me](https://dbushell.com/twitter/) on Twitter!
 
 And keep up to date with assorted goodies at [Design Heroes](http://www.designheroes.co.uk).

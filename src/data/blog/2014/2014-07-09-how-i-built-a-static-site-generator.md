@@ -125,4 +125,4 @@ At the end of the day I'm not forcing these dependencies upon my clients. They w
 
 For front-end development I find it rewarding to utilise, develop, and combine small solutions that do just enough and nothing more. As oppose to an all-in-one solution. They often become a brick wall when minor preferences or requirements can't be addressed.
 
-What do you use? [Send me a Tweet!](http://twitter.com/dbushell)
+What do you use? [Send me a Tweet!](https://dbushell.com/twitter/)

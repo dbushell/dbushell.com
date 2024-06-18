@@ -100,7 +100,7 @@ That's a big improvement!
 
 With this change browsers will no longer prompt users to open their RSS app. This is a reasonable trade-off in my opinion. People who know RSS and have reader apps installed can easily copy the feed URL. Those that don't — I suspect the majority — will see a pretty page and not a mess like before. Perhaps I need a message at the top explaining RSS? I've seen a few feeds do that.
 
-It may be controversial that I don't put my entire blog content in the feed. I don't know why to be honest, I made the decision so long ago. What is your opinion? I'm on [Mastodon](https://fosstodon.org/@dbushell) and [Twitter](https://twitter.com/dbushell) (for now) let me know.
+It may be controversial that I don't put my entire blog content in the feed. I don't know why to be honest, I made the decision so long ago. What is your opinion? I'm on [Mastodon](https://dbushell.com/mastodon/), let me know.
 
 ## Edge Cases
 

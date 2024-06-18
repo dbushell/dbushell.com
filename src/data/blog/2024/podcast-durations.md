@@ -25,7 +25,7 @@ I think the Shop Talk issue may be unrelated because the tag does at least exist
 
 I have a feeling the durations will suddenly reappear and I'll never know why!
 
-[Someone tell me](https://fosstodon.org/@dbushell) I'm not going crazy!
+[Someone tell me](https://dbushell.com/mastodon/) I'm not going crazy!
 
 I'll update here if the mystery is ever solved.
 

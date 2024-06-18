@@ -58,7 +58,7 @@ The complete set of build tasks can be quite slow so I need to build individual 
 
 I've been using [Compass](http://compass-style.org/) for a long time to generate CSS. With pre-processors you get a nice command line programme to watch for changes and automatically generate plain CSS output. This alleviates the burden that an extra step adds.
 
-With my new practice of separation between source and build I need a more powerful watcher. [Grunt watch](https://github.com/gruntjs/grunt-contrib-watch) comes to the rescue. For each requirement I instruct it to watch a set of files and then perform a specific task. HTML is edited? Rebuild it. CSS changes? Recompile it. SVGs are modified? Optimise and create raster fallbacks (OK, [I haven't perfected that yet](https://twitter.com/dbushell/status/318733510674350081/)).
+With my new practice of separation between source and build I need a more powerful watcher. [Grunt watch](https://github.com/gruntjs/grunt-contrib-watch) comes to the rescue. For each requirement I instruct it to watch a set of files and then perform a specific task. HTML is edited? Rebuild it. CSS changes? Recompile it. SVGs are modified? Optimise and create raster fallbacks (OK, I haven't perfected that yet).
 
 Whenever I'm working on a project I just run `grunt watch` and let it go.
 

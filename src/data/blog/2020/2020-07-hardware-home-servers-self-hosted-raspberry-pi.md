@@ -80,4 +80,4 @@ A couple of podcasts have really inspired these projects:
 * [Linux Unplugged](https://linuxunplugged.com/)
 * [Self-Hosted](https://selfhosted.show/)
 
-Well worth a listen. Incredibly, I've still got idle CPU and memory on my RPi 4 for more self-hosted projects. [@ me ideas!](https://twitter.com/dbushell)
+Well worth a listen. Incredibly, I've still got idle CPU and memory on my RPi 4 for more self-hosted projects. [@ me ideas!](https://dbushell.com/twitter/)

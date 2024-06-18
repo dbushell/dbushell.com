@@ -30,4 +30,4 @@ For the most part a professional designer balances somewhere in-between. Conten
 
 * * *
 
-_**If you're a professional designer and blogger** (in any discipline) and would like to contribute, leave a comment below (or [tweet me](http://twitter.com/dbushell)) and I'll get in touch with more details. I'll be contacting a few people directly over the next few weeks._
+_**If you're a professional designer and blogger** (in any discipline) and would like to contribute, leave a comment below (or [tweet me](https://dbushell.com/twitter/)) and I'll get in touch with more details. I'll be contacting a few people directly over the next few weeks._

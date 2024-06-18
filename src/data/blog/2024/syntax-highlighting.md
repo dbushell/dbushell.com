@@ -131,4 +131,4 @@ const code = await shiki.codeToHtml(token.text, {
 });
 ```
 
-What do you think? [Direct opinions to Mastodon!](https://fosstodon.org/@dbushell)
+What do you think? [Direct opinions to Mastodon!](https://dbushell.com/mastodon/)

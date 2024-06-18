@@ -73,4 +73,4 @@ So I remain unsure. I think we need:
 * Improved browser support
 * More consideration in brand design
 
-What do you think? [@dbushell](https://twitter.com/dbushell). I'm leaning towards fully enabling my dark mode. Most visitors are here to read a blog article and it really benefits reading.
+What do you think? [@dbushell](https://dbushell.com/twitter/). I'm leaning towards fully enabling my dark mode. Most visitors are here to read a blog article and it really benefits reading.

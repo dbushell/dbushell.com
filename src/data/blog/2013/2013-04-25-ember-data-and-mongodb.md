@@ -187,4 +187,4 @@ When I send a new task to the server — including `list_ids` — I can then u
 
 I'm not entirely convinced this technique is the best way to maintain many-to-many relationships. I haven't tested the `{ embedded: 'always' }` technique so I can't confirm Ember Data actually handles this correctly. Either way it feels overkill.
 
-Am I doing something wrong, or do you know a better way? [Give me a shout on Twitter](https://twitter.com/dbushell) or comment on [Hacker News](https://news.ycombinator.com/item?id=5608851).
+Am I doing something wrong, or do you know a better way? [Give me a shout on Twitter](https://dbushell.com/twitter/) or comment on [Hacker News](https://news.ycombinator.com/item?id=5608851).

@@ -28,10 +28,10 @@ Social widgets are a stopgap solution; use with care. I suspect **[Web Intents]
 
 **Update** some great responses on Twitter:
 
-> @[dbushell](https://twitter.com/dbushell) Making sharing harder can be a good thing; without buttons we might see more considered comments alongside the links people share.
+> @[dbushell](https://dbushell.com/twitter/) Making sharing harder can be a good thing; without buttons we might see more considered comments alongside the links people share.
 >
 > — Paul Lloyd (@paulrobertlloyd) [July 20, 2012](https://twitter.com/paulrobertlloyd/status/226316299146493953)
 
-> @[dbushell](https://twitter.com/dbushell) As for testing: It is incredibly hard. You simply can't A/B test one and the same article on Social Media Buttons or not.
+> @[dbushell](https://dbushell.com/twitter/) As for testing: It is incredibly hard. You simply can't A/B test one and the same article on Social Media Buttons or not.
 >
 > — Oliver Reichenstein (@iA) [July 20, 2012](https://twitter.com/iA/status/226313980795297795)

@@ -33,4 +33,4 @@ Keep your legacy contracts pain-free. Old desktop browsers need not be fully res
 
 **Update:** [@justmarkup](https://twitter.com/justmarkup/status/286441851190398976) points me to [Jake Archibald's Sass technique](http://jakearchibald.github.com/sass-ie/) which is excellent.
 
-Found that useful? [Follow me on Twitter](http://twitter.com/dbushell) for regular responsive discussion.
+Found that useful? [Follow me on Twitter](https://dbushell.com/twitter/) for regular responsive discussion.

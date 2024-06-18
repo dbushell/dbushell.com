@@ -36,4 +36,4 @@ So in an effort to balance the love I present a run down of all the brilliant cr
 
 This summer has also been a wonderful few months for my personal website (dbushell.com). I've been featured on many websites including [The CSS Awards](http://thecssawards.com/), [Web Creme](http://webcreme.com/), [The Design Inspiration](http://thedesigninspiration.com/) and [Design Shack](http://www.designshack.co.uk) to name drop a few!
 
-You can follow my daily design blogging at [DesignHeroes.co.uk](http://designheroes.co.uk) (and [@dbushell](http://twitter.com/dbushell)).
+You can follow my daily design blogging at [DesignHeroes.co.uk](http://designheroes.co.uk) (and [@dbushell](https://dbushell.com/twitter/)).

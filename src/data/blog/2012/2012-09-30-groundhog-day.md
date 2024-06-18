@@ -8,7 +8,7 @@ title: Groundhog Day
 
 "ahhhhhh!"
 
-— is what I [tweeted](http://twitter.com/dbushell/status/252499830750982144) on this fine Sunday evening. (And some people choose not to follow me?) What provoked this dramatic outburst was every designers' worst nightmare; a sudden urge to "redesign" their website.
+— is what I tweeted on this fine Sunday evening. (And some people choose not to follow me?) What provoked this dramatic outburst was every designers' worst nightmare; a sudden urge to "redesign" their website.
 
 [June 2009](/2009/06/06/website-update/), [August 2009](/2009/08/26/redesign-or-realign/), [June 2010](/2010/06/26/dbushell-v4/), [May 2011](/2011/05/25/designing-a-new-me/), [February 2012](/2012/02/27/spring-cleaning-redesigning-dbushell-com/). At this point the cycle is hardly a surprise and I guess I should embrace the prospect rather than tweet about it. Last time I said:
 

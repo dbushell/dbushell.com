@@ -150,4 +150,4 @@ Today's lesson is do one of the following:
 * `await` promises in a `try`/`catch` block
 * chain `.catch()` immediately
 
-Otherwise you cannot guarantee to catch an error. How and where is a combination of preferred coding style and execution order. There are nuances if you want to add `finally` into the mix. If you know why WebKit doesn't exit after the error please let me know [@dbushell](https://twitter.com/dbushell) I have no idea!
+Otherwise you cannot guarantee to catch an error. How and where is a combination of preferred coding style and execution order. There are nuances if you want to add `finally` into the mix. If you know why WebKit doesn't exit after the error please let me know [@dbushell](https://dbushell.com/twitter/) I have no idea!

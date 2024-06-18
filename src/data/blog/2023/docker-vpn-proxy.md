@@ -128,5 +128,5 @@ Bear in mind that DNS queries may not be proxied using this set up. I have a sep
 
 * * *
 
-Have suggestions to improve this set up? [@dbushell](https://twitter.com/dbushell)!
+Have suggestions to improve this set up? [@dbushell](https://dbushell.com/twitter/)!
 

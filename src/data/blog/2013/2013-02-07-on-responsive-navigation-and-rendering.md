@@ -16,7 +16,7 @@ Not any more! I've added an intermediate state:
 
 ## The "app screen"
 
-I'm experimenting with an intermediate state that essentially mimics the app screen we know and love. It utilises the available space for big touch-friendly buttons. This breakpoint sits between 40–60em. I quite like this design. It does feels a bit unusual initally, but then I guess it is — what do you think? [Give me a tweet](http://twitter.com/dbushell).
+I'm experimenting with an intermediate state that essentially mimics the app screen we know and love. It utilises the available space for big touch-friendly buttons. This breakpoint sits between 40–60em. I quite like this design. It does feels a bit unusual initally, but then I guess it is — what do you think? [Give me a tweet](https://dbushell.com/twitter/).
 
 ## A note about CSS transforms
 

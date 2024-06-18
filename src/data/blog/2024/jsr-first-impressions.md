@@ -136,7 +136,7 @@ In the screenshot above the first import is my NPM package which I added  manual
 
 But unless I'm doing it wrong (possible), Bun is left in the cold.
 
-Is this something I can solve, or JSR can solve? Or does Bun need to implement additional support for JSR? It's getting late on a Friday so I'll leave those questions open! I'm on [Mastodon](https://fosstodon.org/@dbushell) and [Twitter](https://twitter.com/dbushell) (for now) if you can enlighten me!
+Is this something I can solve, or JSR can solve? Or does Bun need to implement additional support for JSR? It's getting late on a Friday so I'll leave those questions open! I'm on [Mastodon](https://dbushell.com/mastodon/) if you can enlighten me!
 
 I would like to see Bun added to the **"Works with"** compatibility label at least.
 

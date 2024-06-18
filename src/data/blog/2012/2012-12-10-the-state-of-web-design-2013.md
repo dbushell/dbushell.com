@@ -10,7 +10,7 @@ To wrap up 2011 [I wrote a few thoughts](/2011/12/15/web-design-2012-and-beyond/
 
 **I encourage you to do the same!**
 
-This all stemmed from a [tweet](http://twitter.com/dbushell/status/258633483579162624) back in October. It's fine to observe and copy trends, but it's also important to reflect upon your own work and instigate new ideas. They don't need to be revolutionary, but if you don't share your thoughts the evolution of web design becomes mighty slow. So with that, you know what I ask of you!
+This all stemmed from a tweet back in October. It's fine to observe and copy trends, but it's also important to reflect upon your own work and instigate new ideas. They don't need to be revolutionary, but if you don't share your thoughts the evolution of web design becomes mighty slow. So with that, you know what I ask of you!
 
 This is my personal take:
 

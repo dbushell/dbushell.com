@@ -58,7 +58,7 @@ const {start = 1} = props;
 
 Side note: I really hate `defaultProps` and `propTypes` — especially since React moved away from class-based components.
 
-Side side note: I wonder how **TypeScript** works with Svelte? Something to investigate. In theory I like its use with React props — I've just never gotten past compiler errors. Serious, [can anyone help me](https://twitter.com/dbushell) with a no-nonsense TypeScript & React setup?
+Side side note: I wonder how **TypeScript** works with Svelte? Something to investigate. In theory I like its use with React props — I've just never gotten past compiler errors. Serious, [can anyone help me](https://dbushell.com/twitter/) with a no-nonsense TypeScript & React setup?
 
 In Svelte I understand it's possible to do `$$props.start` or possibly `export let props;` as a single object. I suspect both are bad ideas. Perhaps for an end-of-the-line component such a shortcut wouldn't matter. Then again, it's best to practice best practices everywhere.
 
@@ -288,6 +288,6 @@ I really like Svelte. I like React just fine too, but I'm finding Svelte to have
 
 Svelte is now my go-to UI framework. I'll still be writing a lot of [React for WordPress Gutenberg](/2020/05/08/wordpress-gutenberg-react-acf-example-blocks/). And as mentioned, I'll give Vue 3 another chance.
 
-Which JavaScript framework do you prefer? [Tweet me @dbushell!](https://twitter.com/dbushell)
+Which JavaScript framework do you prefer? [Tweet me @dbushell!](https://dbushell.com/twitter/)
 
 Bonus points if you reply "none".

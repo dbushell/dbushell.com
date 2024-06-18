@@ -13,7 +13,7 @@ It's not easy to showcase my work in a neat package as it's spread out across th
 * [See my projects](/now/) — Side projects I'm working on now
 * [Follow my GitHub](https://github.com/dbushell/) — I share open source code
 
-Contact me if you have a project in mind and I can demonstrate related work. I also have profiles on [Mastodon](https://fosstodon.org/@dbushell), [Twitter](https://twitter.com/dbushell/), and [CodePen](https://codepen.io/dbushell/).
+Contact me if you have a project in mind and I can demonstrate related work. I also have profiles on [Mastodon](https://dbushell.com/mastodon/) and [CodePen](https://codepen.io/dbushell/).
 
 <a href="/contact/" class="Button">Get in Touch</a>
 

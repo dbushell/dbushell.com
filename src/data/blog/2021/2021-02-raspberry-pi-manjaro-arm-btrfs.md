@@ -133,4 +133,4 @@ Finally edit the second SD card to update the fstab and boot config as described
 
 I've set up a few Docker services as an experiment. I'm running Snapper to take hourly, weekly, and monthly snapshots of the root partition. I will leave the Pi running for a few weeks to see what happens.
 
-Tweet [@dbushell](https://twitter.com/dbushell) if you've done something similar I'm keen to learn more.
+Tweet [@dbushell](https://dbushell.com/twitter/) if you've done something similar I'm keen to learn more.

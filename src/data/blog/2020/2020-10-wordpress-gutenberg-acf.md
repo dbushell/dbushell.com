@@ -142,4 +142,4 @@ Related posts from my blog:
 * [WordPress Gutenberg: React & Advanced Custom Fields (ACF)](/2020/04/24/wordpress-gutenberg-react-and-advanced-custom-fields/)
 * [Docker, WordPress, and Portless Localhost Domains](/2020/02/07/docker-wordpress-portless-localhost-domains/)
 
-Send me a tweet [@dbushell](https://twitter.com/dbushell) if you have similar tips.
+Send me a tweet [@dbushell](https://dbushell.com/twitter/) if you have similar tips.

@@ -32,4 +32,4 @@ One of the exciting projects we're working on at [Base Creative](http://www.base
 
 Thinking about it, there's too many bookmarks to blog about here,
 
-follow me [@dbushell](http://www.twitter.com/dbushell) on Twitter!
+follow me [@dbushell](https://dbushell.com/twitter/) on Twitter!

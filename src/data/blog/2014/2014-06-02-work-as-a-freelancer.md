@@ -22,7 +22,7 @@ The problem is I haven't attended a conference since Brighton — only a handf
 
 I am hugely appreciative of the opportunities I've had to talk on stage, I'm just not sure it's for me… but maybe I can / should be persuaded more often? Regardless, I need to value opportunities to "network" more. To get to know fellow freelancers and agencies. It's hard to quantify the value of networking but I'm sure I'm missing out on something. If I'm not getting out there how will I ever know?
 
-Earlier today [I tweeted](https://twitter.com/dbushell/status/473412541562228737):
+Earlier today I tweeted:
 
 > freelancers — any tips / resources on proactively acquiring work? (as opposed to waiting for enquires)
 

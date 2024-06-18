@@ -6,7 +6,7 @@ template: single.html
 title: It’s a UI thing
 ---
 
-If you were to stakeout my desk you will hear me shout out expletives 4 or 5 times a day. And if something has really thrown me, I'll [tweet](http://twitter.com/dbushell) about it.
+If you were to stakeout my desk you will hear me shout out expletives 4 or 5 times a day. And if something has really thrown me, I'll [tweet](https://dbushell.com/twitter/) about it.
 
 I am (of course) refering to bad user interface design.
 

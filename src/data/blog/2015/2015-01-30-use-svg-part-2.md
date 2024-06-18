@@ -126,4 +126,4 @@ but alas, no luck! SVG data URIs work fine, just not xlink references.
 
 The experiments will continue to find the most browser and developer friendly technique. You can [visit my test page](/demos/svg/2015-01-29/svg-sprite.html) to see all the examples above.
 
-Know of anything cool SVG tricks I've missed? [Send me a tweet](http://twitter.com/dbushell).
+Know of anything cool SVG tricks I've missed? [Send me a tweet](https://dbushell.com/twitter/).

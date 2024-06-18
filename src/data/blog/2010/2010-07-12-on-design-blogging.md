@@ -14,7 +14,7 @@ I guess what I value most is first hand opinion. The way I've learnt to connect 
 
 ### Why I blog
 
-For those reasons I blog about design myself. I write my personal ideas here at [dbushell.com](https://dbushell.com) and [@dbushell](http://twitter.com/dbushell), and I write about other peoples ideas at [Design Heroes](http://designheroes.co.uk). All of these websites have transformed over the last year in the way I use them but the aim remains the same – to share, discuss, inform (hopefully) and promote.
+For those reasons I blog about design myself. I write my personal ideas here at [dbushell.com](https://dbushell.com) and [@dbushell](https://dbushell.com/twitter/), and I write about other peoples ideas at [Design Heroes](http://designheroes.co.uk). All of these websites have transformed over the last year in the way I use them but the aim remains the same – to share, discuss, inform (hopefully) and promote.
 
 Ego trip aside writing a design blog is a powerful tool in self-education. It engages your brain into thinking about design and encourages research. Writing about design you like forces you to open your eyes further than normal. Simply _browsing_ showcases and portfolios isn't enough. When you write about design you are forced to think about what makes it so special instead of just thinking _"that's pretty"_.
 

@@ -26,4 +26,4 @@ I’ve found that such tasks were overcomplicating the matter. This is especiall
 
 Finally, I’ve really cut back on the “opinionated CSS”. There’s almost no design, just pure CSS patterns. Well there is a little design, but it follows my personal conventions and patterns I find common enough to warrant inclusion.
 
-[Origin is on GitHub](https://github.com/dbushell/dbushell-Origin). It’s really just for me but you may discover ideas to improve your own workflow. [Tweet me](https://twitter.com/dbushell) if you do!
+[Origin is on GitHub](https://github.com/dbushell/dbushell-Origin). It’s really just for me but you may discover ideas to improve your own workflow. [Tweet me](https://dbushell.com/twitter/) if you do!

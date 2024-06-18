@@ -29,6 +29,6 @@ I've also found `::backdrop` transitions to behave strangely for some CSS proper
 
 Short answer: I don't know, so I wouldn't recommend it. While browser support is strong it's all very recent. I'd appreciate any accessibility related feedback on this implementation.
 
-Find me at [@dbushell](https://twitter.com/dbushell) and [@dbushell@fosstodon.org](https://fosstodon.org/@dbushell) or [email me](/contact/).
+Find me at [@dbushell@fosstodon.org](https://dbushell.com/mastodon/) or [email me](/contact/).
 
 A closing thought: do you really want your entire navigation dumped into an off-canvas `<dialog>` modal?

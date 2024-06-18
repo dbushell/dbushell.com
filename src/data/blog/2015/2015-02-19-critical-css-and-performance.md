@@ -48,4 +48,4 @@ I'm rather happy with that!
 
 There's still work to do though. I get the sense that some of the later assets are tripping over themselves. I want to ensure that non-critical, asynchronous CSS is still prioritised before other resources.
 
-Have some thoughts? Let me know [@dbushell](http://twitter.com/dbushell).
+Have some thoughts? Let me know [@dbushell](https://dbushell.com/twitter/).

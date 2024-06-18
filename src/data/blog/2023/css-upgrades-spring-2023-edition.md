@@ -206,4 +206,4 @@ I'm not sure I agree with that rationale. Specificity is the source of all CSS w
 
 With these updates I no longer need the [Sass preprocessor](https://sass-lang.com/). A little sad to let such a useful tool go. I've been using Sass for longer than I can remember. Possibly even prior to even using a Node build process. Or maybe that was an earlier preprocessor, I forget. Anyway, it has been an invaluable tool, and its legacy lives on in new CSS specs. With [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc), [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties), and now [CSS nesting](https://developer.chrome.com/articles/css-nesting/), my need for Sass is all but gone.
 
-I'd normally plug [my Twitter](https://twitter.com/dbushell) but I've now set up Mastodon so [@dbushell@fosstodon.org](https://fosstodon.org/@dbushell) and let me know any mistakes I've made!
+I'd normally plug [my Twitter](https://dbushell.com/twitter/) but I've now set up Mastodon so [@dbushell@fosstodon.org](https://dbushell.com/mastodon/) and let me know any mistakes I've made!

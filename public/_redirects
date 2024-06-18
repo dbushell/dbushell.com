@@ -4,3 +4,7 @@
 /rss/ /rss.xml 307
 /tip /tip/ 308
 /tip/ https://ko-fi.com/dbushell 307
+/twitter /twitter/ 308
+/twitter/ /mastodon/ 307
+/mastodon /mastodon/ 308
+/mastodon/ https://fosstodon.org/@dbushell 307

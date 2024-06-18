@@ -26,9 +26,7 @@ export const syntaxCSS = async () => {
   let css = [...cssMap.entries()].map(([k, v]) => `.${v}{${k};}`).join('');
   css = `@layer syntax{${css}}`;
   const hash = encodeBase64(
-    new Uint8Array(
-      await crypto.subtle.digest('sha-256', new TextEncoder().encode(css))
-    )
+    new Uint8Array(await crypto.subtle.digest('sha-256', new TextEncoder().encode(css)))
   );
   return {css, hash};
 };
@@ -84,7 +82,7 @@ marked.use({
 });
 
 const renderer = {
-   html(html: string, block: boolean | undefined) {
+  html(html: string, block: boolean | undefined) {
     if (!block) return html;
     const img = /(<img[^>]+?src=")([^"]+?)("[^>]*?>)/gs.exec(html);
     if (img) {
@@ -111,9 +109,7 @@ const renderer = {
     text = typeof text === 'string' ? text : 'no description';
     let url: URL;
     try {
-      url = /^[\/|#]/.test(href)
-        ? new URL(href, 'https://dbushell.com')
-        : new URL(href);
+      url = /^[\/|#]/.test(href) ? new URL(href, 'https://dbushell.com') : new URL(href);
     } catch (err) {
       console.warn(`⚠️ Invalid URL: ${href}`);
       throw err;
@@ -124,15 +120,15 @@ const renderer = {
   link(href: string, title: string | null | undefined, text: string) {
     let url: URL;
     try {
-      url = /^[\/|#]/.test(href)
-        ? new URL(href, 'https://dbushell.com')
-        : new URL(href);
+      url = /^[\/|#]/.test(href) ? new URL(href, 'https://dbushell.com') : new URL(href);
     } catch (err) {
       console.warn(`⚠️ Invalid URL: ${href}`);
       throw err;
     }
+    // Paths to open in new window
+    const excludePaths = ['/tip/', '/twitter/', '/mastodon/'];
     let out = '<a';
-    if (url.hostname === 'dbushell.com') {
+    if (url.hostname === 'dbushell.com' && !excludePaths.includes(url.pathname)) {
       out += ` href="${url.href}"`;
     } else {
       out += ` href="${url.href}" rel="noopener noreferrer" target="_blank"`;

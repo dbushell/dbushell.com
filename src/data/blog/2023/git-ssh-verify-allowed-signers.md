@@ -49,4 +49,4 @@ Seems sensible to include my old public key as a signer and keep it on my GitHub
 
 If a private key ever gets stolen then the only choice is to disassociate with both keys.
 
-Am I doing something wrong? [@dbushell](https://twitter.com/dbushell/) or [@dbushell@fosstodon.org](https://fosstodon.org/@dbushell).
+Am I doing something wrong? [@dbushell@fosstodon.org](https://dbushell.com/mastodon/).
