@@ -186,3 +186,7 @@ Play around with the [CodePen demo](https://codepen.io/dbushell/pen/xxNXqVW). Se
 As mentioned I plan to build the other piece(s) of a carousel pattern. I've attempted that before with my [Mostly CSS Responsive Carousel](https://codepen.io/dbushell/full/mdWGWJZ). That version doesn't use custom elements and the "dots" were an afterthought.
 
 By the way, I'm using the name `<dots-component>` for lack of a better idea. Suggestions are welcome. Have a good day!
+
+## Update for 18th June 2024
+
+I've built and blogged about a [carousel web component](/2024/06/18/carousel-web-component/) using the dots custom element.
