@@ -10,7 +10,7 @@ It's Friday 13th. It's been a long and productive week, I'll try to keep this li
 
 I'm going to use this post to combine two rants. One on the use of the word "Retina", another on [live conference tweeting](http://jasonlefkowitz.net/2012/06/against-live-tweeting/). I saw this retweeted the other day:
 
-> "I think CSS is our best vector-based drawing tool in the browser today." @[lukew](https://twitter.com/lukew) [#AEA](https://twitter.com/search/%2523AEA)— Thomas Q. Brady (@thomasqbrady) [July 11, 2012](https://twitter.com/thomasqbrady/status/223121090698940419)
+> "I think CSS is our best vector-based drawing tool in the browser today." @lukew #AEA — Thomas Q. Brady (@thomasqbrady) July 11, 2012
 
 A classic conference soundbite with zero context. On face value it's ridiculous:
 

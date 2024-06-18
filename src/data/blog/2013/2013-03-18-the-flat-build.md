@@ -80,6 +80,6 @@ You might decide to use an app or a task automator like me. I'd been very intrig
 
 ## Updates
 
-[Middleman](http://middlemanapp.com/) and [Yeoman](http://yeoman.io/) have been mentioned (thanks [@mattberridge](http://twitter.com/mattberridge) and [@patrickhamann](http://twitter.com/patrickhamann)). And of course full-on static site generators like [Jekyll](https://github.com/mojombo/jekyllJekyll) may serve both development and deployment purposes.
+[Middleman](http://middlemanapp.com/) and [Yeoman](http://yeoman.io/) have been mentioned (thanks @mattberridge and @patrickhamann on Twitter). And of course full-on static site generators like [Jekyll](https://github.com/mojombo/jekyllJekyll) may serve both development and deployment purposes.
 
 [Read: The Flat Build (2)](/2013/04/05/the-flat-build-2/)

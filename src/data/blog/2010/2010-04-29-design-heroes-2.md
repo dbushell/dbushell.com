@@ -16,6 +16,4 @@ The new site retains the idea of "tag filtering" but is initially presented in a
 
 Another cool feature I added is navigation by arrow keys (up/down). The final big change is the ability to post a comment on each bookmark. Hopefully this will make the site a lot more engaging.
 
-And finally, [Design Heroes is on twitter!](http://twitter.com/dsgnheroes) So go follow.
-
 [http://designheroes.co.uk](http://designheroes.co.uk)

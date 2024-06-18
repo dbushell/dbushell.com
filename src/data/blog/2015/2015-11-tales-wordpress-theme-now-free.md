@@ -14,7 +14,7 @@ For the few months that I sold Tales it provided a small but welcome side income
 
 ## Why free, why now?
 
-I sold Tales until October 2014 when the [#VATMOSS](https://twitter.com/search?q=%23vatmoss) EU tax changes threatened to kill small business selling digital goods. Or at least, that seemed to be the sentiment and it certainly looked painful for me. Rather than dealing with it I simply stopped selling Tales.
+I sold Tales until October 2014 when the #VATMOSS EU tax changes threatened to kill small business selling digital goods. Or at least, that seemed to be the sentiment and it certainly looked painful for me. Rather than dealing with it I simply stopped selling Tales.
 
 I haven't been keeping up to date with the whole EU VAT thing but I did notice one of my selling platforms — [Gumroad](http://blog.gumroad.com/post/110080508463/vat) — now takes the burden. So I could start flogging again, but a year on, I feel it's now appropriate to give away the theme for free without offending the handful of lovely buyers who supported my project.
 

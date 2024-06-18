@@ -24,10 +24,10 @@ The fact is we simply cannot understand the user's context based on their device
 
 We need to avoid the categorisation of "mobile" and not use it as an excuse to escape difficult design problems. There are hundreds of web-enabled devices. They come in all shapes an sizes with a vast array of possible abilities and speeds — both in hardware and network connectivity. Use feature detection, not guess work.
 
-In respect to designing websites for multi screen sizes, it's really bloody difficult! Unless you start with an incredibly solid content strategy and hierarchy coupled with a thorough investigation into your users' desired experience it's almost impossible to avoid hiding content on small screens. The problem is not device limitations, it cannot be explained away with the mobile fallacy, the problem is a [1mb png of someone smiling at a salad](https://twitter.com/#!/wilto/statuses/63284673723375616).
+In respect to designing websites for multi screen sizes, it's really bloody difficult! Unless you start with an incredibly solid content strategy and hierarchy coupled with a thorough investigation into your users' desired experience it's almost impossible to avoid hiding content on small screens. The problem is not device limitations, it cannot be explained away with the mobile fallacy, the problem is a 1mb png of someone smiling at a salad.
 
 * * *
 
-**Update:** I should mention this post was not directly inspired by Martin's article. [Thankfully](https://twitter.com/#!/currybet/status/183163262324572161) he wasn't offended by me calling him out! There are far, far worse offenders out there!
+**Update:** I should mention this post was not directly inspired by Martin's article. Thankfully he wasn't offended by me calling him out! There are far, far worse offenders out there!
 
 It does make me think though, do we simply incorporate a need for brevity into our strategy, or do we actually look for ways to understand the users context more? Right now there doesn't seem to be much we can do, but simply saying "don't assume the user's context" and pleading ignorance will never lead to further insight.

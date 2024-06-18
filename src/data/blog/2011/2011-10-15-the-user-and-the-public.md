@@ -8,7 +8,7 @@ title: The User / The Public
 
 I'll start by recommending the book that has influenced this article:
 
-**[Public Parts](http://www.amazon.co.uk/Public-Parts-Sharing-Digital-Improves/dp/1451636008/): How Sharing in the Digital Age Improves the Way We Work and Live**. Author [Jeff Jarvis](http://twitter.com/jeffjarvis) is an interesting guy. He's an old school journalist who is well versed in the web and what is has to offer the future. If you want to understand "privacy" and communication in our age of Facebook and Twitter then read this book. It will also give you historic insight into print, the press, and the public sphere.
+**[Public Parts](http://www.amazon.co.uk/Public-Parts-Sharing-Digital-Improves/dp/1451636008/): How Sharing in the Digital Age Improves the Way We Work and Live**. Author Jeff Jarvis is an interesting guy. He's an old school journalist who is well versed in the web and what is has to offer the future. If you want to understand "privacy" and communication in our age of Facebook and Twitter then read this book. It will also give you historic insight into print, the press, and the public sphere.
 
 While Jarvis expertly dissects the nature of privacy online, he also explains the role of **the public** and how society has changed over the centuries in regards to "publicness" and authoritative roles — particularly that of which **the press** has played in recent times.
 

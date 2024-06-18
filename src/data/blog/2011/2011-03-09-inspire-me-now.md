@@ -14,4 +14,4 @@ Nevertheless, whether I choose to store quotes in my brain or a database, there'
 
 ![Time You Enjoy Wasting Is Not Wasted Time](/images/blog/2011/auohv.jpg)
 
-Thanks to [Ross Moody](http://www.55his.com/time-you-enjoy) ([@55his](http://twitter.com/55his)) for his poster **Time You Enjoy Wasting**.
+Thanks to [Ross Moody](http://www.55his.com/time-you-enjoy) for his poster **Time You Enjoy Wasting**.

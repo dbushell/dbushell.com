@@ -16,7 +16,7 @@ Two common arguments against them are:
 
 ## They don't work
 
-It's often suggested that if people want to share, they'll share regardless of being presented or prompted with functionality to do so. **I cannot disagree with this notion more.** Simplicity and ease-of-use makes a huge different. As designers — insert "UX" if it tickles your fancy — we should know this. Just think of Amazon's patented 1-click payment. Users can be influenced and even manipulated by design. Subtlety is key, overt and obnoxious implementations will fail. But if we're going to make such an argument either way we need objective reasoning. _Statistics_ and _testing_; I've not seen a shred of either in this debate (**edit:** [now I have](http://informationarchitects.net/blog/sweep-the-sleaze-reactions/), thanks [@IA](http://twitter.com/IA)!) Even if we had that, results are almost certainly going to be website and audience specific.
+It's often suggested that if people want to share, they'll share regardless of being presented or prompted with functionality to do so. **I cannot disagree with this notion more.** Simplicity and ease-of-use makes a huge different. As designers — insert "UX" if it tickles your fancy — we should know this. Just think of Amazon's patented 1-click payment. Users can be influenced and even manipulated by design. Subtlety is key, overt and obnoxious implementations will fail. But if we're going to make such an argument either way we need objective reasoning. _Statistics_ and _testing_; I've not seen a shred of either in this debate (**edit:** [now I have](http://informationarchitects.net/blog/sweep-the-sleaze-reactions/), thanks @IA on Twitter. Even if we had that, results are almost certainly going to be website and audience specific.
 
 ## Better thinking
 
@@ -28,10 +28,10 @@ Social widgets are a stopgap solution; use with care. I suspect **[Web Intents]
 
 **Update** some great responses on Twitter:
 
-> @[dbushell](https://dbushell.com/twitter/) Making sharing harder can be a good thing; without buttons we might see more considered comments alongside the links people share.
+> @dbushell Making sharing harder can be a good thing; without buttons we might see more considered comments alongside the links people share.
 >
-> — Paul Lloyd (@paulrobertlloyd) [July 20, 2012](https://twitter.com/paulrobertlloyd/status/226316299146493953)
+> — Paul Lloyd (@paulrobertlloyd) July 20, 2012
 
-> @[dbushell](https://dbushell.com/twitter/) As for testing: It is incredibly hard. You simply can't A/B test one and the same article on Social Media Buttons or not.
+> @dbushell As for testing: It is incredibly hard. You simply can't A/B test one and the same article on Social Media Buttons or not.
 >
-> — Oliver Reichenstein (@iA) [July 20, 2012](https://twitter.com/iA/status/226313980795297795)
+> — Oliver Reichenstein (@iA) July 20, 2012

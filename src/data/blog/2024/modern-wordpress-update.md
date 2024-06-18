@@ -25,7 +25,7 @@ Going on to say:
 
 I very much appreciate this feedback considering how strong my criticism was.
 
-A few others, like [Hendrik Luehrsen](https://twitter.com/hluehrsen/status/1788823929055760705) on Twitter, also corrected me on the `Viewport Width` front matter property. On this [the docs say](https://developer.wordpress.org/themes/patterns/registering-patterns/#using-the-patterns-directory-to-register-patterns):
+A few others, like Hendrik Luehrsen on Twitter, also corrected me on the `Viewport Width` front matter property. On this [the docs say](https://developer.wordpress.org/themes/patterns/registering-patterns/#using-the-patterns-directory-to-register-patterns):
 
 > **Viewport Width:** The width of the `<iframe>` viewport when previewing the pattern (in pixels).
 

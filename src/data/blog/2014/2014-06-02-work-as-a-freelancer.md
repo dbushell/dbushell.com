@@ -28,7 +28,7 @@ Earlier today I tweeted:
 
 The response was excellent.
 
-[James Young](https://twitter.com/welcomebrand/status/473413316556365824) reminded me: Make sure people actually know you’re looking. This compliments much of the other advice. Make sure I'm speaking to people. There are no secrets or shortcuts. It requires a lot of effort.
+James Young on Twitter reminded me: Make sure people actually know you’re looking. This compliments much of the other advice. Make sure I'm speaking to people. There are no secrets or shortcuts. It requires a lot of effort.
 
 Starting today I'm adopting a new policy.
 

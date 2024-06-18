@@ -30,6 +30,6 @@ I can't afford it. At least for the foreseeable future.
 
 Seek [resolution independence](http://coding.smashingmagazine.com/2012/01/16/resolution-independence-with-svg/) by employing a design style more suited to the [medium](/2012/09/25/what-is-the-medium/). More visuals through CSS and SVG; less bitmap data.
 
-*** Update:** this should actually say the size of an image's containing element, [thanks Paul](http://twitter.com/paulrobertlloyd/status/260732321081200640)!
+*** Update:** this should actually say the size of an image's containing element, thanks to Paul Robert Lloyd!
 
 

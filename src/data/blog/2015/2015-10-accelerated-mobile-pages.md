@@ -28,7 +28,7 @@ As you can see above, there's very little visual difference (header, footer, and
 
 It's important to note that AMP is not intended to be a separate m. website in disguise. Responsive design is still "best practice". You don't redirect mobile users to AMP pages and not every page should have an AMP alternative. AMP is best suited to single article content.
 
-So when do users see an AMP page? Well [Google search results](https://www.youtube.com/watch?v=i2_lAEzmOPo) may integrate them soon as demoed in this video. [Twitter are also onboard](https://blog.twitter.com/2015/introducing-accelerated-mobile-pages-0) saying, <q>Over the coming months, we plan to help surface more AMP content in Tweets, making it even easier for our users to browse the mobile web.</q>
+So when do users see an AMP page? Well [Google search results](https://www.youtube.com/watch?v=i2_lAEzmOPo) may integrate them soon as demoed in this video. Twitter are also onboard saying, <q>Over the coming months, we plan to help surface more AMP content in Tweets, making it even easier for our users to browse the mobile web.</q>
 
 We know that speed is a critical factor when deciding whether to read or abandon a website. Especially when casually browsing social media links. AMP gives the ability to preview even lighter versions of web page content in these scenarios.
 

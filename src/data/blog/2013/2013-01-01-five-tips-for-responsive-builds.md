@@ -31,6 +31,6 @@ Test your build in multiple browsers as often as you save code (for me that's ev
 
 Keep your legacy contracts pain-free. Old desktop browsers need not be fully responsive down to mobile size. Serve a **separate stylesheet** for Internet Explorer 8 and lower using conditional comments (hide the normal stylesheet the same way). This should contain all base styles and the contents of media queries up to a desktop viewport (but not the queries themselves). **CSS preprocessors** can be used to build this automatically. Finally, in this old IE stylesheet add a **min-width** to the root element — basically let it go as small as it can before content is squashed. Now old IE will get a semi-fluid build and you can sleep easy at night.
 
-**Update:** [@justmarkup](https://twitter.com/justmarkup/status/286441851190398976) points me to [Jake Archibald's Sass technique](http://jakearchibald.github.com/sass-ie/) which is excellent.
+**Update:** Michael Scharnagl on Twitter pointed me to [Jake Archibald's Sass technique](http://jakearchibald.github.com/sass-ie/) which is excellent.
 
 Found that useful? [Follow me on Twitter](https://dbushell.com/twitter/) for regular responsive discussion.

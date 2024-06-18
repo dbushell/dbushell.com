@@ -10,7 +10,7 @@ The most depressing thing about being a web designer/developer is that you spend
 
 ### Twitter
 
-I'm a big fan of twitter. It's great for self-promotion, news, freebies, interesting links, chat, and finding the one customer service employee who still cares. With that in mind I thought I'd give it more prominence on my site, see the twitter bird in the top right - thanks to [@smashingmag](http://twitter.com/smashingmag) for the free graphic! It's also an experimental exercise in call-to-action and conversion. I'm hoping my follower count will soar compared to the old text link (we'll see).
+I'm a big fan of twitter. It's great for self-promotion, news, freebies, interesting links, chat, and finding the one customer service employee who still cares. With that in mind I thought I'd give it more prominence on my site, see the twitter bird in the top right - thanks to @smashingmag for the free graphic! It's also an experimental exercise in call-to-action and conversion. I'm hoping my follower count will soar compared to the old text link (we'll see).
 
 ### Search Box
 

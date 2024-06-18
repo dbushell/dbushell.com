@@ -69,4 +69,4 @@ Here’s a CodePen:
 
 
 
-[Matt Hinchliffe](https://twitter.com/i_like_robots) shared his library of [promise patterns](https://www.npmjs.com/package/promise-patterns) that includes a similar function. I’ve also been experimenting with JavaScript [generators](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Iterators_and_Generators) and [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await).
+Matt Hinchliffe shared his library of [promise patterns](https://www.npmjs.com/package/promise-patterns) that includes a similar function. I’ve also been experimenting with JavaScript [generators](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Iterators_and_Generators) and [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await).

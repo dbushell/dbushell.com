@@ -24,7 +24,7 @@ I've never been much of a wireframer and that's because my design process has be
 
 ### Intrigue Me: Writing Compelling, Credible Content
 
-For the second talk I switched to track two with **[Stephanie Hay](http://twitter.com/#!/steph_hay)**. My biggest focus in the last few months has been to bring content back to the heart of my creative process. Stephanie's talk was very valuable in understanding good content.
+For the second talk I switched to track two with **Stephanie Hay**. My biggest focus in the last few months has been to bring content back to the heart of my creative process. Stephanie's talk was very valuable in understanding good content.
 
 Three areas were discussed - focus, credibility and consistency. Content needs to be meaningful to avoid raising unneeded questions, thus helpful; don't assume the user knows what to do when arriving at a website.
 

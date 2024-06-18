@@ -22,7 +22,7 @@ I trusted my gut. After a whirlwind three days I'm now relaxing at home and I th
 
 ## The conference
 
-It may be that I'm slightly biased but Responsive Day Out was brilliant. Best conference I've ever attended. The shorter 20 minute format with Q&A allowed for more variety and honest discussion. I was glad to be second on the bill. I'll have to watch [@sazzy's](https://twitter.com/sazzy) talk again. As the only person to take stage before me I spent the entirety of her talk taking in deep breathes, trying to forget about the 400 people sat behind me.
+It may be that I'm slightly biased but Responsive Day Out was brilliant. Best conference I've ever attended. The shorter 20 minute format with Q&A allowed for more variety and honest discussion. I was glad to be second on the bill. I'll have to watch Sarah Parmenter talk again. As the only person to take stage before me I spent the entirety of her talk taking in deep breathes, trying to forget about the 400 people sat behind me.
 
 The attendees were in great spirit. It seemed like my Twitter feed had descended upon Brighton. Too many people to name but it was an absolute pleasure to meet you!
 
@@ -38,13 +38,13 @@ I can only describe being on stage as an out of body experience. It was auto-pil
 
 When I stepped off stage my head was clear. I would describe it as tranquil but that would suggest I was processing anything at all. My brain just switched off. A short breather before it zoned back in.
 
-I knew the audience were making a noise but I had no way to gauge feedback. Was it courtesy, sympathy, gratitude? It was only when [@aral](https://twitter.com/aral) leant across with a smile that I knew I would be content with whatever performance I'd given.
+I knew the audience were making a noise but I had no way to gauge feedback. Was it courtesy, sympathy, gratitude? It was only when Aral Balkan leant across with a smile that I knew I would be content with whatever performance I'd given.
 
 I'm hugely appreciative of all those who spoke to me with kind words later that day. Thank you all so much. I'd highly recommend the experience of conference speaking. As agonising as the process can be I left very humbled and even more respectful of those who do this often. I allowed myself to feel a bit of pride knowing I'd achieved something personally. I can't see myself as a regular speaker, if anything I hate travelling, but I'll do it again.
 
-Once again, a big **thank you** to [@adactio](https://twitter.com/adactio) and the Clearleft team, and all the other speakers and attendees who made Responsive Day Out such an unforgettable experience.
+Once again, a big **thank you** to Jeremy Keith and the Clearleft team, and all the other speakers and attendees who made Responsive Day Out such an unforgettable experience.
 
-More [#beefcheeks](https://twitter.com/search?q=%23beefcheeks) and [#rhubarbguitar](https://twitter.com/search?q=%23rhubarbguitar) notes from:
+More #beefcheeks and #rhubarbguitar notes from:
 
 * [Ashley Nolan](http://www.dragongraphics.co.uk/blog/responsively-winging-it-together)
 * [Dan Davies](http://www.dan-davies.co.uk/beefcheeks-in-brighton)

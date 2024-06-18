@@ -15,5 +15,3 @@ Last week I launched **[xheight.dbushell.com](http://xheight.dbushell.com)** as 
 As expected it's had a very positive reception, and why wouldn't it? Nothing helps us more in design than studying the approach of others. **xheight** is focusing on theory over practical techniques which for some is a difficult concept to grasp. Their loss!
 
 Keep an eye out because there are some great designers lined up to share their ideas. I'm very grateful to all who are participating – thanks guys!
-
-Oh, and follow [@xheightblog](http://twitter.com/xheightblog).

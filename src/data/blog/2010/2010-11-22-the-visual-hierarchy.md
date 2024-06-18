@@ -18,6 +18,4 @@ Read the juicy parts of [The Visual Hierarchy](http://www.basecreative.eu/news/d
 
 I realise I don't blog enough about website design! Should I be writing more? I'm rather pleased with this article and plan to turn it into a mini-series.
 
-I blog at [Design Heroes](http://designheroes.co.uk) daily with interesting bookmarks. It has a small following on [twitter](http://twitter.com/dsgnheroes) and RSS but I continue it as a personal reference most importantly. Perhaps I could be doing more there? Sometimes I have a lot to say, other times I don't.
-
 Anyway, hope some of you find my latest article useful!

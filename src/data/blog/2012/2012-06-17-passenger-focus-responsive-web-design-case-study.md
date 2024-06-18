@@ -72,5 +72,3 @@ Obviously nothing beats real hands-on device testing otherwise quirks from diffe
 Last year I shared [three ideas](/2011/12/15/web-design-2012-and-beyond/) that I'd be mulling over when making websites in 2012. **Accessibility**, **scalability**, and **interactivity**. I can confidently say we've nailed the first two with this project. As for interactivity, we haven't made much new ground (unless you can count being touch-friendly as progress). For the nature of this project that's not a huge concern.
 
 I've discussed before about overly content-centric strategies leading to [restrictive design](/2012/05/26/the-restriction-of-type/). There's a growing echo of responsive design being "boring". It's a concern not without substance. If I were to add a fourth idea to my list it would be **creativity**. Something I believe will regain momentum as the technicalities of responsive design are resolved.
-
-Follow [@browserlondon](http://twitter.com/browserlondon) to keep up with our future work.

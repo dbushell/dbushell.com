@@ -14,7 +14,7 @@ When a page loads the first render — at whatever size the browser viewport hap
 
 * The user changes the orientation of their device.
 * The user decides to expand their desktop browser fullscreen.
-* The user initiates split-screen apps (e.g. Windows 8 — great point [@jack_l_smith](https://twitter.com/jack_l_smith/status/372787437317390336))
+* The user initiates split-screen apps.
 
 But let's be less imaginative. **Sometimes users do drag resize handles.**
 
