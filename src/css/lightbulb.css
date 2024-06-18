@@ -2,6 +2,7 @@
   --lightbulb-stroke: oklch(var(--db-blue));
   --lightbulb-fill: oklch(var(--db-yellow));
   --lightbulb-rays: 1;
+  display: none;
   height: auto;
   left: var(--page-margin);
   padding: calc((9 / 16) * 1rem);
@@ -44,10 +45,6 @@
     transition: fill 100ms, opacity 100ms;
   }
 
-  .Noscript & {
-    display: none;
-  }
-
   .Darkmode & {
     --lightbulb-stroke: oklch(var(--db-green));
     --lightbulb-fill: transparent;
@@ -59,6 +56,12 @@
       --lightbulb-fill: oklch(var(--db-yellow) / 0.5);
       --lightbulb-rays: 1;
     }
+  }
+}
+
+@media (scripting: enabled) {
+  .Lightbulb {
+    display: block;
   }
 }
 

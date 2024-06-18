@@ -11,10 +11,6 @@
   const {latest} = props;
 </script>
 
-<svelte:head>
-<script data-hash="Rb2bGqrQbWB7CI5YFykBzKNjyi3IvTyaPuqR4q4mR8c=">const e=document.documentElement;e.classList.remove("Noscript");"on"===localStorage.getItem("darkmode")&&(e.classList.remove("Lightmode"),e.classList.add("Darkmode"));</script>
-</svelte:head>
-
 <Head />
 
 <div class="Layout">

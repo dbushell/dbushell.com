@@ -25,9 +25,7 @@ export const middleware: DinoHandle<Data> = ({request, platform}) => {
     ['x-img-src', 'data:'],
     // ['x-style-src', `'sha256-${cssHash}'`],
     // TODO - generate? - Hash for Logo inline styles
-    ['x-style-src', `'sha256-p0lVhHvjWu1bucdPJXr5SjN6e3hVy6Jv4paG9r+Nsbc='`],
-    // TODO - generate? - Hash for inline App <head> script
-    ['x-script-src', `'sha256-Rb2bGqrQbWB7CI5YFykBzKNjyi3IvTyaPuqR4q4mR8c='`]
+    ['x-style-src', `'sha256-p0lVhHvjWu1bucdPJXr5SjN6e3hVy6Jv4paG9r+Nsbc='`]
   ];
 
   // Generated inline styles

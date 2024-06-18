@@ -12,10 +12,12 @@
   const {deployHash} = getContext('publicData');
 
   onMount(async () => {
-    const response = await fetch(img.src);
-    if (response.ok) {
-      svg = await response.text();
-    }
+    // Update SVG logo
+    fetch(img.src).then(async (response) => {
+      if (response.ok) {
+        svg = await response.text();
+      }
+    });
 
     // Handle service worker
     if ('serviceWorker' in window.navigator) {
@@ -25,8 +27,12 @@
     // Handle dark mode
     const $doc = document.querySelector('.Document');
     const $mode = document.querySelector('.Lightbulb');
+    const list = $doc.classList;
+    if (localStorage.getItem('darkmode') === 'on') {
+      list.remove('Lightmode');
+      list.add('Darkmode');
+    }
     $mode.addEventListener('click', () => {
-      const list = $doc.classList;
       if (list.contains('Lightmode')) {
         list.remove('Lightmode');
         list.add('Darkmode');
