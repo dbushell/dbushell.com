@@ -1,4 +1,5 @@
 import {encodeBase64} from 'base64';
+import type {MarkedExtension, Renderer, RendererObject, Tokens} from 'marked';
 import {marked} from 'marked';
 import {markedSmartypants} from 'marked-smartypants';
 import {gfmHeadingId as markedHeaderIds} from 'marked-gfm-heading-id';
@@ -31,10 +32,7 @@ export const syntaxCSS = async () => {
   return {css, hash};
 };
 
-// TODO: silence only deprecated warnings
-marked.use({
-  silent: true
-});
+marked.use();
 
 marked.use(
   markedHeaderIds({
@@ -46,6 +44,7 @@ marked.use(markedSmartypants());
 
 marked.use({
   async: true,
+  useNewRenderer: true,
   async walkTokens(token) {
     if (token.type !== 'code') {
       return;
@@ -75,24 +74,25 @@ marked.use({
     token.text = code;
   },
   renderer: {
-    code(code: string, _infostring: string | undefined, _escaped: boolean) {
-      return code;
+    code(args: Tokens.Code) {
+      return args.text;
     }
   }
 });
 
-const renderer = {
-  html(html: string, block: boolean | undefined) {
-    if (!block) return html;
-    const img = /(<img[^>]+?src=")([^"]+?)("[^>]*?>)/gs.exec(html);
+const renderer: RendererObject = {
+  html({block, text}: Tokens.HTML | Tokens.Tag) {
+    if (!block) return text;
+    const img = /(<img[^>]+?src=")([^"]+?)("[^>]*?>)/gs.exec(text);
     if (img) {
       const src = new URL(img[2], 'https://dbushell.com');
-      html = replace(html, img[0], `${img[1]}${src}${img[3]}`);
+      text = replace(text, img[0], `${img[1]}${src}${img[3]}`);
     }
-    return html;
+    return text;
   },
 
-  paragraph(text: string) {
+  paragraph(this: Renderer, token: Tokens.Paragraph) {
+    const text = this.parser.parseInline(token.tokens);
     if (text.startsWith('📢')) {
       return `<p class="Large">${text.replace(/^📢/, '').trim()}</p>\n`;
     }
@@ -105,7 +105,7 @@ const renderer = {
     return /^<p[ |>]/.test(text) ? text : `<p>${text}</p>\n`;
   },
 
-  image(href: string, _title: string | null, text: string) {
+  image({text, href}: Tokens.Image) {
     text = typeof text === 'string' ? text : 'no description';
     let url: URL;
     try {
@@ -114,10 +114,11 @@ const renderer = {
       console.warn(`⚠️ Invalid URL: ${href}`);
       throw err;
     }
-    return `<p class="Image"><img src="${url.href}" loading="lazy" alt="${text}"></p>\n`;
+    return `<p class="Image"><img src="${url.href}" loading="lazy" decoding="async" fetchpriority="low" alt="${text}"></p>\n`;
   },
 
-  link(href: string, title: string | null | undefined, text: string) {
+  link(this: Renderer, {href, title, tokens}: Tokens.Link) {
+    const text = this.parser.parseInline(tokens);
     let url: URL;
     try {
       url = /^[\/|#]/.test(href) ? new URL(href, 'https://dbushell.com') : new URL(href);
@@ -141,7 +142,9 @@ const renderer = {
   }
 };
 
-marked.use({renderer});
+const extension: MarkedExtension = {renderer, useNewRenderer: true};
+
+marked.use(extension);
 
 const markdown = async (md: string): Promise<string> => await marked.parse(md);
 

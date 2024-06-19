@@ -178,6 +178,27 @@ h3 {
   letter-spacing: calc((-0.5 / 16) * 1rem);
 }
 
+.Cursive {
+  &:has(svg + span) {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
+
+    & > svg {
+      aspect-ratio: 1 / 1;
+      block-size: 1em;
+      inline-size: auto;
+      fill: currentColor;
+      flex: 0 0 auto;
+    }
+
+    & > span {
+      flex: 0 1 auto;
+    }
+  }
+}
+
 .Time {
   display: inline-block;
   font-size: var(--step-0);

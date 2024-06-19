@@ -34,10 +34,7 @@
   <ul>
     {#each links as link}
       <li>
-        <a
-          href={link.href}
-          aria-current={current === link.href ? 'page' : null}
-        >
+        <a href={link.href} aria-current={current === link.href ? 'page' : null}>
           {link.label}
         </a>
       </li>

@@ -2,7 +2,7 @@
 slug: about
 title: 'About David Bushell'
 ---
-Based in the UK, near Manchester, I design, build, and consult upon all things web for small (and large) businesses, start-ups, individuals, and fellow web agencies, all over the world.
+Based in the UK, near Manchester, I design, build, and consult upon all things web. I freelance for businesses, start-ups, individuals, and fellow web agencies, all over the world.
 
 <p class="Image Image--basic">
   <img
@@ -14,13 +14,13 @@ Based in the UK, near Manchester, I design, build, and consult upon all things w
     height="289">
 </p>
 
-Though I specialise in front-end development my experience and knowledge covers the whole process. So if anyone asks tell them [I make websites](/services/).
+I specialise in front-end development but my experience and knowledge covers the whole process. If anyone asks, tell them [I make websites](/services/).
 
-### My Background
+### A Brief History
 
-I have over a decade of professional experience. Prior to my life as a freelancer, I worked in London's East End for five years at two digital agencies. I worked in senior client-facing roles with responsibility for web design and front-end development.
+I have over 15 years of professional experience. I started my career working in London's East End for five years at two digital agencies — [Base Creative](https://basecreative.co.uk), and [Browser London](https://www.browserlondon.com). I worked in senior client-facing roles with responsibility for web design and front-end development. Escaping the bustle of London, I moved back to the North West where I've been freelancing for over a decade.
 
-I've worked with just about every type of client and website imaginable. From public sector departments, to small local businesses, and those in-between like charities and entrepreneurs. I pride myself in a collaborative, considered, personable, and attentive approach. A process that is agile and evolving. Iterative and effective.
+I've worked with every type of client and website imaginable. From public sector departments, to small local businesses, and those in-between like charities and entrepreneurs. I pride myself in a collaborative, considered, personable, and attentive approach. A process that listens, iterates, and is always effective.
 
 On the web I'm self-taught. Programming has fascinated me since the days of dial-up modems and floppy disks. My formal education is firmly rooted in the finer arts. I graduated with 1st class honours in Graphic Design at Cumbria University, UK.
 

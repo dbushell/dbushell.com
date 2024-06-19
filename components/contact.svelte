@@ -96,12 +96,7 @@
       </li>
       <li>
         <h4 class="Privacy">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewbox="0 0 24 24"
-          >
+          <svg width="24" height="24" viewbox="0 0 24 24">
             <path
               d="M14 9v2h-4V9c0-1.104.897-2 2-2s2 .896 2 2zm10 3c0 6.627-5.373
               12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12zm-8-1h-1V9a3 3
@@ -112,9 +107,8 @@
         </h4>
         <p>
           <small>
-            This form securely emails your data to my encrypted inbox for the
-            purpose of responding to your enquiry and conducting business with
-            you.
+            This form securely emails your data to my encrypted inbox for the purpose of responding
+            to your enquiry and conducting business with you.
           </small>
         </p>
         <p>
@@ -140,14 +134,10 @@
         </label>
       </li>
       <li>
-        <button class="Button" type="submit" disabled={isDisabled}>
-          Send Message
-        </button>
+        <button class="Button" type="submit" disabled={isDisabled}> Send Message </button>
       </li>
       <li class="Hidden">
-        <label for="contact-human">
-          If you’re human leave the next field blank!
-        </label>
+        <label for="contact-human"> If you’re human leave the next field blank! </label>
         <input
           bind:this={robotRef}
           type="text"
