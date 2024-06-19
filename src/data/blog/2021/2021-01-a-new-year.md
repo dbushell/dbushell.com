@@ -11,13 +11,11 @@ Sometime in February on the bus to the gym I read about the Coronavirus. I pulle
 
 Buying a bench, rack, and weights in late 2019 proved to be a moment of genius precognition. That kept my Zoom background game on point.
 
-<p class="Image">
-  <img loading="lazy"
-    src="/images/blog/2021/home-gym@1x.jpg"
-    alt="My home gym"
-    width="1024"
-    height="768">
-</p>
+<img
+  src="/images/blog/2021/home-gym@1x.jpg"
+  alt="My home gym"
+  width="1024"
+  height="768">
 
 I got an espresso machine too. It's paid for itself.
 

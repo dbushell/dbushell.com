@@ -104,16 +104,11 @@ Shiki is not perfect. Did you spot the highlighting mistake in the code above? S
 
 Maybe if you're reading this from the future the bug was fixed. Sorry (not sorry). Here's a screenshot with a red squiggly:
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/shiki-highlight-error.avif"
-    alt="code with syntax highlighting error underlined"
-    width="429"
-    height="97">
-</figure>
+<img
+  src="/images/blog/2024/shiki-highlight-error.avif"
+  alt="code with syntax highlighting error underlined"
+  width="429"
+  height="97">
 
 Anyway, I think this is still a major improvement to my blog.
 

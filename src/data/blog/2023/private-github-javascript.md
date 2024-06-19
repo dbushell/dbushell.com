@@ -28,7 +28,6 @@ The only permission you need to select is *"Contents"* with *"Access: Read-only"
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2023/github-permissions.avif"
     alt="GitHub access token permissions"
     width="774"

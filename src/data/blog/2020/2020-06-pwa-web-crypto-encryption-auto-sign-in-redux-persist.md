@@ -7,15 +7,13 @@ description: 'The one where paranoia gets the better of me.'
 
 [**Mute Swan**](https://muteswan.dbushell.com/) is a progressive web app I've been coding for my own amusement. It's a playground for me to mess around with experimental web standards. Also to remind myself to buy milk.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/ms-v7a@1x.png,
-    /images/blog/2020/ms-v7a@2x.png 2x"
-    src="/images/blog/2020/ms-v7a@1x.png"
-    alt="Mute Swan v7"
-    width="360"
-    height="300">
-</p>
+<img srcset="
+  /images/blog/2020/ms-v7a@1x.png,
+  /images/blog/2020/ms-v7a@2x.png 2x"
+  src="/images/blog/2020/ms-v7a@1x.png"
+  alt="Mute Swan v7"
+  width="360"
+  height="300">
 
 I've recently implemented hidden Dropbox backup and sync functionality. With that in place I decided that my grocery list was of the upmost secrecy. What if my Dropbox account was hacked?
 
@@ -98,27 +96,23 @@ Requesting a password at the start of each session is an annoying experience. I 
 
 Chrome provides the best auto sign-in experience. If enabled the password can be retrieved seamlessly without user interaction. A temporary notification pops up and passwords can be managed via the key button.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/ms-auto-sign-in@1x.png,
-    /images/blog/2020/ms-auto-sign-in@2x.png 2x"
-    src="/images/blog/2020/ms-auto-sign-in@1x.png"
-    alt="Mute Swan v7 auto sign-in (Chrome)"
-    width="478"
-    height="160">
-</p>
+<img srcset="
+  /images/blog/2020/ms-auto-sign-in@1x.png,
+  /images/blog/2020/ms-auto-sign-in@2x.png 2x"
+  src="/images/blog/2020/ms-auto-sign-in@1x.png"
+  alt="Mute Swan v7 auto sign-in (Chrome)"
+  width="478"
+  height="160">
 
 On Chrome Android the sign-in notification pops up below. The random sky blue is an interesting choice. I'd prefer if it would use the manifest theme colour.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/ms-auto-sign-in-android@1x.png,
-    /images/blog/2020/ms-auto-sign-in-android@2x.png 2x"
-    src="/images/blog/2020/ms-auto-sign-in-android@1x.png"
-    alt="Mute Swan v7 auto sign-in (Android)"
-    width="360"
-    height="300">
-</p>
+<img srcset="
+  /images/blog/2020/ms-auto-sign-in-android@1x.png,
+  /images/blog/2020/ms-auto-sign-in-android@2x.png 2x"
+  src="/images/blog/2020/ms-auto-sign-in-android@1x.png"
+  alt="Mute Swan v7 auto sign-in (Android)"
+  width="360"
+  height="300">
 
 Passwords can be stored programmatically:
 
@@ -172,13 +166,11 @@ If this event is triggered the form can be submitted to attempt an "auto" sign-i
 
 This method has noticeable latency and the form will appear briefly. I considered making the form invisible to avoid the UI flash. However, a timeout would be necessary to show the form again if auto-complete didn't occur, or was not detected. Such a delay seems like the greater evil.
 
-<p class="Image">
-  <img loading="lazy"
-    src="/images/blog/2020/ms-v7-auto-sign-in-hack.gif"
-    alt="Mute Swan v7 auto sign-in hack"
-    width="360"
-    height="200">
-</p>
+<img
+  src="/images/blog/2020/ms-v7-auto-sign-in-hack.gif"
+  alt="Mute Swan v7 auto sign-in hack"
+  width="360"
+  height="200">
 
 This feels very hacky but it works in Firefox.
 
@@ -186,15 +178,13 @@ This feels very hacky but it works in Firefox.
 
 Finally, if neither auto sign-in method works, or no password was saved, the form must be submitted manually by the user.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/ms-sign-in-form@1x.png,
-    /images/blog/2020/ms-sign-in-form@2x.png 2x"
-    src="/images/blog/2020/ms-sign-in-form@1x.png"
-    alt="Mute Swan v7 sign-in form"
-    width="296"
-    height="105">
-</p>
+<img srcset="
+  /images/blog/2020/ms-sign-in-form@1x.png,
+  /images/blog/2020/ms-sign-in-form@2x.png 2x"
+  src="/images/blog/2020/ms-sign-in-form@1x.png"
+  alt="Mute Swan v7 sign-in form"
+  width="296"
+  height="105">
 
 Safari is particularly hesitant to auto-fill for me. Hopefully browser support for credential management auto sign-in becomes standard.
 

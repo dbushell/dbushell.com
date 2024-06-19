@@ -11,7 +11,6 @@ This also arrived:
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2024/zimablade-nas-kit.avif"
     alt="Top-down photo of the ZimaBlade sitting on its hard drive enclosure"
     width="1351"
@@ -36,9 +35,6 @@ That's a total of £154 GBP (~$194 USD). Similar cost to the ZimaBlade for a "us
 
 <figure class="Image">
   <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
     src="/images/blog/2024/raspberry-pi-5-nvme-base.avif"
     alt="Close-up photo of the Pi 5 case modification"
     width="1560"

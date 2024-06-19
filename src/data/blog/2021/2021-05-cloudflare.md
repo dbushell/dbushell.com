@@ -10,15 +10,13 @@ I use both [GitHub Pages](https://pages.github.com/) and [Netlify](https://www.n
 
 I'm building a new progressive web app to play audiobooks (and later podcasts, maybe). The how and why I'll blog about another time. Here's an early peek:
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2021/mesonic-v0-10-0@1x.png,
-    /images/blog/2021/mesonic-v0-10-0@2x.png 2x"
-    src="/images/blog/2021/mesonic-v0-10-0@1x.png"
-    alt="meSonic progressive web app demo screenshot"
-    width="375"
-    height="480">
-</p>
+<img srcset="
+  /images/blog/2021/mesonic-v0-10-0@1x.png,
+  /images/blog/2021/mesonic-v0-10-0@2x.png 2x"
+  src="/images/blog/2021/mesonic-v0-10-0@1x.png"
+  alt="meSonic progressive web app demo screenshot"
+  width="375"
+  height="480">
 
 This super secret side project has both a **client** and **server** component. A partial implementation of the Subsonic API sits in between.
 

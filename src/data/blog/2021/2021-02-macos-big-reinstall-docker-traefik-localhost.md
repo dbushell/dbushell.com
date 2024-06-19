@@ -11,7 +11,6 @@ description: 'The one where I do a fresh reinstall and try something new'
   <img
     src="/images/blog/2021/macos-big-reinstall@1x.webp"
     alt="macOS Big Reinstall"
-    loading="lazy"
     width="960"
     height="460">
 </picture>

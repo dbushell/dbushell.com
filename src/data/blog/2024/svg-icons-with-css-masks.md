@@ -19,9 +19,6 @@ For my examples I'm using this Bootstrap icon:
 
 <figure class="Image">
   <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
     src="/images/blog/2024/bootstrap-arrow-right.svg"
     alt="Arrow right icon"
     width="160"

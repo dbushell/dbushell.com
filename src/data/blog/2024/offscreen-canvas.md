@@ -33,9 +33,6 @@ That's a lot of data for images that are primarily small thumbnails.
 
 <figure class="Image">
   <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
     src="/images/blog/2024/sauropod.avif"
     alt="sauroPod screenshot"
     width="455"
@@ -112,14 +109,11 @@ I'm using the `drawImage` method and there is some noticeable image aliasing on 
 
 The original [Syntax podcast](https://syntax.fm) artwork is 1724×1724. The top-left image below was resized to 128×128 using Photoshop. The top-right image was resized to 128×128 using `OffscreenCanvas`. The second row I've upscaled both images in Photoshop so it's easier to see the aliasing effect.
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    src="/images/blog/2024/offscreen-canvas-render.png"
-    alt="Syntax podcast artwork at different size renders"
-    width="512"
-    height="384">
-</figure>
+<img
+  src="/images/blog/2024/offscreen-canvas-render.png"
+  alt="Syntax podcast artwork at different size renders"
+  width="512"
+  height="384">
 
 It's clear that Photoshop has a better scaling and anti-aliasing algorithm. I've tested both Firefox and Safari on macOS and the results are similar.
 

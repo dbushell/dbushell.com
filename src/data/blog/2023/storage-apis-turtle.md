@@ -13,7 +13,6 @@ Next I'm improving my use of **file storage APIs** to download and cache audio f
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2023/turtle.avif"
     alt="Turtle UI screenshot"
     width="470"

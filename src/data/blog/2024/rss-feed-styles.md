@@ -11,9 +11,6 @@ For the last 15 years my RSS feed was an unreadable mess when viewed in a browse
 
 <figure class="Image">
   <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
     src="/images/blog/2024/rss-mess.png"
     alt="screenshot of my unstyled feed"
     width="810"
@@ -85,16 +82,11 @@ Finally, the RSS feed needs to be served with the `content-type` header: `applic
 
 Now my RSS feed looks like this in the browser:
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/rss-styles.png"
-    alt="screenshot of my styled feed"
-    width="760"
-    height="530">
-</figure>
+<img
+  src="/images/blog/2024/rss-styles.png"
+  alt="screenshot of my styled feed"
+  width="760"
+  height="530">
 
 That's a big improvement!
 

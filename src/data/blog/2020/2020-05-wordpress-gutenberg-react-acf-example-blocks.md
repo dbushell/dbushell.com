@@ -17,53 +17,45 @@ I've outline a few of the blocks below. See the [project documentation](https://
 
 ## 01 - Basic
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/gutenberg-01-basic@1x.png,
-    /images/blog/2020/gutenberg-01-basic@2x.png 2x"
-    src="/images/blog/2020/gutenberg-01-basic@1x.png"
-    alt="A basic Gutenberg block example"
-    width="688"
-    height="156">
-</p>
+<img srcset="
+  /images/blog/2020/gutenberg-01-basic@1x.png,
+  /images/blog/2020/gutenberg-01-basic@2x.png 2x"
+  src="/images/blog/2020/gutenberg-01-basic@1x.png"
+  alt="A basic Gutenberg block example"
+  width="688"
+  height="156">
 
 The first example is the most basic of Gutenberg blocks created with React. The editor and front-end render the same uneditable content. The block has no functionality.
 
 ## 02 - Text Control
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/gutenberg-02-text-control@1x.png,
-    /images/blog/2020/gutenberg-02-text-control@2x.png 2x"
-    src="/images/blog/2020/gutenberg-02-text-control@1x.png"
-    alt="A Gutenberg block example with a Text Control"
-    width="688"
-    height="188">
-</p>
+<img srcset="
+  /images/blog/2020/gutenberg-02-text-control@1x.png,
+  /images/blog/2020/gutenberg-02-text-control@2x.png 2x"
+  src="/images/blog/2020/gutenberg-02-text-control@1x.png"
+  alt="A Gutenberg block example with a Text Control"
+  width="688"
+  height="188">
 
 The second example takes the basic block and makes the content editable. The Gutenberg editor renders a [text control](https://github.com/WordPress/gutenberg/tree/master/packages/components/src/text-control) that updates the related [block attribute](https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/). The front-end renders the block using the `text` attribute value.
 
 ## 03 - ACF
 
-<p class="Image">
-  <img loading="lazy"
-    src="/images/blog/2020/gutenberg-03-acf.gif"
-    alt="A Gutenberg block example registered with the ACF plugin"
-    width="650"
-    height="166">
-</p>
+<img
+  src="/images/blog/2020/gutenberg-03-acf.gif"
+  alt="A Gutenberg block example registered with the ACF plugin"
+  width="650"
+  height="166">
 
 The third example takes a detour away from React. It uses the [Advanced Custom Fields (ACF) plugin](https://www.advancedcustomfields.com/) to register the block with PHP.
 
 ## 04 - Preview Mode
 
-<p class="Image">
-  <img loading="lazy"
-    src="/images/blog/2020/gutenberg-04-preview-mode.gif"
-    alt="A Gutenberg block example with an edit/preview toggle"
-    width="650"
-    height="182">
-</p>
+<img
+  src="/images/blog/2020/gutenberg-04-preview-mode.gif"
+  alt="A Gutenberg block example with an edit/preview toggle"
+  width="650"
+  height="182">
 
 The fourth example — inspired by ACF — moves back to React and adds an edit/preview toggle to the text control block. This allows the front-end block render to be visible in the Gutenberg editor.
 

@@ -11,27 +11,23 @@ If there's one thing I've learnt working with WordPress it is not to fight core 
 
 The `core/columns` block is a good example. Upon inserting a new columns block you're presented with an initial placeholder to configure it.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/wp-columns-block@1x.png,
-    /images/blog/2020/wp-columns-block@2x.png 2x"
-    src="/images/blog/2020/wp-columns-block@1x.png"
-    alt="WordPress Gutenberg columns block configuration"
-    width="435"
-    height="279">
-</p>
+<img srcset="
+  /images/blog/2020/wp-columns-block@1x.png,
+  /images/blog/2020/wp-columns-block@2x.png 2x"
+  src="/images/blog/2020/wp-columns-block@1x.png"
+  alt="WordPress Gutenberg columns block configuration"
+  width="435"
+  height="279">
 
 Selecting the _"50 / 50"_ option sets up a two column layout for example. Each column has its own set of inner blocks to edit in the Gutenberg way.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/wp-columns-block-2@1x.png,
-    /images/blog/2020/wp-columns-block-2@2x.png 2x"
-    src="/images/blog/2020/wp-columns-block-2@1x.png"
-    alt="WordPress Gutenberg columns block with two columns"
-    width="641"
-    height="143">
-</p>
+<img srcset="
+  /images/blog/2020/wp-columns-block-2@1x.png,
+  /images/blog/2020/wp-columns-block-2@2x.png 2x"
+  src="/images/blog/2020/wp-columns-block-2@1x.png"
+  alt="WordPress Gutenberg columns block with two columns"
+  width="641"
+  height="143">
 
 Coding a custom layout block similar to `core/columns` isn't too difficult once you understand Gutenberg's React code. The difficult part is understanding Gutenberg's React code. There isn't much in the way of organised documentation. I just look at the [source code](https://github.com/WordPress/gutenberg/tree/master/packages/block-library/src) and work backwards. But wherever possible, it's best to utilise a core block if one fits.
 

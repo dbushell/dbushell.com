@@ -9,15 +9,13 @@ Today my main computer is a Mac Mini 2018. Quite likely the last Mac I'll buy fo
 
 Here's my office setup:
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/self-hosted-hardware@1x.jpg,
-    /images/blog/2020/self-hosted-hardware@2x.jpg 2x"
-    src="/images/blog/2020/self-hosted-hardware@1x.jpg"
-    alt="self hosted hardware"
-    width="1080"
-    height="525">
-</p>
+<img srcset="
+  /images/blog/2020/self-hosted-hardware@1x.jpg,
+  /images/blog/2020/self-hosted-hardware@2x.jpg 2x"
+  src="/images/blog/2020/self-hosted-hardware@1x.jpg"
+  alt="self hosted hardware"
+  width="1080"
+  height="525">
 
 I was a dual-monitor person for years. That changed when I realised how often my second screen was burning Slack. Yeah, that had to change. I now keep a tablet by my side. Saves on space and electricity.
 
@@ -29,15 +27,13 @@ I've been using Linux to rescue my old Mac Mini (2014) and older Macbook Air (20
 
 Linux has given these devices new life. I was using the old Mini to dual boot Windows 10 for browser testing. After upgrading to the new Mini – notably with 32GB RAM – I can use a virtual machine for IE. I keep the laptop around for portability. It's my second device for coding and blogging out-of-office.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/linux-macbook-air@1x.jpg,
-    /images/blog/2020/linux-macbook-air@2x.jpg 2x"
-    src="/images/blog/2020/linux-macbook-air@1x.jpg"
-    alt="Linux Macbook Air"
-    width="1080"
-    height="525">
-</p>
+<img srcset="
+  /images/blog/2020/linux-macbook-air@1x.jpg,
+  /images/blog/2020/linux-macbook-air@2x.jpg 2x"
+  src="/images/blog/2020/linux-macbook-air@1x.jpg"
+  alt="Linux Macbook Air"
+  width="1080"
+  height="525">
 
 I've hopped around half a dozen Linux distros to see what's new. It's been 15 years since I last used desktop Linux. I settled on a basic Arch + Gnome install on my laptop. I'll probably stick Manjaro or Linux Mint on the old Mini.
 

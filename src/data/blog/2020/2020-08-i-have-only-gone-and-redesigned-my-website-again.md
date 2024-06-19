@@ -25,15 +25,13 @@ My old homepage was probably a little over-designed in retrospect. Especially wi
 
 For weeks I'd been mulling over design ideas and sketching them in a barely comprehensible fashion. I wasn't planning any content changes so sketches didn't quite visualise all I had in mind. On a client-free day inspiration struck and I moved into Adobe XD to experiment with the colour palette and typography.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/dbushell-2k20-adobe-xd@1x.png,
-    /images/blog/2020/dbushell-2k20-adobe-xd@2x.png 2x"
-    src="/images/blog/2020/dbushell-2k20-adobe-xd@1x.png"
-    alt="dbushell.com prototype designs in Adobe XD"
-    width="666"
-    height="802">
-</p>
+<img srcset="
+  /images/blog/2020/dbushell-2k20-adobe-xd@1x.png,
+  /images/blog/2020/dbushell-2k20-adobe-xd@2x.png 2x"
+  src="/images/blog/2020/dbushell-2k20-adobe-xd@1x.png"
+  alt="dbushell.com prototype designs in Adobe XD"
+  width="666"
+  height="802">
 
 By my fourth coffee I was pretty chuffed with where the design was heading. I hadn't nailed it but I was on the right track. By the afternoon I'd fallen into a slump and was just pushing pixels. This was my cue to move into code. I opened up CodePen and found my groove again. The following morning I'd basically designed and built the base template. It was fairly late in the day when I decided to flip the layout. From that moment everything fell into place and I started focusing on the finer details.
 
@@ -51,15 +49,13 @@ I used the [Utopia calculator](https://utopia.fyi/) by **James Gilyead** & **Try
 
 My new design comes with a dark mode theme!
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/dbushell-2k20-darkmode@1x.png,
-    /images/blog/2020/dbushell-2k20-darkmode@2x.png 2x"
-    src="/images/blog/2020/dbushell-2k20-darkmode@1x.png"
-    alt="dbushell.com dark mode design"
-    width="1024"
-    height="384">
-</p>
+<img srcset="
+  /images/blog/2020/dbushell-2k20-darkmode@1x.png,
+  /images/blog/2020/dbushell-2k20-darkmode@2x.png 2x"
+  src="/images/blog/2020/dbushell-2k20-darkmode@1x.png"
+  alt="dbushell.com dark mode design"
+  width="1024"
+  height="384">
 
 This is possible by the power of [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties). Click the lightbulb in the top-left corner. It will soon be activated automatically via media queries once I've perfected it. Check back very soon for a blog post discussing this feature.
 
@@ -69,15 +65,13 @@ I bookmarked **Antoine Boulanger's** article ["Are you using SVG favicons yet?"]
 
 My own favicon was based on a raster image of my origami crane mascot. I launched Adobe Illustrator and whipped up a quick vector version.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/dbushell-2k20-favicon@1x.png,
-    /images/blog/2020/dbushell-2k20-favicon@2x.png 2x"
-    src="/images/blog/2020/dbushell-2k20-favicon@1x.png"
-    alt="dbushell.com SVG favicon"
-    width="512"
-    height="256">
-</p>
+<img srcset="
+  /images/blog/2020/dbushell-2k20-favicon@1x.png,
+  /images/blog/2020/dbushell-2k20-favicon@2x.png 2x"
+  src="/images/blog/2020/dbushell-2k20-favicon@1x.png"
+  alt="dbushell.com SVG favicon"
+  width="512"
+  height="256">
 
 Kinda rough but at 16×16 it works far better than I was expecting. One day I'll vectorize it in more detail as I'd like to experiment with it on my homepage too.
 

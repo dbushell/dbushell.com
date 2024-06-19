@@ -42,15 +42,13 @@ The [`Intl` namespace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 
 For my [podcast player](https://github.com/dbushell/mesonic) side project I've added a function to format dates based on age. Most recent episode are labelled either "Today" or "Yesterday", or by weekday if less than seven days olds, and finally by full date when older.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2021/mesonic-v0-16-2@1x.png,
-    /images/blog/2021/mesonic-v0-16-2@2x.png 2x"
-    src="/images/blog/2021/mesonic-v0-16-2@1x.png"
-    alt="podcast episode list with relative dates"
-    width="360"
-    height="304">
-</p>
+<img srcset="
+  /images/blog/2021/mesonic-v0-16-2@1x.png,
+  /images/blog/2021/mesonic-v0-16-2@2x.png 2x"
+  src="/images/blog/2021/mesonic-v0-16-2@1x.png"
+  alt="podcast episode list with relative dates"
+  width="360"
+  height="304">
 
 This makes it easier to see what's new at a glance. It removes the need to mentally parse a full date. For older episodes a relative format like "20 days ago" is less meaningful so I've opted for long form after one week. Context is key, there's no magic formula.
 

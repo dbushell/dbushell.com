@@ -28,26 +28,22 @@ To ensure your responsive CSS adapts.
 
 I've refactored my own website to better support RTL translation with logical properties. Before updating my CSS you can see some of the issues in switching direction:
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2021/dbushell-rtl-before@1x.png,
-    /images/blog/2021/dbushell-rtl-before@2x.png 2x"
-    src="/images/blog/2021/dbushell-rtl-before@1x.png"
-    alt="dbushell.com RTL design before CSS logical properties and values"
-    width="800"
-    height="280">
-</p>
+<img srcset="
+  /images/blog/2021/dbushell-rtl-before@1x.png,
+  /images/blog/2021/dbushell-rtl-before@2x.png 2x"
+  src="/images/blog/2021/dbushell-rtl-before@1x.png"
+  alt="dbushell.com RTL design before CSS logical properties and values"
+  width="800"
+  height="280">
 
 After logical CSS changes:
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2021/dbushell-rtl-after@1x.png,
-    /images/blog/2021/dbushell-rtl-after@2x.png 2x"
-    src="/images/blog/2021/dbushell-rtl-after@1x.png"
-    alt="dbushell.com RTL design after CSS logical properties and values"
-    width="800"
-    height="280">
-</p>
+<img srcset="
+  /images/blog/2021/dbushell-rtl-after@1x.png,
+  /images/blog/2021/dbushell-rtl-after@2x.png 2x"
+  src="/images/blog/2021/dbushell-rtl-after@1x.png"
+  alt="dbushell.com RTL design after CSS logical properties and values"
+  width="800"
+  height="280">
 
 Obviously these examples are still in English so they look a little weird. I was going to screenshot an Arabic translation but I can't verify the accuracy. What's important is that my coding practices are now inherently friendlier to other languages by default. All the effort is up-front learning.

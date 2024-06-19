@@ -13,7 +13,6 @@ Actually this has been on my "to look at" list for months. It's a long list...
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2023/steve-ballmer.gif"
     alt="Steve Ballmer getting very excited for developers"
     width="360"

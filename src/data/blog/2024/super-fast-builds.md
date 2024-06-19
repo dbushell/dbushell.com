@@ -90,9 +90,6 @@ This had a small but noticeable effect on build time. The end result of optimisa
 
 <figure class="Image">
   <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
     src="/images/blog/2024/static-build.gif"
     alt="screen capture of the build command terminal output"
     width="1200"

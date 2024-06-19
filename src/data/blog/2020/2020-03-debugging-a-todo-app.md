@@ -13,13 +13,11 @@ As it turns out these things are not so easy to test. This week I squashed a bug
 
 Earlier in the week I noticed that tasks assigned to Monday, 30th March would also appear under Sunday 29th. Here's a GIF:
 
-<p class="Image">
-  <img loading="lazy"
-    src="/images/blog/2020/muteswan-datebug.gif"
-    alt="Mute Swan daylight savings bug"
-    width="320"
-    height="419">
-</p>
+<img
+  src="/images/blog/2020/muteswan-datebug.gif"
+  alt="Mute Swan daylight savings bug"
+  width="320"
+  height="419">
 
 I had my suspicions. I Googled "when do the clocks change" as is tradition. 29th March is guilty this time of year in the UK. Now I have a clue as to why this bug exists; time to debug.
 

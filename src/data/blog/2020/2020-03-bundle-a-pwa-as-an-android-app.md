@@ -9,15 +9,13 @@ A [Progressive Web App (PWA)](https://developer.mozilla.org/en-US/docs/Web/Progr
 
 PWAs can be installed or bookmarked from the browser using "Add to Home Screen". On Android 9 doing this via Firefox (v68, left) and Chrome (v80, right) gives two different results on my Samsung S8:
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/ms-homescreen-icons@1x.png,
-    /images/blog/2020/ms-homescreen-icons@2x.png 2x"
-    src="/images/blog/2020/ms-homescreen-icons@1x.png"
-    alt="Mute Swan PWA Homescreen Icons"
-    width="340"
-    height="180">
-</p>
+<img srcset="
+  /images/blog/2020/ms-homescreen-icons@1x.png,
+  /images/blog/2020/ms-homescreen-icons@2x.png 2x"
+  src="/images/blog/2020/ms-homescreen-icons@1x.png"
+  alt="Mute Swan PWA Homescreen Icons"
+  width="340"
+  height="180">
 
 The Firefox icon isn't desirable. Although the Firefox bookmark does open like a fullscreen app, Chrome uses [WebAPK](https://developers.google.com/web/fundamentals/integration/webapks) to wrap the PWA. This offers better Android integration. However, the app wont be listed in the Play Store.
 
@@ -41,15 +39,13 @@ It doesn't really scale well beyond mobile, [I'm working on that...](https://cod
 
 **Mute Swan** is a short-term daily planner for todos and memos. Add items for the upcoming week. See a history of the past seven days. The app is centred around “today” and older items are automatically deleted.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/ms-screenshot@1x.png,
-    /images/blog/2020/ms-screenshot@2x.png 2x"
-    src="/images/blog/2020/ms-screenshot@1x.png"
-    alt="Mute Swan PWA Screenshot"
-    width="360"
-    height="640">
-</p>
+<img srcset="
+  /images/blog/2020/ms-screenshot@1x.png,
+  /images/blog/2020/ms-screenshot@2x.png 2x"
+  src="/images/blog/2020/ms-screenshot@1x.png"
+  alt="Mute Swan PWA Screenshot"
+  width="360"
+  height="640">
 
 ~~And of course, Mute Swan is available on Google Play.~~ **Update:** no longer published.
 
@@ -83,15 +79,13 @@ If "app signing by Google Play" is enabled, the "SHA-256 certificate fingerprint
 
 If the fingerprints do not match users will see the Chrome address bar and other UI. Users may even see an "Add to Home Screen" prompt which is rather confusing. The emulator screenshot below demonstrates this problem.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/ms-assetslink@1x.png,
-    /images/blog/2020/ms-assetslink@2x.png 2x"
-    src="/images/blog/2020/ms-assetslink@1x.png"
-    alt="Mute Swan TWA Digital Asset Links failure"
-    width="405"
-    height="361.5">
-</p>
+<img srcset="
+  /images/blog/2020/ms-assetslink@1x.png,
+  /images/blog/2020/ms-assetslink@2x.png 2x"
+  src="/images/blog/2020/ms-assetslink@1x.png"
+  alt="Mute Swan TWA Digital Asset Links failure"
+  width="405"
+  height="361.5">
 
 Once that is sorted, the app is good to go!
 
@@ -105,29 +99,25 @@ The PWA splash screen uses the icon, colour, and app name from the [manifest fil
 
 On first launch the user gets a notice at the bottom of the screen:
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/ms-chrome@1x.png,
-    /images/blog/2020/ms-chrome@2x.png 2x"
-    src="/images/blog/2020/ms-chrome@1x.png"
-    alt="Mute Swan TWA 'Running in Chrome' message"
-    width="540"
-    height="70">
-</p>
+<img srcset="
+  /images/blog/2020/ms-chrome@1x.png,
+  /images/blog/2020/ms-chrome@2x.png 2x"
+  src="/images/blog/2020/ms-chrome@1x.png"
+  alt="Mute Swan TWA 'Running in Chrome' message"
+  width="540"
+  height="70">
 
 I'm not sure what this achieves other than mild confusion.
 
 A more lasting difference is that the TWA app adopts the dark-mode preference for the Android navigation bar below the app.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/ms-footer@1x.png,
-    /images/blog/2020/ms-footer@2x.png 2x"
-    src="/images/blog/2020/ms-footer@1x.png"
-    alt="Mute Swan TWA and PWA differences"
-    width="540"
-    height="75">
-</p>
+<img srcset="
+  /images/blog/2020/ms-footer@1x.png,
+  /images/blog/2020/ms-footer@2x.png 2x"
+  src="/images/blog/2020/ms-footer@1x.png"
+  alt="Mute Swan TWA and PWA differences"
+  width="540"
+  height="75">
 
 What's interesting is that Chrome uses the same user session. Meaning cache storage between the PWA, TWA app, and visiting [MuteSwan](https://muteswan.dbushell.com) in the browser all share the same data on the device.
 

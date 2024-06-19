@@ -47,14 +47,11 @@ Windows on bare metal would be great but that means dual booting and taking my s
 
 But first I created a "Hackintosh":
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    src="/images/blog/2023/vm-ventura.avif"
-    alt="screenshot of macOS Ventura in a Proxmox virtual machine"
-    width="1280"
-    height="720">
-</figure>
+<img
+  src="/images/blog/2023/vm-ventura.avif"
+  alt="screenshot of macOS Ventura in a Proxmox virtual machine"
+  width="1280"
+  height="720">
 
 MacOS is tricky to install in a VM but doable. Apple make you jump through a few hoops to create the installer and serial number. Despite only access to 4GB of memory it runs ok! Useful for testing apps, I guess?
 
@@ -83,7 +80,6 @@ I'd prefer it come in black but ok:
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2023/vm-beelink.avif"
     alt="Beelink mini PC alonside a Raspberry Pi in my desk drawer"
     width="1280"
@@ -128,7 +124,6 @@ Not giving up on the old 2014 Mac Mini just yet I installed [Arch Linux](https:/
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2023/vm-mac2014.avif"
     alt="mac mini and monitor attached"
     width="1280"

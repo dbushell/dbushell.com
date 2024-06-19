@@ -11,16 +11,11 @@ The first project is a little smaller in scope:
 
 ## VelociRouter
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/velocirouter-banner.avif"
-    alt="VelociRouter website banner"
-    width="1080"
-    height="406">
-</figure>
+<img
+  src="/images/blog/2024/velocirouter-banner.avif"
+  alt="VelociRouter website banner"
+  width="1080"
+  height="406">
 
 [**VelociRouter**](https://ssr.rocks/docs/velocirouter/) is a JavaScript HTTP router inspired by [Polka](https://github.com/lukeed/polka) and [Hono](https://hono.dev/). It takes a `Request` and returns a `Response` using the assigned handlers. What makes VelociRouter unique is that it uses the native [URI Pattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API) to match routes.
 
@@ -42,9 +37,6 @@ VelociRoute uses native JavaScript objects and does not abstract them in a custo
 
 <figure class="Image">
   <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
     src="/images/blog/2024/dinossr-banner.avif"
     alt="DinoSsr website banner"
     width="1080"
@@ -69,16 +61,11 @@ I'm sick of [Bootstrap](https://getbootstrap.com/) so I started designing my own
 
 I'm using this code alongside DinoSsr for my self-hosted web apps.
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/homedeck-app.avif"
-    alt="smart light control web app"
-    width="380"
-    height="350">
-</figure>
+<img
+  src="/images/blog/2024/homedeck-app.avif"
+  alt="smart light control web app"
+  width="380"
+  height="350">
 
 "HomeDeck" is an app to control my lights. It's served by a [Raspberry Pi powering a StreamDeck](/2022/10/14/deno-usb-hid-stream-deck/) for physical buttons. It uses a websocket to [Home Assistant](https://www.home-assistant.io/) hosted on another [Proxmox server](/2023/08/08/adventures-in-windows-proxmox-virtualisation/). The state of proprietary smart home apps is abysmal. Nothing is reliable so built my own solution!
 

@@ -81,26 +81,30 @@ marked.use({
 });
 
 const renderer: RendererObject = {
-  html({block, text}: Tokens.HTML | Tokens.Tag) {
-    if (!block) return text;
+  html({text}: Tokens.HTML | Tokens.Tag) {
     const img = /(<img[^>]+?src=")([^"]+?)("[^>]*?>)/gs.exec(text);
     if (img) {
+      // Add full URL to source
       const src = new URL(img[2], 'https://dbushell.com');
       text = replace(text, img[0], `${img[1]}${src}${img[3]}`);
+      // Add additional img attributes
+      text = replace(text, '<img', '<img loading="lazy" decoding="async" fetchpriority="low"');
+    }
+    // Wrap images in figure
+    if (/^<img[^>]+?>\s*$/gs.test(text)) {
+      text = `<figure class="Image">\n${text}\n</figure>\n`;
     }
     return text;
   },
 
   paragraph(this: Renderer, token: Tokens.Paragraph) {
-    const text = this.parser.parseInline(token.tokens);
-    if (text.startsWith('📢')) {
-      return `<p class="Large">${text.replace(/^📢/, '').trim()}</p>\n`;
+    const text = this.parser.parseInline(token.tokens).trim();
+    // Do not wrap figures in paragraph
+    if (text.startsWith('<figure') && text.endsWith('</figure>')) {
+      return `${text}\n`;
     }
     if (text.startsWith('💤')) {
       return `<p><small>${text.replace(/^💤/, '').trim()}</small></p>\n`;
-    }
-    if (text.startsWith('🖋️')) {
-      return `<p class="Cursive">${text.replace(/^🖋️/, '').trim()}</p>\n`;
     }
     return /^<p[ |>]/.test(text) ? text : `<p>${text}</p>\n`;
   },
@@ -114,7 +118,7 @@ const renderer: RendererObject = {
       console.warn(`⚠️ Invalid URL: ${href}`);
       throw err;
     }
-    return `<p class="Image"><img src="${url.href}" loading="lazy" decoding="async" fetchpriority="low" alt="${text}"></p>\n`;
+    return `<figure class="Image">\n<img loading="lazy" decoding="async" fetchpriority="low" src="${url.href}" alt="${text}">\n</figure>\n`;
   },
 
   link(this: Renderer, {href, title, tokens}: Tokens.Link) {

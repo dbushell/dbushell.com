@@ -61,9 +61,6 @@ The file input includes a button in its shadow DOM. The default appearance varie
 
 <figure class="Image">
   <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
     src="/images/blog/2024/browse-file-input.avif"
     alt="Screenshot of a file input rendered by Firefox on macOS"
     width="178"

@@ -10,13 +10,11 @@ As a home server I’ve been running a Raspberry Pi 4 (4GB) with Ubuntu on the S
 
 Santa was kind enough to deliver an [Argon ONE M.2 case](https://www.argon40.com/argon-one-m-2-case-for-raspberry-pi-4.html). I picked up a new RPi 4 8GB model to avoid having to tear down my old server too early. That’s my excuse, I wasn’t just being greedy with the RAM.
 
-<p class="Image">
-  <img loading="lazy"
-    src="/images/blog/2021/argon-one-m2.jpg"
-    alt="Argon ONE M.2 case for Raspberry Pi 4"
-    width="1024"
-    height="640">
-</p>
+<img
+  src="/images/blog/2021/argon-one-m2.jpg"
+  alt="Argon ONE M.2 case for Raspberry Pi 4"
+  width="1024"
+  height="640">
 
 The Argon case is neat. Like the Flirc cases I've been using they act as a giant heat sink. Argon includes a programmable fan for active cooling too. The best feature though is the enclosed SSD. Mostly enclosed — the USB bridge isn’t ideal but I understand the design choice. On a scale of not a Cylon, to definitely a Cylon, the Argon ONE M.2 ranks respectably.
 

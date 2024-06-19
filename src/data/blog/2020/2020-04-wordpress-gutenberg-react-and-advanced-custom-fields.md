@@ -23,15 +23,13 @@ But what if I wanted to combine a native Gutenberg block with an ACF block? Let'
 
 A single block that renders like this:
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/gutenberg-acf-2@1x.png,
-    /images/blog/2020/gutenberg-acf-2@2x.png 2x"
-    src="/images/blog/2020/gutenberg-acf-2@1x.png"
-    alt="Preview for an example Gutenberg block with React and Advanced Custom Fields"
-    width="750"
-    height="289">
-</p>
+<img srcset="
+  /images/blog/2020/gutenberg-acf-2@1x.png,
+  /images/blog/2020/gutenberg-acf-2@2x.png 2x"
+  src="/images/blog/2020/gutenberg-acf-2@1x.png"
+  alt="Preview for an example Gutenberg block with React and Advanced Custom Fields"
+  width="750"
+  height="289">
 
 Gutenberg provides an embed block with a single caption. These are extremely user-friendly. Users just paste a YouTube link — not even embed code — and WordPress does the rest. However it lacks the additional fields I require.
 
@@ -41,15 +39,13 @@ Neither method allows me to create the **Feature Video** block to my satisfactio
 
 What if I could combine both methods like this:
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/gutenberg-acf-1@1x.png,
-    /images/blog/2020/gutenberg-acf-1@2x.png 2x"
-    src="/images/blog/2020/gutenberg-acf-1@1x.png"
-    alt="Editor UI for an example Gutenberg block with React and Advanced Custom Fields"
-    width="793"
-    height="556">
-</p>
+<img srcset="
+  /images/blog/2020/gutenberg-acf-1@1x.png,
+  /images/blog/2020/gutenberg-acf-1@2x.png 2x"
+  src="/images/blog/2020/gutenberg-acf-1@1x.png"
+  alt="Editor UI for an example Gutenberg block with React and Advanced Custom Fields"
+  width="793"
+  height="556">
 
 In the screenshot above I have a single Gutenberg block that combines a native video embed with ACF fields that I can configured.
 
@@ -85,15 +81,13 @@ Custom `category` values must be added via the [block categories filter](https:/
 
 ACF is used as normal to assign fields to this block.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/gutenberg-acf-3@1x.png,
-    /images/blog/2020/gutenberg-acf-3@2x.png 2x"
-    src="/images/blog/2020/gutenberg-acf-3@1x.png"
-    alt="Fields UI for an example Gutenberg block with React and Advanced Custom Fields"
-    width="900"
-    height="491">
-</p>
+<img srcset="
+  /images/blog/2020/gutenberg-acf-3@1x.png,
+  /images/blog/2020/gutenberg-acf-3@2x.png 2x"
+  src="/images/blog/2020/gutenberg-acf-3@1x.png"
+  alt="Fields UI for an example Gutenberg block with React and Advanced Custom Fields"
+  width="900"
+  height="491">
 
 ### Block Templates
 

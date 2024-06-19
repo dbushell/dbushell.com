@@ -9,14 +9,11 @@ It's time! Time to check off another to-do on the "random dev ideas" list!
 
 I have a [contact form](/contact/) on my website. It emails the enquirer's name, email, and message to me using [AWS SES](https://docs.aws.amazon.com/ses/latest/dg/send-email-api.html) (Simple Email Service).
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    src="/images/blog/2023/contact-form-email.avif"
-    alt="A contact form email with test data"
-    width="830"
-    height="390">
-</figure>
+<img
+  src="/images/blog/2023/contact-form-email.avif"
+  alt="A contact form email with test data"
+  width="830"
+  height="390">
 
 You see that? Plain text email! HTML has no place in emails.
 

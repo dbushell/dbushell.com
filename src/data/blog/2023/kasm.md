@@ -16,14 +16,11 @@ That's when I found [Kasm Workspaces](https://kasmweb.com/).
 
 > "Streaming containerized apps and desktops to end-users."
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    src="/images/blog/2023/kasm-workspaces.avif"
-    alt="Kasm Workspaces with web browser containers"
-    width="512"
-    height="300">
-</figure>
+<img
+  src="/images/blog/2023/kasm-workspaces.avif"
+  alt="Kasm Workspaces with web browser containers"
+  width="512"
+  height="300">
 
 The screenshot above is my Kasm web UI. I've installed six web browsers. Kasm can do more than browsers but browsers are my use case.
 

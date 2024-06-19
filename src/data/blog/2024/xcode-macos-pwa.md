@@ -11,16 +11,11 @@ I built the app to control my lights because Apple's HomeKit is bad. The entire 
 
 Something like this:
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/homedeck-macos-menu-bar.avif"
-    alt="macos menu bar app with webview"
-    width="1300"
-    height="1300">
-</figure>
+<img
+  src="/images/blog/2024/homedeck-macos-menu-bar.avif"
+  alt="macos menu bar app with webview"
+  width="1300"
+  height="1300">
 
 I finally built it!
 

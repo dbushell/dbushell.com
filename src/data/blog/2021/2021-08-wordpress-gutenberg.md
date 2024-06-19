@@ -11,7 +11,6 @@ WordPress began life as a simple [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2021/wp-classic-editor@2x.png"
     alt="WordPress classic editor"
     width="505"
@@ -27,7 +26,6 @@ In WordPress, the block-based [Gutenberg editor](https://wordpress.org/gutenberg
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2021/wp-gutenberg-editor@2x.png"
     alt="WordPress Gutenberg editor"
     width="587"

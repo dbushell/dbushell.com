@@ -33,7 +33,6 @@ Unfortunately the Tailscale iPhone app drains battery alarmingly fast when activ
   <img
     src="/images/blog/2022/tailscale-battery.png"
     alt="Tailscale iPhone app battery usage"
-    loading="lazy"
     width="1170"
     height="395">
 </picture>

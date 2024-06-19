@@ -19,7 +19,6 @@ Passwords nowhere:
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2022/password-adobe.png"
     alt="Adobe login form"
     width="439"
@@ -29,7 +28,6 @@ Passwords nowhere:
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2022/password-apple.png"
     alt="Apple login form"
     width="371"
@@ -39,7 +37,6 @@ Passwords nowhere:
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2022/password-google.png"
     alt="Google login form"
     width="408"
@@ -49,7 +46,6 @@ Passwords nowhere:
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2022/password-twitter.png"
     alt="Twitter login form"
     width="342"
@@ -59,7 +55,6 @@ Passwords nowhere:
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2022/password-amazon.png"
     alt="Amazon login form"
     width="360"
@@ -69,7 +64,6 @@ Passwords nowhere:
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2022/password-slack.png"
     alt="Slack login form"
     width="460"
@@ -83,7 +77,6 @@ Anyway, there is one standout winner amongst my regular logins.
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2022/password-netlify.png"
     alt="Netlify login form"
     width="385"

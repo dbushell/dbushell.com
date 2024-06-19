@@ -34,7 +34,6 @@ WordPress Gutenberg is a block-based content editor. It has several layout block
 
 <figure class="Image" id="figure-1">
   <img
-    loading="lazy"
     src="/images/blog/2023/gutenberg-blocks.avif"
     alt="screenshot of the Gutenberg block list view"
     width="350"
@@ -86,7 +85,6 @@ I confirmed this issue on a brand new WordPress 6.3 install. I created a new the
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2023/gutenberg-blocks-render.avif"
     alt="screenshot of the HTML paragraphs with missing block gap"
     width="445"

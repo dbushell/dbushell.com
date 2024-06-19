@@ -34,16 +34,11 @@ I don't use Node often but this looks more convenient.
 
 I raised a question around the curious omission of Bun. Now Bun has been added alongside the other runtimes.
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/jsr-runtimes.avif"
-    alt="JSR runtime support"
-    width="430"
-    height="134">
-</figure>
+<img
+  src="/images/blog/2024/jsr-runtimes.avif"
+  alt="JSR runtime support"
+  width="430"
+  height="134">
 
 I was mulling over a conspiracy theory as to Bun's whereabouts.
 
@@ -59,16 +54,11 @@ I'd highly recommend [Syntax episode #737](https://syntax.fm/show/737/jsr-the-ne
 
 JSR wants to solve that and package score may be one factor:
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/jsr-score.avif"
-    alt="JSR score card example"
-    width="354"
-    height="396">
-</figure>
+<img
+  src="/images/blog/2024/jsr-score.avif"
+  alt="JSR score card example"
+  width="354"
+  height="396">
 
 Check out my [@dbushell/carriageway](https://jsr.io/@dbushell/carriageway/score) package for example.
 

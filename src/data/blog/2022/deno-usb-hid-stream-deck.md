@@ -18,7 +18,6 @@ To much ire Elgato have made little effort to support Apple Silicon. On macOS ru
   <img
     src="/images/blog/2022/stream-deck.jpg"
     alt="my Stream Deck attached to a Raspberry Pi running custom software"
-    loading="lazy"
     width="1008"
     height="756">
 </picture>

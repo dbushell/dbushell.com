@@ -8,7 +8,7 @@ description: 'The one where I revisit an old client'
 [Back in 2015](/2016/01/04/css-framework-for-partsgiant/) I built the front-end for [Parts Giant](https://www.partsgiant.com/). Following a successful five years of e-commerce, Parts Giant handed me a similar brief with a refreshed design. Five years is a _long time_ on the web. This was an opportunity to showcase that evolution and deliver a thoroughly modern front-end component library building on past success.
 
 <figure class="Image">
-  <img loading="lazy" srcset="
+  <img srcset="
       /images/blog/2021/parts-giant-design@1x.webp 1240w,
       /images/blog/2021/parts-giant-design@2x.webp 2480w"
     sizes="(min-width: 48rem) 50vw, 86vw"
@@ -34,7 +34,7 @@ Jump to a topic of interest:
 To build a website I first loosely itemise components into a three tier hierarchy. There are many names for a methodology like this but I don't strictly adhere to any one in particular. I find being overly rigid on rules does not compliment the nature of front-end. One must be pragmatic and not get hung up on conventions for conventions sake.
 
 <figure class="Image">
-  <img loading="lazy" srcset="
+  <img srcset="
       /images/blog/2021/parts-giant-library@1x.webp 440w,
       /images/blog/2021/parts-giant-library@2x.webp 880w"
     sizes="(min-width: 48rem) 50vw, 86vw"
@@ -49,15 +49,13 @@ To build a website I first loosely itemise components into a three tier hierarch
 
 The first component tier is the most primitive. It comprises singular 'elements' like a button or form field. I also fit typographic styles, colours, and common units like spacing into this tier as CSS custom properties.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-      /images/blog/2021/partsgiant-button-states@1x.png,
-      /images/blog/2021/partsgiant-button-states@2x.png 2x"
-    src="/images/blog/2021/partsgiant-button-states@1x.png"
-    alt="Parts Giant button component states"
-    width="350"
-    height="84">
-</p>
+<img srcset="
+    /images/blog/2021/partsgiant-button-states@1x.png,
+    /images/blog/2021/partsgiant-button-states@2x.png 2x"
+  src="/images/blog/2021/partsgiant-button-states@1x.png"
+  alt="Parts Giant button component states"
+  width="350"
+  height="84">
 
 I've recently written on the topic of [**CSS focus state**](/2021/04/30/accessibility-css-focus-state/) with several examples from this project. Improving accessibility was a key aspect here. I've also started to write CSS that is naturally adaptable to [**right-to-left styling**](/2021/02/02/changing-css-for-good-logical-properties-and-values/). All the components I built for Parts Giant are RTL-ready.
 
@@ -70,7 +68,7 @@ The final tier of 'container' components each represent a horizontal slice of a 
 Since the original website was built the options for CSS layout have expanded immensely.
 
 <figure class="Image">
-  <img loading="lazy" srcset="
+  <img srcset="
       /images/blog/2021/parts-giant-product-grid@1x.webp 990w,
       /images/blog/2021/parts-giant-product-grid@2x.webp 1980w"
     sizes="(min-width: 48rem) 50vw, 86vw"
@@ -86,7 +84,7 @@ The old code used the classic [float and clearfix](https://css-tricks.com/all-ab
 Each product uses the [card pattern](/2021/04/30/accessibility-css-focus-state/#the-card) which itself uses Flexbox layout in a column direction. This allows for equal height cards with the card footer aligned to the bottom.
 
 <figure class="Image">
-  <img loading="lazy" srcset="
+  <img srcset="
       /images/blog/2021/parts-giant-forms@1x.webp 820w,
       /images/blog/2021/parts-giant-forms@2x.webp 1640w"
     sizes="(min-width: 48rem) 50vw, 86vw"
@@ -104,7 +102,7 @@ CSS Grid allowed for a simple responsive form layout without superfluous markup.
 Aside the product listing grid is a sidebar with various filters. This was redesigned and coded to be modular allowing any arrangement of panels.
 
 <figure class="Image">
-  <img loading="lazy" srcset="
+  <img srcset="
       /images/blog/2021/parts-giant-color-filter@1x.webp 560w,
       /images/blog/2021/parts-giant-color-filter@2x.webp 1120w"
     sizes="(min-width: 48rem) 50vw, 86vw"
@@ -134,7 +132,7 @@ A reduced code example:
 On smaller screens, where there is no space for a sidebar, the filters are moved inside a pop-up modal. By default the modal is hidden and empty and thus considered a progressive enhancement. It's "nice to have" functionality but not absolutely critical for browsing.
 
 <figure class="Image">
-  <img loading="lazy" srcset="
+  <img srcset="
       /images/blog/2021/parts-giant-filter@1x.webp 890w,
       /images/blog/2021/parts-giant-filter@2x.webp 1780w"
     sizes="(min-width: 48rem) 50vw, 86vw"
@@ -169,7 +167,7 @@ Parts Giant was designed with many avenues for product navigation and discovery.
 The new component library helped finalise the design of UI components to ensure they worked in regards to both aesthetics and overall usability.
 
 <figure class="Image">
-  <img loading="lazy" srcset="
+  <img srcset="
       /images/blog/2021/parts-giant-pagination@1x.webp 673w,
       /images/blog/2021/parts-giant-pagination@2x.webp 1346w"
     sizes="(min-width: 48rem) 50vw, 86vw"
@@ -185,7 +183,7 @@ The new component library helped finalise the design of UI components to ensure 
 The new website introduces an off-canvas navigation for smaller screens.
 
 <figure class="Image">
-  <img loading="lazy" srcset="
+  <img srcset="
       /images/blog/2021/parts-giant-off-canvas@1x.webp 1079w,
       /images/blog/2021/parts-giant-off-canvas@2x.webp 2158w"
     sizes="(min-width: 48rem) 50vw, 86vw"

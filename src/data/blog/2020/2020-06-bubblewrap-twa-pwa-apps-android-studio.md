@@ -21,15 +21,13 @@ I opted to open the project in [Android Studio](https://developer.android.com/st
 
 Following a small design refresh of [**Mute Swan**](https://muteswan.dbushell.com/) I needed to update and fix the generated icons. On some devices they were clipped awkwardly.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/muteswan-icons-broken@1x.png,
-    /images/blog/2020/muteswan-icons-broken@2x.png 2x"
-    src="/images/blog/2020/muteswan-icons-broken@1x.png"
-    alt="Mute Swan icons (broken)"
-    width="340"
-    height="100">
-</p>
+<img srcset="
+  /images/blog/2020/muteswan-icons-broken@1x.png,
+  /images/blog/2020/muteswan-icons-broken@2x.png 2x"
+  src="/images/blog/2020/muteswan-icons-broken@1x.png"
+  alt="Mute Swan icons (broken)"
+  width="340"
+  height="100">
 
 I could use Bubblewrap again to re-generate the icons but that wouldn't fix the clipping. I found the offending assets in this directory:
 
@@ -41,27 +39,23 @@ There is an awful lot of size variations to edit by hand. Has no one heard of ve
 
 Control/right-click on the `res` directory and select _"New > Image Asset"_.
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/muteswan-android-studio@1x.png,
-    /images/blog/2020/muteswan-android-studio@2x.png 2x"
-    src="/images/blog/2020/muteswan-android-studio@1x.png"
-    alt="Mute Swan in Android Studio"
-    width="744"
-    height="250">
-</p>
+<img srcset="
+  /images/blog/2020/muteswan-android-studio@1x.png,
+  /images/blog/2020/muteswan-android-studio@2x.png 2x"
+  src="/images/blog/2020/muteswan-android-studio@1x.png"
+  alt="Mute Swan in Android Studio"
+  width="744"
+  height="250">
 
 You'll see this UI:
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/muteswan-android-studio-icons@1x.png,
-    /images/blog/2020/muteswan-android-studio-icons@2x.png 2x"
-    src="/images/blog/2020/muteswan-android-studio-icons@1x.png"
-    alt="Mute Swan app icons in Android Studio"
-    width="1045"
-    height="725">
-</p>
+<img srcset="
+  /images/blog/2020/muteswan-android-studio-icons@1x.png,
+  /images/blog/2020/muteswan-android-studio-icons@2x.png 2x"
+  src="/images/blog/2020/muteswan-android-studio-icons@1x.png"
+  alt="Mute Swan app icons in Android Studio"
+  width="1045"
+  height="725">
 
 In this modal you can configure the _"Background Layer"_. I entered a solid colour to match my icon. When you click _"Next"_ you'll see a list of files that will be overwritten — confirm to save the new icons.
 

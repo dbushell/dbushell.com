@@ -8,15 +8,13 @@ I'm building a **progressive web app** (PWA, aka website) to play audiobooks. [I
 
 First a visual update on my PWA because it's all code to follow:
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2021/mesonic-v0-13-1@1x.png,
-    /images/blog/2021/mesonic-v0-13-1@2x.png 2x"
-    src="/images/blog/2021/mesonic-v0-13-1@1x.png"
-    alt="meSonic progressive web app demo screenshot"
-    width="420"
-    height="560">
-</p>
+<img srcset="
+  /images/blog/2021/mesonic-v0-13-1@1x.png,
+  /images/blog/2021/mesonic-v0-13-1@2x.png 2x"
+  src="/images/blog/2021/mesonic-v0-13-1@1x.png"
+  alt="meSonic progressive web app demo screenshot"
+  width="420"
+  height="560">
 
 Yes those are [Bootstrap](https://getbootstrap.com/) styles. My next blog topic.
 

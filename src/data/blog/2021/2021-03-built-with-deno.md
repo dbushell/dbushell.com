@@ -18,13 +18,11 @@ That meta tag is a little spice I’ve mixed into [my personal static site gener
 
 Truthfully this isn't my first time with Deno but it's my first project of any real significance. [The Deno Manual](https://deno.land/manual@v1.8.0/introduction) has a good introduction so I won't bore you. Below are my initial thoughts after using Deno "in production".
 
-<p class="Image">
-  <img loading="lazy"
-    src="/images/blog/2021/deno-logo.svg"
-    alt="Deno logo"
-    width="200"
-    height="200">
-</p>
+<img
+  src="/images/blog/2021/deno-logo.svg"
+  alt="Deno logo"
+  width="200"
+  height="200">
 
 Deno is good. Deno feels modern.
 

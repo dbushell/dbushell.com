@@ -75,16 +75,11 @@ TypeScript packages are automatically compiled to run under Node. This looks lik
 
 ### Compatibility
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/jsr-package-compatibility.avif"
-    alt="JSR package compatibility icons"
-    width="522"
-    height="132">
-</figure>
+<img
+  src="/images/blog/2024/jsr-package-compatibility.avif"
+  alt="JSR package compatibility icons"
+  width="522"
+  height="132">
 
 Packages on JSR have a **"Works with"** label to show compatibility. This must be manually configured and you can lie. I expect that will lead to some pains with unintentional mislabelling, or untested breaking changes leading to incompatibility. I wonder if these labels can be automated? That'd be a lot of work if technically possible.
 
@@ -100,16 +95,11 @@ I was thinking about using my initials `@db` as my primary personal scope. I opt
 
 JSR packages can be linked and published from a GitHub repo. See my [Carriageway](https://github.com/dbushell/carriageway/) repository for example. [On JSR](https://jsr.io/@dbushell/carriageway@0.9.0) it looks like this:
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/jsr-package-documentation.avif"
-    alt="JSR package documentation"
-    width="1190"
-    height="650">
-</figure>
+<img
+  src="/images/blog/2024/jsr-package-documentation.avif"
+  alt="JSR package documentation"
+  width="1190"
+  height="650">
 
 The README markdown is front and centre just like the [NPM page](https://www.npmjs.com/package/carriageway). Additional documentation is generated from TypeScript and optional [JSDoc](https://jsdoc.app/) comments. Similar to how Deno's [3rd party hosting](https://deno.land/x/carriageway@v0.8.1/mod.ts) documentation works. This is lovely stuff. My code is self-documenting, after all 😏
 
@@ -119,16 +109,11 @@ You can browse all the source code right on JSR. On NPM only the `files` listed 
 
 [Bun](https://bun.sh/) is another JavaScript runtime that is TypeScript first like Deno, but implements Node APIs along with it's own. You can use JSR packages via a Node package manager in Bun. However, the types get lost.
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/jsr-package-bun-ts.avif"
-    alt="JSR package in a Bun typescript file"
-    width="655"
-    height="185">
-</figure>
+<img
+  src="/images/blog/2024/jsr-package-bun-ts.avif"
+  alt="JSR package in a Bun typescript file"
+  width="655"
+  height="185">
 
 In the screenshot above the first import is my NPM package which I added  manual types with `index.d.ts`. The second import is my JSR package. It exists and the code executes but VS Code is getting confused. JSR is delivering this for Node so the TypeScript is compiled to JavaScript without types. JSR boasts:
 

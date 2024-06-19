@@ -25,7 +25,6 @@ It works somewhat in macOS:
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2023/macos-control-center.avif"
     alt="macOS control center"
     width="294"
@@ -39,7 +38,6 @@ I've yet to get any image working on the iPhone:
 
 <figure class="Image">
   <img
-    loading="lazy"
     src="/images/blog/2023/ios-lock-screen.avif"
     alt="iOS lock screen"
     width="585"

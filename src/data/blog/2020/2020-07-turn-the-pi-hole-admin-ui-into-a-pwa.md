@@ -13,14 +13,12 @@ Fewer ads are nice, but tracker and malware blocking at the LAN DNS level is nic
 
 The admin web interface is pretty:
 
-<p class="Image">
-  <img loading="lazy"
-    src="/images/blog/2020/pihole-dashboard.png"
-    title="Pi-hole Admin Dashboard © Pi-hole"
-    alt="Pi-hole Admin Dashboard © Pi-hole"
-    width="1331"
-    height="783">
-</p>
+<img
+  src="/images/blog/2020/pihole-dashboard.png"
+  title="Pi-hole Admin Dashboard © Pi-hole"
+  alt="Pi-hole Admin Dashboard © Pi-hole"
+  width="1331"
+  height="783">
 
 But it lacks one thing I'm obsessed with; full Progressive Web App support. The ability to _install_ the website as it were.
 
@@ -28,15 +26,13 @@ I added support myself.
 
 The mobile phone screenshot below is a before and after:
 
-<p class="Image">
-  <img loading="lazy" srcset="
-    /images/blog/2020/pi-hole-pwa-home-screen@1x.png,
-    /images/blog/2020/pi-hole-pwa-home-screen@2x.png 2x"
-    src="/images/blog/2020/pi-hole-pwa-home-screen@1x.png"
-    alt="Pi-hole shortcut and PWA home screen icons"
-    width="360"
-    height="160">
-</p>
+<img srcset="
+  /images/blog/2020/pi-hole-pwa-home-screen@1x.png,
+  /images/blog/2020/pi-hole-pwa-home-screen@2x.png 2x"
+  src="/images/blog/2020/pi-hole-pwa-home-screen@1x.png"
+  alt="Pi-hole shortcut and PWA home screen icons"
+  width="360"
+  height="160">
 
 **On the left** is the standard home screen bookmark. Note the ugly Chrome icon-within-an-icon. The bookmark opens a web browser. This is the default "Add to Home screen" experience for Pi-hole – and any website – out of the box.
 

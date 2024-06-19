@@ -25,16 +25,11 @@ I replaced SvelteKit with my own janky [DinoSsr](https://ssr.rocks/) project I'v
 
 Let's take a look:
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/sauropod-components.avif"
-    alt="sauroPod screenshots"
-    width="4012"
-    height="2440">
-</figure>
+<img
+  src="/images/blog/2024/sauropod-components.avif"
+  alt="sauroPod screenshots"
+  width="4012"
+  height="2440">
 
 The left-hand screenshot about shows the [sauroPod](https://github.com/dbushell/sauroPod) design without annotation. The middle screenshot has all the Svelte components highlighted. SvelteKit magically handled all UI updates and front-end routing. It was really nice; maybe I should have kept it.
 

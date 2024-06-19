@@ -13,16 +13,11 @@ Anyway, I've been coding up a "Dots" [custom element](https://developer.mozilla.
 
 Look at this GIF:
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/dots-component.gif"
-    alt="interacting with the “Dots” component"
-    width="220"
-    height="60">
-</figure>
+<img
+  src="/images/blog/2024/dots-component.gif"
+  alt="interacting with the “Dots” component"
+  width="220"
+  height="60">
 
 See my ["Dots" prototype on **CodePen**](https://codepen.io/dbushell/full/xxNXqVW).
 

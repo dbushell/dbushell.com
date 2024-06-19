@@ -12,9 +12,6 @@ It’s finally happened! My bookmark blog is back!
     rel="noopener noreferrer"
     target="_blank">
     <img
-      loading="lazy"
-      decoding="async"
-      fetchpriority="low"
       src="/images/blog/2024/cotton-coder.avif"
       alt="Cotton Coder"
       width="840"

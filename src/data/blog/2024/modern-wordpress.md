@@ -60,9 +60,6 @@ Like Gutenberg blocks, this *HTML-JSON* for FSE has a habit of finding its way i
 
 <figure class="Image">
   <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
     src="/images/blog/2024/wordpress-fse-header.avif"
     alt="WordPress full site editor"
     width="1150"
@@ -71,16 +68,11 @@ Like Gutenberg blocks, this *HTML-JSON* for FSE has a habit of finding its way i
 
 Customised templates are saved to the database:
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/wordpress-database-templates.avif"
-    alt="WordPress database templates"
-    width="706"
-    height="112">
-</figure>
+<img
+  src="/images/blog/2024/wordpress-database-templates.avif"
+  alt="WordPress database templates"
+  width="706"
+  height="112">
 
 So as a developer, what if you're asked to change the header template? What happens if you edit `parts/header.html`? *\*crickets** — that file is not a real template. It's just a placeholder or reference that *may* be copied into the database. Once it is, it's game over.
 
@@ -88,16 +80,11 @@ So how are you supposed to edit templates consistently?
 
 That's the neat thing, you don't!
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    src="/images/blog/2024/wordpress-you-dont.avif"
-    alt="meme: that's the neat thing, you don't."
-    width="495"
-    height="275">
-</figure>
+<img
+  src="/images/blog/2024/wordpress-you-dont.avif"
+  alt="meme: that's the neat thing, you don't."
+  width="495"
+  height="275">
 
 There is no template. No source of truth. Try an SQL `REPLACE` on the *HTML-JSON*, I guess... 🤷
 

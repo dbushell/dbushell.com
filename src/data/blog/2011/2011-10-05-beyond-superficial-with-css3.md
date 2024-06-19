@@ -23,6 +23,7 @@ Where can CSS3 take us beyond superficial sprinkles? I don't have all the answe
 I'd point to the recently launched [Apple iPhone 4S website](http://www.apple.com/iphone/) as a tantalising example of where our future could lead us (you'll have to [visit](http://www.apple.com/iphone/) and click through the slideshow). Nothing more than a very advanced image slideshow I'm sure you'll agree and — if you can get past the fact that I (a designer) have chosen Apple as an example — that sort of design ships products and delights users. It is a very _small_ but definitely not _superficial_ step into a new standard of design.
 
 ![Apple iPhone 4S website (as of 5th October 2011)](/images/blog/2011/appleiphone4s.png)
+
 _Apple's iPhone 4S website with a CSS3 transform slideshow._
 
 Now don't get me wrong, I'm well aware that Apple's website is far from perfect but I think its an effort worth applauding. My point is that we shouldn't be so quick to dismiss new technologies that cannot be fully utilised and haven't been fully explored.

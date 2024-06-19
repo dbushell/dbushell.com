@@ -99,14 +99,11 @@ console.log(await response.text());
 
 [Firefox Multi-Account Containers](https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers/) is an official plugin by Mozilla. The plugin allows you to create sessions where local storage like cookies are separated. You can also configured these sessions to use a HTTP proxy.
 
-<figure class="Image">
-  <img
-    loading="lazy"
-    src="/images/blog/2023/firefox-socks5-proxy.avif"
-    alt="Firefox Multi-Account Containers"
-    width="334"
-    height="134">
-</figure>
+<img
+  src="/images/blog/2023/firefox-socks5-proxy.avif"
+  alt="Firefox Multi-Account Containers"
+  width="334"
+  height="134">
 
 This set up means that browsing the web using a VPN is as simple as opening a new tab. You could have multiple tabs open using multiple VPNs whilst others use non.
 
