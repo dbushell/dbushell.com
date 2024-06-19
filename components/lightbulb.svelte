@@ -1,4 +1,4 @@
-<button class="Lightbulb" type="button" tabindex="0">
+<button class="Lightbulb" type="button" tabindex="-1">
   <span class="Hidden">Toggle Dark Mode</span>
   <svg aria-hidden="true" focusable="false" width="250" height="275" viewBox="0 0 250 275">
     <path

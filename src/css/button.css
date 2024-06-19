@@ -9,7 +9,7 @@
   box-shadow: calc((-1 / 16) * 1rem) calc((-1 / 16) * 1rem) 0 calc((1 / 16) * 1rem)
       oklch(var(--button-shadow)),
     calc((2 / 16) * 1rem) calc((2 / 16) * 1rem) 0 0 oklch(var(--db-black) / 0.1);
-  color: oklch(var(--color-primary));
+  color: oklch(var(--color-primary2));
   display: block;
   font-size: var(--step-s);
   font-weight: 600;

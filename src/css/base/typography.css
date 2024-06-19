@@ -37,20 +37,20 @@ a {
   }
 }
 
-:where(.Star, .List, .Prose, .Footer) {
+:where(.Card p, .List, .Prose, .Star) {
   & a:not([class]) {
     background-image: linear-gradient(
       to right,
       oklch(var(--color-primary) / 0.2),
       oklch(var(--color-primary) / 0.2)
     );
-    background-position: bottom 5% left;
+    background-position: left bottom 5%;
     background-repeat: repeat-x;
     background-size: 100% 0;
 
     &:hover {
-      background-position: bottom center;
-      background-size: 100% 20%;
+      background-position: center bottom;
+      background-size: 100% 0.25em;
     }
   }
 }
