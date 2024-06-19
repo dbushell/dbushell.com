@@ -35,7 +35,7 @@
   <svelte:fragment slot="main">
     <Nav current="/" />
     <Heading title={h1} balance={false} />
-    <h3 class="Cursive">
+    <h2 class="Cursive">
       <!-- https://icons.getbootstrap.com/icons/code-slash/ -->
       <svg width="16" height="16" viewBox="0 0 16 16">
         <path
@@ -43,7 +43,7 @@
         />
       </svg>
       <span>I make websites</span>
-    </h3>
+    </h2>
     <div class="Prose">
       <p class="Large Balance">
         I design and build websites with a focus on <em>standards</em>, <em>performance</em>, and
@@ -55,12 +55,11 @@
         <picture>
           <source srcset="/assets/images/origami-crane.avif" type="image/avif" />
           <img
-            alt="Origami Crane - Copyright © David Bushell"
+            alt="my mascot; green folded origami crane"
             src="/assets/images/origami-crane.png"
             width="500"
             height="520"
             loading="lazy"
-            role="presentation"
           />
         </picture>
         <div>
@@ -72,7 +71,7 @@
           <Button href="/contact/">Hire Me!</Button>
         </div>
       </div>
-      <h3 class="Cursive">
+      <h2 class="Cursive">
         <!-- https://icons.getbootstrap.com/icons/quote/ -->
         <svg width="16" height="16" viewBox="0 0 16 16">
           <path
@@ -80,7 +79,7 @@
           />
         </svg>
         <span>What my clients say</span>
-      </h3>
+      </h2>
       <blockquote>
         <p>
           Highly skilled, personable, helpful and dedicated: David exceeded my expectations to
@@ -89,7 +88,7 @@
         <p><cite>Frank Fenton – Head of Digital – Dinosaur UK Ltd.</cite></p>
       </blockquote>
       <Rule />
-      <h3 class="Cursive">
+      <h2 class="Cursive">
         <!-- https://icons.getbootstrap.com/icons/rss/ -->
         <svg width="16" height="16" viewBox="0 0 16 16">
           <path
@@ -97,8 +96,8 @@
           />
         </svg>
         <span>Latest weblog</span>
-      </h3>
+      </h2>
     </div>
-    <Article {...latest[0]} />
+    <Article {...latest[0]} heading="h3" />
   </svelte:fragment>
 </App>

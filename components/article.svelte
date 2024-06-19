@@ -1,6 +1,7 @@
 <script>
   import Time from './time.svelte';
 
+  export let heading = 'h2';
   export let date;
   export let excerpt;
   export let href;
@@ -8,9 +9,9 @@
 </script>
 
 <article class="Article">
-  <h2 class="Star">
+  <svelte:element this={heading} class="Star">
     <a {href}>{@html title}</a>
-  </h2>
+  </svelte:element>
   {#if date}
     <Time {date} />
   {/if}

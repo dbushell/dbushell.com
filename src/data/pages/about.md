@@ -16,7 +16,7 @@ Based in the UK, near Manchester, I design, build, and consult upon all things w
 
 I specialise in front-end development but my experience and knowledge covers the whole process. If anyone asks, tell them [I make websites](/services/).
 
-### A Brief History
+## A Brief History
 
 I have over 15 years of professional experience. I started my career working in London's East End for five years at two digital agencies — [Base Creative](https://basecreative.co.uk), and [Browser London](https://www.browserlondon.com). I worked in senior client-facing roles with responsibility for web design and front-end development. Escaping the bustle of London, I moved back to the North West where I've been freelancing for over a decade.
 

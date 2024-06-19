@@ -28,7 +28,7 @@
     <Nav current="/contact/" />
     <Heading title={`Contact`} />
     <div class="Prose">
-      <h3 class="Cursive">Let’s chat!</h3>
+      <h2 class="Cursive">Let’s chat!</h2>
       <p class="Large">Need professional help with your website?</p>
       <p class="Large">
         <a href="mailto:hi@dbushell.com"><b>hi@dbushell.com</b></a>

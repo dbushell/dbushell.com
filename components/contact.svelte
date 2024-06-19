@@ -95,7 +95,7 @@
         />
       </li>
       <li>
-        <h4 class="Privacy">
+        <h3 class="Privacy">
           <svg width="24" height="24" viewbox="0 0 24 24">
             <path
               d="M14 9v2h-4V9c0-1.104.897-2 2-2s2 .896 2 2zm10 3c0 6.627-5.373
@@ -104,7 +104,7 @@
             />
           </svg>
           <span>Your data and privacy</span>
-        </h4>
+        </h3>
         <p>
           <small>
             This form securely emails your data to my encrypted inbox for the purpose of responding

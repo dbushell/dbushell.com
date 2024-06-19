@@ -10,7 +10,7 @@
 <div class="Aside">
   <Rule hidden />
   <aside class="Featured">
-    <Card href="/" title="David Bushell">
+    <Card href="/" title="David Bushell" heading="h2">
       <Bio />
       <Social />
     </Card>
