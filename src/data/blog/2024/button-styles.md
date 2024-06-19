@@ -104,7 +104,7 @@ Button focus state can be improved with two tricks:
 ```
 
 <div class="Box">
- <h4>Update for 20th March 2024</h4>
+ <h3>Update for 20th March 2024</h3>
 
 [It's been noted](https://hachyderm.io/@hi_mayank/112124624184257324) that removing the default `:focus` state is unnecessary.
 </div>

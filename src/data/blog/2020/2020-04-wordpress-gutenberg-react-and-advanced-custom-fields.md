@@ -225,6 +225,6 @@ I do plan to add full example code to GitHub with this and more. It's possible t
 
 More on that when I have time...
 
-## Update for May 2020
+### Update for May 2020
 
 I've written a new article: ["WordPress Gutenberg Example Blocks"](/2020/05/08/wordpress-gutenberg-react-acf-example-blocks/).

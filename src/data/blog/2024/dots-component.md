@@ -187,6 +187,6 @@ As mentioned I plan to build the other piece(s) of a carousel pattern. I've atte
 
 By the way, I'm using the name `<dots-component>` for lack of a better idea. Suggestions are welcome. Have a good day!
 
-## Update for 18th June 2024
+### Update for 18th June 2024
 
 I've built and blogged about a [carousel web component](/2024/06/18/carousel-web-component/) using the dots custom element.
