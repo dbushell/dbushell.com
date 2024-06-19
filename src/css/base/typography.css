@@ -1,5 +1,5 @@
 a {
-  --anchor-color: var(--color-primary);
+  --anchor-color: var(--color-primary2);
   --anchor-opacity: 0.5;
   color: oklch(var(--anchor-color));
   text-decoration-line: underline;
@@ -29,11 +29,9 @@ a {
   }
 }
 
-:where(cite, small, p:not([class])) {
-  & > a {
-    &:not(:hover) {
-      --anchor-color: var(--color-primary2);
-    }
+:where(h2, h3, .Large, .Social) {
+  & a:not(.Button, :hover) {
+    --anchor-color: var(--color-primary);
   }
 }
 

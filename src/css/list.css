@@ -23,10 +23,6 @@
 
     & a {
       font-weight: 500;
-
-      &:not(:hover) {
-        color: oklch(var(--color-primary2));
-      }
     }
   }
 

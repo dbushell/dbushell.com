@@ -22,10 +22,6 @@
     text-transform: uppercase;
     outline-offset: calc((-2.25 / 16) * 1rem);
 
-    &:not(:hover) {
-      --anchor-color: var(--color-primary2);
-    }
-
     &[aria-current='page'] {
       --anchor-color: var(--color-secondary2);
       --anchor-opacity: 0;
