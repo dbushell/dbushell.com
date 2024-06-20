@@ -31,5 +31,3 @@ I'm proud of my work and love to share it with permission. Here's just a couple 
 * [Responsive Design for Houden](/2015/03/18/responsive-design-for-houden/)
 
 [Check out my portfolio](/showcase/) for a showcase of work spanning my entire career.
-
-💤 [My services](/services/) also include: [front-end development](/front-end-development/), [content management](/wordpress-and-cms-integration/), and [process & strategy](/process-and-strategy/).

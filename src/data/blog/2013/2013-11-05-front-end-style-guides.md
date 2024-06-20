@@ -10,7 +10,7 @@ I've just read **[Front-end Style Guides](http://www.fivesimplesteps.com/produc
 
 Style guides are critical to how I make websites.
 
-My [design & build process](/process-and-strategy/) naturally results in a front-end style guide being created alongside the website. This is more than just a "deliverable". While it will likely benefit future design and development, that's not the primary reason why I create it.
+My design & build process naturally results in a front-end style guide being created alongside the website. This is more than just a "deliverable". While it will likely benefit future design and development, that's not the primary reason why I create it.
 
 As my [last case study](/2013/08/09/responsive-design-for-kings-transfer/) hopefully shows, I prefer to start new projects with heavy focus on content. This allows me to understand the client's business while setting reasonable — budget conscious — requirements and criteria for a successful design. I then work on simple info architecture with the client resulting in a plain HTML website; much of the content and structure objectively decided and prioritised. This aspect of web design is as important to me as the visual design that follows.
 

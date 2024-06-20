@@ -3,11 +3,9 @@ slug: showcase
 title: 'Portfolio'
 ---
 
-📢 I provide [many services](/services/) and fulfil many roles.
+I provide [many services](/services/) and fulfil many roles. It's not easy to showcase my work in a neat package as it's spread out across the web.
 
-It's not easy to showcase my work in a neat package as it's spread out across the web.
-
-<h3 class="Cursive">Discover my recent work</h3>
+<p class="Cursive">Discover my recent work</p>
 
 * [Read my blog](/blog/) — I go in-depth with case studies and topics
 * [See my projects](/now/) — Side projects I'm working on now
@@ -26,32 +24,38 @@ The projects below are from my university degree ([I graduated in 2008](/about/)
 <ul class="List List--folio">
   <li>
     <a href="/showcase/origami-unfolded/">
-      <span class="Hidden">Origami Unfolded</span><img  src="/images/portfolio/origami.jpg" alt="Origami Unfolded" loading="lazy" width="330" height="220" />
+      <span class="Hidden">Origami Unfolded</span>
+      <img src="/images/portfolio/origami.jpg" alt="Origami Unfolded" width="330" height="220" />
     </a>
   </li>
   <li>
     <a href="/showcase/machinal/">
-      <span class="Hidden">Machinal</span><img  src="/images/portfolio/machinal.jpg" alt="Machinal" loading="lazy" width="330" height="220" />
+      <span class="Hidden">Machinal</span>
+      <img src="/images/portfolio/machinal.jpg" alt="Machinal" width="330" height="220" />
     </a>
   </li>
   <li>
     <a href="/showcase/space-opera/">
-      <span class="Hidden">Space Opera</span><img  src="/images/portfolio/space.jpg" alt="Space Opera" loading="lazy" width="330" height="220" />
+      <span class="Hidden">Space Opera</span>
+      <img src="/images/portfolio/space.jpg" alt="Space Opera" width="330" height="220" />
     </a>
   </li>
   <li>
     <a href="/showcase/seized/">
-      <span class="Hidden">Seized</span><img  src="/images/portfolio/seized.jpg" alt="Seized" loading="lazy" width="330" height="220" />
+      <span class="Hidden">Seized</span>
+      <img src="/images/portfolio/seized.jpg" alt="Seized" width="330" height="220" />
     </a>
   </li>
   <li>
     <a href="/showcase/digital-legibility/">
-      <span class="Hidden">Digital Legibility</span><img  src="/images/portfolio/digital.jpg" alt="Digital Legibility" loading="lazy" width="330" height="220" />
+      <span class="Hidden">Digital Legibility</span>
+      <img src="/images/portfolio/digital.jpg" alt="Digital Legibility" width="330" height="220" />
     </a>
   </li>
   <li>
     <a href="/showcase/tamed-aggression/">
-      <span class="Hidden">Tamed Aggression</span><img  src="/images/portfolio/tamed.jpg" alt="Tamed Aggression" loading="lazy" width="330" height="220" />
+      <span class="Hidden">Tamed Aggression</span>
+      <img src="/images/portfolio/tamed.jpg" alt="Tamed Aggression" width="330" height="220" />
     </a>
   </li>
 </ul>

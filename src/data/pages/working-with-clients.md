@@ -3,7 +3,8 @@ slug: working-with-clients
 title: 'Your Website'
 features: ['cta']
 ---
-📢 Are you looking to get a new website off the ground, or revitalise an existing one?
+
+Are you looking to get a new website off the ground, or revitalise an existing one?
 
 I've worked successfully with many businesses. From large national organisations to small individually run start-ups. Here's how I can help you:
 

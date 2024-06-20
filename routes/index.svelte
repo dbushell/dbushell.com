@@ -20,7 +20,6 @@
   import Article from '@components/article.svelte';
   import Button from '@components/button.svelte';
   import Heading from '@components/heading.svelte';
-  import Kofi from '@components/kofi.svelte';
   import Nav from '@components/nav.svelte';
   import Rule from '@components/rule.svelte';
 
@@ -66,7 +65,7 @@
           <ul class="List List--large">
             <li><a href="/front-end-development/">Front-end Development</a></li>
             <li><a href="/responsive-design/">Responsive Design</a></li>
-            <li><a href="/services/">And a whole lot more&hellip;</a></li>
+            <li><a href="/about/">Who Am I?</a></li>
           </ul>
           <Button href="/contact/">Hire Me!</Button>
         </div>

@@ -69,6 +69,15 @@ p {
   &:has(small:only-child) {
     font-size: var(--step-s);
   }
+
+  &:has(.Button:only-child) {
+    &:not(:first-child) {
+      margin-block-start: calc((27 / 16) * 1rem);
+    }
+    &:not(:last-child) {
+      margin-block: calc((27 / 16) * 1rem) 0;
+    }
+  }
 }
 
 sup {

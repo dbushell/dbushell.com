@@ -33,7 +33,7 @@ export const readProps = async (srcPath: string): Promise<Props> => {
     src: srcPath
   };
   if (/\/showcase\//.test(props.href)) {
-    props.priority = '0.7';
+    props.priority = '0.5';
   }
 
   // Pass title and description through Marked for smartypants

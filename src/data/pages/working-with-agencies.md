@@ -3,7 +3,8 @@ slug: working-with-agencies
 title: 'Working with Agencies'
 features: ['cta']
 ---
-📢 Need a reliable hand with design, front-end, or a bit of everything?
+
+Need a reliable hand with [design](/responsive-design/), [front-end](/front-end-development/), or a bit of everything?
 
 I can pick up the overflow to help deliver your project on time. I pride myself in communication and initiative to ensure my involvement is always seamless, flexible, cost-effective, and of the highest quality.
 

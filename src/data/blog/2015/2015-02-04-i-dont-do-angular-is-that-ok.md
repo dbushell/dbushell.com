@@ -16,7 +16,7 @@ Then I list:
 
 * [Responsive Design](/responsive-design/)
 * [Front-end Development](/front-end-development/)
-* [Process & Strategy](/process-and-strategy/)
+* Process & Strategy
 
 These pages are a delicate balance of an intelligent, thoughtful, and succinct description of my 'craft', and some SEO bingo because that's an unfortunate reality. In my sidebar-slash-footer: _"I freelance for small businesses, start-ups, individuals, and fellow web agencies."_ — i.e. pretty much anyone willing to pay me.
 
