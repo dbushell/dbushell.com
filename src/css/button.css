@@ -13,7 +13,7 @@
   display: block;
   font-size: var(--step-s);
   font-weight: 600;
-  line-height: 1.6;
+  line-height: var(--line-height-2);
   letter-spacing: calc((1 / 16) * 1rem);
   max-width: max-content;
   padding: calc((7 / 16) * 1rem) calc((16 / 16) * 1rem);

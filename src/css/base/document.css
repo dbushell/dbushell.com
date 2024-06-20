@@ -1,10 +1,11 @@
-.Document {
+:root {
   --outline: calc((2 / 16) * 1rem) dashed oklch(var(--color-secondary));
   background: oklch(var(--color-background));
   color: oklch(var(--color-foreground));
   font-family: 'Raleway', sans-serif;
+  font-synthesis: none;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: var(--line-height-1);
   margin: 0;
   padding: 0;
 }

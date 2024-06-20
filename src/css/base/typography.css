@@ -65,10 +65,15 @@ p {
   & a {
     font-weight: 500;
   }
+
+  &:has(small:only-child) {
+    font-size: var(--step-s);
+  }
 }
 
 sup {
   font-size: var(--step-s);
+  line-height: 1;
   vertical-align: top;
 }
 
@@ -105,7 +110,7 @@ h6 {
   color: oklch(var(--color-primary));
   font-size: var(--step-1);
   font-weight: 600;
-  line-height: 1.5;
+  line-height: var(--line-height-2);
   margin: calc((27 / 16) * 1rem) 0 calc((18 / 16) * 1rem) 0;
   position: relative;
 
@@ -120,7 +125,7 @@ h6 {
 
 h1 {
   font-size: var(--step-5);
-  line-height: 1.25;
+  line-height: 1;
   margin: calc((18 / 16) * 1rem) 0;
 }
 
@@ -140,7 +145,7 @@ h2 {
 
   :where(.Main) & {
     font-size: var(--step-2);
-    line-height: 1.4;
+    line-height: var(--line-height-3);
   }
 }
 
@@ -155,7 +160,7 @@ h3 {
 
   &.Cursive {
     font-size: var(--step-1);
-    line-height: 1.5;
+    line-height: var(--line-height-2);
   }
 }
 

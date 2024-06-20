@@ -25,7 +25,7 @@
     }
 
     // Handle dark mode
-    const $doc = document.querySelector('.Document');
+    const $doc = document.documentElement;
     const $mode = document.querySelector('.Lightbulb');
     const list = $doc.classList;
     if (localStorage.getItem('darkmode') === 'on') {
@@ -46,16 +46,26 @@
 
     // Handle monospace font
     if (document.querySelector('code')) {
-      var fira = new FontFace(
-        'Fira Code Light',
-        `url('/assets/fonts/fira-code-light.woff2?v=${deployHash}') format('woff2')`,
-        {weight: '300', unicodeRange: 'U+0020-007F'}
-      );
-      Promise.all([fira.load()]).then((fonts) => {
-        fonts.forEach((font) => {
+      new FontFace(
+        'Roboto Mono',
+        `url('/assets/fonts/roboto-mono-variable.woff2?v=${deployHash}') format('woff2')`,
+        {weight: '1 900'}
+      )
+        .load()
+        .then((font) => {
+          console.log(font);
           document.fonts.add(font);
         });
-      });
+      new FontFace(
+        'Roboto Mono',
+        `url('/assets/fonts/roboto-mono-italic-variable.woff2?v=${deployHash}') format('woff2')`,
+        {weight: '1 900', style: 'italic'}
+      )
+        .load()
+        .then((font) => {
+          console.log(font);
+          document.fonts.add(font);
+        });
     }
   });
 </script>

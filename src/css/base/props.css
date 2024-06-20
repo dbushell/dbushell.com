@@ -1,76 +1,26 @@
 /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1920,19,1.333,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
 
 :root {
-  --step-s: calc((14 / 16) * 1rem);
-}
+  --step-s: clamp(0.875rem, 0.85rem + 0.125vi, 1rem); /* 14-16 */
+  --step-0: clamp(1rem, 0.9625rem + 0.1875vi, 1.1875rem); /* 16-19 */
+  --step-1: clamp(1.125rem, 1.025rem + 0.5vi, 1.625rem); /* 18-26 */
+  --step-2: clamp(1.25rem, 1.1rem + 0.75vi, 2rem); /* 20-32 */
+  /* --step-3: clamp(1.375rem, 1.075rem + 1.5vi, 2.875rem); */ /* 22-46 */
+  /* --step-4: clamp(1.625rem, 1.2rem + 2.125vi, 3.75rem); */ /* 26-60 */
+  --step-5: clamp(1.75rem, 1.1rem + 3.25vi, 5rem); /* 28-80 */
 
-@media (width >= calc((600 / 16) * 1rem)) {
-  :root {
-    --step-s: calc((15 / 16) * 1rem);
-  }
-}
-
-:root {
-  --fluid-min-width: 320;
-  --fluid-max-width: 1920;
-
-  --fluid-screen: 100vw;
-  --fluid-bp: calc(
-    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
-      (var(--fluid-max-width) - var(--fluid-min-width))
-  );
-}
-
-@media (width >= calc((1920 / 16) * 1rem)) {
-  :root {
-    --fluid-screen: calc(var(--fluid-max-width) * 1px);
-  }
+  --line-height-1: 1.6;
+  --line-height-2: 1.5;
+  --line-height-3: 1.4;
 }
 
 :root {
-  --f-0-min: 16;
-  --f-0-max: 19;
-  --step-0: calc(
-    ((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) * var(--fluid-bp)
-  );
-
-  --f-1-min: 18;
-  --f-1-max: 26;
-  --step-1: calc(
-    ((var(--f-1-min) / 16) * 1rem) + (var(--f-1-max) - var(--f-1-min)) * var(--fluid-bp)
-  );
-
-  --f-2-min: 20;
-  --f-2-max: 34;
-  --step-2: calc(
-    ((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) * var(--fluid-bp)
-  );
-
-  --f-3-min: 22;
-  --f-3-max: 46;
-  --step-3: calc(
-    ((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) * var(--fluid-bp)
-  );
-
-  --f-4-min: 26;
-  --f-4-max: 60;
-  --step-4: calc(
-    ((var(--f-4-min) / 16) * 1rem) + (var(--f-4-max) - var(--f-4-min)) * var(--fluid-bp)
-  );
-
-  --f-5-min: 28;
-  --f-5-max: 80;
-  --step-5: calc(
-    ((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) * var(--fluid-bp)
-  );
-}
-
-:root {
-  --page-margin-mid: calc(((100 / 1920) * 100) * 1dvw);
+  --page-max-inline: 1920;
+  --page-margin-mid: calc(((100 / 1920) * 100) * 1dvi);
   --page-margin-min: calc((20 / 16) * 1rem);
   --page-margin-max: calc((100 / 16) * 1rem);
   --page-margin: clamp(var(--page-margin-min), var(--page-margin-mid), var(--page-margin-max));
-  --page-max: calc((var(--fluid-max-width) / 16) * 1rem);
+  --page-max: calc((var(--page-max-inline) / 16) * 1rem);
 }
 
 :root {

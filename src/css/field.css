@@ -13,7 +13,7 @@
   display: block;
   font-size: var(--step-s);
   font-family: 'Raleway', sans-serif;
-  line-height: 1.6;
+  line-height: var(--line-height-2);
   outline: none;
   padding: calc((7 / 16) * 1rem) calc((10 / 16) * 1rem);
   transition: color 200ms, border-color 200ms, box-shadow 200ms;
