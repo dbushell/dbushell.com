@@ -52,20 +52,14 @@
         {weight: '1 900'}
       )
         .load()
-        .then((font) => {
-          console.log(font);
-          document.fonts.add(font);
-        });
+        .then((font) => document.fonts.add(font));
       new FontFace(
         'Roboto Mono',
         `url('/assets/fonts/roboto-mono-italic-variable.woff2?v=${deployHash}') format('woff2')`,
         {weight: '1 900', style: 'italic'}
       )
         .load()
-        .then((font) => {
-          console.log(font);
-          document.fonts.add(font);
-        });
+        .then((font) => document.fonts.add(font));
     }
   });
 </script>
