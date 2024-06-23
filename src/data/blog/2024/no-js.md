@@ -58,7 +58,7 @@ Isn't that cool?
 
   [Vadim Makeev](https://mastodon.social/@pepelsbey/112664544117364708) and [Russell Heimlich](https://mastodon.social/@kingkool68/112661256185552879) also raised concerns over of a script failing later. The `no-js` didn't account for this either.
 
-  Adding an initialised class per-component script, or toggling attributes like `disabled` where relevant, allow for more fine-grained progressive enhancement based.
+  Adding an initialised class per-component script, or toggling attributes like `disabled` where relevant, allow for more fine-grained progressive enhancement.
 
   With these considerations `scripting: none` seems useful but `scripting: enabled` isn't all that meaningful.
 </div>
