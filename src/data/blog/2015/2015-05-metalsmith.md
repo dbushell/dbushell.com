@@ -6,10 +6,8 @@ template: single.html
 title: WordPress to Metalsmith
 ---
 
-<div class="b-boxed b-boxed--dark u-dark">
-  <h3>NEW: <a href="/2017/02/13/react-as-a-static-site-generator/">React as a Static Site Generator</a></h3>
-  <p>I now used React instead of Metalsmith. See my new approach above!</p>
-</div>
+New update: [React as a Static Site Generator](/2017/02/13/react-as-a-static-site-generator/) — I now used React instead of Metalsmith.
+
 
 It’s a busy work schedule that is usually to blame for my lack of written output on this blog. That was not the case last month!
 

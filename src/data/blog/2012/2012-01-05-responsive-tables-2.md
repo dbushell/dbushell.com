@@ -6,10 +6,7 @@ template: single.html
 title: Responsive Tables (2)
 ---
 
-<div class="b-boxed b-boxed--dark u-dark">
-<h3>NEW: <a href="/2016/03/04/css-only-responsive-tables/">CSS only Responsive Tables</a></h3>
-<p>See the link above for more recent developments.</p>
-</div>
+New update: [CSS only Responsive Tables](/2016/03/04/css-only-responsive-tables/) — more recent developments.
 
 My [last article on responsive tables](/2012/01/04/responsive-calendar-demo/) was very popular so I've only gone and implemented the idea that I was alluding to with horizontal scrolling!
 

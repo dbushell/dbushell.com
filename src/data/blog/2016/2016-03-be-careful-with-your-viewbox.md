@@ -10,20 +10,20 @@ In Sara Soueidan's article: [SVG Style Inheritance and the ‘Flash of Unstyled 
 
 I have an SVG sprite for social icons:
 
-<div class="b-boxed social">
-  <style scoped>
-  .svg-icon  { display: inline-block; vertical-align: top; margin: 0 2px; width: 42px; height: 42px; fill: #ff6680; }
-  </style>
-  <svg class="svg-icon" role="presentation">
-    <use xlink:href="/assets/img/icons.svg#twitter"></use>
-  </svg>
-  <svg class="svg-icon" role="presentation">
-    <use xlink:href="/assets/img/icons.svg#github"></use>
-  </svg>
-  <svg class="svg-icon" role="presentation">
-    <use xlink:href="/assets/img/icons.svg#codepen"></use>
-  </svg>
-</div>
+```html
+<style scoped>
+.svg-icon  { display: inline-block; vertical-align: top; margin: 0 2px; width: 42px; height: 42px; fill: #ff6680; }
+</style>
+<svg class="svg-icon" role="presentation">
+  <use xlink:href="/assets/img/icons.svg#twitter"></use>
+</svg>
+<svg class="svg-icon" role="presentation">
+  <use xlink:href="/assets/img/icons.svg#github"></use>
+</svg>
+<svg class="svg-icon" role="presentation">
+  <use xlink:href="/assets/img/icons.svg#codepen"></use>
+</svg>
+```
 
 These three icons live within a single file (see Sara's guide to [SVG sprites](https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/)). To reused an icon is as simple as referencing it like so:
 

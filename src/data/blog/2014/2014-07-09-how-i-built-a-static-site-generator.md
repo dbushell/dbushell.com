@@ -6,10 +6,7 @@ template: single.html
 title: How I built a Static Site Generator
 ---
 
-<div class="b-boxed b-boxed--dark u-dark">
-  <h3>NEW: <a href="/2017/02/13/react-as-a-static-site-generator/">React as a Static Site Generator</a></h3>
-  <p>I now used React! See my new approach above.</p>
-</div>
+New update: [React as a Static Site Generator](/2017/02/13/react-as-a-static-site-generator/) — I now used React!
 
 I used to build websites with nothing but a text editor.
 

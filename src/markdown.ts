@@ -46,6 +46,14 @@ marked.use({
   async: true,
   useNewRenderer: true,
   async walkTokens(token) {
+    if (token.type === 'html') {
+      const match = /(<div\s[^>]*>)(.+?)(<\/div>\s*)/s.exec(token.text);
+      if (match) {
+        token.text = await markdown(match[2]);
+        token.text = `${match[1]}${token.text}${match[3]}`;
+        return;
+      }
+    }
     if (token.type !== 'code') {
       return;
     }

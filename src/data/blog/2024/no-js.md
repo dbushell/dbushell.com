@@ -50,6 +50,19 @@ For example:
 
 Isn't that cool?
 
+<div class="Box">
+  <p class="Cursive">Update for 23rd June 2024</p>
+
+  [Šime Vidas notes:](https://mastodon.social/@simevidas/112661438539619295)
+  > The problem with the CSS scripting feature (compared to the no-js class) is that it doesn’t detect when the user has disabled JavaScript via a browser extension, which is probably the by far most common way of doing that.
+
+  [Vadim Makeev](https://mastodon.social/@pepelsbey/112664544117364708) and [Russell Heimlich](https://mastodon.social/@kingkool68/112661256185552879) also raised concerns over of a script failing later. The `no-js` didn't account for this either.
+
+  Adding an initialised class per-component script, or toggling attributes like `disabled` where relevant, allow for more fine-grained progressive enhancement based.
+
+  With these considerations `scripting: none` seems useful but `scripting: enabled` isn't all that meaningful.
+</div>
+
 ## A Little History
 
 As far as I know the `no-js` class was popularised by [Modernizr](https://github.com/Modernizr/Modernizr), an influential JavaScript library for feature detection.

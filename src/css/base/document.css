@@ -1,3 +1,7 @@
+/* @view-transition {
+  navigation: auto;
+} */
+
 :root {
   --outline: calc((2 / 16) * 1rem) dashed oklch(var(--color-secondary));
   background: oklch(var(--color-background));
