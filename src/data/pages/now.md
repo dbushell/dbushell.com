@@ -1,7 +1,6 @@
 ---
 slug: now
 title: 'My Projects'
-features: ['kofi']
 ---
 
 ## Active

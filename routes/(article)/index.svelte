@@ -21,7 +21,6 @@
   import {getContext} from 'svelte';
   import App from '@components/app.svelte';
   import Heading from '@components/heading.svelte';
-  import Kofi from '@components/kofi.svelte';
   import Nav from '@components/nav.svelte';
   import Prose from '@components/prose.svelte';
   import Time from '@components/time.svelte';
@@ -38,6 +37,5 @@
       <Time {date} />
     {/if}
     <Prose innerHTML={body} />
-    <Kofi />
   </svelte:fragment>
 </App>

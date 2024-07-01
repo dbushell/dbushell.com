@@ -25,7 +25,6 @@
   import App from '@components/app.svelte';
   import CTA from '@components/cta.svelte';
   import Heading from '@components/heading.svelte';
-  import Kofi from '@components/kofi.svelte';
   import Nav from '@components/nav.svelte';
   import Prose from '@components/prose.svelte';
 
@@ -40,9 +39,6 @@
     <Prose innerHTML={body} />
     {#if features?.includes('cta')}
       <CTA />
-    {/if}
-    {#if features?.includes('kofi')}
-      <Kofi />
     {/if}
   </svelte:fragment>
 </App>

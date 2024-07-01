@@ -51,6 +51,7 @@ export const readProps = async (srcPath: string): Promise<Props> => {
 
   // Blog date and slug
   if (matter.attrs.date) {
+    props.features?.push('prompt');
     props.container = 'article';
     props.priority = '0.6';
     props.date = new Date(matter.attrs.date);
@@ -64,6 +65,7 @@ export const readProps = async (srcPath: string): Promise<Props> => {
       ].join('/') +
       '/';
   }
+
   return props;
 };
 

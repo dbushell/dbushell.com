@@ -1,7 +1,6 @@
 ---
 slug: uses
 title: 'The Stuff I use'
-features: ['kofi']
 ---
 
 This website is built and hosted using:
@@ -31,5 +30,3 @@ Machines I use for work and self-hosting:
 * Raspberry Pi — many of them!
 
 *Last updated: January 2024*
-
-<Kofi />

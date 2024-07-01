@@ -19,7 +19,6 @@
   import App from '@components/app.svelte';
   import Contact from '@components/contact.svelte';
   import Heading from '@components/heading.svelte';
-  import Kofi from '@components/kofi.svelte';
   import Nav from '@components/nav.svelte';
 </script>
 

@@ -21,7 +21,6 @@
   import Article from '@components/article.svelte';
   import Button from '@components/button.svelte';
   import Heading from '@components/heading.svelte';
-  import Kofi from '@components/kofi.svelte';
   import Nav from '@components/nav.svelte';
 
   const {props} = getContext('serverData');
@@ -61,6 +60,5 @@
         {/if}
       </div>
     {/if}
-    <Kofi />
   </svelte:fragment>
 </App>
