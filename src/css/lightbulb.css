@@ -1,0 +1,72 @@
+.Lightbulb {
+  --lightbulb-stroke: oklch(var(--db-blue));
+  --lightbulb-fill: oklch(var(--db-yellow));
+  --lightbulb-rays: 1;
+  display: none;
+  block-size: auto;
+  inset-inline-start: var(--page-margin);
+  padding: calc((9 / 16) * 1rem);
+  padding-block-start: calc((18 / 16) * 1rem);
+  position: absolute;
+  inset-block-start: 0;
+  transform: translateY(calc((-9 / 16) * 1rem));
+  transition: transform 100ms;
+  inline-size: calc((45 / 16) * 1rem);
+  z-index: 10;
+
+  &:before {
+    background: var(--lightbulb-stroke);
+    bottom: calc(100% - ((19 / 16) * 1rem));
+    content: '';
+    display: block;
+    block-size: calc((36 / 16) * 1rem);
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    inline-size: calc((1 / 16) * 1rem);
+  }
+
+  &:hover {
+    transform: translateY(0);
+    --lightbulb-stroke: oklch(var(--db-blue));
+    --lightbulb-fill: oklch(var(--db-blue) / 0.5);
+    --lightbulb-rays: 0;
+  }
+
+  &:focus {
+    outline: var(--outline);
+  }
+
+  &:not(:focus-visible) {
+    outline: none;
+  }
+
+  & path {
+    transition: fill 100ms, opacity 100ms;
+  }
+
+  .Darkmode & {
+    --lightbulb-stroke: oklch(var(--db-green));
+    --lightbulb-fill: transparent;
+    --lightbulb-rays: 0;
+
+    &:focus,
+    &:hover {
+      --lightbulb-stroke: oklch(var(--db-yellow));
+      --lightbulb-fill: oklch(var(--db-yellow) / 0.5);
+      --lightbulb-rays: 1;
+    }
+  }
+}
+
+@media (scripting: enabled) {
+  .Lightbulb {
+    display: block;
+  }
+}
+
+@container app (inline-size < calc((400 / 16) * 1rem)) {
+  .Lightbulb {
+    margin-inline-start: calc((-12 / 16) * 1rem);
+  }
+}

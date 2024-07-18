@@ -1,0 +1,74 @@
+:root {
+  --db-light: 98.62% 0.014 84.58;
+  --db-dark: 40.05% 0.014 17.74;
+  --db-pink: 70.27% 0.192 13.7;
+  --db-blue: 62.78% 0.12 226;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: oklch(var(--db-light));
+  color: oklch(var(--db-dark));
+}
+
+body {
+  padding: 1.5rem;
+}
+
+a {
+  color: oklch(var(--db-blue));
+}
+
+a:hover {
+  color: oklch(var(--db-pink));
+  text-decoration: none;
+}
+
+a:focus-visible {
+  color: oklch(var(--db-pink));
+  outline: 0.125rem solid oklch(var(--db-pink));
+  outline-offset: 0.125rem;
+}
+
+main,
+header {
+  margin-block-end: 3rem;
+  margin-inline: auto;
+  max-inline-size: 80ch;
+}
+
+article {
+  margin-block-end: 3rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-block: 1rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-block: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-block: 1rem;
+}
+
+p {
+  font-size: 1.25rem;
+  margin-block-end: 1rem;
+}
+
+small {
+  font-size: 1rem;
+}

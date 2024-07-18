@@ -1,0 +1,97 @@
+/* @view-transition {
+  navigation: auto;
+} */
+
+:root {
+  --outline: calc((2 / 16) * 1rem) dashed oklch(var(--color-secondary));
+  background: oklch(var(--color-background));
+  color: oklch(var(--color-foreground));
+  font-family: 'Raleway', sans-serif;
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: var(--line-height-1);
+  margin: 0;
+  padding: 0;
+}
+
+[class*='🖕'] {
+  display: none;
+}
+
+@media screen {
+  .Lightmode {
+    --color-background: var(--db-light);
+    --color-background2: var(--db-white);
+    --color-foreground: var(--db-dark);
+
+    --color-primary: var(--db-blue);
+    --color-primary2: var(--db-blue2);
+    --color-secondary: var(--db-pink);
+    --color-secondary2: var(--db-red);
+    --color-tertiary: var(--db-pink);
+    --color-quaternary: var(--db-green);
+
+    --masthead-primary: var(--db-green);
+    --masthead-secondary: var(--db-blue);
+  }
+
+  .Darkmode {
+    --color-background: var(--db-dark);
+    --color-background2: var(--db-black);
+    --color-foreground: var(--db-light);
+
+    --color-primary: var(--db-yellow);
+    --color-primary2: var(--db-yellow);
+    --color-secondary: var(--db-green);
+    --color-secondary2: var(--db-green);
+    --color-tertiary: var(--db-pink);
+    --color-quaternary: var(--db-blue);
+
+    --masthead-primary: var(--db-blue);
+    --masthead-secondary: var(--db-green);
+  }
+}
+
+.Kofi {
+  --inset: calc((36 / 16) * 1rem);
+  font-size: var(--step-s);
+  inset-block-end: var(--inset);
+  inset-inline-end: var(--inset);
+  line-height: 1;
+  margin: 0;
+  position: fixed;
+
+  & a {
+    align-items: center;
+    display: flex;
+    gap: calc((9 / 16) * 1rem);
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      & span {
+        opacity: 1;
+      }
+    }
+  }
+
+  & img {
+    inline-size: calc((40 / 16) * 1rem);
+  }
+
+  & span {
+    background: oklch(var(--color-background2));
+    border: calc((1 / 16) * 1rem) solid currentColor;
+    border-radius: calc((5 / 16) * 1rem);
+    opacity: 0;
+    padding: calc((9 / 16) * 1rem);
+    transition: opacity 200ms;
+    white-space: nowrap;
+  }
+}
+
+@media (width < calc((400 / 16) * 1rem)) or (height < calc((400 / 16) * 1rem)) {
+  .Kofi {
+    display: none;
+  }
+}

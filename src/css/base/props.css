@@ -1,0 +1,52 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1920,19,1.333,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+  --step-s: clamp(0.875rem, 0.85rem + 0.125vi, 1rem); /* 14-16 */
+  --step-0: clamp(1rem, 0.9625rem + 0.1875vi, 1.1875rem); /* 16-19 */
+  --step-1: clamp(1.125rem, 1.025rem + 0.5vi, 1.625rem); /* 18-26 */
+  --step-2: clamp(1.25rem, 1.1rem + 0.75vi, 2rem); /* 20-32 */
+  /* --step-3: clamp(1.375rem, 1.075rem + 1.5vi, 2.875rem); */ /* 22-46 */
+  /* --step-4: clamp(1.625rem, 1.2rem + 2.125vi, 3.75rem); */ /* 26-60 */
+  --step-5: clamp(1.75rem, 1.1rem + 3.25vi, 5rem); /* 28-80 */
+
+  --line-height-1: 1.6;
+  --line-height-2: 1.5;
+  --line-height-3: 1.4;
+}
+
+:root {
+  --page-max-inline: 1920;
+  --page-margin-mid: calc(((100 / 1920) * 100) * 1dvi);
+  --page-margin-min: calc((20 / 16) * 1rem);
+  --page-margin-max: calc((100 / 16) * 1rem);
+  --page-margin: clamp(var(--page-margin-min), var(--page-margin-mid), var(--page-margin-max));
+  --page-max: calc((var(--page-max-inline) / 16) * 1rem);
+}
+
+:root {
+  --db-light: 98.62% 0.014 84.58; /* 40, 100%, 97%; /* 255, 250, 240; */
+  --db-dark: 40.05% 0.014 17.74; /* 0, 7%, 29%; /* 80, 70, 70; */
+  --db-pink: 70.27% 0.192 13.7; /* 350, 100%, 69%; /* 255, 100, 125; */
+  --db-red: 57.82% 0.19 16.36; /* 350, 63%, 52%; /* 210, 55, 80; */
+  --db-green: 86.59% 0.088 168.12; /* 157, 61%, 75%; /* 150, 230, 200; */
+  --db-blue: 62.78% 0.12 226; /* 194, 82%, 41%; /* 20, 150, 190; */
+  --db-blue2: 52.78% 0.1 226; /* 194, 82%, 31%; /* 15, 110, 155; */
+  --db-yellow: 97.25% 0.0767 103; /* 55, 100%, 87%; /* 255, 250, 190; */
+  --db-white: 100% 0 0; /* 0, 0%, 100%; /* 255, 255, 255; */
+  --db-black: 31.55% 0.009 17.62; /* 0, 5%, 20%; /* 55, 50, 50; */
+  /* --db-midnight: 28.82% 0.022 277.51; */
+  --db-midnight: 30.05% 0.014 17.74;
+}
+
+@media (color-gamut: p3) {
+  :root {
+    --db-pink: 72.27% 0.222 13.7;
+    --db-blue: 62.78% 0.158 226;
+    --db-blue2: 52.78% 0.12 226;
+  }
+}
+
+:root {
+  --star: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path d="M9.625 5.375L15 7.5 9.625 9.625 7.5 15 5.375 9.625 0 7.5l5.375-2.125L7.5 0z"/></svg>');
+  --check: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.75" viewBox="0 0 14 10.75"><path d="M12.28 0a1.71 1.71 0 00-1.22.5L5 6.59l-2-2A1.73 1.73 0 00.56 7.03l3.25 3.25a1.73 1.73 0 002.44 0l7.31-7.31a1.73 1.73 0 000-2.44A1.71 1.71 0 0012.28 0z"/></svg>');
+}

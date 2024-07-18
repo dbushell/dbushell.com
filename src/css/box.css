@@ -1,0 +1,22 @@
+.Box {
+  align-items: center;
+  background: oklch(var(--color-background2));
+  border: calc((2 / 16) * 1rem) solid oklch(var(--color-quaternary));
+  border-radius: calc((9 / 16) * 1rem);
+  display: grid;
+  gap: calc((18 / 16) * 1rem);
+  grid-template-columns: 1fr;
+  padding: calc((18 / 16) * 1rem);
+  position: relative;
+
+  & > * {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+}
+
+@container app (inline-size >= calc((400 / 16) * 1rem)) {
+  .Box {
+    margin-inline-start: calc((-20 / 16) * 1rem);
+  }
+}

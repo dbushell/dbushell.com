@@ -1,0 +1,35 @@
+.Note {
+  align-items: center;
+  border: calc((1 / 16) * 1rem) solid oklch(var(--color-quaternary));
+  border-radius: calc((9 / 16) * 1rem);
+  display: grid;
+  gap: calc((18 / 16) * 1rem);
+  grid-template-columns: 1fr;
+  margin: calc((36 / 16) * 1rem) 0;
+  padding: calc((18 / 16) * 1rem);
+  position: relative;
+
+  & > footer {
+    margin-block-end: calc((-9 / 16) * 1rem);
+    order: -1;
+  }
+
+  & > * {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  & + & {
+    margin-block-start: calc((-18 / 16) * 1rem);
+  }
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+}
+
+@container app (inline-size >= calc((400 / 16) * 1rem)) {
+  .Note {
+    margin-inline-start: calc((-20 / 16) * 1rem);
+  }
+}

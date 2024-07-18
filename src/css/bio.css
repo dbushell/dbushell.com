@@ -1,0 +1,22 @@
+.Bio {
+  display: flow-root;
+
+  & figure,
+  & img {
+    block-size: calc((80 / 16) * 1rem);
+    inline-size: calc((80 / 16) * 1rem);
+  }
+
+  & figure {
+    flex: 0 0 calc((80 / 16) * 1rem);
+    float: inline-end;
+    margin: 0 0 calc((9 / 16) * 1rem) 0;
+    margin-inline-start: calc((18 / 16) * 1rem);
+    shape-outside: circle(50%);
+  }
+
+  & img {
+    border: calc((2 / 16) * 1rem) solid oklch(var(--color-secondary));
+    border-radius: 100%;
+  }
+}

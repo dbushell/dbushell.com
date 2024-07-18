@@ -1,0 +1,235 @@
+a:where([href]) {
+  --anchor-color: var(--color-primary2);
+  --anchor-opacity: 0.5;
+  color: oklch(var(--anchor-color));
+  text-decoration-line: underline;
+  text-decoration-thickness: 5%;
+  text-decoration-skip-ink: all;
+  text-decoration-color: oklch(var(--anchor-color) / var(--anchor-opacity));
+  text-underline-offset: 0.15em;
+  transition: color 200ms, background 200ms, text-decoration-color 200ms, text-decoration 200ms;
+
+  &:hover {
+    --anchor-color: var(--color-tertiary);
+    --anchor-opacity: 0;
+  }
+
+  &:focus {
+    --anchor-opacity: 0;
+    outline: var(--outline);
+    outline-offset: calc((2 / 16) * 1rem);
+
+    &:not(:focus-visible) {
+      outline: none;
+    }
+  }
+
+  &:active {
+    outline: none;
+  }
+}
+
+:where(h2, h3, .Large, .Social) {
+  & a:not(.Button, :hover) {
+    --anchor-color: var(--color-primary);
+  }
+}
+
+:where(.Card p, .List, .Prose, .Star) {
+  & a:not([class]) {
+    background-image: linear-gradient(
+      to right,
+      oklch(var(--color-primary) / 0.2),
+      oklch(var(--color-primary) / 0.2)
+    );
+    background-position: left bottom 5%;
+    background-repeat: repeat-x;
+    background-size: 100% 0;
+
+    &:hover {
+      background-position: center bottom;
+      background-size: 100% 0.25em;
+    }
+  }
+}
+
+p {
+  font-size: var(--step-0);
+  margin: 0 0 calc((18 / 16) * 1rem) 0;
+  max-inline-size: 70ch;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  & a {
+    font-weight: 500;
+  }
+
+  &:has(small:only-child) {
+    font-size: var(--step-s);
+  }
+
+  &:has(.Button:only-child) {
+    &:not(:first-child) {
+      margin-block-start: calc((27 / 16) * 1rem);
+    }
+    &:not(:last-child) {
+      margin-block: calc((27 / 16) * 1rem) 0;
+    }
+  }
+}
+
+sup {
+  font-size: var(--step-s);
+  line-height: 1;
+  vertical-align: top;
+}
+
+blockquote {
+  margin: 0;
+  margin-inline-start: calc((18 / 16) * 1rem);
+  padding-inline-start: calc((18 / 16) * 1rem);
+  border-inline-start: calc((1 / 16) * 1rem) solid oklch(var(--color-tertiary));
+
+  & :is(p, li) {
+    font-style: italic;
+  }
+
+  & cite {
+    font-size: var(--step-s);
+    font-weight: 500;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: oklch(var(--color-primary));
+  font-size: var(--step-1);
+  font-weight: 600;
+  line-height: var(--line-height-2);
+  margin: calc((27 / 16) * 1rem) 0 calc((18 / 16) * 1rem) 0;
+  position: relative;
+
+  &:first-child {
+    margin-block-start: 0;
+  }
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+}
+
+h1 {
+  font-size: var(--step-5);
+  line-height: 1;
+  margin: calc((18 / 16) * 1rem) 0;
+}
+
+@container main (inline-size >= calc((400 / 16) * 1rem)) {
+  h1 {
+    margin: calc((36 / 16) * 1rem) 0;
+  }
+
+  h2,
+  h3 {
+    margin-block-start: calc((36 / 16) * 1rem);
+  }
+}
+
+h2 {
+  font-size: var(--step-1);
+
+  :where(.Main) & {
+    font-size: var(--step-2);
+    line-height: var(--line-height-3);
+  }
+}
+
+h3 {
+  font-size: var(--step-1);
+}
+
+:is(h2, h3) {
+  & .Cursive {
+    font-size: var(--step-0);
+  }
+
+  &.Cursive {
+    font-size: var(--step-1);
+    line-height: var(--line-height-2);
+  }
+}
+
+.Balance {
+  text-wrap: balance;
+}
+
+.Large {
+  font-size: var(--step-1);
+}
+
+.Comic {
+  font-family: 'Komika', 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+
+  & .Hyphen {
+    display: inline-block;
+    transform: translateX(20%) translateY(5%);
+  }
+}
+
+:is(.Cursive, .Time) {
+  color: oklch(var(--color-secondary2));
+  font-family: 'Comic Neue', 'Raleway', sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: calc((-0.5 / 16) * 1rem);
+
+  &:has(svg) {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
+
+    & > svg {
+      aspect-ratio: 1 / 1;
+      block-size: 1em;
+      inline-size: auto;
+      fill: currentColor;
+      flex: 0 0 auto;
+    }
+
+    & > span {
+      flex: 0 1 auto;
+    }
+  }
+}
+
+.Time {
+  display: inline-block;
+  font-size: var(--step-0);
+  vertical-align: top;
+
+  & a {
+    &:not([href]) {
+      display: contents;
+    }
+
+    &[href] {
+      &:not(:hover) {
+        --anchor-color: var(--color-secondary2);
+        --anchor-opacity: 0;
+      }
+    }
+  }
+}
+
+.Error {
+  color: oklch(var(--db-red));
+}

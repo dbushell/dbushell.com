@@ -1,0 +1,7 @@
+.Article {
+  margin: 0 0 calc((36 / 16) * 1rem) 0;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+}

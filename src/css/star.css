@@ -1,0 +1,40 @@
+.Star,
+.List li,
+.Prose :where(ul:not([class*='List'], [class*='Form'])) li {
+  position: relative;
+
+  &::before {
+    content: '•';
+    color: transparent;
+    background: oklch(var(--color-secondary));
+    mask: var(--star) center center / calc((16 / 16) * 1rem) auto no-repeat;
+    inset-inline-start: calc((-36 / 16) * 1rem);
+    position: absolute;
+    inline-size: calc((36 / 16) * 1rem);
+  }
+}
+
+@container app (inline-size < calc((800 / 16) * 1rem)) {
+  .Star,
+  .List li,
+  .Prose :where(ul:not([class*='List'], [class*='Form'])) li {
+    &::before {
+      mask-size: calc((12 / 16) * 1rem) auto;
+      inset-inline-start: calc((-27 / 16) * 1rem);
+      inline-size: calc((27 / 16) * 1rem);
+    }
+  }
+}
+
+@container app (inline-size < calc((600 / 16) * 1rem)) {
+  .Star,
+  .List li,
+  .Prose :where(ul:not([class*='List'], [class*='Form'])) li {
+    padding-inline-start: calc((16 / 16) * 1rem);
+
+    &::before {
+      inset-inline-start: calc((-6 / 16) * 1rem);
+      inline-size: calc((12 / 16) * 1rem);
+    }
+  }
+}

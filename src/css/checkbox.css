@@ -1,0 +1,55 @@
+.Checkbox {
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  & + span {
+    cursor: pointer;
+    display: inline-block;
+    padding-inline-start: calc((36 / 16) * 1rem);
+    position: relative;
+
+    &::after,
+    &::before {
+      background: oklch(var(--color-background2));
+      border: calc((2 / 16) * 1rem) solid oklch(var(--color-quaternary));
+      border-top: 0;
+      border-left: 0;
+      border-radius: calc((5 / 16) * 1rem);
+      box-shadow: calc((-1 / 16) * 1rem) calc((-1 / 16) * 1rem) 0 calc((1 / 16) * 1rem)
+          oklch(var(--color-primary) / 0.5),
+        calc((2 / 16) * 1rem) calc((2 / 16) * 1rem) 0 0 oklch(var(--db-black) / 0.1);
+      content: '';
+      cursor: pointer;
+      display: block;
+      block-size: calc((20 / 16) * 1rem);
+      inset-block-start: 50%;
+      inset-inline-start: 0;
+      opacity: 1;
+      position: absolute;
+      transform: translateY(-50%);
+      inline-size: calc((20 / 16) * 1rem);
+    }
+
+    &::after {
+      background: oklch(var(--color-primary));
+      mask: var(--check) calc((3 / 16) * 1rem) calc((4 / 16) * 1rem) / calc((12 / 16) * 1rem) auto
+        no-repeat;
+      box-shadow: none;
+      opacity: 0;
+      transition: opacity 100ms;
+    }
+  }
+
+  &:focus + span::before {
+    outline: var(--outline);
+    outline-offset: calc((4 / 16) * 1rem);
+  }
+
+  &:checked + span {
+    &::after {
+      opacity: 1;
+    }
+  }
+}

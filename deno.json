@@ -1,0 +1,27 @@
+{
+  "tasks": {
+    "dev": "deno run -A mod.ts --dev",
+    "prod": "deno run -A mod.ts --prod",
+    "build": "deno run -A mod.ts --build"
+  },
+  "imports": {
+    "dinossr": "jsr:@ssr/dinossr@0.31",
+    "carriageway": "jsr:@dbushell/carriageway@0.12",
+    "fs": "jsr:@std/fs@0.229",
+    "path": "jsr:@std/path@0.225",
+    "uuid": "jsr:@std/uuid@1.0",
+    "base64": "jsr:@std/encoding@1.0/base64",
+    "streams": "jsr:@std/streams@0.224",
+    "debounce": "jsr:@std/async@0.224/debounce",
+    "front-matter": "jsr:@std/front-matter@0.224/yaml",
+    "file-server": "jsr:@std/http@0.224/file-server",
+    "lightningcss": "npm:lightningcss@1.25.1",
+    "shiki": "npm:shiki@1.10.0",
+    "shiki-transformers": "npm:@shikijs/transformers@1.10.0",
+    "marked": "npm:marked@13.0.0",
+    "marked-smartypants": "npm:marked-smartypants@1.1.7",
+    "marked-gfm-heading-id": "npm:marked-gfm-heading-id@4.0.0",
+    "@components/": "./components/",
+    "@src/": "./src/"
+  }
+}
