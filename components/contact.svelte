@@ -53,8 +53,9 @@
     <strong>{formNotice}</strong>
   </p>
 {:else}
-  <form method="post" action="/contact/" on:submit={onSubmit}>
-    <p>Email me above or use the form below:</p>
+  <p>Email me above or use the form below:</p>
+  <form aria-labelledby="contact-heading" method="post" action="/contact/" on:submit={onSubmit}>
+    <h2 id="contact-heading" class="Hidden">Contact Form</h2>
     <ul class="Form">
       <li>
         <label class="Cursive" for="contact-name">Name</label>
