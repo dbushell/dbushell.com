@@ -45,9 +45,9 @@
     </h2>
     <div class="Prose">
       <p class="Large Balance">
-        I design and build websites with a focus on <em>standards</em>, <em>performance</em>, and
-        <em>accessibility</em>. With over 15 years of professional experience I’ve delivered for
-        everyone. Whether it’s progressive web apps, content managed templates, or full-stack
+        I design and build websites with a focus on <em>standards</em>, <em>performance</em>,
+        <em>accessibility</em>, and <em>security</em>. With over 15 years of professional
+        experience, from progressive web apps, to content managed templates, and full-stack
         frameworks, I've coded it all.
       </p>
       <div class="Crane">
