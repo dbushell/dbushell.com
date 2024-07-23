@@ -52,8 +52,11 @@ export const GET: DinoHandle<Data> = () => {
 
   const entries = notes.map((note) => {
     let xml = entry;
+    let description = striptags(note.body);
+    description = replace(description, '<', '&lt;');
+    description = replace(description, '>', '&gt;');
     const guid = new URL(note.href, meta.url);
-    xml = replace(xml, `{{description}}`, striptags(note.body));
+    xml = replace(xml, `{{description}}`, description);
     xml = replace(xml, `{{html}}`, note.body);
     xml = replace(xml, `{{link}}`, guid.href);
     xml = replace(xml, `{{guid}}`, guid.href);

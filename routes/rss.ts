@@ -53,8 +53,11 @@ export const GET: DinoHandle<Data> = () => {
     let xml = entry;
     const pubDate = new Date(bookmark.date!).toUTCString();
     const guid = new URL(bookmark.href, meta.url);
+    let excerpt = striptags(bookmark.excerpt);
+    excerpt = replace(excerpt, '<', '&lt;');
+    excerpt = replace(excerpt, '>', '&gt;');
     xml = replace(xml, `{{title}}`, bookmark.title);
-    xml = replace(xml, `{{description}}`, striptags(bookmark.excerpt));
+    xml = replace(xml, `{{description}}`, excerpt);
     xml = replace(xml, `{{html}}`, bookmark.body);
     xml = replace(xml, `{{link}}`, guid.href);
     xml = replace(xml, `{{guid}}`, guid.href);
