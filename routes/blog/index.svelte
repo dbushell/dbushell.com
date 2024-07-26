@@ -21,6 +21,7 @@
   import Heading from '@components/heading.svelte';
   import Nav from '@components/nav.svelte';
   import Pagination from '@components/pagination.svelte';
+  import RssBlog from '@components/rss-blog.svelte';
 
   const {props} = getContext('serverData');
   const {articles, next, prev, title} = props;
@@ -30,6 +31,7 @@
   <svelte:fragment slot="main">
     <Nav current="/blog/" />
     <Heading {title} />
+    <RssBlog />
     {#each articles as item (item.href)}
       <Article {...item} />
     {/each}

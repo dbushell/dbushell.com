@@ -20,6 +20,7 @@
   import Heading from '@components/heading.svelte';
   import Nav from '@components/nav.svelte';
   import Note from '@components/note.svelte';
+  import RssNotes from '@components/rss-notes.svelte';
 
   const {props} = getContext('serverData');
   const {href, date, body, title} = props;
@@ -29,9 +30,7 @@
   <svelte:fragment slot="main">
     <Nav current="/notes/" />
     <Heading title="Notes" />
+    <RssNotes />
     <Note {href} {date} {body} />
-    <div class="Box">
-      <p>Subscribe to my <a href="/notes/rss.xml" target="_blank">microblog RSS feed</a>.</p>
-    </div>
   </svelte:fragment>
 </App>

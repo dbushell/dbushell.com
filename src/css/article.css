@@ -1,6 +1,10 @@
 .Article {
   margin: 0 0 calc((36 / 16) * 1rem) 0;
 
+  :where(.Box) + & {
+    margin-block-start: calc((36 / 16) * 1rem);
+  }
+
   &:last-child {
     margin-block-end: 0;
   }

@@ -23,6 +23,7 @@
   import Heading from '@components/heading.svelte';
   import Nav from '@components/nav.svelte';
   import Prose from '@components/prose.svelte';
+  import RssBlog from '@components/rss-blog.svelte';
   import Time from '@components/time.svelte';
 
   const {props} = getContext('serverData');
@@ -37,5 +38,6 @@
       <p><Time {date} /></p>
     {/if}
     <Prose innerHTML={body} />
+    <RssBlog />
   </svelte:fragment>
 </App>

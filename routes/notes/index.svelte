@@ -21,6 +21,7 @@
   import Nav from '@components/nav.svelte';
   import Note from '@components/note.svelte';
   import Pagination from '@components/pagination.svelte';
+  import RssNotes from '@components/rss-notes.svelte';
 
   const {props} = getContext('serverData');
   const {notes, next, prev, title} = props;
@@ -30,12 +31,7 @@
   <svelte:fragment slot="main">
     <Nav current="/notes/" />
     <Heading {title} />
-    <div class="Box">
-      <p>
-        Subscribe to my <a href="/notes/rss.xml" target="_blank">microblog RSS feed</a> and
-        <a href="/mastodon/" target="_blank">follow on Mastodon</a>.
-      </p>
-    </div>
+    <RssNotes />
     {#each notes as item (item.date)}
       <Note {...item} />
     {/each}
