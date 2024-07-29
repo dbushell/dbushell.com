@@ -13,6 +13,13 @@ jobs:
       deployments: write
 
     steps:
+    - name: Tailscale
+      uses: tailscale/github-action@v2
+      with:
+        oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+        oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+        tags: tag:github
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -20,11 +27,9 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
       - name: Fetch LFS
         env:
-          LFS_ACCESS_KEY: ${{ secrets.LFS_ACCESS_KEY }}
-          LFS_SECRET_KEY: ${{ secrets.LFS_SECRET_KEY }}
-          LFS_ENDPOINT: ${{ secrets.LFS_ENDPOINT }}
+          LFS_URL: ${{ secrets.LFS_URL }}
         run: |
-          echo -e "[lfs]\n\turl = https://${LFS_ACCESS_KEY}:${LFS_SECRET_KEY}@${LFS_ENDPOINT}" > .lfsconfig
+          echo -e "[lfs]\n\turl = ${LFS_URL}" > .lfsconfig
           git lfs env
           git lfs fetch --all && git lfs checkout
 
