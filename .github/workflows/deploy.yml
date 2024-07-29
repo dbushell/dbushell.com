@@ -30,6 +30,7 @@ jobs:
           LFS_ACCESS_KEY: ${{ secrets.LFS_ACCESS_KEY }}
           LFS_SECRET_KEY: ${{ secrets.LFS_SECRET_KEY }}
           LFS_ENDPOINT: ${{ secrets.LFS_ENDPOINT }}
+          LFS_DOMAIN: ${{ secrets.LFS_DOMAIN }}
         run: |
           echo -e "[lfs]\n\turl = https://${LFS_ACCESS_KEY}:${LFS_SECRET_KEY}@${LFS_ENDPOINT}" > .lfsconfig
           git lfs env
