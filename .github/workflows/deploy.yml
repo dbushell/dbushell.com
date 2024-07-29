@@ -29,7 +29,7 @@ jobs:
         env:
           LFS_URL: ${{ secrets.LFS_URL }}
         run: |
-          echo -e "[lfs]\n\turl = ${LFS_URL}" > .lfsconfig
+          echo -e "[lfs]\n\turl = https://${LFS_ACCESS_KEY}:${LFS_SECRET_KEY}@${LFS_ENDPOINT}" > .lfsconfig
           git lfs env
           git lfs fetch --all && git lfs checkout
 
