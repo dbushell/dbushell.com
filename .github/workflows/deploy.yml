@@ -31,7 +31,9 @@ jobs:
           LFS_SECRET_KEY: ${{ secrets.LFS_SECRET_KEY }}
           LFS_ENDPOINT: ${{ secrets.LFS_ENDPOINT }}
           LFS_DOMAIN: ${{ secrets.LFS_DOMAIN }}
+          LFS_DOMAIN_IP: ${{ secrets.LFS_DOMAIN_IP }}
         run: |
+          sudo echo "${LFS_DOMAIN_IP} ${LFS_DOMAIN}" | sudo tee -a /etc/hosts
           echo -e "[lfs]\n\turl = https://${LFS_ACCESS_KEY}:${LFS_SECRET_KEY}@${LFS_ENDPOINT}" > .lfsconfig
           git lfs env
           git lfs fetch --all && git lfs checkout
