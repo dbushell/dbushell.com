@@ -1,6 +1,6 @@
 import * as path from '@std/path';
 import * as lcss from 'lightningcss';
-import {encodeBase64} from '@std/encoding/base64';
+import {encodeBase64} from '@std/encoding';
 import {replace} from '@src/shared.ts';
 
 const srcPath = path.join(Deno.cwd(), 'src/css/_stylesheet.css');
