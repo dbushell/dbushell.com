@@ -4,7 +4,9 @@ const PRECACHE = [
   '/assets/fonts/komika-title.woff2?v=%DEPLOY_HASH%',
   '/assets/fonts/raleway-variable.woff2?v=%DEPLOY_HASH%',
   '/assets/fonts/comic-neue-bold-italic.woff2?v=%DEPLOY_HASH%',
-  '/assets/images/dbushell-logotype.svg?v=%DEPLOY_HASH%'
+  '/assets/images/dbushell-logotype.svg?v=%DEPLOY_HASH%',
+  '/assets/scripts/head.js?v=%DEPLOY_HASH%',
+  '/assets/scripts/contact.js?v=%DEPLOY_HASH%'
 ];
 
 self.addEventListener('install', (ev) => {
@@ -78,4 +80,3 @@ self.addEventListener('fetch', (ev) => {
   }
   ev.respondWith(handleFetch(ev));
 });
-

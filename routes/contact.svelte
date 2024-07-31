@@ -16,11 +16,18 @@
 </script>
 
 <script>
+  import {getContext} from 'svelte';
   import App from '@components/app.svelte';
   import Contact from '@components/contact.svelte';
   import Heading from '@components/heading.svelte';
   import Nav from '@components/nav.svelte';
+
+  const {deployHash} = getContext('publicData');
 </script>
+
+<svelte:head>
+  <script defer type="module" src="/assets/scripts/contact.js?v={deployHash}"></script>
+</svelte:head>
 
 <App>
   <svelte:fragment slot="main">
@@ -32,9 +39,9 @@
       <p class="Large">
         <a href="mailto:hi@dbushell.com"><b>hi@dbushell.com</b></a>
       </p>
-      <div id="contact-form">
+      <contact-form id="contact-form">
         <Contact />
-      </div>
+      </contact-form>
     </div>
   </svelte:fragment>
 </App>

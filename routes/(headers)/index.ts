@@ -1,4 +1,4 @@
-import type {DinoHandle} from 'dinossr';
+import type {DinoHandle} from '@ssr/dinossr';
 import type {Data} from '@src/types.ts';
 import {authorized, replace} from '@src/shared.ts';
 

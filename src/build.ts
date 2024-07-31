@@ -1,14 +1,22 @@
-import type {DinoServer} from 'dinossr';
+import type {DinoServer} from '@ssr/dinossr';
 import type {Data} from '@src/types.ts';
-import * as fs from 'fs';
-import * as path from 'path';
-import {Queue} from 'carriageway';
+import * as fs from '@std/fs';
+import * as path from '@std/path';
+import {Queue} from '@dbushell/carriageway';
 import {manifest} from '@src/manifest.ts';
 
 const buildPath = path.resolve(Deno.cwd(), 'build');
 const staticPath = path.resolve(Deno.cwd(), 'public');
 
-const extra = ['/sitemap.xml', '/rss.xml', '/notes/rss.xml', '/_headers', '/sw.js'];
+const extra = [
+  '/sitemap.xml',
+  '/rss.xml',
+  '/notes/rss.xml',
+  '/_headers',
+  '/sw.js',
+  '/assets/scripts/head.js',
+  '/assets/scripts/contact.js'
+];
 
 const fetchQueue = new Queue({concurrency: 10});
 
@@ -73,6 +81,7 @@ export const build = async (server: DinoServer<Data>) => {
         // const response = await fetch(request);
         const response = await server.router.handle(request, {
           info: {
+            completed: Promise.resolve(),
             remoteAddr: {
               transport: 'tcp',
               hostname: '127.0.0.1',

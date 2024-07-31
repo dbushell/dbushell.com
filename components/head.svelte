@@ -23,4 +23,5 @@
   <meta property="og:image" content="https://dbushell.com/assets/icons/512x512.png" />
   <meta property="og:site_name" content="dbushell.com" />
   <meta name="fediverse:creator" content="@dbushell@fosstodon.org" />
+  <script defer type="module" src="/assets/scripts/head.js?v={publicData.deployHash}"></script>
 </svelte:head>

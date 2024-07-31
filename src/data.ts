@@ -1,7 +1,7 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import * as frontMatter from 'front-matter';
-import {TextLineStream} from 'streams';
+import * as fs from '@std/fs';
+import * as path from '@std/path';
+import * as frontMatter from '@std/front-matter';
+import {TextLineStream} from '@std/streams';
 import markdown from '@src/markdown.ts';
 import {striptags} from '@src/shared.ts';
 import type {FrontProps, NoteProps, Props} from './types.ts';
@@ -21,7 +21,7 @@ export const excerptProp = (body: string): string => {
 
 export const readProps = async (srcPath: string): Promise<Props> => {
   // Parse front matter
-  const matter = frontMatter.extract<FrontProps>(await Deno.readTextFile(srcPath));
+  const matter = frontMatter.extractYaml<FrontProps>(await Deno.readTextFile(srcPath));
   const props: Props = {
     features: matter.attrs.features ?? [],
     href: `/${matter.attrs.slug}/`,

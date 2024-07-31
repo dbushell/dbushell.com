@@ -1,10 +1,10 @@
-import {encodeBase64} from 'base64';
+import {encodeBase64} from '@std/encoding';
 import type {MarkedExtension, Renderer, RendererObject, Tokens} from 'marked';
 import {marked} from 'marked';
 import {markedSmartypants} from 'marked-smartypants';
 import {gfmHeadingId as markedHeaderIds} from 'marked-gfm-heading-id';
 import * as shiki from 'shiki';
-import {transformerRenderWhitespace} from 'shiki-transformers';
+import {transformerRenderWhitespace} from '@shikijs/transformers';
 import {replace} from '@src/shared.ts';
 
 const transformers = [transformerRenderWhitespace()];

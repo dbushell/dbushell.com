@@ -1,5 +1,5 @@
-import * as path from 'path';
-import {serveDir, serveFile} from 'file-server';
+import * as path from '@std/path';
+import {serveDir, serveFile} from '@std/http';
 
 const rootDir = path.resolve(Deno.cwd(), 'build');
 

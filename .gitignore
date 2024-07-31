@@ -26,6 +26,7 @@ routes/**/*.*
 src/**/*.*
 !src/*.ts
 !src/css/**/*.css
+!src/scripts/*.ts
 
 # Static files
 !public

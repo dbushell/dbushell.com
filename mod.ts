@@ -1,8 +1,9 @@
 import type {Data} from '@src/types.ts';
-import * as path from 'path';
-import {debounce} from 'debounce';
-import {DinoSsr} from 'dinossr';
+import * as path from '@std/path';
+import {debounce} from '@std/async';
+import {DinoSsr} from '@ssr/dinossr';
 import {middleware} from '@src/middleware.ts';
+import {islands} from '@src/islands.ts';
 import {build} from '@src/build.ts';
 import {rebuildCSS} from '@src/css.ts';
 import {rebuildManifest} from '@src/manifest.ts';
@@ -42,6 +43,8 @@ const start = async () => {
   await dinossr.init();
 
   dinossr.router.use(middleware);
+
+  dinossr.router.use(islands);
 
   dinossr.router.onError = (error, request) => {
     console.log(request.url, error);

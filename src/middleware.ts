@@ -1,4 +1,4 @@
-import type {DinoHandle} from 'dinossr';
+import type {DinoHandle} from '@ssr/dinossr';
 import type {Data, ServerData} from '@src/types.ts';
 import {manifest} from '@src/manifest.ts';
 
