@@ -7,7 +7,9 @@
 </script>
 
 <article class="Note">
-  {@html body}
+  <div class="Prose">
+    {@html body}
+  </div>
   {#if date}
     <footer>
       <Time {href} {date} time={true} />

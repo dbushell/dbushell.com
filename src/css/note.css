@@ -26,6 +26,30 @@
   &:last-child {
     margin-block-end: 0;
   }
+
+  & .Prose {
+    min-inline-size: 0;
+
+    & > :is(ol, ul) {
+      padding-inline-start: calc((27 / 16) * 1rem);
+    }
+
+    & > :is(blockquote, pre) {
+      margin-inline: 0;
+    }
+  }
+}
+
+@container app (inline-size < calc((800 / 16) * 1rem)) {
+  .Note .Prose > :is(ol, ul) {
+    padding-inline-start: calc((18 / 16) * 1rem);
+  }
+}
+
+@container app (inline-size <  calc((600 / 16) * 1rem)) {
+  .Note .Prose > :is(ol, ul) {
+    padding-inline-start: 0;
+  }
 }
 
 @container app (inline-size >= calc((400 / 16) * 1rem)) {
