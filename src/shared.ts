@@ -104,3 +104,14 @@ export const dateParts = (date: Date): Record<string, string> => {
   const mm = date.getUTCMinutes().toString().padStart(2, '0');
   return {ISO, D, dddd, dd, MMMM, MMM, YYYY, HH, mm};
 };
+
+// Generate excerpt from body
+export const excerpt = (body: string): string => {
+  let excerpt = striptags(body);
+  const words = excerpt.split(' ');
+  if (words.length >= 55) {
+    excerpt = `${words.slice(0, 55).join(' ')} […]`;
+  }
+  excerpt = excerpt.trim();
+  return excerpt;
+};

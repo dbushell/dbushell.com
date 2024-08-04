@@ -5,24 +5,24 @@
     "build": "deno run -A mod.ts --build"
   },
   "imports": {
-    "@src/": "./src/",
     "@components/": "./components/",
     "@dbushell/carriageway": "jsr:@dbushell/carriageway@^1.0.1",
-    "@shikijs/transformers": "npm:@shikijs/transformers@^1.12.0",
-    "@ssr/dinossr": "jsr:@ssr/dinossr@^0.32.0",
-    "@std/async": "jsr:@std/async@^1.0.1",
+    "@shikijs/transformers": "npm:@shikijs/transformers@^1.12.1",
+    "@src/": "./src/",
+    "@ssr/dinossr": "jsr:@ssr/dinossr@^0.35.0",
+    "@std/async": "jsr:@std/async@^1.0.2",
+    "@std/crypto": "jsr:@std/crypto@^1.0.2",
     "@std/encoding": "jsr:@std/encoding@^1.0.1",
-    "@std/front-matter": "jsr:@std/front-matter@^1.0.0",
-    "@std/fs": "jsr:@std/fs@^1.0.0",
-    "@std/http": "jsr:@std/http@^0.224.5",
+    "@std/front-matter": "jsr:@std/front-matter@^1.0.1",
+    "@std/fs": "jsr:@std/fs@^1.0.1",
+    "@std/http": "jsr:@std/http@^1.0.0",
     "@std/path": "jsr:@std/path@^1.0.2",
     "@std/streams": "jsr:@std/streams@^1.0.0",
-    "@std/uuid": "jsr:@std/uuid@^1.0.0",
     "esbuild": "npm:esbuild@^0.23.0",
     "lightningcss": "npm:lightningcss@^1.25.1",
     "marked": "npm:marked@^13.0.3",
     "marked-gfm-heading-id": "npm:marked-gfm-heading-id@^4.0.0",
     "marked-smartypants": "npm:marked-smartypants@^1.1.7",
-    "shiki": "npm:shiki@^1.12.0"
+    "shiki": "npm:shiki@^1.12.1"
   }
 }

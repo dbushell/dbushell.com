@@ -1,4 +1,4 @@
-import type {DinoServer} from '@ssr/dinossr';
+import type {DinoSsr} from '@ssr/dinossr';
 import type {Data} from '@src/types.ts';
 import * as fs from '@std/fs';
 import * as path from '@std/path';
@@ -7,6 +7,11 @@ import {manifest} from '@src/manifest.ts';
 
 const buildPath = path.resolve(Deno.cwd(), 'build');
 const staticPath = path.resolve(Deno.cwd(), 'public');
+const cachePath = path.join(Deno.cwd(), '.cache');
+
+if (!(await fs.exists(cachePath))) {
+  fs.ensureDir(cachePath);
+}
 
 const extra = [
   '/sitemap.xml',
@@ -20,7 +25,7 @@ const extra = [
 
 const fetchQueue = new Queue({concurrency: 10});
 
-export const build = async (server: DinoServer<Data>) => {
+export const build = async (server: DinoSsr<Data>) => {
   const now = performance.now();
   console.log('Building...');
 
@@ -33,9 +38,9 @@ export const build = async (server: DinoServer<Data>) => {
   manifest.notes.forEach((note) => {
     routePaths.push(note.href);
   });
-  server.manifest.islands.forEach((island) => {
-    routePaths.push(island.pattern);
-  });
+  // server.manifest.islands.forEach((island) => {
+  //   routePaths.push(island.pattern);
+  // });
   routePaths.push(...extra);
 
   const tasks: Array<Promise<unknown>> = [];

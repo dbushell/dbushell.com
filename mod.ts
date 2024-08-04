@@ -32,7 +32,6 @@ const start = async () => {
   dinossr = new DinoSsr<Data>(dir, {
     dev: DEV || BUILD,
     static: 'public',
-    deployHash: DEV ? 'dev' : undefined,
     serve: {
       signal: controller.signal,
       hostname: '127.0.0.1',
