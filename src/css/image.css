@@ -19,7 +19,7 @@
   }
 
   & figcaption {
-    margin: calc((-18 / 16) * 1rem) 0 calc((27 / 16) * 1rem) 0;
+    margin: calc((9 / 16) * 1rem) 0 0 0;
   }
 }
 

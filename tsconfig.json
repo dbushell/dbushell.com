@@ -4,17 +4,7 @@
       "@components/*": ["./components/*"],
       "@src/*": ["./src/*"]
     },
-    "moduleResolution": "bundler",
-    "lib": ["ESNext", "DOM"],
-    "module": "ESNext",
-    "target": "ESNext",
-    "strict": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true,
     "allowImportingTsExtensions": true,
-    "allowSyntheticDefaultImports": true,
-    "noEmit": true
+    "moduleResolution": "bundler"
   }
 }
