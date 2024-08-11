@@ -2,7 +2,8 @@
   & ul {
     display: flex;
     flex-wrap: wrap;
-    margin: calc((-4.5 / 16) * 1rem) calc((-9 / 16) * 1rem);
+    column-gap: calc((4.5 / 16) * 1rem);
+    margin: calc((-4.5 / 16) * 1rem);
   }
 
   & li {
@@ -16,7 +17,6 @@
     font-size: var(--step-s);
     font-weight: 700;
     letter-spacing: calc((0.5 / 16) * 1rem);
-    margin: 0 calc((4.5 / 16) * 1rem);
     min-block-size: 100%;
     padding: calc((4.5 / 16) * 1rem);
     text-transform: uppercase;
@@ -25,6 +25,20 @@
     &[aria-current='page'] {
       --anchor-color: var(--color-secondary2);
       --anchor-opacity: 0;
+    }
+  }
+}
+
+@container main (inline-size < calc((400 / 16) * 1rem)) {
+  .Nav {
+    max-inline-size: calc((300 / 16) * 1rem);
+  }
+}
+
+@container app (inline-size >= calc((800 / 16) * 1rem)) {
+  .Nav {
+    & ul {
+      column-gap: calc((9 / 16) * 1rem);
     }
   }
 }

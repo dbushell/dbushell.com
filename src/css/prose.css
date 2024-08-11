@@ -18,4 +18,22 @@
   :where(&) > :is(blockquote, iframe, hr, .Box, .Image) {
     margin-block: calc((36 / 16) * 1rem);
   }
+
+  :where(& :not(figure)) [href^='http'] {
+    position: relative;
+    padding-inline-start: 1.1rem;
+  }
+
+  :where(& :not(figure)) [href^='http']::after {
+    aspect-ratio: 1 / 1;
+    background: currentColor;
+    content: '';
+    display: block;
+    inline-size: 0.75rem;
+    inset-block-start: 50%;
+    inset-inline-start: 0.1rem;
+    mask: var(--external) center center / 100% auto no-repeat;
+    position: absolute;
+    transform: translateY(-50%);
+  }
 }
