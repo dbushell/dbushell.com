@@ -2,6 +2,7 @@ import type {DinoHandle} from '@ssr/dinossr';
 import type {Data} from '@src/types.ts';
 import {manifest} from '@src/manifest.ts';
 import {replace, striptags} from '@src/shared.ts';
+import {escape, unescape} from '@std/html/entities';
 
 export const pattern = '.xml';
 
@@ -53,8 +54,7 @@ export const GET: DinoHandle<Data> = () => {
   const entries = notes.map((note) => {
     let xml = entry;
     let description = striptags(note.body);
-    description = replace(description, '<', '&lt;');
-    description = replace(description, '>', '&gt;');
+    description = escape(unescape(description));
     const guid = new URL(note.href, meta.url);
     xml = replace(xml, `{{description}}`, description);
     xml = replace(xml, `{{html}}`, note.body);

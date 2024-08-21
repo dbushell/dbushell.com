@@ -2,6 +2,7 @@ import type {DinoHandle} from '@ssr/dinossr';
 import type {Data} from '@src/types.ts';
 import {manifest} from '@src/manifest.ts';
 import {replace, striptags} from '@src/shared.ts';
+import {escape, unescape} from '@std/html/entities';
 
 export const pattern = '.xml';
 
@@ -54,8 +55,7 @@ export const GET: DinoHandle<Data> = () => {
     const pubDate = new Date(bookmark.date!).toUTCString();
     const guid = new URL(bookmark.href, meta.url);
     let excerpt = striptags(bookmark.excerpt);
-    excerpt = replace(excerpt, '<', '&lt;');
-    excerpt = replace(excerpt, '>', '&gt;');
+    excerpt = escape(unescape(excerpt));
     xml = replace(xml, `{{title}}`, bookmark.title);
     xml = replace(xml, `{{description}}`, excerpt);
     xml = replace(xml, `{{html}}`, bookmark.body);

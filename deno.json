@@ -15,6 +15,7 @@
     "@std/encoding": "jsr:@std/encoding@^1.0.1",
     "@std/front-matter": "jsr:@std/front-matter@^1.0.1",
     "@std/fs": "jsr:@std/fs@^1.0.1",
+    "@std/html": "jsr:@std/html@^1.0.1",
     "@std/http": "jsr:@std/http@^1.0.0",
     "@std/path": "jsr:@std/path@^1.0.2",
     "@std/streams": "jsr:@std/streams@^1.0.0",
