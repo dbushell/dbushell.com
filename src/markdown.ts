@@ -1,13 +1,8 @@
 import {encodeBase64} from '@std/encoding';
-import type {MarkedExtension, Renderer, RendererObject, Tokens} from 'marked';
-import {marked} from 'marked';
-import {markedSmartypants} from 'marked-smartypants';
-import {gfmHeadingId as markedHeaderIds} from 'marked-gfm-heading-id';
 import * as shiki from 'shiki';
 import {transformerRenderWhitespace} from '@shikijs/transformers';
-import {replace} from '@src/shared.ts';
-
-const transformers = [transformerRenderWhitespace()];
+import {hmmarkdown, defaultOptions} from '@dbushell/hmmarkdown';
+// import type {HmmOptions} from '@dbushell/hmmarkdown/types';
 
 export const cssMap = new Map<string, string>();
 const styleAttr = /style=(["'])(.*?)\1/g;
@@ -32,47 +27,40 @@ export const syntaxCSS = async () => {
   return {css, hash};
 };
 
-marked.use();
+const transformers = [transformerRenderWhitespace()];
 
-marked.use(
-  markedHeaderIds({
-    prefix: ''
-  })
-);
-
-marked.use(markedSmartypants());
-
-marked.use({
-  async: true,
-  useNewRenderer: true,
-  async walkTokens(token) {
-    if (token.type === 'html') {
-      const match = /(<div\s[^>]*>)(.+?)(<\/div>\s*)/s.exec(token.text);
-      if (match) {
-        token.text = await markdown(match[2]);
-        token.text = `${match[1]}${token.text}${match[3]}`;
-        return;
-      }
-    }
-    if (token.type !== 'code') {
-      return;
-    }
-    if (!token.lang || ['plain', 'text', 'txt'].includes(token.lang)) {
-      const lines = (token.text as string).split('\n');
-      token.text = '';
+defaultOptions.blockFilters = {
+  image: (props) => {
+    const href = props.attributes.src;
+    const url = href[0] === '/' ? new URL(href, 'https://dbushell.com') : new URL(href);
+    props.attributes.src = url.href;
+    props.attributes.decoding = 'async';
+    props.attributes.fetchpriority = 'low';
+    props.attributes.loading = 'lazy';
+    props.before = `<figure class="Image">`;
+    props.after = `</figure>`;
+    return Promise.resolve();
+  },
+  preformatted: async (props) => {
+    const lang = props.attributes['data-lang'];
+    let {code} = props;
+    // Handle plaintext
+    if (!lang || ['plain', 'text', 'txt'].includes(lang)) {
+      const lines = (code as string).split('\n');
+      code = '';
       for (const line of lines) {
-        token.text += `<span class="line">${line}</span>\n`;
+        code += `<span class="line">${line}</span>\n`;
       }
-      token.text = `<pre data-lang="text"><code>${token.text}</code></pre>`;
-      token.escaped = true;
+      props.code = code;
+      props.attributes['data-lang'] = 'text';
       return;
     }
-    if (!Object.hasOwn(shiki.bundledLanguages, token.lang)) {
-      console.log(`⚠ Unknown lang: ${token.lang}`);
+    if (!Object.hasOwn(shiki.bundledLanguages, lang)) {
+      console.log(`⚠ Unknown lang: ${lang}`);
       return;
     }
-    let code = await shiki.codeToHtml(token.text, {
-      lang: token.lang,
+    code = await shiki.codeToHtml(code, {
+      lang,
       theme: 'dracula',
       colorReplacements: {
         '#6272a4': '#a3b5eb', // Grey
@@ -81,90 +69,30 @@ marked.use({
       },
       transformers
     });
-    // Remove default Shiki classes
+    // Remove default Shiki wrapper
     code = stripStyles(code);
-    code = replace(code, 'class="shiki dracula"', `data-lang="${token.lang}"`);
-    code = replace(code, 'class="syntax-0"', '');
-    token.escaped = true;
-    token.text = code;
-  },
-  renderer: {
-    code(args: Tokens.Code) {
-      return args.text;
-    }
-  }
-});
-
-const renderer: RendererObject = {
-  html({text}: Tokens.HTML | Tokens.Tag) {
-    const img = /(<img[^>]+?src=")([^"]+?)("[^>]*?>)/gs.exec(text);
-    if (img) {
-      // Add full URL to source
-      const src = new URL(img[2], 'https://dbushell.com');
-      text = replace(text, img[0], `${img[1]}${src}${img[3]}`);
-      // Add additional img attributes
-      text = replace(text, '<img', '<img loading="lazy" decoding="async" fetchpriority="low"');
-    }
-    // Wrap images in figure
-    if (/^<img[^>]+?>\s*$/gs.test(text)) {
-      text = `<figure class="Image">\n${text}\n</figure>\n`;
-    }
-    return text;
-  },
-
-  paragraph(this: Renderer, token: Tokens.Paragraph) {
-    const text = this.parser.parseInline(token.tokens).trim();
-    // Do not wrap figures in paragraph
-    if (text.startsWith('<figure') && text.endsWith('</figure>')) {
-      return `${text}\n`;
-    }
-    if (text.startsWith('💤')) {
-      return `<p><small>${text.replace(/^💤/, '').trim()}</small></p>\n`;
-    }
-    return /^<p[ |>]/.test(text) ? text : `<p>${text}</p>\n`;
-  },
-
-  image({text, href}: Tokens.Image) {
-    text = typeof text === 'string' ? text : 'no description';
-    let url: URL;
-    try {
-      url = /^[\/|#]/.test(href) ? new URL(href, 'https://dbushell.com') : new URL(href);
-    } catch (err) {
-      console.warn(`⚠️ Invalid URL: ${href}`);
-      throw err;
-    }
-    return `<figure class="Image">\n<img loading="lazy" decoding="async" fetchpriority="low" src="${url.href}" alt="${text}">\n</figure>\n`;
-  },
-
-  link(this: Renderer, {href, title, tokens}: Tokens.Link) {
-    const text = this.parser.parseInline(tokens);
-    let url: URL;
-    try {
-      url = /^[\/|#]/.test(href) ? new URL(href, 'https://dbushell.com') : new URL(href);
-    } catch (err) {
-      console.warn(`⚠️ Invalid URL: ${href}`);
-      throw err;
-    }
-    // Paths to open in new window
-    const excludePaths = ['/tip/', '/twitter/', '/mastodon/'];
-    let out = '<a';
-    if (url.hostname === 'dbushell.com' && !excludePaths.includes(url.pathname)) {
-      out += ` href="${url.href}"`;
-    } else {
-      out += ` href="${url.href}" rel="noopener noreferrer" target="_blank"`;
-    }
-    if (title) {
-      out += ` title="${title}"`;
-    }
-    out += `>${text}</a>`;
-    return out;
+    code = code.replace(/^<pre[^>]*?><code>/, '');
+    code = code.replace(/<\/code><\/pre>$/, '');
+    props.code = code;
   }
 };
 
-const extension: MarkedExtension = {renderer, useNewRenderer: true};
+defaultOptions.inlineFilters = {
+  anchor: (props) => {
+    const href = props.attributes.href;
+    const url = /^[\/|#]/.test(href) ? new URL(href, 'https://dbushell.com') : new URL(href);
+    const excludePaths = ['/tip/', '/mastodon/'];
+    props.attributes.href = href[0] === '#' ? url.hash : url.href;
+    if (url.hostname !== 'dbushell.com' || excludePaths.includes(url.pathname)) {
+      props.attributes.rel = 'noopener noreferrer';
+      props.attributes.target = '_blank';
+    }
+    return Promise.resolve();
+  }
+};
 
-marked.use(extension);
-
-const markdown = async (md: string): Promise<string> => await marked.parse(md);
+const markdown = (md: string): Promise<string> => {
+  return hmmarkdown(md, defaultOptions);
+};
 
 export default markdown;

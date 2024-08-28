@@ -69,12 +69,12 @@ const emptyTags = [
   'video'
 ];
 
-export const striptags = (html: string) => {
+export const striptags = (html: string, depth = 0) => {
   const voidRegex = new RegExp(`(<(?:${voidTags.join('|')})[^>]*?>)`, 'gs');
   const voidMatch = voidRegex.exec(html);
   if (voidMatch) {
     html = replace(html, voidMatch[1], '', true);
-    html = striptags(html);
+    html = striptags(html, depth + 1);
   }
   const regex = /<([\w-]+)[^>]*?>(.*?)<\/\1>/gs;
   const match = regex.exec(html);
@@ -86,8 +86,11 @@ export const striptags = (html: string) => {
     if (emptyTags.includes(match[1])) {
       replacement = '';
     }
-    html = replace(html, match[0], replacement, true);
-    html = striptags(html);
+    html = replace(html, match[0], replacement + ' ', true);
+    html = striptags(html, depth + 1);
+  }
+  if (depth === 0) {
+    html = html.replace(/\s+/g, ' ');
   }
   return html;
 };
