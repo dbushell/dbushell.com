@@ -37,62 +37,90 @@ export const replace = (subject: string, search: string, replace = '', all = fal
   return parts.join(replace);
 };
 
-// Complete list of self-closing void tags to remove
-const voidTags = [
-  'area',
-  'base',
+const inlineTags = [
+  'a',
+  'abbr',
+  'b',
+  'bdi',
+  'bdo',
   'br',
-  'col',
-  'embed',
-  'hr',
-  'img',
-  'input',
-  'link',
-  'meta',
-  'param',
-  'source',
-  'track',
+  'cite',
+  'code',
+  'data',
+  'del',
+  'dfn',
+  'em',
+  'i',
+  'ins',
+  'kbd',
+  'mark',
+  'q',
+  'rp',
+  'rt',
+  'ruby',
+  's',
+  'samp',
+  'small',
+  'span',
+  'strong',
+  'sub',
+  'sup',
+  'time',
+  'u',
+  'var',
   'wbr'
 ];
 
 // Bespoke list of "contentless" elements to remove
-const emptyTags = [
+const removeTags = [
   'audio',
-  'blockquote',
   'canvas',
   'figure',
+  'form',
   'iframe',
   'picture',
   'pre',
   'script',
+  'style',
   'table',
   'video'
 ];
 
-export const striptags = (html: string, depth = 0) => {
-  const voidRegex = new RegExp(`(<(?:${voidTags.join('|')})[^>]*?>)`, 'gs');
-  const voidMatch = voidRegex.exec(html);
-  if (voidMatch) {
-    html = replace(html, voidMatch[1], '', true);
-    html = striptags(html, depth + 1);
-  }
-  const regex = /<([\w-]+)[^>]*?>(.*?)<\/\1>/gs;
-  const match = regex.exec(html);
-  if (match) {
-    let replacement = match[2];
-    if (match[1] === 'q') {
-      replacement = `“${replacement}”`;
+// Remove HTML and return text content
+export const striptags = (html: string) => {
+  // Find open and close tags
+  let match: RegExpMatchArray | null;
+  while ((match = html.match(/(<([\w-]+)[^>]*?>)(.+?)(<\/\2>)/s))) {
+    let {0: search, 2: tag, 3: text} = match;
+    // Remove entire contents
+    if (removeTags.includes(tag)) {
+      html = replace(html, search, '');
+      continue;
     }
-    if (emptyTags.includes(match[1])) {
-      replacement = '';
+    // Remove tags and keep content
+    const inline = inlineTags.includes(tag);
+    // Wrap quotes
+    if (['blockquote', 'q'].includes(tag)) {
+      text = `“${striptags(text).trim()}”`;
     }
-    html = replace(html, match[0], replacement + ' ', true);
-    html = striptags(html, depth + 1);
+    html = replace(html, search, text + (inline ? '' : ' '));
   }
-  if (depth === 0) {
-    html = html.replace(/\s+/g, ' ');
+  // Remove comments, self-closing, and void tags
+  while ((match = html.match(/(<!--[\s\S]*?-->|<\/?([\w-]+)[^>]*?>)/))) {
+    html = replace(html, match[0], '');
   }
   return html;
+};
+
+// Generate excerpt from body
+export const excerpt = (body: string): string => {
+  let excerpt = striptags(body);
+  const words = excerpt.split(' ');
+  if (words.length >= 55) {
+    excerpt = `${words.slice(0, 55).join(' ')} […]`;
+  }
+  excerpt = excerpt.trim();
+  return excerpt;
 };
 
 export const dateParts = (date: Date): Record<string, string> => {
@@ -106,15 +134,4 @@ export const dateParts = (date: Date): Record<string, string> => {
   const HH = date.getUTCHours().toString().padStart(2, '0');
   const mm = date.getUTCMinutes().toString().padStart(2, '0');
   return {ISO, D, dddd, dd, MMMM, MMM, YYYY, HH, mm};
-};
-
-// Generate excerpt from body
-export const excerpt = (body: string): string => {
-  let excerpt = striptags(body);
-  const words = excerpt.split(' ');
-  if (words.length >= 55) {
-    excerpt = `${words.slice(0, 55).join(' ')} […]`;
-  }
-  excerpt = excerpt.trim();
-  return excerpt;
 };
