@@ -4,7 +4,7 @@ import {crypto} from '@std/crypto';
 import {encodeHex} from '@std/encoding';
 import {extractYaml} from '@std/front-matter';
 import {TextLineStream, toText} from '@std/streams';
-import markdown from '@src/markdown.ts';
+import markdown, {hmmtypography} from '@src/markdown.ts';
 import {excerpt, striptags} from '@src/shared.ts';
 import type {FrontProps, NoteProps, Props} from './types.ts';
 
@@ -46,7 +46,7 @@ export const readProps = async (srcPath: string): Promise<Props> => {
   }
 
   // Pass title and description through Marked for smartypants
-  props.title = await markdown(props.title);
+  props.title = await hmmtypography(props.title);
   props.title = striptags(props.title).trim();
 
   if (matter.attrs.description) {

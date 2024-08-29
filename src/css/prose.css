@@ -19,12 +19,12 @@
     margin-block: calc((36 / 16) * 1rem);
   }
 
-  :where(& :not(figure)) [href^='http']:not([href*='/dbushell.com']) {
+  :where(&) [href^='http']:where(:not(:has(img:only-child), [href*='/dbushell.com'])) {
     position: relative;
     padding-inline-start: 1.1rem;
   }
 
-  :where(& :not(figure)) [href^='http']:not([href*='/dbushell.com'])::after {
+  :where(&) [href^='http']:where(:not(:has(img:only-child), [href*='/dbushell.com']))::after {
     aspect-ratio: 1 / 1;
     background: currentColor;
     content: '';

@@ -1,10 +1,15 @@
 .Image {
+  display: block;
   margin: 0;
   max-inline-size: none;
 
   &[href] {
     display: block;
     inline-size: fit-content;
+  }
+
+  & p {
+    display: contents;
   }
 
   & img,

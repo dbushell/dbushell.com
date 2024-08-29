@@ -1,8 +1,9 @@
 import {encodeBase64} from '@std/encoding';
 import * as shiki from 'shiki';
 import {transformerRenderWhitespace} from '@shikijs/transformers';
-import {hmmarkdown, defaultOptions} from '@dbushell/hmmarkdown';
-// import type {HmmOptions} from '@dbushell/hmmarkdown/types';
+import {hmmarkdown, hmmtypography, defaultOptions} from '@dbushell/hmmarkdown';
+
+export {hmmtypography};
 
 export const cssMap = new Map<string, string>();
 const styleAttr = /style=(["'])(.*?)\1/g;
