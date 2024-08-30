@@ -1,7 +1,6 @@
 import type {DinoHandle} from '@ssr/dinossr';
 import type {Data} from '@src/types.ts';
 import {manifest} from '@src/manifest.ts';
-import {replace} from '@src/shared.ts';
 
 export const pattern = '.xml';
 
@@ -33,11 +32,11 @@ export const GET: DinoHandle<Data> = () => {
     }
     let xml = entry;
     for (const [key, value] of Object.entries(item)) {
-      xml = replace(xml, `{{${key}}}`, value);
+      xml = xml.replace(`{{${key}}}`, () => value);
     }
     return xml;
   });
-  body = replace(body, `{{entries}}`, entries.join(''));
+  body = body.replace(`{{entries}}`, () => entries.join(''));
 
   return new Response(body, {
     headers: {

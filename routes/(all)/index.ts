@@ -1,6 +1,6 @@
 import type {DinoHandle} from '@ssr/dinossr';
 import type {Data} from '@src/types.ts';
-import {appendHeaders, replace, redirect} from '@src/shared.ts';
+import {appendHeaders, redirect} from '@src/shared.ts';
 
 // Match all routes
 export const pattern = '/*';
@@ -29,8 +29,8 @@ export const GET: DinoHandle<Data> = async ({request, response, platform}) => {
 
   if (response.headers.get('content-type')?.includes('text/html')) {
     let body = await response.text();
-    body = replace(body, '%DEPLOY_HASH%', platform.deployHash, true);
-    body = replace(body, '%STYLES%', stylesHTML);
+    body = body.replaceAll('%DEPLOY_HASH%', platform.deployHash);
+    body = body.replace('%STYLES%', () => stylesHTML);
     response = new Response(body, response);
   }
   return response;

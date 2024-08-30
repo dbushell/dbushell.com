@@ -4,14 +4,25 @@ import {crypto} from '@std/crypto';
 import {encodeHex} from '@std/encoding';
 import {extractYaml} from '@std/front-matter';
 import {TextLineStream, toText} from '@std/streams';
+import {stripTags} from '@dbushell/hyperless';
 import markdown, {hmmtypography} from '@src/markdown.ts';
-import {excerpt, striptags} from '@src/shared.ts';
 import type {FrontProps, NoteProps, Props} from './types.ts';
 
 const dataPath = path.resolve(Deno.cwd(), 'src/data');
 const cachePath = path.join(Deno.cwd(), '.cache');
 
 const DEV = Deno.args.includes('--dev');
+
+// Generate excerpt from body
+export const excerpt = (body: string): string => {
+  let excerpt = stripTags(body);
+  const words = excerpt.split(' ');
+  if (words.length >= 55) {
+    excerpt = `${words.slice(0, 55).join(' ')} […]`;
+  }
+  excerpt = excerpt.trim();
+  return excerpt;
+};
 
 export const readProps = async (srcPath: string): Promise<Props> => {
   // Read markdown
@@ -47,11 +58,11 @@ export const readProps = async (srcPath: string): Promise<Props> => {
 
   // Pass title and description through Marked for smartypants
   props.title = await hmmtypography(props.title);
-  props.title = striptags(props.title).trim();
+  props.title = stripTags(props.title).trim();
 
   if (matter.attrs.description) {
     props.description = await markdown(matter.attrs.description);
-    props.description = striptags(props.description).trim();
+    props.description = stripTags(props.description).trim();
   }
 
   // Pass body through Marked for full HTML

@@ -1,8 +1,8 @@
 import {encodeBase64} from '@std/encoding';
 import * as shiki from 'shiki';
 import {transformerRenderWhitespace} from '@shikijs/transformers';
-import {hmmarkdown, hmmtypography, defaultOptions} from '@dbushell/hmmarkdown';
-// import {hmmarkdown, hmmtypography, defaultOptions} from '../../packages/hmmarkdown/mod.ts';
+// import {hmmarkdown, hmmtypography, defaultOptions} from '@dbushell/hmmarkdown';
+import {hmmarkdown, hmmtypography, defaultOptions} from '../../packages/hmmarkdown/mod.ts';
 export {hmmtypography};
 
 export const cssMap = new Map<string, string>();

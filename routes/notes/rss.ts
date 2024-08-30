@@ -1,7 +1,7 @@
 import type {DinoHandle} from '@ssr/dinossr';
 import type {Data} from '@src/types.ts';
 import {manifest} from '@src/manifest.ts';
-import {replace, striptags} from '@src/shared.ts';
+import {stripTags} from '@dbushell/hyperless';
 import {escape, unescape} from '@std/html/entities';
 
 export const pattern = '.xml';
@@ -45,26 +45,26 @@ export const GET: DinoHandle<Data> = () => {
   if (!notes) return;
 
   let body = template;
-  body = replace(body, `{{url}}`, url.href);
-  body = replace(body, `{{lastBuildDate}}`, notes[0].date.toUTCString());
+  body = body.replace(`{{url}}`, () => url.href);
+  body = body.replace(`{{lastBuildDate}}`, notes[0].date.toUTCString());
   for (const [key, value] of Object.entries(meta)) {
     body = body.replaceAll(`{{meta.${key}}}`, value);
   }
 
   const entries = notes.map((note) => {
     let xml = entry;
-    let description = striptags(note.body);
+    let description = stripTags(note.body);
     description = escape(unescape(description));
     const guid = new URL(note.href, meta.url);
-    xml = replace(xml, `{{description}}`, description);
-    xml = replace(xml, `{{html}}`, note.body);
-    xml = replace(xml, `{{link}}`, guid.href);
-    xml = replace(xml, `{{guid}}`, guid.href);
-    xml = replace(xml, `{{pubDate}}`, note.date.toUTCString());
+    xml = xml.replace(`{{description}}`, () => description);
+    xml = xml.replace(`{{html}}`, () => note.body);
+    xml = xml.replace(`{{link}}`, () => guid.href);
+    xml = xml.replace(`{{guid}}`, () => guid.href);
+    xml = xml.replace(`{{pubDate}}`, () => note.date.toUTCString());
     return xml;
   });
 
-  body = replace(body, `{{entries}}`, entries.join(''));
+  body = body.replace(`{{entries}}`, () => entries.join(''));
 
   return new Response(body, {
     headers: {

@@ -1,7 +1,7 @@
 import type {DinoHandle} from '@ssr/dinossr';
 import type {Data} from '@src/types.ts';
 import {manifest} from '@src/manifest.ts';
-import {replace, striptags} from '@src/shared.ts';
+import {stripTags} from '@dbushell/hyperless';
 import {escape, unescape} from '@std/html/entities';
 
 export const pattern = '.xml';
@@ -44,28 +44,28 @@ export const GET: DinoHandle<Data> = () => {
   const {latest} = manifest;
 
   let body = template;
-  body = replace(body, `{{url}}`, url.href);
-  body = replace(body, `{{lastBuildDate}}`, new Date(latest[0].date!).toUTCString());
+  body = body.replace(`{{url}}`, () => url.href);
+  body = body.replace(`{{lastBuildDate}}`, new Date(latest[0].date!).toUTCString());
   for (const [key, value] of Object.entries(meta)) {
-    body = body.replaceAll(`{{meta.${key}}}`, value);
+    body = body.replaceAll(`{{meta.${key}}}`, () => value);
   }
 
   const entries = latest.map((bookmark) => {
     let xml = entry;
     const pubDate = new Date(bookmark.date!).toUTCString();
     const guid = new URL(bookmark.href, meta.url);
-    let excerpt = striptags(bookmark.excerpt);
+    let excerpt = stripTags(bookmark.excerpt);
     excerpt = escape(unescape(excerpt));
-    xml = replace(xml, `{{title}}`, bookmark.title);
-    xml = replace(xml, `{{description}}`, excerpt);
-    xml = replace(xml, `{{html}}`, bookmark.body);
-    xml = replace(xml, `{{link}}`, guid.href);
-    xml = replace(xml, `{{guid}}`, guid.href);
-    xml = replace(xml, `{{pubDate}}`, pubDate);
+    xml = xml.replace(`{{title}}`, () => bookmark.title);
+    xml = xml.replace(`{{description}}`, () => excerpt);
+    xml = xml.replace(`{{html}}`, () => bookmark.body);
+    xml = xml.replace(`{{link}}`, () => guid.href);
+    xml = xml.replace(`{{guid}}`, () => guid.href);
+    xml = xml.replace(`{{pubDate}}`, () => pubDate);
     return xml;
   });
 
-  body = replace(body, `{{entries}}`, entries.join(''));
+  body = body.replace(`{{entries}}`, () => entries.join(''));
 
   return new Response(body, {
     headers: {

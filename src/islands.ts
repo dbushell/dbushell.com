@@ -3,7 +3,6 @@ import type {Data} from '@src/types.ts';
 import * as fs from '@std/fs';
 import * as path from '@std/path';
 import * as esbuild from 'esbuild';
-import {replace} from '@src/shared.ts';
 
 export const islands: DinoHandle<Data> = async ({request, platform}) => {
   if (request.method !== 'GET') return;
@@ -33,7 +32,7 @@ export const islands: DinoHandle<Data> = async ({request, platform}) => {
 
   let src = result.outputFiles?.[0]?.text ?? '';
 
-  src = replace(src, '%DEPLOY_HASH%', platform.deployHash, true);
+  src = src.replaceAll('%DEPLOY_HASH%', platform.deployHash);
 
   return new Response(src, {
     headers: {
