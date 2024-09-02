@@ -76,7 +76,10 @@ const start = async () => {
         response.headers.get('content-type')?.startsWith('text/html')
       ) {
         let body = await response.text();
-        body = body.replaceAll('https://dbushell.com/', () => '/');
+        body = body.replaceAll('https://dbushell.com/', '/');
+        body = body.replaceAll('decoding="async"', 'decoding="sync"');
+        body = body.replaceAll('fetchpriority="low"', 'fetchpriority="high"');
+        body = body.replaceAll('loading="lazy"', 'loading="eager"');
         return new Response(body, response);
       }
     });

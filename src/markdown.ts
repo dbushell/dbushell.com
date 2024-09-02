@@ -38,8 +38,10 @@ defaultOptions.blockFilters = {
     props.attributes.decoding = 'async';
     props.attributes.fetchpriority = 'low';
     props.attributes.loading = 'lazy';
-    props.before = `<figure class="Image">`;
-    props.after = `</figure>`;
+    if (props.attributes._parentTag !== 'figure') {
+      props.before = `<figure class="Image">`;
+      props.after = `</figure>`;
+    }
     return Promise.resolve();
   },
   preformatted: async (props) => {

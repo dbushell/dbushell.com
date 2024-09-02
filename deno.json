@@ -7,8 +7,8 @@
   "imports": {
     "@components/": "./components/",
     "@dbushell/carriageway": "jsr:@dbushell/carriageway@^1.1.0",
-    "@dbushell/hmmarkdown": "jsr:@dbushell/hmmarkdown@^0.9.0",
-    "@dbushell/hyperless": "jsr:@dbushell/hyperless@^0.3.0",
+    "@dbushell/hmmarkdown": "jsr:@dbushell/hmmarkdown@^0.11.0",
+    "@dbushell/hyperless": "jsr:@dbushell/hyperless@^0.5.0",
     "@shikijs/transformers": "npm:@shikijs/transformers@^1.14.1",
     "@src/": "./src/",
     "@ssr/dinossr": "jsr:@ssr/dinossr@^0.35.1",

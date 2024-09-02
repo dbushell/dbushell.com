@@ -4,7 +4,7 @@ import {crypto} from '@std/crypto';
 import {encodeHex} from '@std/encoding';
 import {extractYaml} from '@std/front-matter';
 import {TextLineStream, toText} from '@std/streams';
-import {stripTags} from '@dbushell/hyperless';
+import {excerpt, stripTags} from '@dbushell/hyperless';
 import markdown, {hmmtypography} from '@src/markdown.ts';
 import type {FrontProps, NoteProps, Props} from './types.ts';
 
@@ -12,17 +12,6 @@ const dataPath = path.resolve(Deno.cwd(), 'src/data');
 const cachePath = path.join(Deno.cwd(), '.cache');
 
 const DEV = Deno.args.includes('--dev');
-
-// Generate excerpt from body
-export const excerpt = (body: string): string => {
-  let excerpt = stripTags(body);
-  const words = excerpt.split(' ');
-  if (words.length >= 55) {
-    excerpt = `${words.slice(0, 55).join(' ')} […]`;
-  }
-  excerpt = excerpt.trim();
-  return excerpt;
-};
 
 export const readProps = async (srcPath: string): Promise<Props> => {
   // Read markdown
