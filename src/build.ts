@@ -3,6 +3,9 @@ import type {Data} from '@src/types.ts';
 import * as fs from '@std/fs';
 import * as path from '@std/path';
 import {Queue} from '@dbushell/carriageway';
+
+performance.mark('build-start');
+
 import {manifest} from '@src/manifest.ts';
 
 const buildPath = path.resolve(Deno.cwd(), 'build');
@@ -119,4 +122,10 @@ export const build = async (server: DinoSsr<Data>) => {
   writer.releaseLock();
   const ms = (performance.now() - now).toFixed(2);
   console.log(`Built ${tasks.length} routes in ${ms}ms`);
+
+  performance.mark('build-end');
+
+  console.log(
+    `Total ${performance.measure('build', 'build-start', 'build-end').duration.toFixed(2)}ms`
+  );
 };
