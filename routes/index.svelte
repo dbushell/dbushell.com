@@ -48,7 +48,7 @@
         I design and build websites with a focus on <em>standards</em>, <em>performance</em>,
         <em>accessibility</em>, and <em>security</em>. With over 15 years of professional
         experience, from progressive web apps, to content managed templates, and full-stack
-        frameworks, I've coded it all.
+        frameworks, I’ve coded it all.
       </p>
       <div class="Crane">
         <picture>
