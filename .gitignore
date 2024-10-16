@@ -28,6 +28,11 @@ src/**/*.*
 !src/css/**/*.css
 !src/scripts/*.ts
 
+# Test files
+!test
+test/**/*.*
+!test/*.ts
+
 # Static files
 !public
 public/*
