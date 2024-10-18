@@ -1,0 +1,40 @@
+<div class="Aside">
+  <my-rule hidden />
+  <aside class="Featured">
+    <my-card href="/" title="David Bushell" heading="h2">
+      <my-bio />
+      <my-social />
+    </my-card>
+    <my-card href="/now/" title="My Projects" subtitle="New and old!">
+      <p>
+        Read my <a href="/notes/">microblog</a>, see what I’m <a href="/now/">coding now</a>
+        and my <a href="/showcase/">design portfolio</a>.
+      </p>
+    </my-card>
+    <my-card href="/working-with-agencies/" title="Web Agencies" subtitle="Need a hand?">
+      <p>
+        I’m reliable, flexible, and pride myself in communication and initiative to delivery on time
+        and within budget.
+      </p>
+    </my-card>
+    <my-card href="/working-with-clients/" title="Businesses" subtitle="Have an idea?">
+      <p>
+        Let’s discuss your requirements, share ideas, and figure out what’s best for your new
+        website together.
+      </p>
+    </my-card>
+    <my-rule />
+    <ssr-if condition="articles.length">
+      <my-card title="The Blog" href="/blog/">
+        <p class="Balance">I write about web design and development.</p>
+        <ul class="List">
+          <ssr-for item="item" of="articles">
+            <li>
+              <a href="{{item.href}}"><ssr-html>{{item.title}}</ssr-html></a>
+            </li>
+          </ssr-for>
+        </ul>
+      </my-card>
+    </ssr-if>
+  </aside>
+</div>

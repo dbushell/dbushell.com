@@ -1,0 +1,15 @@
+<script context="component">
+  const {href, title, excerpt} = article;
+</script>
+
+<article class="Article">
+  <ssr-element tag="{{$local.heading ?? 'h2'}}" class="Star">
+    <a href="{{href}}"><ssr-html>{{title}}</ssr-html></a>
+  </ssr-element>
+  <ssr-if condition="article.date">
+    <p><my-time date="{{article.date}}" /></p>
+  </ssr-if>
+  <ssr-if condition="excerpt">
+    <p><ssr-html>{{excerpt}}</ssr-html></p>
+  </ssr-if>
+</article>

@@ -1,0 +1,41 @@
+<script context="component">
+  let href = props.href ?? '/';
+  let shortTitle = props.title ?? siteTitle;
+  let pageDescription = props.description ?? shortTitle;
+  let longTitle = siteTitle;
+  if (props.title) {
+    longTitle = `${props.title} – ${longTitle}`;
+  }
+</script>
+
+<ssr-fragment portal="head">
+  <title>{{longTitle}}</title>
+  <link rel="canonical" href="https://dbushell.com{{href}}" />
+  <meta name="author" content="David Bushell" />
+  <meta name="description" content="{{pageDescription}}" />
+  <meta property="og:title" content="{{shortTitle}}" />
+  <meta property="og:url" content="https://dbushell.com{{href}}" />
+  <meta property="og:description" content="{{pageDescription}}" />
+  <meta property="og:image" content="https://dbushell.com/assets/icons/512x512.png" />
+  <meta property="og:site_name" content="dbushell.com" />
+  <meta name="fediverse:creator" content="@dbushell@fosstodon.org" />
+  <script type="module" src="/assets/scripts/head.js?v={{deployHash}}"></script>
+</ssr-fragment>
+
+<div class="Layout">
+  <ssr-cache name="masthead">
+    <my-masthead />
+  </ssr-cache>
+  <main class="Main">
+    <ssr-slot name="main" />
+  </main>
+  <ssr-slot name="aside">
+    <ssr-cache name="aside">
+      <my-aside articles="{{props.latest}}" />
+    </ssr-cache>
+  </ssr-slot>
+</div>
+<ssr-cache name="footer">
+  <my-lightbulb />
+  <my-footer />
+</ssr-cache>

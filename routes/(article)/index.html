@@ -1,0 +1,32 @@
+<script context="module">
+  export const pattern = '/:year(\\d+)/:month(\\d+)/:day(\\d+)/:slug/';
+
+  export const load = async ({fetch, params, platformProps}) => {
+    const data = await fetch(
+      `/api/article/${params.year}/${params.month}/${params.day}/${params.slug}/`,
+      {
+        headers: {
+          authorization: `Bearer ${Deno.env.get('SSR_API_KEY')}`
+        }
+      }
+    );
+    if (!data.ok) {
+      return new Response(null, {status: 404});
+    }
+    platformProps.props = await data.json();
+  };
+</script>
+
+<my-layout>
+  <my-app>
+    <ssr-fragment slot="main">
+      <my-nav />
+      <my-heading title="{{props.title}}" />
+      <ssr-if condition="props.date">
+        <p><my-time date="{{props.date}}" /></p>
+      </ssr-if>
+      <my-prose html="{{props.body}}" />
+      <rss-blog />
+    </ssr-fragment>
+  </my-app>
+</my-layout>

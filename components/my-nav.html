@@ -1,0 +1,41 @@
+<script context="component">
+  const href = typeof current === 'undefined' ? '' : current;
+  const links = [
+    {
+      href: '/',
+      label: 'Home'
+    },
+    {
+      href: '/about/',
+      label: 'About'
+    },
+    {
+      href: '/services/',
+      label: 'Services'
+    },
+    {
+      href: '/blog/',
+      label: 'Blog'
+    },
+    {
+      href: '/notes/',
+      label: 'Notes'
+    },
+    {
+      href: '/contact/',
+      label: 'Contact'
+    }
+  ];
+</script>
+<nav class="Nav">
+  <h2 class="Hidden">Menu</h2>
+  <ul>
+    <ssr-for item="link" of="links">
+      <li>
+        <a href="{{link.href}}" aria-current="{{href === link.href ? 'page' : 'false'}}">
+          {{link.label}}
+        </a>
+      </li>
+    </ssr-for>
+  </ul>
+</nav>

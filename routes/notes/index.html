@@ -1,0 +1,31 @@
+<script context="module">
+  export const pattern = '/';
+
+  export const load = async ({fetch, platformProps}) => {
+    const data = await fetch('/api/notes/1/', {
+      headers: {
+        authorization: `Bearer ${Deno.env.get('SSR_API_KEY')}`
+      }
+    });
+    if (!data.ok) {
+      return new Response(null, {status: 404});
+    }
+    platformProps.props = await data.json();
+  };
+</script>
+
+<my-layout>
+  <my-app>
+    <ssr-fragment slot="main">
+      <my-nav current="/notes/" />
+      <my-heading title="{{props.title}}" />
+      <rss-notes />
+      <ssr-for item="item" of="props.notes">
+        <my-note note="{{item}}" />
+      </ssr-for>
+      <ssr-if condition="props.next || props.prev">
+        <my-pagination next="{{props.next}}" prev="{{props.prev}}" />
+      </ssr-if>
+    </ssr-fragment>
+  </my-app>
+</my-layout>

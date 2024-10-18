@@ -1,0 +1,28 @@
+<script context="module">
+  export const pattern = '/';
+
+  export const load = async ({fetch, platformProps}) => {
+    const data = await fetch(`/api/page/404/`, {
+      headers: {
+        authorization: `Bearer ${Deno.env.get('SSR_API_KEY')}`
+      }
+    });
+    if (!data.ok) {
+      throw new Error();
+    }
+    platformProps.props = await data.json();
+  };
+</script>
+
+<my-layout>
+  <my-app>
+    <ssr-fragment slot="main">
+      <my-nav current="{{props.href}}" />
+      <my-heading title="{{props.title}}" />
+      <my-prose html="{{props.body}}" />
+      <ssr-if condition="props.features?.includes('cta')">
+        <my-cta />
+      </ssr-if>
+    </ssr-fragment>
+  </my-app>
+</my-layout>

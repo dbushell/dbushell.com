@@ -1,27 +1,27 @@
-import type {DinoHandle} from '@ssr/dinossr';
-import type {Data} from '@src/types.ts';
-import {authorized} from '@src/shared.ts';
-import {manifest} from '@src/manifest.ts';
+import type { HyperHandle } from "@dbushell/hyperserve";
+import { authorized } from "@src/shared.ts";
+import { manifest } from "@src/manifest.ts";
 
-export const pattern = '/:page(\\d+)/';
+export const pattern = "/:page(\\d+)/";
 
-export const GET: DinoHandle<Data> = ({request, match}) => {
+export const GET: HyperHandle = ({ request, match }) => {
   if (!authorized(request)) {
-    return new Response(null, {status: 401});
+    return new Response(null, { status: 401 });
   }
   const page = match.pathname.groups.page;
-  let href = '';
-  if (page === '1') {
-    href = '/blog/';
+  let href = "";
+  if (page === "1") {
+    href = "/blog/";
   } else {
     href = `/blog/page/${[page]}/`;
   }
   const data = manifest.routes[href];
   if (data) {
+    const latest = manifest.latest.map((props) => ({ ...props, body: "" }));
     return Response.json({
       ...data,
-      latest: manifest.latest
+      latest,
     });
   }
-  return new Response(null, {status: 400});
+  return new Response(null, { status: 400 });
 };

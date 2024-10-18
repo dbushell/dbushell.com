@@ -6,19 +6,19 @@
 
 !app.html
 !deno.json
+!deno.jsonc
 !mod.ts
 !README.md
-!tsconfig.json
 
 # Svelte components
 !components
 components/**/*.*
-!components/**/*.svelte
+!components/**/*.html
 
 # DinoSsr routes
 !routes
 routes/**/*.*
-!routes/**/*.svelte
+!routes/**/*.html
 !routes/**/*.ts
 
 # Source files
@@ -26,7 +26,6 @@ routes/**/*.*
 src/**/*.*
 !src/*.ts
 !src/css/**/*.css
-!src/scripts/*.ts
 
 # Test files
 !test

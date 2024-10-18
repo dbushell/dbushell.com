@@ -1,19 +1,18 @@
-import type {DinoHandle} from '@ssr/dinossr';
-import type {Data} from '@src/types.ts';
-import {manifest} from '@src/manifest.ts';
-import {stripTags} from '@dbushell/hyperless';
-import {escape, unescape} from '@std/html/entities';
+import type { HyperHandle } from "@dbushell/hyperserve";
+import { manifest } from "@src/manifest.ts";
+import { stripTags } from "@dbushell/hyperless";
+import { escape, unescape } from "@std/html/entities";
 
-export const pattern = '.xml';
+export const pattern = ".xml";
 
 const meta = {
-  name: 'dbushell.com (microblog)',
-  author: 'David Bushell',
-  description: 'David Bushell’s Microblog',
-  url: 'https://dbushell.com'
+  name: "dbushell.com (microblog)",
+  author: "David Bushell",
+  description: "David Bushell’s Microblog",
+  url: "https://dbushell.com",
 };
 
-const url = new URL('/rss.xml', meta.url);
+const url = new URL("/rss.xml", meta.url);
 
 const template = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="/assets/css/rss.xsl" type="text/xsl"?>
@@ -39,8 +38,8 @@ const entry = `<item>
 </item>
 `;
 
-export const GET: DinoHandle<Data> = () => {
-  const {notes} = manifest.routes['/notes/'];
+export const GET: HyperHandle = () => {
+  const { notes } = manifest.routes["/notes/"];
 
   if (!notes) return;
 
@@ -64,12 +63,12 @@ export const GET: DinoHandle<Data> = () => {
     return xml;
   });
 
-  body = body.replace(`{{entries}}`, () => entries.join(''));
+  body = body.replace(`{{entries}}`, () => entries.join(""));
 
   return new Response(body, {
     headers: {
-      'content-type': 'application/xml; charset=utf-8',
-      'content-length': body.length.toString()
-    }
+      "content-type": "application/xml; charset=utf-8",
+      "content-length": body.length.toString(),
+    },
   });
 };

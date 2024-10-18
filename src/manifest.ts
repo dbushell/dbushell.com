@@ -1,9 +1,12 @@
-import * as data from '@src/data.ts';
-import {cssMin, cssHash} from '@src/css.ts';
-import {syntaxCSS} from '@src/markdown.ts';
-import type {Props, Manifest} from './types.ts';
+import * as data from "@src/data.ts";
+import { cssHash, cssMin } from "@src/css.ts";
+import { syntaxCSS } from "@src/markdown.ts";
+import type { Manifest, Props } from "./types.ts";
 
-export const getProps = async (url: URL, manifest: Manifest): Promise<Props | undefined> => {
+export const getProps = async (
+  url: URL,
+  manifest: Manifest,
+): Promise<Props | undefined> => {
   if (!Object.hasOwn(manifest.routes, url.pathname)) {
     return;
   }
@@ -11,7 +14,7 @@ export const getProps = async (url: URL, manifest: Manifest): Promise<Props | un
   if (props.src) {
     props = {
       ...props,
-      ...(await data.readProps(props.src))
+      ...(await data.readProps(props.src)),
     };
   }
   return props;
@@ -19,7 +22,7 @@ export const getProps = async (url: URL, manifest: Manifest): Promise<Props | un
 
 export const generateManifest = async () => {
   const now = performance.now();
-  console.log('Manifesting...');
+  console.log("Manifesting...");
 
   const manifest: Manifest = {
     routes: {},
@@ -28,29 +31,29 @@ export const generateManifest = async () => {
     styles: [
       {
         css: cssMin,
-        hash: cssHash
-      }
-    ]
+        hash: cssHash,
+      },
+    ],
   };
 
-  manifest.routes['/'] = {
-    container: 'home',
-    title: 'Home',
-    body: '',
-    excerpt: '',
-    href: '/',
-    changefreq: 'weekly',
-    priority: '1.0'
+  manifest.routes["/"] = {
+    container: "home",
+    title: "Home",
+    body: "",
+    excerpt: "",
+    href: "/",
+    changefreq: "weekly",
+    priority: "1.0",
   };
 
-  manifest.routes['/contact/'] = {
-    container: 'contact',
-    title: 'Contact',
-    body: '',
-    excerpt: '',
-    href: '/contact/',
-    changefreq: 'monthly',
-    priority: '0.8'
+  manifest.routes["/contact/"] = {
+    container: "contact",
+    title: "Contact",
+    body: "",
+    excerpt: "",
+    href: "/contact/",
+    changefreq: "monthly",
+    priority: "0.8",
   };
 
   for (const props of await data.readPages()) {
@@ -71,13 +74,13 @@ export const generateManifest = async () => {
       const notes = noteProps.splice(0, 20);
       const href = ++index === 1 ? `/notes/` : `/notes/page/${index}/`;
       const title = `Notes` + (index > 1 ? ` (page ${index})` : ``);
-      let next = '';
+      let next = "";
       if (noteProps.length) {
         next = `/notes/page/${index + 1}/`;
       }
-      let prev = '';
+      let prev = "";
       if (index > 1) {
-        prev = index === 2 ? '/notes/' : `/notes/page/${index - 1}/`;
+        prev = index === 2 ? "/notes/" : `/notes/page/${index - 1}/`;
       }
       const props: Props = {
         href,
@@ -85,11 +88,11 @@ export const generateManifest = async () => {
         notes,
         next,
         prev,
-        body: '',
-        excerpt: '',
-        changefreq: index === 1 ? 'daily' : 'weekly',
-        priority: index === 1 ? '0.8' : '0.5',
-        container: 'notes'
+        body: "",
+        excerpt: "",
+        changefreq: index === 1 ? "daily" : "weekly",
+        priority: index === 1 ? "0.8" : "0.5",
+        container: "notes",
       };
       manifest.routes[href] = props;
     }
@@ -101,13 +104,13 @@ export const generateManifest = async () => {
       const articles = articleProps.splice(0, 7);
       const href = ++index === 1 ? `/blog/` : `/blog/page/${index}/`;
       const title = `Blog` + (index > 1 ? ` (page ${index})` : ``);
-      let next = '';
+      let next = "";
       if (articleProps.length) {
         next = `/blog/page/${index + 1}/`;
       }
-      let prev = '';
+      let prev = "";
       if (index > 1) {
-        prev = index === 2 ? '/blog/' : `/blog/page/${index - 1}/`;
+        prev = index === 2 ? "/blog/" : `/blog/page/${index - 1}/`;
       }
       const props: Props = {
         href,
@@ -115,11 +118,11 @@ export const generateManifest = async () => {
         articles,
         next,
         prev,
-        body: '',
-        excerpt: '',
-        changefreq: index === 1 ? 'weekly' : 'monthly',
-        priority: index === 1 ? '0.9' : '0.5',
-        container: 'archive'
+        body: "",
+        excerpt: "",
+        changefreq: index === 1 ? "weekly" : "monthly",
+        priority: index === 1 ? "0.9" : "0.5",
+        container: "archive",
       };
       manifest.routes[href] = props;
     }
@@ -138,4 +141,4 @@ export const rebuildManifest = async () => {
   manifest = await generateManifest();
 };
 
-export {manifest};
+export { manifest };

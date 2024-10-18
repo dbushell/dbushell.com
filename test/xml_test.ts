@@ -67,3 +67,19 @@ Deno.test("notes rss content", async () => {
   assertEquals(title?.innerText, "dbushell.com (microblog)");
   assertEquals(items.length, 20);
 });
+
+Deno.test("sitemap", async () => {
+  const response = await fetch(new URL("/sitemap.xml", url));
+  let items = 0;
+  let pages = 0;
+  for await (const node of parseXML(response.body!)) {
+    if (node.is("url", "loc")) {
+      items++;
+      if (/\/blog\/page\/\d+/.test(node.innerText)) {
+        pages++;
+      }
+    }
+  }
+  assert(items > 450);
+  assert(pages > 50);
+});

@@ -1,3 +1,7 @@
+import type { Hyperserve } from "@dbushell/hyperserve";
+
+export type Handle = Parameters<Hyperserve["router"]["use"]>[0];
+
 export interface NoteProps {
   href: string;
   body: string;
@@ -18,8 +22,8 @@ export interface Props {
   body: string;
   excerpt: string;
   container: string;
-  changefreq: 'daily' | 'weekly' | 'monthly';
-  priority: '1.0' | '0.9' | '0.8' | '0.7' | '0.6' | '0.5';
+  changefreq: "daily" | "weekly" | "monthly";
+  priority: "1.0" | "0.9" | "0.8" | "0.7" | "0.6" | "0.5";
   features?: string[];
   date?: Date;
   description?: string;
@@ -37,21 +41,13 @@ export interface Manifest {
   routes: {
     [key: string]: Props;
   };
-  styles: Array<{css: string; hash: string}>;
+  styles: Array<{ css: string; hash: string }>;
 }
 
-export type PublicData = {
+export type GlobalProps = {
   deployHash: string;
-  title: string;
-};
-
-export type ServerData = {
+  siteTitle: string;
   pageHeaders: Array<[string, string]>;
   props: Props;
-  styles: Array<{css: string; hash: string}>;
-};
-
-export type Data = {
-  publicData: PublicData;
-  serverData: ServerData;
+  styles: Array<{ css: string; hash: string }>;
 };
