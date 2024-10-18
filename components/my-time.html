@@ -12,7 +12,7 @@
 </script>
 
 <time class="Time" datetime="{{iso}}" title="{{iso}}">
-  <ssr-if condition="href">
+  <ssr-if condition="$local.href">
     <a href="{{$local.href}}">
       <ssr-if condition="$local.time !== undefined">
         {{hh}}:{{mm}} <abbr title="{{dddd}}">{{dd}}</abbr>
