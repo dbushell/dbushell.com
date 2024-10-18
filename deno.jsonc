@@ -8,8 +8,8 @@
   "imports": {
     "@dbushell/carriageway": "jsr:@dbushell/carriageway@^1.1.0",
     "@dbushell/hmmarkdown": "jsr:@dbushell/hmmarkdown@^0.11.0",
-    "@dbushell/hyperless": "jsr:@dbushell/hyperless@^0.24.0",
-    "@dbushell/hyperserve": "jsr:@dbushell/hyperserve@^0.17.0",
+    "@dbushell/hyperless": "jsr:@dbushell/hyperless@^0.26.0",
+    "@dbushell/hyperserve": "jsr:@dbushell/hyperserve@^0.18.0",
     "@shikijs/transformers": "npm:@shikijs/transformers@^1.22.0",
     "@src/": "./src/",
     "@std/async": "jsr:@std/async@^1.0.6",
@@ -24,7 +24,4 @@
     "lightningcss": "npm:lightningcss@^1.27.0",
     "shiki": "npm:shiki@^1.22.0"
   }
-  // "patch": [
-  //   "/Users/did/Code/packages/hyperserve"
-  // ]
 }
