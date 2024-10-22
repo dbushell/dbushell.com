@@ -1,7 +1,7 @@
 import { encodeBase64 } from "@std/encoding";
 import { Queue } from "@dbushell/carriageway";
 import { hmmarkdown, hmmtypography } from "@dbushell/hmmarkdown";
-import { escape, Node, parseHTML, unescape } from "@dbushell/hyperless";
+import { Node, parseHTML, unescape } from "@dbushell/hyperless";
 export { hmmtypography };
 
 /** Style languages as plain text */

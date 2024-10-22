@@ -39,18 +39,16 @@ jobs:
           git lfs fetch --all && git lfs checkout
 
       - name: Setup Deno
-        uses: denoland/setup-deno@v1
+        uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
 
       - name: Build Deno
         run: deno task build
 
       - name: Publish
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
-          directory: build
-          wranglerVersion: '3'
+          command: pages deploy build --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }}
