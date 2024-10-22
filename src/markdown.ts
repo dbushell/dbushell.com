@@ -1,23 +1,28 @@
 import { encodeBase64 } from "@std/encoding";
 import { Queue } from "@dbushell/carriageway";
-import {
-  defaultOptions,
-  hmmarkdown,
-  hmmtypography,
-} from "@dbushell/hmmarkdown";
+import { hmmarkdown, hmmtypography } from "@dbushell/hmmarkdown";
 import { escape, Node, parseHTML, unescape } from "@dbushell/hyperless";
 export { hmmtypography };
 
 /** Style languages as plain text */
 const textCode = new Set(["", "plain", "text", "txt"]);
 
-const codeQueue = new Queue<Node, void>({
-  concurrency: 1,
-});
+type SCV = { queue: Queue<Node, void>; worker: Worker };
 
-const worker = new Worker(import.meta.resolve("./shiki-worker.ts"), {
-  type: "module",
-});
+const workers: Array<SCV> = [];
+for (let i = 0; i < Math.min(3, navigator.hardwareConcurrency - 1); i++) {
+  workers.push({
+    queue: new Queue<Node, void>({ concurrency: 1 }),
+    worker: new Worker(import.meta.resolve("./shiki-worker.ts"), {
+      type: "module",
+    }),
+  });
+}
+
+const getSCV = (): SCV => {
+  workers.sort((a, b) => b.queue.length - a.queue.length);
+  return workers.at(-1)!;
+};
 
 export const cssMap = new Map<string, string>();
 const styleAttr = /style=(["'])(.*?)\1/g;
@@ -79,10 +84,11 @@ const imageNode = (img: Node) => {
 };
 
 const markdown = async (md: string): Promise<string> => {
-  const html = await hmmarkdown(md, defaultOptions);
+  const html = await hmmarkdown(md);
   const node = parseHTML(html);
   const pre: Array<Node> = [];
 
+  // Custom transforms
   node.traverse((n) => {
     if (n.tag === "a") anchorNode(n);
     if (n.tag === "img") imageNode(n);
@@ -90,30 +96,22 @@ const markdown = async (md: string): Promise<string> => {
   });
 
   await Promise.all(pre.map((n) => {
-    const lang = n.attributes.get("data-lang") ?? "text";
-    // Remove wrapper
+    let lang = n.attributes.get("data-lang") ?? "text";
+    // Unescape and remove wrapper
     let code = unescape(n.children[0].raw);
     code = code.replace(/^<code>(.+)<\/code>$/s, (...m) => (m[1]));
-    // Manually format plain text
-    if (textCode.has(lang)) {
-      code = escape(code);
-      n.attributes.set("data-lang", "text");
-      const lines = code.split("\n");
-      n.children[0].raw = "<code>";
-      for (const line of lines) {
-        n.children[0].raw += `<span class="line">${line}</span>\n`;
-      }
-      n.children[0].raw += "</code>";
-      return;
-    }
-    return codeQueue.append(n, async () => {
+    if (textCode.has(lang)) lang = "text";
+    // Highlight syntax in worker
+    const scv = getSCV();
+    return scv.queue.append(n, async () => {
       const deferred = Promise.withResolvers<void>();
-      worker.postMessage({ code, lang });
-      worker.addEventListener("message", (ev: MessageEvent) => {
+      scv.worker.postMessage({ code, lang });
+      scv.worker.addEventListener("message", (ev: MessageEvent) => {
         code = ev.data.code ?? "";
         deferred.resolve();
       }, { once: true });
       await deferred.promise;
+      // Remove shiki wrapper
       code = code.replace(/^<pre[^>]*?>(.+)<\/pre>$/s, (...m) => (m[1]));
       code = stripStyles(code);
       n.children[0].raw = code;
