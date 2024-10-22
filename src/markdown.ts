@@ -1,12 +1,23 @@
 import { encodeBase64 } from "@std/encoding";
-import * as shiki from "shiki";
-import { transformerRenderWhitespace } from "@shikijs/transformers";
+import { Queue } from "@dbushell/carriageway";
 import {
   defaultOptions,
   hmmarkdown,
   hmmtypography,
 } from "@dbushell/hmmarkdown";
+import { escape, Node, parseHTML, unescape } from "@dbushell/hyperless";
 export { hmmtypography };
+
+/** Style languages as plain text */
+const textCode = new Set(["", "plain", "text", "txt"]);
+
+const codeQueue = new Queue<Node, void>({
+  concurrency: 1,
+});
+
+const worker = new Worker(import.meta.resolve("./shiki-worker.ts"), {
+  type: "module",
+});
 
 export const cssMap = new Map<string, string>();
 const styleAttr = /style=(["'])(.*?)\1/g;
@@ -33,80 +44,83 @@ export const syntaxCSS = async () => {
   return { css, hash };
 };
 
-const transformers = [transformerRenderWhitespace()];
+// Transform anchor elements
+const anchorNode = (a: Node) => {
+  const href = a.attributes.get("href")!;
+  const url = /^[\/|#]/.test(href)
+    ? new URL(href, "https://dbushell.com")
+    : new URL(href);
+  const excludePaths = ["/tip/", "/mastodon/"];
+  a.attributes.set("href,", href[0] === "#" ? url.hash : url.href);
+  if (
+    url.hostname !== "dbushell.com" || excludePaths.includes(url.pathname)
+  ) {
+    a.attributes.set("rel", "noopener noreferrer");
+    a.attributes.set("target", "_blank");
+  }
+};
 
-defaultOptions.blockFilters = {
-  image: (props) => {
-    const href = props.attributes.src;
-    const url = href[0] === "/"
-      ? new URL(href, "https://dbushell.com")
-      : new URL(href);
-    props.attributes.src = url.href;
-    props.attributes.decoding = "async";
-    props.attributes.fetchpriority = "low";
-    props.attributes.loading = "lazy";
-    if (props.attributes._parentTag !== "figure") {
-      props.before = `<figure class="Image">`;
-      props.after = `</figure>`;
-    }
-    return Promise.resolve();
-  },
-  preformatted: async (props) => {
-    const lang = props.attributes["data-lang"];
-    let { code } = props;
-    // Handle plaintext
-    if (!lang || ["plain", "text", "txt"].includes(lang)) {
-      const lines = (code as string).split("\n");
-      code = "";
+// Transform image elements
+const imageNode = (img: Node) => {
+  const href = img.attributes.get("src")!;
+  const url = href[0] === "/"
+    ? new URL(href, "https://dbushell.com")
+    : new URL(href);
+  img.attributes.set("src", url.href);
+  img.attributes.set("decoding", "async");
+  img.attributes.set("fetchpriority", "low");
+  img.attributes.set("loading", "lazy");
+  if (img.parent?.tag !== "figure") {
+    const figure = new Node(null, "ELEMENT", "", "figure");
+    figure.attributes.set("class", "Image");
+    img.replace(figure);
+    figure.append(img);
+  }
+};
+
+const markdown = async (md: string): Promise<string> => {
+  const html = await hmmarkdown(md, defaultOptions);
+  const node = parseHTML(html);
+  const pre: Array<Node> = [];
+
+  node.traverse((n) => {
+    if (n.tag === "a") anchorNode(n);
+    if (n.tag === "img") imageNode(n);
+    if (n.tag === "pre") pre.push(n);
+  });
+
+  await Promise.all(pre.map((n) => {
+    const lang = n.attributes.get("data-lang") ?? "text";
+    // Remove wrapper
+    let code = unescape(n.children[0].raw);
+    code = code.replace(/^<code>(.+)<\/code>$/s, (...m) => (m[1]));
+    // Manually format plain text
+    if (textCode.has(lang)) {
+      code = escape(code);
+      n.attributes.set("data-lang", "text");
+      const lines = code.split("\n");
+      n.children[0].raw = "<code>";
       for (const line of lines) {
-        code += `<span class="line">${line}</span>\n`;
+        n.children[0].raw += `<span class="line">${line}</span>\n`;
       }
-      props.code = code;
-      props.attributes["data-lang"] = "text";
+      n.children[0].raw += "</code>";
       return;
     }
-    if (!Object.hasOwn(shiki.bundledLanguages, lang)) {
-      console.log(`⚠ Unknown lang: ${lang}`);
-      return;
-    }
-    code = await shiki.codeToHtml(code, {
-      lang,
-      theme: "dracula",
-      colorReplacements: {
-        "#6272a4": "#a3b5eb", // Grey
-        "#ff79c6": "#ff93ce", // Pink
-        "#bd93f9": "#caa7ff", // Purple
-      },
-      transformers,
+    return codeQueue.append(n, async () => {
+      const deferred = Promise.withResolvers<void>();
+      worker.postMessage({ code, lang });
+      worker.addEventListener("message", (ev: MessageEvent) => {
+        code = ev.data.code ?? "";
+        deferred.resolve();
+      }, { once: true });
+      await deferred.promise;
+      code = code.replace(/^<pre[^>]*?>(.+)<\/pre>$/s, (...m) => (m[1]));
+      code = stripStyles(code);
+      n.children[0].raw = code;
     });
-    // Remove default Shiki wrapper
-    code = stripStyles(code);
-    code = code.replace(/^<pre[^>]*?><code>/, "");
-    code = code.replace(/<\/code><\/pre>$/, "");
-    props.code = code;
-  },
-};
+  }));
 
-defaultOptions.inlineFilters = {
-  anchor: (props) => {
-    const href = props.attributes.href;
-    const url = /^[\/|#]/.test(href)
-      ? new URL(href, "https://dbushell.com")
-      : new URL(href);
-    const excludePaths = ["/tip/", "/mastodon/"];
-    props.attributes.href = href[0] === "#" ? url.hash : url.href;
-    if (
-      url.hostname !== "dbushell.com" || excludePaths.includes(url.pathname)
-    ) {
-      props.attributes.rel = "noopener noreferrer";
-      props.attributes.target = "_blank";
-    }
-    return Promise.resolve();
-  },
-};
-
-const markdown = (md: string): Promise<string> => {
-  return hmmarkdown(md, defaultOptions);
+  return node.toString();
 };
 
 export default markdown;
