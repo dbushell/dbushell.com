@@ -75,7 +75,8 @@ const imageNode = (img: Node) => {
   img.attributes.set("decoding", "async");
   img.attributes.set("fetchpriority", "low");
   img.attributes.set("loading", "lazy");
-  if (img.parent?.tag !== "figure") {
+  const figure = img.closest((n) => n.tag === "figure");
+  if (figure === null) {
     const figure = new Node(null, "ELEMENT", "", "figure");
     figure.attributes.set("class", "Image");
     img.replace(figure);
