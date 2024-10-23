@@ -56,7 +56,7 @@ const anchorNode = (a: Node) => {
     ? new URL(href, "https://dbushell.com")
     : new URL(href);
   const excludePaths = ["/tip/", "/mastodon/"];
-  a.attributes.set("href,", href[0] === "#" ? url.hash : url.href);
+  a.attributes.set("href", href[0] === "#" ? url.hash : url.href);
   if (
     url.hostname !== "dbushell.com" || excludePaths.includes(url.pathname)
   ) {

@@ -10,6 +10,7 @@ import type { FrontProps, NoteProps, Props } from "./types.ts";
 
 const dataPath = path.resolve(Deno.cwd(), "src/data");
 const cachePath = path.join(Deno.cwd(), ".cache");
+const snapshotPath = path.join(Deno.cwd(), ".snapshot");
 
 const DEV = Deno.args.includes("--dev");
 
@@ -77,6 +78,15 @@ export const readProps = async (srcPath: string): Promise<Props> => {
         matter.attrs.slug,
       ].join("/") +
       "/";
+  }
+
+  if (Deno.args.includes("--snapshot")) {
+    let snap = `${props.href.slice(1, -1).replaceAll("/", "-")}.html`;
+    snap = path.join(snapshotPath, snap);
+    await Deno.writeTextFile(
+      snap,
+      props.body.replace(/syntax-\d+/g, ""),
+    );
   }
 
   // Save cached props
