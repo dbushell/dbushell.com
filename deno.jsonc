@@ -7,7 +7,7 @@
   },
   "imports": {
     "@dbushell/carriageway": "jsr:@dbushell/carriageway@^1.1.0",
-    "@dbushell/hmmarkdown": "jsr:@dbushell/hmmarkdown@^0.16.0",
+    "@dbushell/hmmarkdown": "jsr:@dbushell/hmmarkdown@^0.17.0",
     "@dbushell/hyperless": "jsr:@dbushell/hyperless@^0.27.0",
     "@dbushell/hyperserve": "jsr:@dbushell/hyperserve@^0.19.0",
     "@shikijs/transformers": "npm:@shikijs/transformers@^1.22.0",

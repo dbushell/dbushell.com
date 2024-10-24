@@ -87,6 +87,8 @@ const start = async () => {
   if (DEV) {
     // Rewrite relative URLs for local development
     ssr.router.get("*", async ({ response }) => {
+      // Remove policy to allow inline syntax styles
+      response?.headers.delete("content-security-policy");
       if (
         response?.ok &&
         response.body &&

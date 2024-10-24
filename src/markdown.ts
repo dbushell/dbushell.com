@@ -4,6 +4,8 @@ import { hmmarkdown, hmmtypography } from "@dbushell/hmmarkdown";
 import { Node, parseHTML, unescape } from "@dbushell/hyperless";
 export { hmmtypography };
 
+const DEV = Deno.args.includes("--dev");
+
 /** Style languages as plain text */
 const textCode = new Set(["", "plain", "text", "txt"]);
 
@@ -114,7 +116,9 @@ const markdown = async (md: string): Promise<string> => {
       await deferred.promise;
       // Remove shiki wrapper
       code = code.replace(/^<pre[^>]*?>(.+)<\/pre>$/s, (...m) => (m[1]));
-      code = stripStyles(code);
+      if (DEV === false) {
+        code = stripStyles(code);
+      }
       n.children[0].raw = code;
     });
   }));
