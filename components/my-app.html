@@ -6,6 +6,10 @@
   if (props.title) {
     longTitle = `${props.title} – ${longTitle}`;
   }
+  let ogType = "";
+  if (/\d{4}(\/|-)\d{2}\1\d{2}/.test(href)) {
+    ogType = "article";
+  }
 </script>
 
 <ssr-fragment portal="head">
@@ -13,12 +17,13 @@
   <link rel="canonical" href="https://dbushell.com{{href}}" />
   <meta name="author" content="David Bushell" />
   <meta name="description" content="{{pageDescription}}" />
+  <meta name="fediverse:creator" content="@dbushell@fosstodon.org" />
   <meta property="og:title" content="{{shortTitle}}" />
   <meta property="og:url" content="https://dbushell.com{{href}}" />
   <meta property="og:description" content="{{pageDescription}}" />
   <meta property="og:image" content="https://dbushell.com/assets/icons/512x512.png" />
   <meta property="og:site_name" content="dbushell.com" />
-  <meta name="fediverse:creator" content="@dbushell@fosstodon.org" />
+  <ssr-if condition="ogType"><meta property="og:type" content="{{ogType}}" /></ssr-if>
   <script type="module" src="/assets/scripts/head.js?v={{deployHash}}"></script>
 </ssr-fragment>
 
