@@ -24,7 +24,3 @@
 
 /rss.xml
   content-type: application/xml; charset=utf-8
-
-/_/immutable/*
-  ! cache-control
-  cache-control: public, max-age=31536000, immutable
