@@ -8,11 +8,15 @@ import { excerpt, stripTags } from "@dbushell/hyperless";
 import markdown, { hmmtypography } from "@src/markdown.ts";
 import type { FrontProps, NoteProps, Props } from "./types.ts";
 
+const DEV = Deno.args.includes("--dev");
+
 const dataPath = path.resolve(Deno.cwd(), "src/data");
 const cachePath = path.join(Deno.cwd(), ".cache");
 const snapshotPath = path.join(Deno.cwd(), ".snapshot");
 
-const DEV = Deno.args.includes("--dev");
+if (DEV) {
+  await fs.emptyDir(cachePath);
+}
 
 export const readProps = async (srcPath: string): Promise<Props> => {
   // Read markdown
