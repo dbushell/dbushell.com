@@ -8,6 +8,7 @@
 
 html {
   container: root / inline-size;
+  color-scheme: light dark;
   hanging-punctuation: first allow-end last;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
@@ -93,4 +94,8 @@ body {
   color: currentColor;
   margin: auto;
   position: fixed;
+}
+
+:where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
+  display: none !important;
 }

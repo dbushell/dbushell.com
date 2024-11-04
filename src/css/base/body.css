@@ -20,7 +20,6 @@ body {
   container: app / inline-size;
   margin-inline: auto;
   max-inline-size: calc(1920 * var(--rem));
-  overflow: hidden;
   padding-inline: var(--page-margin);
   position: relative;
 }
