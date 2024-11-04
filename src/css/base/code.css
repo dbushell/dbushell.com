@@ -1,28 +1,28 @@
 pre,
 code {
   font-family: 'Roboto Mono', monospace;
-  font-size: var(--step-s);
-  font-weight: 300;
+  font-size: var(--font-size-0);
+  font-weight: 400;
   -webkit-text-size-adjust: 100%;
 }
 
 :not(pre) > code {
   background: oklch(var(--color-background2));
-  border: calc((1 / 16) * 1rem) solid oklch(var(--color-quaternary));
+  border: var(--border-size-1) solid oklch(var(--color-quaternary));
   color: oklch(var(--color-secondary2));
   display: inline;
-  font-size: var(--step-s);
-  font-weight: 400;
+  font-size: var(--font-size-0);
+  font-weight: 450;
   line-height: 1;
-  padding: calc((2 / 16) * 1rem) calc((4 / 16) * 1rem);
+  padding: 2px 4px;
   text-decoration: none;
 }
 
 pre {
   --background-color: var(--db-dark);
   --background-alt: var(--db-midnight);
-  --block-padding: calc((12 / 16) * 1rem);
-  --inline-padding: calc((18 / 16) * 1rem);
+  --block-padding: 12px;
+  --inline-padding: var(--size-2);
   background: oklch(var(--background-color));
   color: oklch(var(--db-light));
   counter-reset: line-counter;
@@ -31,8 +31,8 @@ pre {
   -webkit-hyphens: none;
   hyphens: none;
   line-height: var(--line-height-2);
-  margin: calc((36 / 16) * 1rem) 0;
-  margin-inline-start: calc((-18 / 16) * 1rem);
+  margin-block: var(--size-4);
+  margin-inline-start: calc(-1 * var(--size-2));
   overflow: auto;
   overscroll-behavior-inline: contain;
   padding: var(--block-padding) var(--inline-padding);
@@ -52,13 +52,14 @@ pre {
       color: oklch(var(--db-yellow));
       display: block;
       font-family: 'Comic Neue', 'Raleway', sans-serif;
-      font-size: calc((12 / 16) * 1rem);
+      font-size: 12px;
       font-style: italic;
       inset-inline-start: 0;
       line-height: 1;
-      transform: translateX(var(--inline-padding)) translateY(calc(-1 * var(--block-padding)));
-      margin-block-end: calc((-24 / 16) * 1rem);
-      padding: calc((6 / 16) * 1rem);
+      transform: translateX(var(--inline-padding))
+        translateY(calc(-1 * var(--block-padding)));
+      margin-block-end: -24px;
+      padding: 6px;
       position: sticky;
       pointer-events: none;
       text-align: end;
@@ -77,7 +78,7 @@ pre {
 
       &:nth-child(2n + 1) {
         &::before {
-          border-inline: 1px solid transparent;
+          border-inline: var(--border-size-1) solid transparent;
           border-inline-start-color: currentColor;
         }
       }
@@ -112,7 +113,7 @@ pre {
           background: oklch(var(--background-alt) / 0.15);
           content: '';
           display: none;
-          inset: 0 calc((-18 / 16) * 1rem);
+          inset: 0 calc(-1 * var(--size-2));
           position: absolute;
           z-index: -1;
         }
@@ -122,8 +123,8 @@ pre {
           color: oklch(var(--db-yellow));
           display: inline-block;
           inline-size: 2ch;
-          margin-inline-end: calc((14 / 16) * 1rem);
-          margin-inline-start: calc((-6 / 16) * 1rem);
+          margin-inline-end: 14px;
+          margin-inline-start: -6px;
           text-align: end;
           user-select: none;
         }
@@ -147,14 +148,9 @@ pre {
       }
     }
   }
-
-  :where(.Darkmode) & {
-    --background-color: var(--db-midnight);
-    --background-alt: var(--db-dark);
-  }
 }
 
-@container app (inline-size < calc((400 / 16) * 1rem)) {
+@container app (inline-size < 25rem) {
   pre {
     --inline-padding: var(--page-margin);
     margin-inline-end: calc(-1 * var(--page-margin));

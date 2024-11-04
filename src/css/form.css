@@ -1,13 +1,13 @@
 .Form {
   display: grid;
-  row-gap: calc((36 / 16) * 1rem);
+  row-gap: var(--size-4);
 
   & label {
     display: block;
-    font-size: var(--step-0);
+    font-size: var(--font-size-1);
 
     &:not(:last-child) {
-      margin-block-end: calc((9 / 16) * 1rem);
+      margin-block-end: var(--size-1);
     }
   }
 }
@@ -18,13 +18,13 @@
 
   & svg {
     fill: currentColor;
-    margin-inline-end: calc((9 / 16) * 1rem);
+    margin-inline-end: var(--size-1);
   }
 }
 
-@container main (inline-size >= calc((400 / 16) * 1rem)) {
+@container main (inline-size >= 25rem) {
   & .Form {
-    column-gap: calc((27 / 16) * 1rem);
+    column-gap: var(--size-3);
     grid-template-columns: 1fr 1fr;
 
     & li {

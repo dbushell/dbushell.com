@@ -1,9 +1,9 @@
 @layer base, components, modifiers;
 
 @import 'base/fonts.css' layer(base);
-@import 'base/props.css' layer(base);
+@import 'base/properties.css' layer(base);
 @import 'base/reset.css' layer(base);
-@import 'base/document.css' layer(base);
+@import 'base/body.css' layer(base);
 @import 'base/hidden.css' layer(base);
 @import 'base/typography.css' layer(base);
 @import 'base/code.css' layer(base);
@@ -36,4 +36,3 @@
 @import 'aside.css';
 @import 'main.css';
 @import 'layout.css';
-@import 'app.css';

@@ -10,7 +10,8 @@
 
 @font-face {
   font-family: 'Raleway';
-  src: url('/assets/fonts/raleway-variable.woff2?v=%DEPLOY_HASH%') format('woff2');
+  src: url('/assets/fonts/raleway-variable.woff2?v=%DEPLOY_HASH%')
+    format('woff2');
   font-display: swap;
   font-weight: 1 900;
   font-style: normal;
@@ -20,7 +21,8 @@
 
 @font-face {
   font-family: 'Raleway';
-  src: url('/assets/fonts/raleway-italic-variable.woff2?v=%DEPLOY_HASH%') format('woff2');
+  src: url('/assets/fonts/raleway-italic-variable.woff2?v=%DEPLOY_HASH%')
+    format('woff2');
   font-display: swap;
   font-weight: 1 900;
   font-style: italic;
@@ -30,7 +32,8 @@
 
 @font-face {
   font-family: 'Comic Neue';
-  src: url('/assets/fonts/comic-neue-bold-italic.woff2?v=%DEPLOY_HASH%') format('woff2');
+  src: url('/assets/fonts/comic-neue-bold-italic.woff2?v=%DEPLOY_HASH%')
+    format('woff2');
   font-display: swap;
   font-weight: 600;
   font-style: italic;

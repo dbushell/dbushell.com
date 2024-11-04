@@ -7,34 +7,23 @@
     content: '•';
     color: transparent;
     background: oklch(var(--color-secondary));
-    mask: var(--star) center center / calc((16 / 16) * 1rem) auto no-repeat;
-    inset-inline-start: calc((-36 / 16) * 1rem);
+    mask: var(--star) center center / 16px auto no-repeat;
+    inset-inline-start: calc(-1 * var(--size-4));
     position: absolute;
-    inline-size: calc((36 / 16) * 1rem);
+    inline-size: var(--size-4);
   }
 }
 
-@container app (inline-size < calc((800 / 16) * 1rem)) {
+@container app (inline-size < 37.5rem) {
   .Star,
   .List li,
   .Prose :where(ul:not([class*='List'], [class*='Form'])) li {
-    &::before {
-      mask-size: calc((12 / 16) * 1rem) auto;
-      inset-inline-start: calc((-27 / 16) * 1rem);
-      inline-size: calc((27 / 16) * 1rem);
-    }
-  }
-}
-
-@container app (inline-size < calc((600 / 16) * 1rem)) {
-  .Star,
-  .List li,
-  .Prose :where(ul:not([class*='List'], [class*='Form'])) li {
-    padding-inline-start: calc((16 / 16) * 1rem);
+    padding-inline-start: var(--size-2);
 
     &::before {
-      inset-inline-start: calc((-6 / 16) * 1rem);
-      inline-size: calc((12 / 16) * 1rem);
+      mask-size: 12px auto;
+      inset-inline-start: calc(-0.5 * var(--size-3));
+      inline-size: var(--size-3);
     }
   }
 }

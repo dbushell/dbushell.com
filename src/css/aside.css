@@ -1,14 +1,13 @@
 .Aside {
-  container-name: aside;
-  container-type: inline-size;
+  container: aside / inline-size;
   width: 100%;
 
   & > .Rule {
-    margin-block-end: calc((36 / 16) * 1rem);
+    margin-block-end: var(--size-4);
   }
 }
 
-@container app (inline-size >= calc((800 / 16) * 1rem)) {
+@container app (inline-size >= 50rem) {
   .Aside {
     & > .Rule {
       display: none;

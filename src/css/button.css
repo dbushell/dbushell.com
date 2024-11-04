@@ -1,25 +1,22 @@
 .Button {
   --button-shadow: var(--color-quaternary);
-  appearance: none;
   background: oklch(var(--color-background2));
-  border: calc((2 / 16) * 1rem) solid oklch(var(--color-primary) / 0.5);
+  border: var(--border-size-2) solid oklch(var(--color-primary) / 0.5);
   border-top: 0;
   border-left: 0;
-  border-radius: calc((5 / 16) * 1rem);
-  box-shadow: calc((-1 / 16) * 1rem) calc((-1 / 16) * 1rem) 0 calc((1 / 16) * 1rem)
-      oklch(var(--button-shadow)),
-    calc((2 / 16) * 1rem) calc((2 / 16) * 1rem) 0 0 oklch(var(--db-black) / 0.1);
+  border-radius: var(--radius-1);
+  box-shadow: -1px -1px 0 1px oklch(var(--button-shadow)),
+    2px 2px 0 0 oklch(0% 0 0 / 0.1);
   color: oklch(var(--color-primary2));
   display: block;
-  font-size: var(--step-s);
-  font-weight: 600;
+  font-size: var(--font-size-0);
+  font-weight: 650;
   line-height: var(--line-height-2);
-  letter-spacing: calc((1 / 16) * 1rem);
+  letter-spacing: 1px;
   max-inline-size: max-content;
-  padding: calc((7 / 16) * 1rem) calc((16 / 16) * 1rem);
+  padding: 7px 16px;
   text-decoration: none;
   text-transform: uppercase;
-  touch-action: manipulation;
   transition: color 200ms, border 200ms, box-shadow 200ms;
   user-select: none;
 
@@ -32,7 +29,7 @@
 
   &:focus-visible {
     outline: var(--outline);
-    outline-offset: calc((4 / 16) * 1rem);
+    outline-offset: 4px;
   }
 
   &[disabled] {

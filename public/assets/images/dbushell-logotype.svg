@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="544.77" height="216.89" viewBox="0 0 544.77 216.89">
   <defs>
-    <style data-hash="p0lVhHvjWu1bucdPJXr5SjN6e3hVy6Jv4paG9r+Nsbc=">
+    <style data-hash="3JLJnuPpu2Hf1q28HaSEirC4QVl4SFAuPAn9LzXYAsw=">
 :root {
   --logo-green: 86.59% 0.088 168.12;
   --logo-blue: 62.78% 0.117 226.03;
@@ -11,7 +11,7 @@
   --logo-outline: var(--masthead-secondary, var(--db-blue, var(--logo-blue)));
 }
 @media screen and (prefers-color-scheme: dark) {
-  .Darkmode {
+  :root[data-theme='dark'] {
     --logo-outline: var(--masthead-secondary, var(--db-green, var(--logo-green)));
   }
 }

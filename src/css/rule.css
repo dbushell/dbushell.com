@@ -2,8 +2,7 @@
 :where(.Prose) > hr {
   background: oklch(var(--color-quaternary));
   border: none;
-  block-size: calc((1 / 16) * 1rem);
-  margin: 0;
+  block-size: var(--border-size-1);
   outline: none;
   inline-size: 100%;
 }

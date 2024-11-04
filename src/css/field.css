@@ -1,34 +1,28 @@
 .Field {
   --field-shadow: oklch(var(--color-primary) / 0.5);
-  appearance: none;
   background: oklch(var(--color-background2));
-  border: calc((2 / 16) * 1rem) solid oklch(var(--color-quaternary));
+  border: var(--border-size-2) solid oklch(var(--color-quaternary));
   border-top: 0;
   border-left: 0;
-  border-radius: calc((5 / 16) * 1rem);
-  box-shadow: calc((-1 / 16) * 1rem) calc((-1 / 16) * 1rem) 0 calc((1 / 16) * 1rem)
-      var(--field-shadow),
-    calc((2 / 16) * 1rem) calc((2 / 16) * 1rem) 0 0 oklch(var(--db-black) / 0.1);
+  border-radius: var(--radius-1);
+  box-shadow: -1px -1px 0 1px var(--field-shadow),
+    2px 2px 0 0 oklch(0% 0 0 / 0.1);
   color: oklch(var(--color-foreground));
   display: block;
-  font-size: var(--step-s);
+  font-size: var(--font-size-0);
   font-family: 'Raleway', sans-serif;
+  font-weight: 550;
   line-height: var(--line-height-2);
-  outline: none;
-  padding: calc((7 / 16) * 1rem) calc((10 / 16) * 1rem);
+  padding: 7px 10px;
   transition: color 200ms, border-color 200ms, box-shadow 200ms;
   inline-size: 100%;
 
-  &:focus {
+  &:focus-visible {
     --field-shadow: oklch(var(--color-primary));
     border-color: oklch(var(--color-primary));
     color: oklch(var(--color-primary));
     outline: var(--outline);
-    outline-offset: calc((4 / 16) * 1rem);
-  }
-
-  &[rows] {
-    resize: vertical;
+    outline-offset: 4px;
   }
 
   &[disabled] {

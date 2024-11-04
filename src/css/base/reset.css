@@ -2,10 +2,23 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
+  container: root / inline-size;
+  hanging-punctuation: first allow-end last;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+
+  &:where(.translated-rtl) {
+    direction: rtl;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -14,60 +27,70 @@ html {
   }
 }
 
-.translated-rtl {
-  direction: rtl;
-}
-
 body {
-  margin: 0;
-  padding: 0;
+  min-block-size: 100svb;
 }
 
-img,
-svg,
-video {
-  border: 0;
+:where(canvas, img, picture, svg, video) {
   block-size: auto;
+  border: none;
   display: block;
   max-inline-size: 100%;
 }
 
-button {
-  background: transparent;
+:where(button, input, progress, select, textarea) {
   appearance: none;
+  background: transparent;
   border: none;
-  outline: none;
-
-  &:hover {
-    cursor: pointer;
-  }
+  color: currentColor;
+  font: inherit;
+  hanging-punctuation: none;
+  line-height: inherit;
+  text-align: start;
+  touch-action: manipulation;
 }
 
-b,
-strong {
-  font-weight: 600;
+:where(button) {
+  cursor: pointer;
+  user-select: none;
 }
 
-abbr {
+:where(textarea) {
+  resize: vertical;
+}
+
+:where(b, strong) {
+  font-weight: 650;
+}
+
+:where(p, li, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+:where(abbr) {
   &[title] {
     border: none;
     text-decoration: none;
   }
 }
 
-small,
-figcaption {
-  font-size: var(--step-s);
+:where(cite) {
+  font-style: normal;
 }
 
-ul,
-ol {
+:where(small) {
+  font-size: inherit;
+}
+
+:where(ul, ol, li) {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
-li {
-  margin: 0;
-  padding: 0;
+:where(dialog, [popover]) {
+  background: transparent;
+  border: none;
+  color: currentColor;
+  margin: auto;
+  position: fixed;
 }

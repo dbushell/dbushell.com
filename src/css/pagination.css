@@ -8,16 +8,16 @@
 
     & svg {
       fill: currentColor;
-      block-size: calc((12 / 16) * 1rem);
+      block-size: 12px;
       stroke: currentColor;
-      inline-size: calc((12 / 16) * 1rem);
+      inline-size: 12px;
 
       &:first-child {
-        margin-inline: calc((-4 / 16) * 1rem) calc((6 / 16) * 1rem);
+        margin-inline: -4px 6px;
       }
 
       &:last-child {
-        margin-inline: calc((6 / 16) * 1rem) calc((-4 / 16) * 1rem);
+        margin-inline: 6px -4px;
       }
     }
   }

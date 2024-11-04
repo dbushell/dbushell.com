@@ -1,7 +1,6 @@
 .Main {
-  container-name: main;
-  container-type: inline-size;
-  margin: 0 auto calc((36 / 16) * 1rem) auto;
+  container: main / inline-size;
+  margin-block-end: var(--size-4);
   inline-size: 100%;
 
   &:last-child {

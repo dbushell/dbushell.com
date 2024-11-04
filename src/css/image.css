@@ -1,6 +1,5 @@
 .Image {
   display: block;
-  margin: 0;
   max-inline-size: none;
 
   &[href] {
@@ -14,34 +13,25 @@
 
   & img,
   & video {
-    display: block;
     background-color: oklch(var(--db-black) / 0.2);
-    border-radius: calc((3 / 16) * 1rem);
-    border: calc((2 / 16) * 1rem) solid oklch(var(--color-background));
-    box-shadow: calc((-4 / 16) * 1rem) 0 0 calc((-2 / 16) * 1rem) oklch(var(--color-secondary)),
-      calc((4 / 16) * 1rem) calc((4 / 16) * 1rem) 0 0 oklch(var(--db-black) / 0.2);
+    border: var(--border-size-2) solid oklch(var(--color-background));
+    border-radius: var(--radius-2);
+    box-shadow: -4px 0 0 -2px oklch(var(--color-secondary)),
+      3px 3px 0 0 oklch(0% 0 0 / 0.15);
+    overflow: clip;
     position: relative;
   }
 
   & figcaption {
-    margin: calc((9 / 16) * 1rem) 0 0 0;
+    margin-block-start: var(--size-1);
   }
 }
 
 .Image--basic {
-  &[href] {
-    img {
-      border: calc((2 / 16) * 1rem) solid currentColor;
-      border-radius: calc((9 / 16) * 1rem);
-      box-sizing: content-box;
-      overflow: hidden;
-    }
-  }
-
   & img {
     background: transparent;
-    border-radius: 0;
     border: none;
+    border-radius: 0;
     box-shadow: none;
   }
 }

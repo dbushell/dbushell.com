@@ -3,15 +3,26 @@
 } */
 
 :root {
-  --outline: calc((2 / 16) * 1rem) dashed oklch(var(--color-secondary));
   background: oklch(var(--color-background));
+  scrollbar-color: oklch(var(--color-primary)) oklch(var(--color-background));
+}
+
+body {
+  accent-color: var(--color-primary);
   color: oklch(var(--color-foreground));
   font-family: 'Raleway', sans-serif;
   font-synthesis: none;
-  font-weight: 400;
+  font-weight: 475;
   line-height: var(--line-height-1);
-  margin: 0;
-  padding: 0;
+}
+
+body {
+  container: app / inline-size;
+  margin-inline: auto;
+  max-inline-size: calc(1920 * var(--rem));
+  overflow: hidden;
+  padding-inline: var(--page-margin);
+  position: relative;
 }
 
 [class*='🖕'] {
@@ -19,7 +30,7 @@
 }
 
 @media screen {
-  .Lightmode {
+  :root[data-theme='light'] {
     --color-background: var(--db-light);
     --color-background2: var(--db-white);
     --color-foreground: var(--db-dark);
@@ -35,15 +46,15 @@
     --masthead-secondary: var(--db-blue);
   }
 
-  .Darkmode {
-    --color-background: var(--db-dark);
-    --color-background2: var(--db-black);
+  :root[data-theme='dark'] {
+    --color-background: var(--db-black);
+    --color-background2: var(--db-dark);
     --color-foreground: var(--db-light);
 
-    --color-primary: var(--db-yellow);
-    --color-primary2: var(--db-yellow);
-    --color-secondary: var(--db-green);
-    --color-secondary2: var(--db-green);
+    --color-primary: var(--db-green);
+    --color-primary2: var(--db-green);
+    --color-secondary: var(--db-pink);
+    --color-secondary2: var(--db-pink);
     --color-tertiary: var(--db-pink);
     --color-quaternary: var(--db-blue);
 

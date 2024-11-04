@@ -1,16 +1,16 @@
 .Note {
   align-items: center;
-  border: calc((1 / 16) * 1rem) solid oklch(var(--color-quaternary));
-  border-radius: calc((9 / 16) * 1rem);
+  border: var(--border-size-1) solid oklch(var(--color-quaternary));
+  border-radius: var(--radius-2);
   display: grid;
-  gap: calc((18 / 16) * 1rem);
+  gap: var(--size-2);
   grid-template-columns: 1fr;
-  margin: calc((36 / 16) * 1rem) 0;
-  padding: calc((18 / 16) * 1rem);
+  margin-block: var(--size-4);
+  padding: var(--size-2);
   position: relative;
 
   & > footer {
-    margin-block-end: calc((-9 / 16) * 1rem);
+    margin-block-end: calc(-1 * var(--size-1));
     order: -1;
   }
 
@@ -20,7 +20,7 @@
   }
 
   & + & {
-    margin-block-start: calc((-18 / 16) * 1rem);
+    margin-block-start: calc(-1 * var(--size-2));
   }
 
   &:last-child {
@@ -31,7 +31,7 @@
     min-inline-size: 0;
 
     & > :is(ol, ul) {
-      padding-inline-start: calc((27 / 16) * 1rem);
+      padding-inline-start: var(--size-3);
     }
 
     & > :is(blockquote, pre) {
@@ -40,20 +40,18 @@
   }
 }
 
-@container app (inline-size < calc((800 / 16) * 1rem)) {
-  .Note .Prose > :is(ol, ul) {
-    padding-inline-start: calc((18 / 16) * 1rem);
+@container app (inline-size < 37.5rem) {
+  .Note {
+    margin-inline: calc(-1 * var(--size-1));
   }
-}
 
-@container app (inline-size <  calc((600 / 16) * 1rem)) {
   .Note .Prose > :is(ol, ul) {
     padding-inline-start: 0;
   }
 }
 
-@container app (inline-size >= calc((400 / 16) * 1rem)) {
+@container app (inline-size >= 50rem) {
   .Note {
-    margin-inline-start: calc((-20 / 16) * 1rem);
+    margin-inline-start: calc(-1 * var(--size-2));
   }
 }

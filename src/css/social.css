@@ -1,18 +1,19 @@
 .Social {
+  --social-size: calc(24 * var(--rem));
   --social-color: oklch(var(--color-background));
   align-items: center;
   display: flex;
-  margin-block-start: calc((18 / 16) * 1rem);
-  margin-inline-end: calc((-4.5 / 16) * 1rem);
+  margin-block-start: var(--size-2);
+  margin-inline-end: calc(-1 * var(--size-0));
 
   & svg {
-    border-radius: calc((5 / 16) * 1rem);
-    box-shadow: calc((1.5 / 16) * 1rem) calc((1.5 / 16) * 1rem) 0 0 oklch(var(--db-black) / 0.1);
+    border-radius: var(--radius-1);
+    box-shadow: 2px 2px 0 0 oklch(0% 0 0 / 0.1);
     fill: currentColor;
-    block-size: calc((24 / 16) * 1rem);
+    block-size: var(--social-size);
+    inline-size: var(--social-size);
     transform: var(--transform);
     transition: transform 150ms;
-    inline-size: auto;
   }
 
   & .Button {
@@ -22,7 +23,7 @@
 
   & a:not(.Button) {
     display: block;
-    padding: calc((4.5 / 16) * 1rem);
+    padding: var(--size-0);
     perspective: 50px;
     position: relative;
     text-decoration: none;
@@ -32,7 +33,7 @@
       --transform: scale(1.1);
     }
 
-    &:focus {
+    &:focus-visible {
       outline-offset: 0;
     }
   }

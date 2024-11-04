@@ -1,9 +1,0 @@
-.App {
-  container-name: app;
-  container-type: inline-size;
-  margin: 0 auto;
-  max-inline-size: var(--page-max);
-  overflow: hidden;
-  padding: 0 var(--page-margin);
-  position: relative;
-}

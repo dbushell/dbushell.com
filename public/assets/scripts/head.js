@@ -19,22 +19,18 @@ fetch($logo.src).then(async (response) => {
 // Handle dark mode
 const $doc = document.documentElement;
 const $mode = document.querySelector(".Lightbulb");
-const list = $doc.classList;
 
-if (localStorage.getItem("darkmode") === "on") {
-  list.remove("Lightmode");
-  list.add("Darkmode");
+if (localStorage.getItem("theme") === "dark") {
+  $doc.dataset.theme = "dark";
 }
 
 $mode.addEventListener("click", () => {
-  if (list.contains("Lightmode")) {
-    list.remove("Lightmode");
-    list.add("Darkmode");
-    localStorage.setItem("darkmode", "on");
+  if ($doc.dataset.theme === "dark") {
+    $doc.dataset.theme = "light";
+    localStorage.setItem("theme", "light");
   } else {
-    list.remove("Darkmode");
-    list.add("Lightmode");
-    localStorage.setItem("darkmode", "off");
+    $doc.dataset.theme = "dark";
+    localStorage.setItem("theme", "dark");
   }
 });
 

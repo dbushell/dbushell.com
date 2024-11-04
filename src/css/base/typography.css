@@ -7,21 +7,18 @@ a:where([href]) {
   text-decoration-skip-ink: all;
   text-decoration-color: oklch(var(--anchor-color) / var(--anchor-opacity));
   text-underline-offset: 0.15em;
-  transition: color 200ms, background 200ms, text-decoration-color 200ms, text-decoration 200ms;
+  transition: color 200ms, background 200ms, text-decoration-color 200ms,
+    text-decoration 200ms;
 
   &:hover {
     --anchor-color: var(--color-tertiary);
     --anchor-opacity: 0;
   }
 
-  &:focus {
+  &:focus-visible {
     --anchor-opacity: 0;
     outline: var(--outline);
-    outline-offset: calc((2 / 16) * 1rem);
-
-    &:not(:focus-visible) {
-      outline: none;
-    }
+    outline-offset: var(--border-size-2);
   }
 
   &:active {
@@ -54,8 +51,9 @@ a:where([href]) {
 }
 
 p {
-  font-size: var(--step-0);
-  margin: 0 0 calc((18 / 16) * 1rem) 0;
+  --font-size: var(--font-size-1);
+  font-size: var(--font-size);
+  margin-block-end: var(--size-2);
   max-inline-size: 70ch;
 
   &:last-child {
@@ -63,42 +61,51 @@ p {
   }
 
   & a {
-    font-weight: 500;
+    font-weight: 550;
   }
 
   &:has(small:only-child) {
-    font-size: var(--step-s);
+    --font-size: var(--font-size-0);
   }
 
   &:has(.Button:only-child) {
     &:not(:first-child) {
-      margin-block-start: calc((27 / 16) * 1rem);
+      margin-block-start: var(--size-3);
     }
+
     &:not(:last-child) {
-      margin-block: calc((27 / 16) * 1rem) 0;
+      margin-block: var(--size-3);
     }
   }
 }
 
+small {
+  font-size: inherit;
+}
+
+figcaption {
+  font-size: var(--font-size-0);
+}
+
 sup {
-  font-size: var(--step-s);
+  font-size: var(--font-size-0);
   line-height: 1;
   vertical-align: top;
 }
 
 blockquote {
   margin: 0;
-  margin-inline-start: calc((18 / 16) * 1rem);
-  padding-inline-start: calc((18 / 16) * 1rem);
-  border-inline-start: calc((1 / 16) * 1rem) solid oklch(var(--color-tertiary));
+  margin-inline-start: var(--size-2);
+  padding-inline-start: var(--size-2);
+  border-inline-start: var(--border-size-1) solid oklch(var(--color-tertiary));
 
   & :is(p, li) {
     font-style: italic;
   }
 
   & cite {
-    font-size: var(--step-s);
-    font-weight: 500;
+    font-size: var(--font-size-0);
+    font-weight: 550;
   }
 }
 
@@ -108,11 +115,13 @@ h3,
 h4,
 h5,
 h6 {
+  --font-size: var(--font-size-2);
+  --line-height: var(--line-height-2);
   color: oklch(var(--color-primary));
-  font-size: var(--step-1);
-  font-weight: 600;
-  line-height: var(--line-height-2);
-  margin: calc((27 / 16) * 1rem) 0 calc((18 / 16) * 1rem) 0;
+  font-size: var(--font-size);
+  font-weight: 650;
+  line-height: var(--line-height);
+  margin-block: var(--size-3) var(--size-2);
   position: relative;
 
   &:first-child {
@@ -125,43 +134,43 @@ h6 {
 }
 
 h1 {
-  font-size: var(--step-5);
-  line-height: 1;
-  margin: calc((18 / 16) * 1rem) 0;
+  --font-size: var(--font-size-4);
+  --line-height: 1;
+  margin-block: var(--size-2);
 }
 
-@container main (inline-size >= calc((400 / 16) * 1rem)) {
+@container main (inline-size >= 25rem) {
   h1 {
-    margin: calc((36 / 16) * 1rem) 0;
+    margin-block: var(--size-4);
   }
 
   h2,
   h3 {
-    margin-block-start: calc((36 / 16) * 1rem);
+    margin-block-start: var(--size-4);
   }
 }
 
 h2 {
-  font-size: var(--step-1);
+  --font-size: var(--font-size-2);
 
   :where(.Main) & {
-    font-size: var(--step-2);
-    line-height: var(--line-height-3);
+    --font-size: var(--font-size-3);
+    --line-height: var(--line-height-3);
   }
 }
 
 h3 {
-  font-size: var(--step-1);
+  --font-size: var(--font-size-2);
 }
 
 :is(h2, h3) {
   & .Cursive {
-    font-size: var(--step-0);
+    font-size: var(--font-size-1);
   }
 
   &.Cursive {
-    font-size: var(--step-1);
-    line-height: var(--line-height-2);
+    --font-size: var(--font-size-2);
+    --line-height: var(--line-height-2);
   }
 }
 
@@ -170,7 +179,7 @@ h3 {
 }
 
 .Large {
-  font-size: var(--step-1);
+  --font-size: var(--font-size-2);
 }
 
 .Comic {
@@ -189,7 +198,7 @@ h3 {
   font-family: 'Comic Neue', 'Raleway', sans-serif;
   font-style: italic;
   font-weight: 600;
-  letter-spacing: calc((-0.5 / 16) * 1rem);
+  letter-spacing: calc(-0.5 * var(--rem));
 
   &:has(svg) {
     align-items: center;
@@ -213,7 +222,7 @@ h3 {
 
 .Time {
   display: inline-block;
-  font-size: var(--step-0);
+  font-size: var(--font-size-1);
   vertical-align: top;
 
   & a {

@@ -1,40 +1,90 @@
-/* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1920,19,1.333,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+@property --body-size {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: true;
+}
 
-:root {
-  --step-s: clamp(0.875rem, 0.85rem + 0.125vi, 1rem); /* 14-16 */
-  --step-0: clamp(1rem, 0.9625rem + 0.1875vi, 1.1875rem); /* 16-19 */
-  --step-1: clamp(1.125rem, 1.025rem + 0.5vi, 1.625rem); /* 18-26 */
-  --step-2: clamp(1.25rem, 1.1rem + 0.75vi, 2rem); /* 20-32 */
-  /* --step-3: clamp(1.375rem, 1.075rem + 1.5vi, 2.875rem); */ /* 22-46 */
-  /* --step-4: clamp(1.625rem, 1.2rem + 2.125vi, 3.75rem); */ /* 26-60 */
-  --step-5: clamp(1.75rem, 1.1rem + 3.25vi, 5rem); /* 28-80 */
+@property --font-size {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 16px;
+}
+
+@property --line-height {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1.4;
+}
+
+body {
+  --body-size: 100cqi;
+  --rem: 0.0625rem;
+  /* --fluid: calc((var(--body-size) - 400px) / (1920 - 400)); */
+  --fluid: calc((var(--body-size) - (400 * var(--rem))) / (1920 - 400));
+
+  --font-size-0: clamp(
+    calc(14 * var(--rem)),
+    calc((14 * var(--rem)) + (16 - 14) * var(--fluid)),
+    calc(16 * var(--rem))
+  );
+  --font-size-1: clamp(
+    calc(17 * var(--rem)),
+    calc((17 * var(--rem)) + (19 - 17) * var(--fluid)),
+    calc(19 * var(--rem))
+  );
+  --font-size-2: clamp(
+    calc(19 * var(--rem)),
+    calc((19 * var(--rem)) + (26 - 19) * var(--fluid)),
+    calc(26 * var(--rem))
+  );
+  --font-size-3: clamp(
+    calc(21 * var(--rem)),
+    calc((21 * var(--rem)) + (32 - 21) * var(--fluid)),
+    calc(32 * var(--rem))
+  );
+  --font-size-4: clamp(
+    calc(31 * var(--rem)),
+    calc((31 * var(--rem)) + (80 - 31) * var(--fluid)),
+    calc(80 * var(--rem))
+  );
+
+  --size-0: 4.5px;
+  --size-1: 9px;
+  --size-2: 18px;
+  --size-3: 27px;
+  --size-4: 36px;
+
+  --border-size-1: 1px;
+  --border-size-2: 2px;
+
+  --radius-1: var(--size-0);
+  --radius-2: var(--size-1);
 
   --line-height-1: 1.6;
   --line-height-2: 1.5;
   --line-height-3: 1.4;
+
+  --page-margin: clamp(
+    calc(20 * var(--rem)),
+    calc((20 * var(--rem)) + (100 - 20) * var(--fluid)),
+    calc(100 * var(--rem))
+  );
+
+  --outline: var(--border-size-2) dashed oklch(var(--color-secondary));
 }
 
 :root {
-  --page-max-inline: 1920;
-  --page-margin-mid: calc(((100 / 1920) * 100) * 1dvi);
-  --page-margin-min: calc((20 / 16) * 1rem);
-  --page-margin-max: calc((100 / 16) * 1rem);
-  --page-margin: clamp(var(--page-margin-min), var(--page-margin-mid), var(--page-margin-max));
-  --page-max: calc((var(--page-max-inline) / 16) * 1rem);
-}
-
-:root {
-  --db-light: 98.62% 0.014 84.58; /* 40, 100%, 97%; /* 255, 250, 240; */
+  --db-light: 98.2% 0.014 85; /* 98.62% 0.014 84.58; /* 40, 100%, 97%; /* 255, 250, 240; */
   --db-dark: 40.05% 0.014 17.74; /* 0, 7%, 29%; /* 80, 70, 70; */
   --db-pink: 70.27% 0.192 13.7; /* 350, 100%, 69%; /* 255, 100, 125; */
   --db-red: 57.82% 0.19 16.36; /* 350, 63%, 52%; /* 210, 55, 80; */
   --db-green: 86.59% 0.088 168.12; /* 157, 61%, 75%; /* 150, 230, 200; */
   --db-blue: 62.78% 0.12 226; /* 194, 82%, 41%; /* 20, 150, 190; */
   --db-blue2: 52.78% 0.1 226; /* 194, 82%, 31%; /* 15, 110, 155; */
+  /* --db-blue3: 72.78% 0.12 226; */
   --db-yellow: 97.25% 0.0767 103; /* 55, 100%, 87%; /* 255, 250, 190; */
   --db-white: 100% 0 0; /* 0, 0%, 100%; /* 255, 255, 255; */
   --db-black: 31.55% 0.009 17.62; /* 0, 5%, 20%; /* 55, 50, 50; */
-  /* --db-midnight: 28.82% 0.022 277.51; */
   --db-midnight: 30.05% 0.014 17.74;
 }
 

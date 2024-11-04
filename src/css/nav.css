@@ -2,25 +2,24 @@
   & ul {
     display: flex;
     flex-wrap: wrap;
-    column-gap: calc((4.5 / 16) * 1rem);
-    margin: calc((-4.5 / 16) * 1rem);
+    column-gap: var(--size-0);
+    margin: calc(-1 * var(--size-0));
   }
 
   & li {
     flex: 0 0 auto;
-    margin: 0;
   }
 
   & a {
     align-items: center;
     display: flex;
-    font-size: var(--step-s);
-    font-weight: 700;
-    letter-spacing: calc((0.5 / 16) * 1rem);
+    font-size: var(--font-size-0);
+    font-weight: 750;
+    letter-spacing: calc(0.5 * var(--rem));
     min-block-size: 100%;
-    padding: calc((4.5 / 16) * 1rem);
+    padding: var(--size-0);
     text-transform: uppercase;
-    outline-offset: calc((-2.25 / 16) * 1rem);
+    outline-offset: -2px;
 
     &[aria-current='page'] {
       --anchor-color: var(--color-secondary2);
@@ -29,16 +28,16 @@
   }
 }
 
-@container main (inline-size < calc((400 / 16) * 1rem)) {
+@container main (inline-size < 25rem) {
   .Nav {
     max-inline-size: calc((300 / 16) * 1rem);
   }
 }
 
-@container app (inline-size >= calc((800 / 16) * 1rem)) {
+@container app (inline-size >= 50rem) {
   .Nav {
     & ul {
-      column-gap: calc((9 / 16) * 1rem);
+      column-gap: var(--size-1);
     }
   }
 }

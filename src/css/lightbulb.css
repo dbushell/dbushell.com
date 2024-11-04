@@ -5,25 +5,25 @@
   display: none;
   block-size: auto;
   inset-inline-start: var(--page-margin);
-  padding: calc((9 / 16) * 1rem);
-  padding-block-start: calc((18 / 16) * 1rem);
+  padding: var(--size-1);
+  padding-block-start: var(--size-2);
   position: absolute;
   inset-block-start: 0;
-  transform: translateY(calc((-9 / 16) * 1rem));
+  transform: translateY(calc(-1 * var(--size-1)));
   transition: transform 100ms;
-  inline-size: calc((45 / 16) * 1rem);
+  inline-size: 45px;
   z-index: 10;
 
   &:before {
     background: var(--lightbulb-stroke);
-    bottom: calc(100% - ((19 / 16) * 1rem));
+    bottom: calc(100% - 19px);
     content: '';
     display: block;
-    block-size: calc((36 / 16) * 1rem);
+    block-size: var(--size-4);
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
-    inline-size: calc((1 / 16) * 1rem);
+    inline-size: 1px;
   }
 
   &:hover {
@@ -33,24 +33,19 @@
     --lightbulb-rays: 0;
   }
 
-  &:focus {
+  &:focus-visible {
     outline: var(--outline);
-  }
-
-  &:not(:focus-visible) {
-    outline: none;
   }
 
   & path {
     transition: fill 100ms, opacity 100ms;
   }
 
-  .Darkmode & {
+  :where(:root[data-theme='dark']) & {
     --lightbulb-stroke: oklch(var(--db-green));
     --lightbulb-fill: transparent;
     --lightbulb-rays: 0;
 
-    &:focus,
     &:hover {
       --lightbulb-stroke: oklch(var(--db-yellow));
       --lightbulb-fill: oklch(var(--db-yellow) / 0.5);
@@ -65,8 +60,8 @@
   }
 }
 
-@container app (inline-size < calc((400 / 16) * 1rem)) {
+@container app (inline-size < 25rem) {
   .Lightbulb {
-    margin-inline-start: calc((-12 / 16) * 1rem);
+    margin-inline-start: -12px;
   }
 }
