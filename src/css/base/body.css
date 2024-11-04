@@ -10,16 +10,14 @@
 body {
   accent-color: oklch(var(--color-primary));
   color: oklch(var(--color-foreground));
+  container: app / inline-size;
   font-family: 'Raleway', sans-serif;
   font-synthesis: none;
   font-weight: 475;
   line-height: var(--line-height-1);
-}
-
-body {
-  container: app / inline-size;
   margin-inline: auto;
   max-inline-size: calc(1920 * var(--rem));
+  overflow-x: clip;
   padding-inline: var(--page-margin);
   position: relative;
 }
