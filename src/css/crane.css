@@ -24,14 +24,20 @@
   .Crane {
     & img {
       max-inline-size: 50%;
+      transform: translateX(-10%);
     }
 
-    & .List,
+    & > div {
+      display: grid;
+      justify-content: center;
+    }
+
+    & .List {
+      margin-block: 0 var(--size-3);
+    }
+
     & .Button {
-      display: block;
-      margin-inline-start: auto;
-      margin-inline-end: auto;
-      max-inline-size: max-content;
+      margin-inline-start: var(--size-2);
     }
   }
 }

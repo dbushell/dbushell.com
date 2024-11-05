@@ -136,7 +136,7 @@ h6 {
 h1 {
   --font-size: var(--font-size-4);
   --line-height: 1;
-  margin-block: var(--size-2);
+  margin-block: var(--size-3);
 }
 
 @container main (inline-size >= 25rem) {
