@@ -41,7 +41,7 @@
   }
 }
 
-@container app (inline-size < 25rem) {
+@container body (inline-size < 25rem) {
   .Masthead {
     &::after {
       block-size: 150%;

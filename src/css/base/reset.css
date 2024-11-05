@@ -7,7 +7,6 @@
 }
 
 html {
-  container: root / inline-size;
   color-scheme: light dark;
   hanging-punctuation: first allow-end last;
   scroll-behavior: smooth;
@@ -29,7 +28,9 @@ html {
 }
 
 body {
+  container: body / inline-size;
   min-block-size: 100svb;
+  min-inline-size: 300px;
 }
 
 :where(canvas, img, picture, svg, video) {
@@ -97,5 +98,5 @@ body {
 }
 
 :where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
-  display: none !important;
+  display: none;
 }

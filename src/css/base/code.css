@@ -150,7 +150,7 @@ pre {
   }
 }
 
-@container app (inline-size < 25rem) {
+@container body (inline-size < 25rem) {
   pre {
     --inline-padding: var(--page-margin);
     margin-inline-end: calc(-1 * var(--page-margin));

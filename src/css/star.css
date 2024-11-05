@@ -14,7 +14,7 @@
   }
 }
 
-@container app (inline-size < 37.5rem) {
+@container body (inline-size < 37.5rem) {
   .Star,
   .List li,
   .Prose :where(ul:not([class*='List'], [class*='Form'])) li {

@@ -10,7 +10,6 @@
 body {
   accent-color: oklch(var(--color-primary));
   color: oklch(var(--color-foreground));
-  container: app / inline-size;
   font-family: 'Raleway', sans-serif;
   font-synthesis: none;
   font-weight: 475;

@@ -31,7 +31,6 @@ const start = async () => {
     static: "public",
     serve: {
       signal: controller.signal,
-      hostname: "127.0.0.1",
       port: 8000,
     },
   });

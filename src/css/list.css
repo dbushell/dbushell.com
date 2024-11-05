@@ -44,7 +44,7 @@
   }
 }
 
-@container app (inline-size < 37.5rem) {
+@container body (inline-size < 37.5rem) {
   .Prose :where(ol:not([class])) {
     & > li {
       &::before {
@@ -148,7 +148,7 @@
   }
 }
 
-@container app (inline-size < 50rem) {
+@container body (inline-size < 50rem) {
   .List--columns {
     grid-column-gap: var(--size-3);
   }

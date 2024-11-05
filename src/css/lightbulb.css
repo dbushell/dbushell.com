@@ -60,7 +60,7 @@
   }
 }
 
-@container app (inline-size < 25rem) {
+@container body (inline-size < 25rem) {
   .Lightbulb {
     margin-inline-start: -12px;
   }

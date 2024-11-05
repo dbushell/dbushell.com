@@ -7,7 +7,7 @@
   }
 }
 
-@container app (inline-size >= 50rem) {
+@container body (inline-size >= 50rem) {
   .Aside {
     & > .Rule {
       display: none;

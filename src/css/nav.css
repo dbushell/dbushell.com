@@ -34,7 +34,7 @@
   }
 }
 
-@container app (inline-size >= 50rem) {
+@container body (inline-size >= 50rem) {
   .Nav {
     & ul {
       column-gap: var(--size-1);

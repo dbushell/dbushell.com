@@ -8,7 +8,7 @@
   }
 }
 
-@container app (inline-size >= 25rem) {
+@container body (inline-size >= 25rem) {
   .Layout {
     & .Masthead {
       inline-size: calc((1 / 1.25) * 100%);
@@ -16,7 +16,7 @@
   }
 }
 
-@container app (inline-size >= 37.5rem) {
+@container body (inline-size >= 37.5rem) {
   .Layout {
     & .Masthead {
       inline-size: calc((1 / 1.618) * 100%);
@@ -24,7 +24,7 @@
   }
 }
 
-@container app (inline-size >= 50rem) {
+@container body (inline-size >= 50rem) {
   .Layout {
     align-items: start;
     display: grid;
@@ -64,7 +64,7 @@
   }
 }
 
-@container app (inline-size >= 80rem) {
+@container body (inline-size >= 80rem) {
   .Layout {
     grid-template-columns:
       auto var(--page-margin)

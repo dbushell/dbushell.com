@@ -15,13 +15,13 @@
   }
 }
 
-@container app (inline-size < 37.5rem) {
+@container body (inline-size < 37.5rem) {
   .Box {
     margin-inline: calc(-1 * var(--size-1));
   }
 }
 
-@container app (inline-size >= 50rem) {
+@container body (inline-size >= 50rem) {
   .Box {
     margin-inline-start: calc(-1 * var(--size-2));
   }
