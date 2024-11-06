@@ -44,7 +44,7 @@ body {
   appearance: none;
   background: transparent;
   border: none;
-  color: currentColor;
+  color: inherit;
   font: inherit;
   hanging-punctuation: none;
   line-height: inherit;
@@ -92,8 +92,10 @@ body {
 :where(dialog, [popover]) {
   background: transparent;
   border: none;
-  color: currentColor;
+  color: inherit;
   margin: auto;
+  max-block-size: none;
+  max-inline-size: none;
   position: fixed;
 }
 
