@@ -3,6 +3,12 @@
   color: oklch(var(--color-background));
 }
 
+[contenteditable]::spelling-error {
+  background-color: oklch(var(--db-red) / 0.2);
+  text-decoration: underline wavy oklch(var(--db-red)) 1.5px;
+  text-decoration-skip-ink: none;
+}
+
 a:where([href]) {
   --anchor-color: var(--color-primary2);
   --anchor-opacity: 0.5;

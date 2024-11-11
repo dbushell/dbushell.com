@@ -51,3 +51,15 @@ if (document.querySelector("code")) {
     .load()
     .then((font) => document.fonts.add(font));
 }
+
+// Local development
+if (globalThis.location.hostname === "localhost") {
+  globalThis.addEventListener("load", () => {
+    document.querySelectorAll(".Prose").forEach(($prose) => {
+      $prose.addEventListener("click", () => {
+        $prose.setAttribute("contenteditable", "");
+        $prose.setAttribute("spellcheck", "true");
+      }, { once: true });
+    });
+  });
+}
