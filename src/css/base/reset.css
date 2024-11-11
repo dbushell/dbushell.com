@@ -28,7 +28,6 @@ html {
 }
 
 body {
-  container: body / inline-size;
   min-block-size: 100svb;
   min-inline-size: 300px;
 }
@@ -59,10 +58,6 @@ body {
 
 :where(textarea) {
   resize: vertical;
-}
-
-:where(b, strong) {
-  font-weight: 650;
 }
 
 :where(p, li, h1, h2, h3, h4, h5, h6) {

@@ -11,7 +11,7 @@
   display: block;
   font-size: var(--font-size-0);
   font-family: 'Raleway', sans-serif;
-  font-weight: 550;
+  font-weight: var(--font-weight-2);
   line-height: var(--line-height-2);
   padding: 7px 10px;
   transition: color 200ms, border-color 200ms, box-shadow 200ms;

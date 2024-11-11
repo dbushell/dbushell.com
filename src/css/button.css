@@ -10,7 +10,7 @@
   color: oklch(var(--color-primary2));
   display: block;
   font-size: var(--font-size-0);
-  font-weight: 650;
+  font-weight: var(--font-weight-3);
   line-height: var(--line-height-2);
   letter-spacing: 1px;
   max-inline-size: max-content;

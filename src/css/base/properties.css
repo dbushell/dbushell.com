@@ -1,8 +1,8 @@
-@property --body-size {
+/* @property --body-size {
   syntax: '<length>';
   initial-value: 0px;
   inherits: true;
-}
+} */
 
 @property --font-size {
   syntax: '<length>';
@@ -16,11 +16,12 @@
   initial-value: 1.4;
 }
 
-body {
-  --body-size: 100cqi;
+:root {
+  /* --body-size: 100cqi; */
   --rem: 0.0625rem;
   /* --fluid: calc((var(--body-size) - 400px) / (1920 - 400)); */
-  --fluid: calc((var(--body-size) - (400 * var(--rem))) / (1920 - 400));
+  /* --fluid: calc((var(--body-size) - (400 * var(--rem))) / (1920 - 400)); */
+  --fluid: calc((100vi - (400 * var(--rem))) / (1920 - 400));
 
   --font-size-0: clamp(
     calc(14 * var(--rem)),
@@ -47,6 +48,11 @@ body {
     calc((31 * var(--rem)) + (80 - 31) * var(--fluid)),
     calc(80 * var(--rem))
   );
+
+  --font-weight-base: 0;
+  --font-weight-1: calc(var(--font-weight-base) + 475);
+  --font-weight-2: calc(var(--font-weight-base) + 550);
+  --font-weight-3: 650;
 
   --size-0: 4.5px;
   --size-1: 9px;
@@ -93,6 +99,42 @@ body {
     --db-pink: 72.27% 0.222 13.7;
     --db-blue: 62.78% 0.158 226;
     --db-blue2: 52.78% 0.12 226;
+  }
+}
+
+@media screen {
+  :root[data-theme='light'] {
+    --color-background: var(--db-light);
+    --color-background2: var(--db-white);
+    --color-foreground: var(--db-dark);
+
+    --color-primary: var(--db-blue);
+    --color-primary2: var(--db-blue2);
+    --color-secondary: var(--db-pink);
+    --color-secondary2: var(--db-red);
+    --color-tertiary: var(--db-pink);
+    --color-quaternary: var(--db-green);
+
+    --masthead-primary: var(--db-green);
+    --masthead-secondary: var(--db-blue);
+  }
+
+  :root[data-theme='dark'] {
+    --color-background: var(--db-black);
+    --color-background2: var(--db-dark);
+    --color-foreground: var(--db-light);
+
+    --color-primary: var(--db-green);
+    --color-primary2: var(--db-green);
+    --color-secondary: var(--db-pink);
+    --color-secondary2: var(--db-pink);
+    --color-tertiary: var(--db-pink);
+    --color-quaternary: var(--db-blue);
+
+    --masthead-primary: var(--db-blue);
+    --masthead-secondary: var(--db-green);
+
+    --font-weight-base: 25;
   }
 }
 

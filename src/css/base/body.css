@@ -9,10 +9,11 @@
 
 body {
   accent-color: oklch(var(--color-primary));
+  container: body / inline-size;
   color: oklch(var(--color-foreground));
   font-family: 'Raleway', sans-serif;
   font-synthesis: none;
-  font-weight: 475;
+  font-weight: var(--font-weight-1);
   line-height: var(--line-height-1);
   margin-inline: auto;
   max-inline-size: calc(1920 * var(--rem));
@@ -23,38 +24,4 @@ body {
 
 [class*='🖕'] {
   display: none;
-}
-
-@media screen {
-  :root[data-theme='light'] {
-    --color-background: var(--db-light);
-    --color-background2: var(--db-white);
-    --color-foreground: var(--db-dark);
-
-    --color-primary: var(--db-blue);
-    --color-primary2: var(--db-blue2);
-    --color-secondary: var(--db-pink);
-    --color-secondary2: var(--db-red);
-    --color-tertiary: var(--db-pink);
-    --color-quaternary: var(--db-green);
-
-    --masthead-primary: var(--db-green);
-    --masthead-secondary: var(--db-blue);
-  }
-
-  :root[data-theme='dark'] {
-    --color-background: var(--db-black);
-    --color-background2: var(--db-dark);
-    --color-foreground: var(--db-light);
-
-    --color-primary: var(--db-green);
-    --color-primary2: var(--db-green);
-    --color-secondary: var(--db-pink);
-    --color-secondary2: var(--db-pink);
-    --color-tertiary: var(--db-pink);
-    --color-quaternary: var(--db-blue);
-
-    --masthead-primary: var(--db-blue);
-    --masthead-secondary: var(--db-green);
-  }
 }
