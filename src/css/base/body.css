@@ -21,7 +21,3 @@ body {
   padding-inline: var(--page-margin);
   position: relative;
 }
-
-[class*='🖕'] {
-  display: none;
-}

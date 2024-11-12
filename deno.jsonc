@@ -9,19 +9,19 @@
     "@dbushell/carriageway": "jsr:@dbushell/carriageway@^1.1.0",
     "@dbushell/hmmarkdown": "jsr:@dbushell/hmmarkdown@^0.17.0",
     "@dbushell/hyperless": "jsr:@dbushell/hyperless@^0.27.0",
-    "@dbushell/hyperserve": "jsr:@dbushell/hyperserve@^0.19.0",
-    "@shikijs/transformers": "npm:@shikijs/transformers@^1.22.0",
+    "@dbushell/hyperserve": "jsr:@dbushell/hyperserve@^0.20.0",
+    "@shikijs/transformers": "npm:@shikijs/transformers@^1.22.2",
     "@src/": "./src/",
-    "@std/async": "jsr:@std/async@^1.0.6",
+    "@std/async": "jsr:@std/async@^1.0.8",
     "@std/crypto": "jsr:@std/crypto@^1.0.3",
     "@std/encoding": "jsr:@std/encoding@^1.0.5",
     "@std/front-matter": "jsr:@std/front-matter@^1.0.5",
-    "@std/fs": "jsr:@std/fs@^1.0.4",
+    "@std/fs": "jsr:@std/fs@^1.0.5",
     "@std/html": "jsr:@std/html@^1.0.3",
-    "@std/http": "jsr:@std/http@^1.0.8",
-    "@std/path": "jsr:@std/path@^1.0.6",
-    "@std/streams": "jsr:@std/streams@^1.0.7",
-    "lightningcss": "npm:lightningcss@^1.27.0",
-    "shiki": "npm:shiki@^1.22.0"
+    "@std/http": "jsr:@std/http@^1.0.9",
+    "@std/path": "jsr:@std/path@^1.0.8",
+    "@std/streams": "jsr:@std/streams@^1.0.8",
+    "lightningcss": "npm:lightningcss@^1.28.1",
+    "shiki": "npm:shiki@^1.22.2"
   }
 }
