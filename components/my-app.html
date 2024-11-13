@@ -7,8 +7,13 @@
     longTitle = `${props.title} – ${longTitle}`;
   }
   let ogType = "";
+  let ogImage = `https://dbushell.com/assets/icons/512x512.png?v=${deployHash}`;
   if (/\d{4}(\/|-)\d{2}\1\d{2}/.test(href)) {
     ogType = "article";
+    if (new Date(props.date).getFullYear() >= 2020) {
+      const image = href.slice(1, -1).replaceAll("/", "-") + ".png";
+      ogImage = `https://dbushell.com/images/articles/${image}?v=${deployHash}`;
+    }
   }
 </script>
 
@@ -21,7 +26,7 @@
   <meta property="og:title" content="{{shortTitle}}" />
   <meta property="og:url" content="https://dbushell.com{{href}}" />
   <meta property="og:description" content="{{pageDescription}}" />
-  <meta property="og:image" content="https://dbushell.com/assets/icons/512x512.png" />
+  <meta property="og:image" content="{{ogImage}}" />
   <meta property="og:site_name" content="dbushell.com" />
   <ssr-if condition="ogType"><meta property="og:type" content="{{ogType}}" /></ssr-if>
   <script type="module" src="/assets/scripts/head.js?v={{deployHash}}"></script>
