@@ -10,10 +10,10 @@
   let ogImage = `https://dbushell.com/assets/icons/512x512.png?v=${deployHash}`;
   if (/\d{4}(\/|-)\d{2}\1\d{2}/.test(href)) {
     ogType = "article";
-    if (new Date(props.date).getFullYear() >= 2020) {
-      const image = href.slice(1, -1).replaceAll("/", "-") + ".png";
-      ogImage = `https://dbushell.com/images/articles/${image}?v=${deployHash}`;
-    }
+  }
+  if (/^\/\d{4}(\/|-)\d{2}\1\d{2}/.test(href) && new Date(props.date).getFullYear() >= 2020) {
+    const image = href.slice(1, -1).replaceAll("/", "-") + ".png";
+    ogImage = `https://dbushell.com/images/articles/${image}?v=${deployHash}`;
   }
 </script>
 
