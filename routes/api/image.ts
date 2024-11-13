@@ -30,7 +30,7 @@ body {
 #heading {
   color: oklch(var(--db-blue));
   font-family: Komika, Raleway, sans-serif;
-  font-size: 100px;
+  font-size: 110px;
   font-weight: 600px;
   line-height: 1;
   margin: 0;
