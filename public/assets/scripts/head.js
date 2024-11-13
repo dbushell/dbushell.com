@@ -56,10 +56,17 @@ if (document.querySelector("code")) {
 if (globalThis.location.hostname === "localhost") {
   globalThis.addEventListener("load", () => {
     document.querySelectorAll(".Prose").forEach(($prose) => {
-      $prose.addEventListener("click", () => {
+      $prose.addEventListener("click", (ev) => {
+        const $link = ev.target.closest("[href]");
+        if ($prose.hasAttribute("contenteditable")) {
+          if ($link) globalThis.location.href = ev.target.href;
+          return;
+        }
+        if ($link) return;
         $prose.setAttribute("contenteditable", "");
         $prose.setAttribute("spellcheck", "true");
-      }, { once: true });
+        setTimeout(() => $prose.focus(), 1);
+      });
     });
   });
 }

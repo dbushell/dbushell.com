@@ -15,6 +15,30 @@
   }
 }
 
+.Box--cta {
+  & p {
+    --font-size: var(--font-size-0);
+  }
+
+  & a:has(svg) {
+    align-items: center;
+    display: inline-flex;
+    gap: 1px;
+    margin-inline-end: 2px;
+    vertical-align: top;
+
+    &:hover {
+      background: none;
+    }
+
+    & svg {
+      --size: calc(var(--font-size) * var(--line-height));
+      inline-size: calc(0.8 * var(--size));
+      fill: currentColor;
+    }
+  }
+}
+
 @container body (inline-size < 37.5rem) {
   .Box {
     margin-inline: calc(-1 * var(--size-1));

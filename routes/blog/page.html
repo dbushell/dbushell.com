@@ -19,7 +19,7 @@
     <ssr-fragment slot="main">
       <my-nav current="/blog/" />
       <my-heading title="{{props.title}}" />
-      <rss-blog />
+      <cta-blog />
       <ssr-for item="item" of="props.articles">
         <my-article article="{{item}}" />
       </ssr-for>

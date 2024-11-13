@@ -19,7 +19,7 @@
     <ssr-fragment slot="main">
       <my-nav current="/notes/" />
       <my-heading title="{{props.title}}" />
-      <rss-notes />
+      <cta-notes />
       <ssr-for item="item" of="props.notes">
         <my-note note="{{item}}" />
       </ssr-for>
