@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="544.77" height="216.89" viewBox="0 0 544.77 216.89">
   <defs>
-    <style data-hash="3JLJnuPpu2Hf1q28HaSEirC4QVl4SFAuPAn9LzXYAsw=">
+    <style data-hash="kXLrG8qzlz0MMhgMvdF9YD6tca5CYXeC1iFSTHDsO8w=">
 :root {
   --logo-green: 86.59% 0.088 168.12;
-  --logo-blue: 62.78% 0.117 226.03;
+  --logo-blue: 62.78% 0.12 226;
   --logo-yellow: 97.25% 0.0767 103;
   --logo-white: 100% 0 0;
   --logo-text: var(--db-white, var(--logo-white));
