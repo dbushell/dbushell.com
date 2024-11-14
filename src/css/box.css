@@ -6,8 +6,13 @@
   display: grid;
   gap: var(--size-2);
   grid-template-columns: 1fr;
+  margin-block-end: var(--size-4);
   padding: var(--size-2);
   position: relative;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
 
   & > * {
     grid-column: 1 / -1;
