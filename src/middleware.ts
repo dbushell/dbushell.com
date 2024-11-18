@@ -3,11 +3,8 @@ import { manifest } from "@src/manifest.ts";
 
 export const middleware: HyperHandle = ({ request, platform }) => {
   const url = new URL(request.url);
-
-  // Setup DinoSsr platform data
+  // Platform data
   platform.platformProps.deployHash = platform.deployHash;
-  platform.platformProps.siteTitle =
-    "David Bushell – Freelance Web Design (UK)";
 
   // Skip headers for internal API requests
   if (url.pathname.startsWith("/api/")) {

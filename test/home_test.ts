@@ -10,7 +10,7 @@ Deno.test("homepage", async (test) => {
   await test.step("title", () => {
     assertEquals(
       root.find((n) => n.tag === "title")?.at(0)?.toString(),
-      "David Bushell – Freelance Web Design (UK)",
+      "David Bushell – Freelance Web Design &amp; Front-end Development (UK)",
     );
   });
 
@@ -19,7 +19,7 @@ Deno.test("homepage", async (test) => {
       root.find((n) =>
         n.tag === "meta" && n.attributes.get("name") === "description"
       )?.attributes.get("content"),
-      "David Bushell – Freelance Web Design (UK)",
+      "David Bushell – Freelance Web Design & Front-end Development (UK)",
     );
   });
 

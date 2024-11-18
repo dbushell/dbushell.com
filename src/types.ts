@@ -46,7 +46,6 @@ export interface Manifest {
 
 export type GlobalProps = {
   deployHash: string;
-  siteTitle: string;
   pageHeaders: Array<[string, string]>;
   props: Props;
   styles: Array<{ css: string; hash: string }>;

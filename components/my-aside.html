@@ -6,27 +6,27 @@
       <my-social />
     </my-card>
     <my-card href="/now/" title="My Projects" subtitle="New and old!">
-      <p>
-        Read my <a href="/notes/">microblog</a>, see what I’m <a href="/now/">coding now</a>
-        and my <a href="/showcase/">design portfolio</a>.
-      </p>
+      <p>Read my <a href="/notes/">microblog</a>, see what I’m <a href="/now/">coding now</a> and my <a href="/showcase/">design portfolio</a>.</p>
     </my-card>
     <my-card href="/working-with-agencies/" title="Web Agencies" subtitle="Need a hand?">
-      <p>
-        I’m reliable, flexible, and pride myself in communication and initiative to delivery on time
-        and within budget.
-      </p>
+      <p>I’m reliable, flexible, and pride myself in communication and initiative to delivery on time and within budget.</p>
     </my-card>
     <my-card href="/working-with-clients/" title="Businesses" subtitle="Have an idea?">
-      <p>
-        Let’s discuss your requirements, share ideas, and figure out what’s best for your new
-        website together.
-      </p>
+      <p>Let’s discuss your requirements, share ideas, and figure out what’s best for your new website together.</p>
     </my-card>
     <my-rule />
     <ssr-if condition="articles.length">
       <my-card title="The Blog" href="/blog/">
-        <p class="Balance">I write about web design and development.</p>
+        <p>
+          <span>I write about making websites.</span>
+          <a class="Icon" href="/rss.xml">
+            <svg role="presentation" viewBox="0 0 512 512" width="24" height="24">
+              <circle cx="145" cy="367" r="35"  />
+              <path fill="none" stroke="currentColor" stroke-width="60" d="M109 241c89 0 162 73 162 162m114 0c0-152-124-276-276-276"/>
+            </svg>
+            <span>RSS feed</span>
+          </a>
+        </p>
         <ul class="List">
           <ssr-for item="item" of="articles">
             <li>

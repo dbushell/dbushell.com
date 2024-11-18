@@ -257,3 +257,21 @@ h3 {
 .Error {
   color: oklch(var(--db-red));
 }
+
+.Icon {
+  align-items: center;
+  display: inline-flex;
+  gap: 1px;
+  margin-inline-end: 2px;
+  vertical-align: top;
+
+  &:hover {
+    background: none;
+  }
+
+  & svg {
+    --size: calc(var(--font-size) * var(--line-height));
+    inline-size: calc(0.8 * var(--size));
+    fill: currentColor;
+  }
+}
