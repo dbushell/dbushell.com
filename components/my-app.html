@@ -40,6 +40,7 @@
   <meta property="og:site_name" content="dbushell.com" />
   <ssr-if condition="ogType"><meta property="og:type" content="{{ogType}}" /></ssr-if>
   <script type="module" src="/assets/scripts/head.js?v={{deployHash}}"></script>
+  <script fetchpriority="low" type="module" src="/assets/scripts/search.js?v={{deployHash}}"></script>
 </ssr-fragment>
 
 <div class="Layout">

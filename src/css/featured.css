@@ -28,13 +28,13 @@
 
       &:last-child {
         grid-column: 3 / 4;
-        grid-row: 1 / 5;
+        grid-row: 1 / 6;
       }
     }
 
     & .Rule {
       grid-column: 2 / 3;
-      grid-row: 1 / 5;
+      grid-row: 1 / 6;
       block-size: 100%;
       inline-size: var(--border-size-1);
     }

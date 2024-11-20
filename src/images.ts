@@ -4,6 +4,7 @@ import { manifest, rebuildManifest } from "@src/manifest.ts";
 import { webkit } from "npm:playwright";
 
 const ALL = Deno.args.includes("--all");
+const OVERWRITE = Deno.args.includes("--overwrite");
 const DAY = 1000 * 60 * 60 * 24 * 7 * 2;
 const YEAR = 2020;
 const WIDTH = 1200;
@@ -28,10 +29,11 @@ for (const [href, route] of Object.entries(manifest.routes)) {
   // Get path and skip if exists
   const fileName = href.slice(1, -1).replaceAll("/", "-") + ".png";
   const filePath = path.join(imagePath, fileName);
-  if (ALL === false) {
-    if (Date.now() - route.date.getTime() > DAY) {
-      if (await fs.exists(filePath)) continue;
-    }
+  if (ALL === false && Date.now() - route.date.getTime() > DAY) {
+    continue;
+  }
+  if (OVERWRITE === false && await fs.exists(filePath)) {
+    continue;
   }
 
   // Generate screenshot

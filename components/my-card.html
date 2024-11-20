@@ -1,10 +1,5 @@
-<script context="component">
-  const tag = typeof heading === 'undefined' ? 'h3': heading;
-  const sub = typeof subtitle === 'undefined' ? false : true;
-</script>
-
-<article class="Card">
-  <ssr-element tag="{{tag}}">
+<ssr-element tag="{{$local.tag ?? 'article'}}" class="Card">
+  <ssr-element tag="{{$local.heading ?? 'h3'}}">
     <span class="Star">
       <ssr-if condition="href">
         <a href="{{href}}">{{title}}</a>
@@ -12,11 +7,11 @@
         {{title}}
       </ssr-if>
     </span>
-    <ssr-if condition="sub">
+    <ssr-if condition="$local.subtitle">
       <span class="Cursive">{{subtitle}}</span>
     </ssr-if>
   </ssr-element>
   <div>
     <ssr-slot />
   </div>
-</article>
+</ssr-element>

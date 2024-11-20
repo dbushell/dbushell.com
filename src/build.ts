@@ -1,9 +1,11 @@
 import type { Hyperserve } from "@dbushell/hyperserve";
 import * as fs from "@std/fs";
 import * as path from "@std/path";
+import { assert } from "jsr:@std/assert";
 import { Queue } from "@dbushell/carriageway";
+import * as pagefind from "npm:pagefind@1.2.0";
 
-performance.mark("build-start");
+performance.mark("b-start");
 
 import { manifest } from "@src/manifest.ts";
 
@@ -26,6 +28,60 @@ const extra = [
 ];
 
 const fetchQueue = new Queue({ concurrency: 10 });
+
+const searchExt = [".pf_fragment", ".pf_index", ".pf_meta", ".pagefind"];
+const searchFiles = ["pagefind-entry.json", "pagefind.js"];
+
+const search = async () => {
+  performance.mark("s-start");
+
+  // Setup Pagefind
+  const { index } = await pagefind.createIndex({
+    excludeSelectors: [".Box--cta"],
+    rootSelector: "main",
+  });
+  assert(index, "Failed to create index");
+
+  // Only index blog posts
+  const dir = await index.addDirectory({
+    glob: "<[0-9]:4>/**/*.html",
+    path: "build",
+  });
+
+  if (dir.errors.length) console.error(dir.errors);
+  assert(dir.errors.length === 0, "Index directory error");
+
+  const data = await index.getFiles();
+
+  if (data.errors.length) console.error(data.errors);
+  assert(data.errors.length === 0, "Index files error");
+
+  // Setup search directory
+  const searchPath = path.join(buildPath, "_search");
+  try {
+    await Deno.remove(searchPath);
+  } catch { /* Ignore */ }
+  await fs.ensureDir(searchPath);
+
+  for (const file of data.files) {
+    // Skip junk
+    if (searchExt.includes(path.extname(file.path)) === false) {
+      if (searchFiles.includes(file.path) === false) {
+        continue;
+      }
+    }
+    // Write file
+    const filePath = path.join(searchPath, file.path);
+    await fs.ensureFile(filePath);
+    await Deno.writeFile(filePath, file.content);
+  }
+
+  await pagefind.close();
+
+  performance.mark("s-end");
+  const { duration } = performance.measure("s", "s-start", "s-end");
+  console.log(`Indexed ${dir.page_count} pages in ${duration.toFixed(2)}ms`);
+};
 
 export const build = async (server: Hyperserve) => {
   const now = performance.now();
@@ -122,13 +178,10 @@ export const build = async (server: Hyperserve) => {
   const ms = (performance.now() - now).toFixed(2);
   console.log(`Built ${tasks.length} routes in ${ms}ms`);
 
-  performance.mark("build-end");
+  await search();
 
-  console.log(
-    `Total ${
-      performance.measure("build", "build-start", "build-end").duration.toFixed(
-        2,
-      )
-    }ms`,
-  );
+  performance.mark("b-end");
+
+  const { duration } = performance.measure("b", "b-start", "b-end");
+  console.log(`Total ${duration.toFixed(2)}ms`);
 };

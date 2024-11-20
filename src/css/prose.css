@@ -15,7 +15,7 @@
     }
   }
 
-  :where(&) > :is(blockquote, iframe, hr, .Box, .Image) {
+  :where(&) > :is(blockquote, iframe, hr, .Box, .Image, .Table) {
     margin-block: var(--size-4);
   }
 

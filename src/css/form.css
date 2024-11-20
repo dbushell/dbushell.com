@@ -36,3 +36,54 @@
     }
   }
 }
+
+search-form {
+  & form {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    position: relative;
+
+    & > * {
+      grid-row: 1;
+    }
+
+    & svg {
+      block-size: 16px;
+      fill: oklch(var(--color-primary));
+      grid-column: 1 / 2;
+      inline-size: 16px;
+      margin-block-start: 10px;
+      margin-inline-start: 10px;
+      z-index: 1;
+    }
+  }
+
+  & .Field {
+    grid-column: 1 / 4;
+    padding-inline: 36px calc(20px + (45 * var(--rem)));
+
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+  }
+
+  & .Button {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    display: none;
+    font-size: calc(12 * var(--rem));
+    grid-column: 3 / 4;
+    padding-inline: 10px;
+
+    &:hover {
+      border-color: transparent;
+    }
+  }
+
+  &:state(active) {
+    & .Button {
+      display: block;
+    }
+  }
+}
