@@ -58,6 +58,7 @@ export class Component extends HTMLElement {
     // Disable fallback
     this.searchForm.addEventListener("submit", (ev) => {
       ev.preventDefault();
+      this.#search();
     });
 
     this.searchInput.addEventListener("input", () => this.#search());
