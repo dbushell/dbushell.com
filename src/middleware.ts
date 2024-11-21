@@ -22,6 +22,7 @@ export const middleware: HyperHandle = ({ request, platform }) => {
     ["x-img-src", "data:"],
     // TODO - generate? - Hash for Logo inline styles
     ["x-style-src", `'sha256-kXLrG8qzlz0MMhgMvdF9YD6tca5CYXeC1iFSTHDsO8w='`],
+    ["x-script-src", `'wasm-unsafe-eval'`],
   ];
 
   // Generated inline styles
