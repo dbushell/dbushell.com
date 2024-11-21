@@ -54,12 +54,13 @@ search-form {
     }
 
     & svg {
+      --offset: 0px;
       block-size: 16px;
       fill: oklch(var(--color-primary));
       grid-column: 1 / 2;
       inline-size: 16px;
-      margin-block-start: 12px;
-      margin-inline-start: 10px;
+      inset-block-start: calc(50% - 8px + var(--offset));
+      inset-inline-start: calc(10px + var(--offset));
       position: relative;
       z-index: 1;
     }
@@ -105,11 +106,11 @@ search-form {
 
   &:state(searching) {
     & form svg {
+      --offset: -1px;
       animation: --search-form 500ms linear infinite;
       border: 2px solid oklch(var(--color-foreground) / 0.5);
       border-inline-end-color: transparent;
       border-radius: 50%;
-      inset: -1px 0 0 -1px;
       fill: transparent;
     }
   }

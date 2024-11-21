@@ -9,7 +9,7 @@
     2px 2px 0 0 oklch(0% 0 0 / 0.1);
   color: oklch(var(--color-foreground));
   display: block;
-  font-size: var(--font-size-0);
+  font-size: max(16px, var(--font-size-0));
   font-family: 'Raleway', sans-serif;
   font-weight: var(--font-weight-2);
   line-height: var(--line-height-2);
