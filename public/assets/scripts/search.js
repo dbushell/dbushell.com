@@ -18,12 +18,12 @@ export class Component extends HTMLElement {
 
   /** @returns {HTMLInputElement} */
   get searchInput() {
-    return this.searchForm.querySelector("input[type='search']");
+    return this.searchForm.querySelector(".Field");
   }
 
   /** @return {HTMLButtonElement} */
   get clearButton() {
-    return this.searchForm.querySelector("[type='button']");
+    return this.searchForm.querySelector(".Button");
   }
 
   /** @return {HTMLUListElement} */
@@ -37,6 +37,8 @@ export class Component extends HTMLElement {
   }
 
   connectedCallback() {
+    this.clearButton.textContent = "Clear";
+    this.clearButton.setAttribute("type", "button");
     this.#defaultItems = [...this.searchList.querySelectorAll("li")];
     this.searchInput.addEventListener("focus", () => {
       this.#setup();
@@ -74,6 +76,7 @@ export class Component extends HTMLElement {
       return;
     }
 
+    const start = performance.now();
     this.#internals.states.add("active");
     this.#internals.states.add("searching");
 
@@ -102,6 +105,11 @@ export class Component extends HTMLElement {
       const li = this.#items.get(item.url);
       this.searchList.append(li);
     }
+
+    const duration = performance.now() - start;
+    await new Promise((resolve) =>
+      setTimeout(resolve, Math.max(300 - duration, 0))
+    );
 
     this.#internals.states.delete("searching");
   }

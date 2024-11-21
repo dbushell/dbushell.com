@@ -37,6 +37,12 @@
   }
 }
 
+@keyframes --search-form {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 search-form {
   & form {
     display: grid;
@@ -52,8 +58,9 @@ search-form {
       fill: oklch(var(--color-primary));
       grid-column: 1 / 2;
       inline-size: 16px;
-      margin-block-start: 10px;
+      margin-block-start: 12px;
       margin-inline-start: 10px;
+      position: relative;
       z-index: 1;
     }
   }
@@ -71,10 +78,19 @@ search-form {
     background: transparent;
     border-color: transparent;
     box-shadow: none;
-    display: none;
     font-size: calc(12 * var(--rem));
     grid-column: 3 / 4;
     padding-inline: 10px;
+
+    &[type='button'] {
+      display: none;
+    }
+
+    &[type='submit'] {
+      @media (scripting: enabled) {
+        display: none;
+      }
+    }
 
     &:hover {
       border-color: transparent;
@@ -84,6 +100,17 @@ search-form {
   &:state(active) {
     & .Button {
       display: block;
+    }
+  }
+
+  &:state(searching) {
+    & form svg {
+      animation: --search-form 500ms linear infinite;
+      border: 2px solid oklch(var(--color-foreground) / 0.5);
+      border-inline-end-color: transparent;
+      border-radius: 50%;
+      inset: -1px 0 0 -1px;
+      fill: transparent;
     }
   }
 }
