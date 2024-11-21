@@ -22,7 +22,9 @@ export const middleware: HyperHandle = ({ request, platform }) => {
     ["x-img-src", "data:"],
     // TODO - generate? - Hash for Logo inline styles
     ["x-style-src", `'sha256-kXLrG8qzlz0MMhgMvdF9YD6tca5CYXeC1iFSTHDsO8w='`],
+    // Allow WASM (search)
     ["x-script-src", `'wasm-unsafe-eval'`],
+    ["x-form-action", `https://duckduckgo.com`],
   ];
 
   // Generated inline styles
