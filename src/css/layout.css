@@ -30,9 +30,7 @@
     display: grid;
     grid-column-gap: 0;
     grid-template-rows: auto 1fr;
-    grid-template-columns:
-      calc(60% - var(--page-margin)) var(--page-margin)
-      auto;
+    grid-template-columns: auto var(--page-margin) minmax(320px, 30%);
     max-inline-size: none;
 
     & > * {
@@ -61,6 +59,14 @@
       max-inline-size: 100%;
       padding-block-start: 100px;
     }
+  }
+}
+
+@container body (inline-size >= 60rem) {
+  .Layout {
+    grid-template-columns:
+      auto var(--page-margin)
+      calc(45% - var(--page-margin));
   }
 }
 

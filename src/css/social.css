@@ -25,6 +25,7 @@
 
   & a:not(.Button) {
     display: block;
+    flex-shrink: 0;
     overflow: clip;
     padding: var(--size-0);
     perspective: 50px;
