@@ -1,12 +1,11 @@
-pre,
-code {
+:is(code, kbd, pre) {
   font-family: 'Roboto Mono', monospace;
   font-size: var(--font-size-0);
   font-weight: 400;
   -webkit-text-size-adjust: 100%;
 }
 
-:not(pre) > code {
+:is(:where(:not(pre)) > code, kbd) {
   background: oklch(var(--color-background2));
   border: var(--border-size-1) solid oklch(var(--color-quaternary));
   color: oklch(var(--color-secondary2));
@@ -16,6 +15,15 @@ code {
   line-height: 1;
   padding: 2px 4px;
   text-decoration: none;
+}
+
+kbd {
+  border-radius: var(--radius-1);
+  background-color: transparent;
+  color: oklch(var(--color-foreground));
+  border: var(--border-size-1) solid oklch(var(--color-primary) / 0.5);
+  font-weight: var(--font-weight-1);
+  /* border-color: oklch(var(--color-primary)); */
 }
 
 pre {
