@@ -42,4 +42,5 @@ public/*
 !public/favicon.ico
 !public/manifest.webmanifest
 !public/robots.txt
+!public/speculation-rules.json
 !public/sw.js

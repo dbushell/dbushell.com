@@ -30,5 +30,25 @@ https://github.com/dbushell/dbushell.com
 </head>
 <body>
 <ssr-slot />
+<script type="speculationrules">
+{
+  "prefetch": [
+    {
+      "where": {
+        "href_matches": "/*"
+      },
+      "eagerness": "immediate"
+    }
+  ],
+  "prerender": [
+    {
+      "where": {
+        "href_matches": "/*"
+      },
+      "eagerness": "moderate"
+    }
+  ]
+}
+</script>
 </body>
 </html>

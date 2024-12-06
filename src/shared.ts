@@ -1,10 +1,16 @@
+const SET_HEADERS = new Set(["content-type"]);
+
 export const appendHeaders = (
   response: Response,
   headers: Array<[string, string]>,
 ) => {
   try {
     headers.forEach(([name, value]) => {
-      response.headers.append(name, value);
+      if (SET_HEADERS.has(name.toLowerCase())) {
+        response.headers.set(name, value);
+      } else {
+        response.headers.append(name, value);
+      }
     });
   } catch {
     // Ignore immutable headers

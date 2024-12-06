@@ -4,7 +4,7 @@ import { authorized } from "@src/shared.ts";
 export const pattern = "/_headers";
 export const order = 9999;
 
-export const GET: HyperHandle = async ({ request, response }) => {
+export const GET: HyperHandle = async ({ request, response, platform }) => {
   if (!authorized(request)) {
     return null;
   }
@@ -17,6 +17,7 @@ export const GET: HyperHandle = async ({ request, response }) => {
     `default-src 'self'`;
   let body = await response.text();
   body = body.replace("%CONTENT_SECURITY_POLICY%", csp);
+  body = body.replaceAll("%DEPLOY_HASH%", platform.deployHash);
   response = new Response(body, response);
   response.headers.set("content-length", body.length.toString());
   return response;

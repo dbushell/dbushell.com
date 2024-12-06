@@ -8,6 +8,7 @@
   permissions-policy: browsing-topics=(),interest-cohort=()
   referrer-policy: same-origin
   x-robots-tag: noai, noimageai
+  speculation-rules: "/speculation-rules.json?v=%DEPLOY_HASH%"
 
 /assets/*
   x-robots-tag: noindex
@@ -24,3 +25,6 @@
 
 /rss.xml
   content-type: application/xml; charset=utf-8
+
+/speculation-rules.json
+  content-type: application/speculationrules+json

@@ -19,10 +19,16 @@ export const middleware: HyperHandle = ({ request, platform }) => {
     ["x-content-type-options", "nosniff"],
     ["permissions-policy", "browsing-topics=(),interest-cohort=()"],
     ["referrer-policy", "same-origin"],
+    ["speculation-rules", '"/speculation-rules.json"'],
     ["x-img-src", "data:"],
     // TODO - generate? - Hash for Logo inline styles
     ["x-style-src", `'sha256-kXLrG8qzlz0MMhgMvdF9YD6tca5CYXeC1iFSTHDsO8w='`],
-    // Allow WASM (search)
+    // Inline speculation rules
+    ["x-script-src", `'sha256-wJ17tFso+XVW2pKPhXkRCUyukGeWjM3DmjQUc7cNNMw='`],
+    // "this.rel=`stylesheet`"
+    ["x-script-src", `'unsafe-hashes'`],
+    ["x-script-src", `'sha256-BGXQRYq/G9+8wEtSYSbQRnDRz8/8apfi/W/CUBMh9w0='`],
+    // Allow search WASM and fallback
     ["x-script-src", `'wasm-unsafe-eval'`],
     ["x-form-action", `https://duckduckgo.com`],
   ];
@@ -31,6 +37,10 @@ export const middleware: HyperHandle = ({ request, platform }) => {
   manifest.styles.forEach((style) => {
     pageHeaders.push(["x-style-src", `'sha256-${style.hash}'`]);
   });
+
+  if (url.pathname.startsWith("/speculation-rules.json")) {
+    pageHeaders.push(["content-type", "application/speculationrules+json"]);
+  }
 
   // CORS headers
   if (/\/(rss|sitemap)\.xml$/.test(url.pathname)) {
