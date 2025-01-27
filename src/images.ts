@@ -1,7 +1,7 @@
 import * as fs from "@std/fs";
 import * as path from "@std/path";
 import { manifest, rebuildManifest } from "@src/manifest.ts";
-import { webkit } from "npm:playwright";
+import { webkit } from "npm:playwright@1.50.0";
 
 const ALL = Deno.args.includes("--all");
 const OVERWRITE = Deno.args.includes("--overwrite");
@@ -39,6 +39,7 @@ for (const [href, route] of Object.entries(manifest.routes)) {
   // Generate screenshot
   const url = new URL("http://localhost:8000/api/image/");
   url.searchParams.append("title", route.title);
+
   await page.goto(url.href, {
     waitUntil: "load",
   });
