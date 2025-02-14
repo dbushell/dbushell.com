@@ -1,10 +1,14 @@
-import { encodeBase64 } from "@std/encoding";
+import { crypto } from "@std/crypto";
+import { encodeBase64, encodeHex } from "@std/encoding";
 import { Queue } from "@dbushell/carriageway";
 import { hmmarkdown, hmmtypography } from "@dbushell/hmmarkdown";
-import { Node, parseHTML, unescape } from "@dbushell/hyperless";
+import { AttributeMap, Node, parseHTML, unescape } from "@dbushell/hyperless";
+
 export { hmmtypography };
 
 const DEV = Deno.args.includes("--dev");
+
+const textEncoder = new TextEncoder();
 
 /** Style languages as plain text */
 const textCode = new Set(["", "plain", "text", "txt"]);
@@ -45,7 +49,7 @@ export const syntaxCSS = async () => {
   css = `@layer syntax{${css}}`;
   const hash = encodeBase64(
     new Uint8Array(
-      await crypto.subtle.digest("sha-256", new TextEncoder().encode(css)),
+      await crypto.subtle.digest("SHA-256", textEncoder.encode(css)),
     ),
   );
   return { css, hash };
@@ -120,8 +124,31 @@ const markdown = async (md: string): Promise<string> => {
         code = stripStyles(code);
       }
       n.children[0].raw = code;
+
+      const hash = await crypto.subtle
+        .digest("FNV32A", textEncoder.encode(code))
+        .then(encodeHex);
+      n.attributes.set("id", `pre-${hash}`);
     });
   }));
+
+  node.traverse((n) => {
+    if (n.tag === "pre") {
+      const button = new Node(
+        null,
+        "ELEMENT",
+        undefined,
+        "button",
+        new AttributeMap([
+          ["type", "button"],
+          ["disabled", ""],
+          ["data-copy", n.attributes.get("id")!],
+        ]),
+      );
+      button.append(new Node(null, "TEXT", "Copy Code"));
+      n.after(button);
+    }
+  });
 
   return node.toString();
 };

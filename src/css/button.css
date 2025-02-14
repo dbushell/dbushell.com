@@ -37,3 +37,30 @@
     pointer-events: none;
   }
 }
+
+[data-copy^='pre'] {
+  color: oklch(var(--color-primary2));
+  font-size: 14px;
+  font-weight: var(--font-weight-3);
+  float: inline-end;
+  margin-block-start: calc((-1 * var(--size-4)) + 2px);
+  margin-inline: var(--border-size-2);
+  position: relative;
+  padding: 0;
+  text-transform: uppercase;
+  transition: color 200ms;
+
+  &:after,
+  &:hover {
+    color: oklch(var(--color-tertiary));
+  }
+
+  &:focus-visible {
+    outline: var(--outline);
+    outline-offset: 0;
+  }
+
+  &:disabled {
+    display: none;
+  }
+}

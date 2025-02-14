@@ -34,6 +34,19 @@ $mode.addEventListener("click", () => {
   }
 });
 
+const copyButtons = document.querySelectorAll("[data-copy^='pre']");
+copyButtons.forEach((button) => {
+  button.disabled = false;
+  const codeId = button.dataset.copy;
+  button.addEventListener("click", () => {
+    navigator.clipboard.writeText(
+      document.getElementById(codeId).textContent,
+    ).then(() => {
+      button.textContent = "Copied!";
+    });
+  });
+});
+
 // Handle monospace font
 if (document.querySelector("code")) {
   new FontFace(
