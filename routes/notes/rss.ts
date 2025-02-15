@@ -1,6 +1,6 @@
 import type { HyperHandle } from "@dbushell/hyperserve";
 import { manifest } from "@src/manifest.ts";
-import { stripTags } from "@dbushell/hyperless";
+import { Node, parseHTML, stripTags } from "@dbushell/hyperless";
 import { escape, unescape } from "@std/html/entities";
 
 export const pattern = ".xml";
@@ -55,8 +55,15 @@ export const GET: HyperHandle = () => {
     let description = stripTags(note.body);
     description = escape(unescape(description));
     const guid = new URL(note.href, meta.url);
+    // Remove copy buttons
+    const node = parseHTML(note.body);
+    const remove = new Set<Node>();
+    node.traverse((n) => {
+      if (n.tag === "button" && n.attributes.has("data-copy")) remove.add(n);
+    });
+    for (const n of remove) n.detach();
     xml = xml.replace(`{{description}}`, () => description);
-    xml = xml.replace(`{{html}}`, () => note.body);
+    xml = xml.replace(`{{html}}`, () => node.toString());
     xml = xml.replace(`{{link}}`, () => guid.href);
     xml = xml.replace(`{{guid}}`, () => guid.href);
     xml = xml.replace(`{{pubDate}}`, () => note.date.toUTCString());
