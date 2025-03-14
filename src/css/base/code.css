@@ -1,5 +1,5 @@
 :is(code, kbd, pre) {
-  font-family: 'Roboto Mono', monospace;
+  font-family: '0xProto', monospace;
   font-size: var(--font-size-0);
   font-weight: 400;
   -webkit-text-size-adjust: 100%;

@@ -50,16 +50,23 @@ copyButtons.forEach((button) => {
 // Handle monospace font
 if (document.querySelector("code")) {
   new FontFace(
-    "Roboto Mono",
-    `url('/assets/fonts/roboto-mono-variable.woff2?v=${deployHash}') format('woff2')`,
-    { weight: "1 900" },
+    "0xProto",
+    `url('/assets/fonts/0xProto-Regular.woff2?v=2.202') format('woff2')`,
+    { weight: "400" },
   )
     .load()
     .then((font) => document.fonts.add(font));
   new FontFace(
-    "Roboto Mono",
-    `url('/assets/fonts/roboto-mono-italic-variable.woff2?v=${deployHash}') format('woff2')`,
-    { weight: "1 900", style: "italic" },
+    "0xProto",
+    `url('/assets/fonts/0xProto-Bold.woff2?v=2.202') format('woff2')`,
+    { weight: "700" },
+  )
+    .load()
+    .then((font) => document.fonts.add(font));
+  new FontFace(
+    "0xProto",
+    `url('/assets/fonts/0xProto-Italic.woff2?v=2.202') format('woff2')`,
+    { weight: "400", style: "italic" },
   )
     .load()
     .then((font) => document.fonts.add(font));
