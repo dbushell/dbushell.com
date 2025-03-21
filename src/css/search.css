@@ -1,0 +1,79 @@
+@keyframes --search-form {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+search-form {
+  & form {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    margin-block: var(--size-2) var(--size-3);
+    position: relative;
+
+    & > * {
+      grid-row: 1;
+    }
+
+    & svg {
+      --offset: 0px;
+      block-size: 16px;
+      fill: oklch(var(--color-primary));
+      grid-column: 1 / 2;
+      inline-size: 16px;
+      inset-block-start: calc(50% - 9px + var(--offset));
+      inset-inline-start: calc(10px + var(--offset));
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  & .Field {
+    grid-column: 1 / 4;
+    padding-inline: 36px calc(20px + (45 * var(--rem)));
+
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+  }
+
+  & .Button {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    font-size: calc(12 * var(--rem));
+    grid-column: 3 / 4;
+    padding-inline: 10px;
+
+    &[type='button'] {
+      display: none;
+    }
+
+    &[type='submit'] {
+      @media (scripting: enabled) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      border-color: transparent;
+    }
+  }
+
+  &:state(active) {
+    & .Button {
+      display: block;
+    }
+  }
+
+  &:state(searching) {
+    & form svg {
+      --offset: -1px;
+      animation: --search-form 500ms linear infinite;
+      border: 2px solid oklch(var(--color-foreground) / 0.5);
+      border-inline-end-color: transparent;
+      border-radius: 50%;
+      fill: transparent;
+    }
+  }
+}

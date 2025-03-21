@@ -1,4 +1,6 @@
 .Nav {
+  --font-size: var(--font-size-0);
+
   & ul {
     display: flex;
     flex-wrap: wrap;
@@ -13,11 +15,11 @@
   & a {
     align-items: center;
     display: flex;
-    font-size: var(--font-size-0);
-    font-weight: 750;
-    letter-spacing: calc(0.5 * var(--rem));
+    font-size: var(--font-size);
+    font-weight: 600;
     min-block-size: 100%;
     padding: var(--size-0);
+    text-box: trim-both cap alphabetic;
     text-transform: uppercase;
     outline-offset: -2px;
 
@@ -30,7 +32,14 @@
 
 @container main (inline-size < 25rem) {
   .Nav {
-    max-inline-size: calc((300 / 16) * 1rem);
+    & ul {
+      display: block;
+      text-wrap: balance;
+    }
+
+    & li {
+      display: inline-block;
+    }
   }
 }
 

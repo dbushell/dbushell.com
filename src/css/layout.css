@@ -3,23 +3,26 @@
   margin-inline: auto;
 
   & .Masthead {
-    inline-size: 100%;
-    margin: 0 calc(-0.5 * var(--page-margin)) var(--size-2) auto;
+    inline-size: 320px;
+    margin-inline-start: auto;
+    margin-block-end: var(--size-2);
+    max-inline-size: 320px;
   }
 }
 
-@container body (inline-size >= 25rem) {
-  .Layout {
-    & .Masthead {
-      inline-size: calc((1 / 1.25) * 100%);
-    }
+.Layout--focus {
+  & h1 + .Box {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-inline: 0;
   }
 }
 
-@container body (inline-size >= 37.5rem) {
-  .Layout {
-    & .Masthead {
-      inline-size: calc((1 / 1.618) * 100%);
+@container main (inline-size >= 25rem) {
+  .Layout--focus {
+    & h1 + .Box {
+      margin-block-start: calc(-1 * var(--size-1));
     }
   }
 }
@@ -37,27 +40,81 @@
       min-inline-size: 0;
     }
 
+    & h1 {
+      max-inline-size: 38ch;
+      margin-inline: auto;
+    }
+
     & .Masthead {
       grid-column: 3 / 4;
       grid-row: 1;
       margin-block-end: var(--size-4);
-      margin-left: calc(-0.5 * var(--page-margin));
+      margin-inline-start: calc(-1 * var(--page-margin));
       inline-size: auto;
     }
 
     & .Aside {
       grid-column: 3 / 4;
       grid-row: 2 / 3;
-      margin-block-end: 0;
-      max-inline-size: 100%;
     }
 
     & .Main {
       grid-column: 1 / 2;
       grid-row: 1 / 3;
-      margin-block-end: 0;
-      max-inline-size: 100%;
       padding-block-start: 100px;
+    }
+  }
+
+  .Layout:where(:not([class*='Layout--'])) {
+    & .Masthead {
+      max-inline-size: none;
+    }
+
+    & .Aside {
+      margin-block-end: 0;
+
+      & > .Rule {
+        display: none;
+      }
+    }
+
+    & .Main {
+      margin-block-end: 0;
+    }
+  }
+
+  .Layout--focus {
+    & .Masthead {
+      inline-size: 100%;
+      justify-self: end;
+      margin-inline-start: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    & h1 + .Box {
+      text-align: center;
+    }
+
+    & .Main {
+      grid-column: 1 / -1;
+
+      & > h1 {
+        text-align: center;
+      }
+
+      & > :is(.Box, .Prose) {
+        margin-inline: auto;
+      }
+    }
+
+    & .Aside {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      margin-inline: auto;
+      max-inline-size: var(--prose-max);
     }
   }
 }

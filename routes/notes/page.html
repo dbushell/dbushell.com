@@ -23,6 +23,7 @@
       <cta-notes />
       <ssr-for item="item" of="props.notes">
         <my-note note="{{item}}" />
+        <my-rule />
       </ssr-for>
       <ssr-if condition="props.next || props.prev">
         <my-pagination next="{{props.next}}" prev="{{props.prev}}" />

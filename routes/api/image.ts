@@ -29,7 +29,7 @@ body {
 }
 #heading {
   color: oklch(var(--db-blue));
-  font-family: Komika, Raleway, sans-serif;
+  font-family: Komika, sans-serif;
   font-size: 110px;
   font-weight: 600px;
   line-height: 1;

@@ -1,4 +1,12 @@
 @font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  src: url('/assets/fonts/AtkinsonHyperlegibleNextVF-Variable.woff2?v=%DEPLOY_HASH%')
+    format('woff2');
+  font-display: swap;
+  font-weight: 1 900;
+}
+
+@font-face {
   font-family: 'Komika';
   src: url('/assets/fonts/komika-title.woff2?v=%DEPLOY_HASH%') format('woff2');
   font-display: swap;
@@ -6,28 +14,6 @@
   font-style: normal;
   /* Basic Latin */
   unicode-range: U+0020-007F;
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: url('/assets/fonts/raleway-variable.woff2?v=%DEPLOY_HASH%')
-    format('woff2');
-  font-display: swap;
-  font-weight: 1 900;
-  font-style: normal;
-  /* Basic Latin, Latin-1 Supplement, General Punctuation */
-  unicode-range: U+0020-007F, U+00A0-00FF, U+2000-206F;
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: url('/assets/fonts/raleway-italic-variable.woff2?v=%DEPLOY_HASH%')
-    format('woff2');
-  font-display: swap;
-  font-weight: 1 900;
-  font-style: italic;
-  /* Basic Latin, Latin-1 Supplement, General Punctuation */
-  unicode-range: U+0020-007F, U+00A0-00FF, U+2000-206F;
 }
 
 @font-face {

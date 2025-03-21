@@ -4,8 +4,9 @@
     classname += ' Balance';
   }
   const html = title.replaceAll('-', '<span class="Hyphen">-</span>');
+  const id = $local.hash ? `id-${$local.hash}` : undefined;
 </script>
 
-<h1 class="{{classname}}">
+<h1 class="{{classname}}" data-id="{{id}}">
   <ssr-html>{{html}}</ssr-html>
 </h1>

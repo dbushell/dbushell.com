@@ -3,21 +3,15 @@
   justify-content: space-between;
 
   & .Button {
-    align-items: center;
-    display: flex;
+    gap: var(--size-0);
 
     & svg {
-      fill: currentColor;
-      block-size: 12px;
-      stroke: currentColor;
-      inline-size: 12px;
-
       &:first-child {
-        margin-inline: -4px 6px;
+        margin-inline-start: calc(-0.5 * var(--size-0));
       }
 
       &:last-child {
-        margin-inline: 6px -4px;
+        margin-inline-end: calc(-0.5 * var(--size-0));
       }
     }
   }

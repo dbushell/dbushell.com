@@ -1,28 +1,41 @@
 .Button {
-  --button-shadow: var(--color-quaternary);
+  --color1: oklch(var(--color-quaternary) / 1);
+  --color2: oklch(var(--color-primary) / 0.5);
+  --font-size: var(--font-size-0);
+  --min-size: 42px;
+  --padding-block: 14px;
+  --padding-inline: 16px;
+  align-items: center;
   background: oklch(var(--color-background2));
-  border: var(--border-size-2) solid oklch(var(--color-primary) / 0.5);
-  border-top: 0;
-  border-left: 0;
+  border: var(--border-size-2) solid transparent;
+  background-image: linear-gradient(
+      oklch(var(--color-background2)),
+      oklch(var(--color-background2))
+    ),
+    linear-gradient(135deg, var(--color1), var(--color2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   border-radius: var(--radius-1);
-  box-shadow: -1px -1px 0 1px oklch(var(--button-shadow)),
-    2px 2px 0 0 oklch(0% 0 0 / 0.1);
+  box-shadow: 2px 2px 0 0 oklch(0% 0 0 / 0.1);
   color: oklch(var(--color-primary2));
-  display: block;
-  font-size: var(--font-size-0);
+  display: flex;
+  font-size: var(--font-size);
   font-weight: var(--font-weight-3);
-  line-height: var(--line-height-2);
-  letter-spacing: 1px;
+  gap: var(--size-1);
+  line-height: 1;
+  min-block-size: var(--min-size);
+  min-inline-size: var(--min-size);
   max-inline-size: max-content;
-  padding: 7px 16px;
+  padding: var(--padding-block) var(--padding-inline);
+  text-box: trim-both cap alphabetic;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color 200ms, border 200ms, box-shadow 200ms;
+  transition: color 200ms, --color1 200ms, --color2 200ms;
   user-select: none;
 
   &:hover {
-    --button-shadow: var(--color-tertiary);
-    border-color: oklch(var(--color-tertiary));
+    --color1: oklch(var(--color-tertiary));
+    --color2: oklch(var(--color-tertiary));
     color: oklch(var(--color-tertiary));
     cursor: pointer;
   }
@@ -36,6 +49,24 @@
     opacity: 0.5;
     pointer-events: none;
   }
+
+  & span {
+    text-box: inherit;
+  }
+
+  & svg {
+    --size: 12px;
+    fill: currentColor;
+    block-size: var(--size);
+    stroke: currentColor;
+    inline-size: var(--size);
+  }
+}
+
+@supports not (text-box: trim-both cap alphabetic) {
+  .Button {
+    --padding-block: 11px;
+  }
 }
 
 [data-copy^='pre'] {
@@ -43,7 +74,7 @@
   font-size: 14px;
   font-weight: var(--font-weight-3);
   float: inline-end;
-  margin-block-start: calc((-1 * var(--size-4)) + 2px);
+  margin-block: calc((-1 * var(--size-4)) + 2px) 0 !important;
   margin-inline: var(--border-size-2);
   position: relative;
   padding: 0;

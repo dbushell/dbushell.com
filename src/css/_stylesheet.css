@@ -8,24 +8,22 @@
 @import 'base/typography.css' layer(base);
 @import 'base/code.css' layer(base);
 
-@import 'article.css';
 @import 'button.css';
 @import 'checkbox.css';
 @import 'field.css';
 @import 'image.css';
-@import 'lightbulb.css';
 @import 'list.css';
-@import 'logo.css';
 @import 'pagination.css';
 @import 'prose.css';
 @import 'rule.css';
-@import 'sign.css';
 @import 'star.css';
 @import 'card.css';
 @import 'box.css';
 @import 'note.css';
 @import 'table.css';
+@import 'search.css';
 @import 'footer.css';
+@import 'settings.css';
 
 @import 'crane.css';
 @import 'form.css';
@@ -37,3 +35,22 @@
 @import 'aside.css';
 @import 'main.css';
 @import 'layout.css';
+
+@media not (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  .Logo {
+    view-transition-name: logo;
+  }
+
+  ::view-transition-group(.heading) {
+    block-size: 100%;
+  }
+
+  :is(h1, h2) {
+    view-transition-name: attr(data-id type(<custom-ident>), none);
+    view-transition-class: heading;
+  }
+}

@@ -1,16 +1,18 @@
 :is(code, kbd, pre) {
+  --font-size: var(--font-size-0);
   font-family: '0xProto', monospace;
-  font-size: var(--font-size-0);
+  font-size: var(--font-size);
   font-weight: 400;
   -webkit-text-size-adjust: 100%;
 }
 
 :is(:where(:not(pre)) > code, kbd) {
+  --font-size: var(--font-size-0);
   background: oklch(var(--color-background2));
   border: var(--border-size-1) solid oklch(var(--color-quaternary));
   color: oklch(var(--color-secondary2));
   display: inline;
-  font-size: var(--font-size-0);
+  font-size: var(--font-size);
   font-weight: 450;
   line-height: 1;
   padding: 2px 4px;
@@ -23,7 +25,6 @@ kbd {
   color: oklch(var(--color-foreground));
   border: var(--border-size-1) solid oklch(var(--color-primary) / 0.5);
   font-weight: var(--font-weight-1);
-  /* border-color: oklch(var(--color-primary)); */
 }
 
 pre {
@@ -59,7 +60,7 @@ pre {
       content: attr(data-lang);
       color: oklch(var(--db-yellow));
       display: block;
-      font-family: 'Comic Neue', 'Raleway', sans-serif;
+      font-family: 'Comic Neue', sans-serif;
       font-size: 12px;
       font-style: italic;
       inset-inline-start: 0;

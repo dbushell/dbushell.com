@@ -18,6 +18,12 @@ if (DEV) {
   await fs.emptyDir(cachePath);
 }
 
+/** Non-cryptographic hash as hexadecimal */
+export const encodeHash = (value: string): Promise<string> =>
+  crypto.subtle
+    .digest("FNV32A", new TextEncoder().encode(value))
+    .then(encodeHex);
+
 export const readProps = async (srcPath: string): Promise<Props> => {
   // Read markdown
   const file = await Deno.open(srcPath);
@@ -81,6 +87,7 @@ export const readProps = async (srcPath: string): Promise<Props> => {
         matter.attrs.slug,
       ].join("/") +
       "/";
+    props.hash = await encodeHash(props.href);
   }
 
   if (Deno.args.includes("--snapshot")) {

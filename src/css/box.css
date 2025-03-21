@@ -3,35 +3,20 @@
   background: oklch(var(--color-background2));
   border: var(--border-size-2) solid oklch(var(--color-quaternary));
   border-radius: var(--radius-2);
-  display: grid;
-  gap: var(--size-2);
-  grid-template-columns: 1fr;
-  margin-block-end: var(--size-4);
+
+  margin-block: var(--size-3);
   padding: var(--size-2);
   position: relative;
+
+  &:first-child {
+    margin-block-start: 0;
+  }
 
   &:last-child {
     margin-block-end: 0;
   }
 
-  & > * {
-    grid-column: 1 / -1;
-    margin: 0;
-  }
-
-  &:where(:has(.Cursive + p:last-child)) {
-    row-gap: var(--size-0);
-  }
-}
-
-@container body (inline-size < 37.5rem) {
-  .Box {
-    margin-inline: calc(-1 * var(--size-1));
-  }
-}
-
-@container body (inline-size >= 50rem) {
-  .Box {
-    margin-inline-start: calc(-1 * var(--size-2));
+  & > .Button {
+    margin-block-start: var(--size-2);
   }
 }

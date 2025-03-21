@@ -6,33 +6,49 @@ if ("serviceWorker" in globalThis.navigator) {
   globalThis.navigator.serviceWorker.register(`/sw.js?v=${deployHash}`);
 }
 
-// Swap logo
-/** @type {HTMLImageElement} */
-const $logo = document.querySelector(".Logo img");
-fetch($logo.src).then(async (response) => {
-  if (!response.ok) return;
-  const template = document.createElement("template");
-  template.innerHTML = await response.text();
-  $logo.replaceWith(template.content);
-});
+const viewTransition = typeof document.startViewTransition === "function"
+  ? (props) => document.startViewTransition(props)
+  : (props) => ({
+    finished: Promise.resolve(props()),
+  });
 
 // Handle dark mode
-const $doc = document.documentElement;
-const $mode = document.querySelector(".Lightbulb");
-
-if (localStorage.getItem("theme") === "dark") {
-  $doc.dataset.theme = "dark";
-}
-
-$mode.addEventListener("click", () => {
-  if ($doc.dataset.theme === "dark") {
-    $doc.dataset.theme = "light";
-    localStorage.setItem("theme", "light");
-  } else {
-    $doc.dataset.theme = "dark";
-    localStorage.setItem("theme", "dark");
+document.querySelectorAll('input[name="appearance"]').forEach(($input) => {
+  if ($input.value === localStorage.getItem("theme")) {
+    $input.checked = true;
   }
+  $input.addEventListener("input", (ev) => {
+    globalThis.__setTheme(ev.target.value);
+  });
 });
+
+document.querySelectorAll("dialog").forEach(($dialog) => {
+  $dialog.addEventListener("cancel", (ev) => {
+    ev.preventDefault();
+    viewTransition(() => {
+      $dialog.close();
+    });
+  });
+});
+
+document.querySelectorAll('button[popovertarget="settings"]').forEach(
+  ($button) => {
+    $button.addEventListener("click", (ev) => {
+      const $dialog = document.getElementById(
+        $button.getAttribute("popovertarget"),
+      );
+      if (!$dialog) return;
+      ev.preventDefault();
+      viewTransition(() => {
+        if ($dialog.open) {
+          $dialog.close();
+        } else {
+          $dialog.showModal();
+        }
+      });
+    });
+  },
+);
 
 const copyButtons = document.querySelectorAll("[data-copy^='pre']");
 copyButtons.forEach((button) => {

@@ -1,7 +1,0 @@
-.Article {
-  margin-block-end: var(--size-4);
-
-  &:last-child {
-    margin-block-end: 0;
-  }
-}

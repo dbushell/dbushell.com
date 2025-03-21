@@ -1,9 +1,3 @@
-/* @property --body-size {
-  syntax: '<length>';
-  initial-value: 0px;
-  inherits: true;
-} */
-
 @property --font-size {
   syntax: '<length>';
   inherits: true;
@@ -16,49 +10,68 @@
   initial-value: 1.4;
 }
 
+@property --color1 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: oklch(0% 0 0);
+}
+
+@property --color2 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: oklch(0% 0 0);
+}
+
 :root {
-  /* --body-size: 100cqi; */
   --rem: 0.0625rem;
-  /* --fluid: calc((var(--body-size) - 400px) / (1920 - 400)); */
-  /* --fluid: calc((var(--body-size) - (400 * var(--rem))) / (1920 - 400)); */
-  --fluid: calc((100vi - (400 * var(--rem))) / (1920 - 400));
+  --fluid1: calc((100vi - (400 * var(--rem))) / (1920 - 400));
+  --fluid2: calc((100vi - (400 * var(--rem))) / (1220 - 400));
 
   --font-size-0: clamp(
     calc(14 * var(--rem)),
-    calc((14 * var(--rem)) + (16 - 14) * var(--fluid)),
+    calc((14 * var(--rem)) + (16 - 14) * var(--fluid2)),
     calc(16 * var(--rem))
   );
+
   --font-size-1: clamp(
     calc(17 * var(--rem)),
-    calc((17 * var(--rem)) + (19 - 17) * var(--fluid)),
-    calc(19 * var(--rem))
+    calc((17 * var(--rem)) + (20 - 17) * var(--fluid2)),
+    calc(20 * var(--rem))
   );
+
   --font-size-2: clamp(
     calc(19 * var(--rem)),
-    calc((19 * var(--rem)) + (26 - 19) * var(--fluid)),
+    calc((19 * var(--rem)) + (26 - 19) * var(--fluid1)),
     calc(26 * var(--rem))
   );
+
   --font-size-3: clamp(
     calc(21 * var(--rem)),
-    calc((21 * var(--rem)) + (32 - 21) * var(--fluid)),
+    calc((21 * var(--rem)) + (32 - 21) * var(--fluid1)),
     calc(32 * var(--rem))
   );
+
   --font-size-4: clamp(
     calc(31 * var(--rem)),
-    calc((31 * var(--rem)) + (80 - 31) * var(--fluid)),
+    calc((31 * var(--rem)) + (80 - 31) * var(--fluid1)),
     calc(80 * var(--rem))
   );
 
+  --font-size: var(--font-size-1);
+
+  --font-family: 'Atkinson Hyperlegible Next', sans-serif;
+
   --font-weight-base: 0;
-  --font-weight-1: calc(var(--font-weight-base) + 475);
-  --font-weight-2: calc(var(--font-weight-base) + 550);
-  --font-weight-3: 650;
+  --font-weight-1: calc(var(--font-weight-base) + 400);
+  --font-weight-2: calc(var(--font-weight-base) + 450);
+  --font-weight-3: 500;
 
   --size-0: 4.5px;
   --size-1: 9px;
   --size-2: 18px;
   --size-3: 27px;
   --size-4: 36px;
+  --size-5: 40.5px;
 
   --border-size-1: 1px;
   --border-size-2: 2px;
@@ -67,14 +80,15 @@
   --radius-2: var(--size-1);
 
   --line-height-1: 1.6;
-  --line-height-2: 1.5;
-  --line-height-3: 1.4;
+  --line-height-2: 1.3;
 
   --page-margin: clamp(
     calc(20 * var(--rem)),
-    calc((20 * var(--rem)) + (100 - 20) * var(--fluid)),
+    calc((20 * var(--rem)) + (100 - 20) * var(--fluid1)),
     calc(100 * var(--rem))
   );
+
+  --prose-max: 42em;
 
   --outline: var(--border-size-2) dashed oklch(var(--color-secondary));
 }
@@ -96,7 +110,7 @@
 
 @media (color-gamut: p3) {
   :root {
-    --db-pink: 72.27% 0.222 13.7;
+    --db-pink-p3: 72.27% 0.222 13.7;
     --db-blue: 62.78% 0.158 226;
     --db-blue2: 52.78% 0.12 226;
   }
@@ -110,9 +124,9 @@
 
     --color-primary: var(--db-blue);
     --color-primary2: var(--db-blue2);
-    --color-secondary: var(--db-pink);
+    --color-secondary: var(--db-pink-p3, var(--db-pink));
     --color-secondary2: var(--db-red);
-    --color-tertiary: var(--db-pink);
+    --color-tertiary: var(--db-pink-p3, var(--db-pink));
     --color-quaternary: var(--db-green);
 
     --masthead-primary: var(--db-green);
@@ -126,15 +140,15 @@
 
     --color-primary: var(--db-green);
     --color-primary2: var(--db-green);
-    --color-secondary: var(--db-pink);
-    --color-secondary2: var(--db-pink);
-    --color-tertiary: var(--db-pink);
+    --color-secondary: var(--db-pink-p3, var(--db-pink));
+    --color-secondary2: var(--db-pink-p3, var(--db-pink));
+    --color-tertiary: var(--db-pink-p3, var(--db-pink));
     --color-quaternary: var(--db-blue);
 
     --masthead-primary: var(--db-blue);
     --masthead-secondary: var(--db-green);
 
-    --font-weight-base: 25;
+    --font-weight-base: 50;
   }
 }
 

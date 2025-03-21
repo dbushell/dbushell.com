@@ -1,57 +1,33 @@
 .Note {
   align-items: center;
-  border: var(--border-size-1) solid oklch(var(--color-quaternary));
-  border-radius: var(--radius-2);
   display: grid;
   gap: var(--size-2);
   grid-template-columns: 1fr;
   margin-block: var(--size-4);
-  padding: var(--size-2);
+  max-inline-size: var(--prose-max);
   position: relative;
-
-  & > footer {
-    margin-block-end: calc(-1 * var(--size-1));
-    order: -1;
-  }
-
-  & > * {
-    grid-column: 1 / -1;
-    margin: 0;
-  }
-
-  & + & {
-    margin-block-start: calc(-1 * var(--size-2));
-  }
 
   &:last-child {
     margin-block-end: 0;
   }
 
-  & .Prose {
+  &:last-of-type {
+    & + .Rule {
+      display: none;
+    }
+  }
+
+  & + .Rule {
+    margin-block: calc(-1 * var(--size-1));
+  }
+
+  & > * {
+    grid-column: 1 / -1;
     min-inline-size: 0;
-
-    & > :is(ol, ul) {
-      padding-inline-start: var(--size-3);
-    }
-
-    & > :is(blockquote, pre) {
-      margin-inline: 0;
-    }
-  }
-}
-
-@container body (inline-size < 37.5rem) {
-  .Note {
-    margin-inline: calc(-1 * var(--size-1));
+    margin: 0;
   }
 
-  .Note .Prose > :is(ol, ul) {
-    padding-inline-start: 0;
-  }
-}
-
-@container body (inline-size >= 50rem) {
-  .Note {
-    margin-inline-start: calc(-1 * var(--size-2));
+  & > footer {
+    order: -1;
   }
 }

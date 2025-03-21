@@ -1,9 +1,10 @@
 <script context="component">
-  const {href, title, excerpt} = article;
+  const {hash, href, title, excerpt} = article;
+  const id = hash ? `id-${hash}` : undefined;
 </script>
 
 <article class="Article">
-  <ssr-element tag="{{$local.heading ?? 'h2'}}" class="Star">
+  <ssr-element tag="{{$local.heading ?? 'h2'}}" data-id="{{id}}" class="Star">
     <a href="{{href}}"><ssr-html>{{title}}</ssr-html></a>
   </ssr-element>
   <ssr-if condition="article.date">

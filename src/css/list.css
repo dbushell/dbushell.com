@@ -1,12 +1,11 @@
-/* @layer components { */
 .List,
 .Prose :where(ul:not([class]), ol:not([class])) {
-  margin: var(--size-3) 0;
+  --font-size: var(--font-size-1);
 
   & li {
-    font-size: var(--font-size-1);
+    font-size: var(--font-size);
     margin-block-end: var(--size-1);
-    max-inline-size: 70ch;
+    /* max-inline-size: 70ch; */
 
     &:last-child {
       margin-block-end: 0;
@@ -28,9 +27,9 @@
       counter-increment: ol-counter;
       color: oklch(var(--color-secondary));
       display: inline-block;
-      font-family: 'Comic Neue', 'Raleway', sans-serif;
+      font-family: 'Comic Neue', sans-serif;
       font-style: italic;
-      font-size: var(--font-size-1);
+      font-size: var(--font-size);
       font-weight: 600;
       margin-inline-start: calc(-1 * var(--size-4));
       padding-inline-end: var(--size-1);
@@ -48,16 +47,13 @@
   .Prose :where(ol:not([class])) {
     & > li {
       &::before {
-        font-size: var(--font-size-0);
         margin-inline-start: calc(-1 * var(--size-1));
         inline-size: var(--size-3);
       }
     }
   }
 }
-/* } */
 
-/* @layer modifiers { */
 .List--large {
   &:not(:first-child) {
     margin-block-start: var(--size-4);
@@ -129,8 +125,9 @@
 
 @container main (inline-size >= 37.5rem) {
   .List--large {
+    --font-size: var(--font-size-2);
+
     & li {
-      font-size: var(--font-size-2);
       margin-block-end: var(--size-2);
     }
   }
@@ -153,4 +150,3 @@
     grid-column-gap: var(--size-3);
   }
 }
-/* } */

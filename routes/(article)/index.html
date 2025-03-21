@@ -21,10 +21,7 @@
   <my-app>
     <ssr-fragment slot="main">
       <my-nav />
-      <my-heading title="{{props.title}}" />
-      <ssr-if condition="props.date">
-        <p><my-time date="{{props.date}}" /></p>
-      </ssr-if>
+      <my-heading title="{{props.title}}" hash="{{props.hash}}" />
       <cta-blog />
       <my-prose html="{{props.body}}" />
       <cta-blog />

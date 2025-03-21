@@ -24,6 +24,7 @@ export interface Props {
   container: string;
   changefreq: "daily" | "weekly" | "monthly";
   priority: "1.0" | "0.9" | "0.8" | "0.7" | "0.6" | "0.5";
+  hash?: string;
   features?: string[];
   date?: Date;
   description?: string;

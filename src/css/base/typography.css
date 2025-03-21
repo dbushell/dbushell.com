@@ -64,12 +64,6 @@ a:where([href]) {
 p {
   --font-size: var(--font-size-1);
   font-size: var(--font-size);
-  margin-block-end: var(--size-2);
-  max-inline-size: 70ch;
-
-  &:last-child {
-    margin-block-end: 0;
-  }
 
   & a {
     font-weight: var(--font-weight-2);
@@ -90,20 +84,25 @@ p {
   }
 }
 
-:where(b, strong) {
+:where(b, strong, legend) {
   font-weight: var(--font-weight-3);
+}
+
+:where(i, em) {
+  font-style: italic;
+  font-variation-settings: 'ital' 1;
 }
 
 small {
   font-size: inherit;
 }
 
-figcaption {
-  font-size: var(--font-size-0);
+:where(cite, figcaption, label, legend, sup, time) {
+  --font-size: var(--font-size-0);
+  font-size: var(--font-size);
 }
 
 sup {
-  font-size: var(--font-size-0);
   line-height: 1;
   vertical-align: top;
 }
@@ -114,12 +113,16 @@ blockquote {
   padding-inline-start: var(--size-2);
   border-inline-start: var(--border-size-1) solid oklch(var(--color-tertiary));
 
+  & > :not(:last-child) {
+    margin-block-end: var(--size-2);
+  }
+
   & :is(p, li) {
     font-style: italic;
+    font-variation-settings: 'ital' 1;
   }
 
   & cite {
-    font-size: var(--font-size-0);
     font-weight: var(--font-weight-2);
   }
 }
@@ -136,32 +139,29 @@ h6 {
   font-size: var(--font-size);
   font-weight: var(--font-weight-3);
   line-height: var(--line-height);
-  margin-block: var(--size-3) var(--size-2);
   position: relative;
-
-  &:first-child {
-    margin-block-start: 0;
-  }
-
-  &:last-child {
-    margin-block-end: 0;
-  }
 }
 
 h1 {
   --font-size: var(--font-size-4);
   --line-height: 1;
   margin-block: var(--size-3);
+  text-box: trim-both cap alphabetic;
+
+  & + h2 {
+    margin-block: var(--size-3) var(--size-2);
+  }
 }
 
 @container main (inline-size >= 25rem) {
   h1 {
-    margin-block: var(--size-4);
+    margin-block: calc(var(--size-4) + var(--size-1));
   }
 
-  h2,
-  h3 {
-    margin-block-start: var(--size-4);
+  @supports not (text-box: trim-both cap alphabetic) {
+    h1 {
+      margin-block: var(--size-4);
+    }
   }
 }
 
@@ -170,7 +170,7 @@ h2 {
 
   :where(.Main) & {
     --font-size: var(--font-size-3);
-    --line-height: var(--line-height-3);
+    --line-height: var(--line-height-2);
   }
 }
 
@@ -179,10 +179,6 @@ h3 {
 }
 
 :is(h2, h3) {
-  & .Cursive {
-    font-size: var(--font-size-1);
-  }
-
   &.Cursive {
     --font-size: var(--font-size-2);
     --line-height: var(--line-height-2);
@@ -198,7 +194,7 @@ h3 {
 }
 
 .Comic {
-  font-family: 'Komika', 'Raleway', sans-serif;
+  font-family: 'Komika', sans-serif;
   font-style: normal;
   font-weight: 600;
 
@@ -208,9 +204,14 @@ h3 {
   }
 }
 
+.Cursive {
+  --font-size: var(--font-size-1);
+  font-size: var(--font-size);
+}
+
 :is(.Cursive, .Time) {
   color: oklch(var(--color-secondary2));
-  font-family: 'Comic Neue', 'Raleway', sans-serif;
+  font-family: 'Comic Neue', sans-serif;
   font-style: italic;
   font-weight: 600;
   letter-spacing: calc(-0.5 * var(--rem));
@@ -236,8 +237,8 @@ h3 {
 }
 
 .Time {
+  --font-size: var(--font-size-1);
   display: inline-block;
-  font-size: var(--font-size-1);
   vertical-align: top;
 
   & a {

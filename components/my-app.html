@@ -3,6 +3,11 @@
   const isArticle = /\d{4}(\/|-)\d{2}\1\d{2}/.test(href);
   const isBlog = /^\/\d{4}(\/|-)\d{2}\1\d{2}/.test(href);
 
+  var className = "Layout";
+  if (isBlog) {
+    className += " Layout--focus";
+  }
+
   let siteTitle = "David Bushell – ";
   if (href === '/') {
     siteTitle += "Freelance Web Design & Front-end Development (UK)";
@@ -39,11 +44,25 @@
   <meta property="og:image" content="{{ogImage}}" />
   <meta property="og:site_name" content="dbushell.com" />
   <ssr-if condition="ogType"><meta property="og:type" content="{{ogType}}" /></ssr-if>
+<script>
+const themes = ["dark", "light", "system"];
+globalThis.__setTheme = (value) => {
+  if (!themes.includes(value)) value = "light";
+  localStorage.setItem("theme", value);
+  if (value === "system") {
+    value = globalThis.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  }
+  document.documentElement.dataset.theme = value;
+};
+globalThis.__setTheme(localStorage.getItem("theme"));
+</script>
   <script type="module" src="/assets/scripts/head.js?v={{deployHash}}"></script>
   <script fetchpriority="low" type="module" src="/assets/scripts/search.js?v={{deployHash}}"></script>
 </ssr-fragment>
 
-<div class="Layout">
+<div class="{{className}}">
   <ssr-cache name="masthead">
     <my-masthead />
   </ssr-cache>

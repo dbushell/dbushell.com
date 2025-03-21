@@ -9,6 +9,7 @@
 html {
   color-scheme: light dark;
   hanging-punctuation: first allow-end last;
+  interpolate-size: allow-keywords;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   text-size-adjust: none;
@@ -65,15 +66,13 @@ body {
   text-wrap: pretty;
 }
 
-:where(abbr) {
-  &[title] {
-    border: none;
-    text-decoration: none;
-  }
+:where(abbr[title]) {
+  border: none;
+  text-decoration: none;
 }
 
 :where(cite) {
-  font-style: normal;
+  font-style: inherit;
 }
 
 :where(small) {
@@ -96,4 +95,8 @@ body {
 
 :where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
   display: none;
+}
+
+:where(fieldset) {
+  border: none;
 }
