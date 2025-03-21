@@ -5,7 +5,6 @@ const PRECACHE = [
   "/assets/fonts/AtkinsonHyperlegibleNextVF-Variable.woff2?v=%DEPLOY_HASH%",
   "/assets/fonts/comic-neue-bold-italic.woff2?v=%DEPLOY_HASH%",
   "/assets/images/dbushell-for-hire.svg?v=%DEPLOY_HASH%",
-  "/assets/images/dbushell-logotype.svg?v=%DEPLOY_HASH%",
   "/assets/scripts/head.js?v=%DEPLOY_HASH%",
   "/assets/scripts/contact.js?v=%DEPLOY_HASH%",
 ];
