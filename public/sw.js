@@ -2,7 +2,7 @@ const CACHE = "%DEPLOY_HASH%";
 
 const PRECACHE = [
   "/assets/fonts/komika-title.woff2?v=%DEPLOY_HASH%",
-  "/assets/fonts/raleway-variable.woff2?v=%DEPLOY_HASH%",
+  "/assets/fonts/AtkinsonHyperlegibleNextVF-Variable.woff2?v=%DEPLOY_HASH%",
   "/assets/fonts/comic-neue-bold-italic.woff2?v=%DEPLOY_HASH%",
   "/assets/images/dbushell-for-hire.svg?v=%DEPLOY_HASH%",
   "/assets/images/dbushell-logotype.svg?v=%DEPLOY_HASH%",
