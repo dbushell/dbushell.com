@@ -24,7 +24,7 @@ export const middleware: HyperHandle = ({ request, platform }) => {
     // TODO - generate? - Hash for Logo inline styles
     ["x-style-src", `'sha256-b3S6PPNQCR5hunY6m2WZDOVKfLngmPu01uGVlDvKO6I='`],
     // Inline <head>
-    ["x-script-src", `'sha256-DYG3/n9nLF/8vTTz0BeAfjdDVBb8OnKj3cIKV9cY+XU=`],
+    ["x-script-src", `'sha256-DYG3/n9nLF/8vTTz0BeAfjdDVBb8OnKj3cIKV9cY+XU='`],
     // Inline speculation rules
     ["x-script-src", `'sha256-wJ17tFso+XVW2pKPhXkRCUyukGeWjM3DmjQUc7cNNMw='`],
     // "this.rel=`stylesheet`"
