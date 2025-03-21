@@ -23,7 +23,15 @@
 
 @container body (inline-size < 30rem) {
   .Settings-Tab {
-    display: none;
+    & .Button {
+      --min-size: 34px;
+      --padding-block: 10px;
+      --padding-inline: 12px;
+
+      & svg {
+        display: none;
+      }
+    }
   }
 }
 
