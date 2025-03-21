@@ -32,14 +32,7 @@
 
 @container main (inline-size < 25rem) {
   .Nav {
-    & ul {
-      display: block;
-      text-wrap: balance;
-    }
-
-    & li {
-      display: inline-block;
-    }
+    max-width: 250px;
   }
 }
 
