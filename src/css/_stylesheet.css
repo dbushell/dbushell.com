@@ -54,6 +54,11 @@
   position: fixed;
   text-align: center;
   z-index: 999;
+
+  & a,
+  & a:hover {
+    --anchor-color: var(--db-white);
+  }
 }
 
 @media not (prefers-reduced-motion: reduce) {

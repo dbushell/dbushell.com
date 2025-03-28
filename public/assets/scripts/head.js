@@ -109,8 +109,8 @@ if (globalThis.location.hostname === "localhost") {
 
 const gramm = document.createElement("p");
 gramm.classList.add("FU-Gramm");
-gramm.innerText =
-  "The Grammarly extension is breaking my website. Please disable it to avoid issues!";
+gramm.innerHTML =
+  `<a href="/notes/2025-03-28T17:54Z/">The Grammarly extension is breaking my website. Please disable it to avoid issues!</a>`;
 
 /** @type {MutationCallback} */
 const callback = (mutationList, _observer) => {
