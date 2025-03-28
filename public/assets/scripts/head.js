@@ -106,3 +106,31 @@ if (globalThis.location.hostname === "localhost") {
     });
   });
 }
+
+const gramm = document.createElement("p");
+gramm.classList.add("FU-Gramm");
+gramm.innerText =
+  "The Grammarly extension is breaking my website. Please disable it to avoid issues!";
+
+/** @type {MutationCallback} */
+const callback = (mutationList, _observer) => {
+  for (const mutation of mutationList) {
+    if (mutation.type === "childList") {
+      mutation.addedNodes.forEach((n) => {
+        if (n.nodeName.toLowerCase().includes("gramm")) {
+          n.parentNode.removeChild(n);
+          document.documentElement.classList.add("fu-gramm");
+          document.documentElement.append(gramm);
+        }
+      });
+    }
+  }
+};
+
+const observer = new MutationObserver(callback);
+
+observer.observe(document.documentElement, {
+  attributes: false,
+  childList: true,
+  subtree: false,
+});

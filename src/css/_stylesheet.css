@@ -36,6 +36,26 @@
 @import 'main.css';
 @import 'layout.css';
 
+.fu-gramm {
+  --rem: 0.0625rem !important;
+}
+
+.FU-Gramm {
+  background: oklch(var(--db-red));
+  color: oklch(var(--db-white));
+  display: block;
+  font-size: var(--font-size-0);
+  font-family: var(--font-family);
+  font-weight: 700;
+  inset-block-end: 0;
+  inset-inline: 0;
+  inline-size: 100%;
+  padding: var(--size-1) var(--size-2);
+  position: fixed;
+  text-align: center;
+  z-index: 999;
+}
+
 @media not (prefers-reduced-motion: reduce) {
   @view-transition {
     navigation: auto;
