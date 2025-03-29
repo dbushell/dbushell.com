@@ -36,11 +36,7 @@
 @import 'main.css';
 @import 'layout.css';
 
-.fu-gramm {
-  --rem: 0.0625rem !important;
-}
-
-.FU-Gramm {
+[class*='🤡'] {
   background: oklch(var(--db-red));
   color: oklch(var(--db-white));
   display: block;

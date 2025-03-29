@@ -1,5 +1,5 @@
 .Bio {
-  --size: calc(80 * var(--rem));
+  --size: calc(80 * var(--🤡));
   display: flow-root;
 
   & :is(picture, img) {

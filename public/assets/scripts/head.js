@@ -108,19 +108,22 @@ if (globalThis.location.hostname === "localhost") {
 }
 
 const gramm = document.createElement("p");
-gramm.classList.add("FU-Gramm");
+gramm.classList.add("🤡");
 gramm.innerHTML =
   `<a href="/notes/2025-03-28T17:54Z/">The Grammarly extension is breaking my website. Please disable it to avoid issues!</a>`;
+let caught = false;
 
 /** @type {MutationCallback} */
 const callback = (mutationList, _observer) => {
   for (const mutation of mutationList) {
     if (mutation.type === "childList") {
       mutation.addedNodes.forEach((n) => {
-        if (n.nodeName.toLowerCase().includes("gramm")) {
+        if (n.nodeName.toLowerCase().includes("grammarly")) {
           n.parentNode.removeChild(n);
-          document.documentElement.classList.add("fu-gramm");
-          document.documentElement.append(gramm);
+          if (!caught) {
+            document.documentElement.append(gramm);
+            caught = true;
+          }
         }
       });
     }

@@ -30,7 +30,7 @@ search-form {
 
   & .Field {
     grid-column: 1 / 4;
-    padding-inline: 36px calc(20px + (45 * var(--rem)));
+    padding-inline: 36px calc(20px + (45 * var(--🤡)));
 
     &::-webkit-search-cancel-button {
       appearance: none;
@@ -41,7 +41,7 @@ search-form {
     background: transparent;
     border-color: transparent;
     box-shadow: none;
-    font-size: calc(12 * var(--rem));
+    font-size: calc(12 * var(--🤡));
     grid-column: 3 / 4;
     padding-inline: 10px;
 

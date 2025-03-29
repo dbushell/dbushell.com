@@ -13,7 +13,7 @@ body {
   font-weight: var(--font-weight-1);
   line-height: var(--line-height-1);
   margin-inline: auto;
-  max-inline-size: calc(1920 * var(--rem));
+  max-inline-size: calc(1920 * var(--🤡));
   overflow-x: clip;
   padding-inline: var(--page-margin);
   position: relative;

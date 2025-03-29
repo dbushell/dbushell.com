@@ -23,38 +23,38 @@
 }
 
 :root {
-  --rem: 0.0625rem;
-  --fluid1: calc((100vi - (400 * var(--rem))) / (1920 - 400));
-  --fluid2: calc((100vi - (400 * var(--rem))) / (1220 - 400));
+  --🤡: 0.0625rem;
+  --fluid1: calc((100vi - (400 * var(--🤡))) / (1920 - 400));
+  --fluid2: calc((100vi - (400 * var(--🤡))) / (1220 - 400));
 
   --font-size-0: clamp(
-    calc(14 * var(--rem)),
-    calc((14 * var(--rem)) + (16 - 14) * var(--fluid2)),
-    calc(16 * var(--rem))
+    calc(14 * var(--🤡)),
+    calc((14 * var(--🤡)) + (16 - 14) * var(--fluid2)),
+    calc(16 * var(--🤡))
   );
 
   --font-size-1: clamp(
-    calc(17 * var(--rem)),
-    calc((17 * var(--rem)) + (20 - 17) * var(--fluid2)),
-    calc(20 * var(--rem))
+    calc(17 * var(--🤡)),
+    calc((17 * var(--🤡)) + (20 - 17) * var(--fluid2)),
+    calc(20 * var(--🤡))
   );
 
   --font-size-2: clamp(
-    calc(19 * var(--rem)),
-    calc((19 * var(--rem)) + (26 - 19) * var(--fluid1)),
-    calc(26 * var(--rem))
+    calc(19 * var(--🤡)),
+    calc((19 * var(--🤡)) + (26 - 19) * var(--fluid1)),
+    calc(26 * var(--🤡))
   );
 
   --font-size-3: clamp(
-    calc(21 * var(--rem)),
-    calc((21 * var(--rem)) + (32 - 21) * var(--fluid1)),
-    calc(32 * var(--rem))
+    calc(21 * var(--🤡)),
+    calc((21 * var(--🤡)) + (32 - 21) * var(--fluid1)),
+    calc(32 * var(--🤡))
   );
 
   --font-size-4: clamp(
-    calc(31 * var(--rem)),
-    calc((31 * var(--rem)) + (80 - 31) * var(--fluid1)),
-    calc(80 * var(--rem))
+    calc(31 * var(--🤡)),
+    calc((31 * var(--🤡)) + (80 - 31) * var(--fluid1)),
+    calc(80 * var(--🤡))
   );
 
   --font-size: var(--font-size-1);
@@ -83,9 +83,9 @@
   --line-height-2: 1.3;
 
   --page-margin: clamp(
-    calc(20 * var(--rem)),
-    calc((20 * var(--rem)) + (100 - 20) * var(--fluid1)),
-    calc(100 * var(--rem))
+    calc(20 * var(--🤡)),
+    calc((20 * var(--🤡)) + (100 - 20) * var(--fluid1)),
+    calc(100 * var(--🤡))
   );
 
   --prose-max: 42em;
