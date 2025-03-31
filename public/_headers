@@ -10,6 +10,9 @@
   x-robots-tag: noai, noimageai
   speculation-rules: "/speculation-rules.json?v=%DEPLOY_HASH%"
 
+/llms/*
+  x-robots-tag: noindex
+
 /assets/*
   x-robots-tag: noindex
 

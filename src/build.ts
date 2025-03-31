@@ -93,6 +93,11 @@ export const build = async (server: Hyperserve) => {
 
   // Add manifest routes and islands
   const routePaths = Object.keys(manifest.routes);
+  for (const path of routePaths) {
+    if (/^\/\d{4}(\/|-)\d{2}\1\d{2}/.test(path)) {
+      routePaths.push(`/llms${path}`);
+    }
+  }
   manifest.notes.forEach((note) => {
     routePaths.push(note.href);
   });

@@ -13,4 +13,9 @@
   <ssr-if condition="excerpt">
     <p><ssr-html>{{excerpt}}</ssr-html></p>
   </ssr-if>
+  <ssr-if condition="$local.llms === true">
+    <p class="Hidden" aria-hidden="true">
+      <a aria-hidden="true" tabindex="-1" href="/llms{{href}}" rel="nofollow">llm version</a>
+    </p>
+  </ssr-if>
 </article>

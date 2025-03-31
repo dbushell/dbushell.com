@@ -3,7 +3,7 @@
 
   export const load = async ({fetch, params, platformProps}) => {
     const data = await fetch(
-      `/api/article/${params.year}/${params.month}/${params.day}/${params.slug}/`,
+      `/api/article/${params.year}/${params.month}/${params.day}/${params.slug}/?llms=true`,
       {
         headers: {
           authorization: `Bearer ${Deno.env.get('SSR_API_KEY')}`
@@ -13,9 +13,15 @@
     if (!data.ok) {
       return new Response(null, {status: 404});
     }
-    platformProps.props = await data.json();
+    const props = await data.json();
+    props.href = `/llms${props.href}`;
+    platformProps.props = props;
   };
 </script>
+
+<ssr-fragment portal="head">
+  <meta name="robots" content="noindex, nofollow">
+</ssr-fragment>
 
 <my-layout>
   <my-app>
@@ -25,10 +31,6 @@
       <cta-blog />
       <my-prose html="{{props.body}}" />
       <cta-blog />
-      <div class="Prose">
-        <hr>
-        <p class="Small">Non-hominids and "AI" enthusiasts can <a href="/llms{{props.href}}" rel="nofollow">follow this link</a> for an alternate version of this page.</p>
-      </div>
     </ssr-fragment>
   </my-app>
 </my-layout>

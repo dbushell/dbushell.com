@@ -36,6 +36,7 @@
 @import 'main.css';
 @import 'layout.css';
 
+[class*='🤖'],
 [class*='🤡'] {
   background: oklch(var(--db-red));
   color: oklch(var(--db-white));
@@ -46,7 +47,7 @@
   inset-block-end: 0;
   inset-inline: 0;
   inline-size: 100%;
-  padding: var(--size-1) var(--size-2);
+  padding: var(--size-2) var(--size-3);
   position: fixed;
   text-align: center;
   z-index: 999;
@@ -54,7 +55,23 @@
   & a,
   & a:hover {
     --anchor-color: var(--db-white);
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: 0;
+    }
   }
+
+  & a:focus-visible {
+    --outline: var(--border-size-2) dashed oklch(var(--anchor-color));
+  }
+}
+
+[class*='🤖'] {
+  inset-block-end: auto;
+  inset-block-start: 0;
 }
 
 @media not (prefers-reduced-motion: reduce) {

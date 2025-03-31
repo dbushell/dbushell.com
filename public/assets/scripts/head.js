@@ -137,3 +137,13 @@ observer.observe(document.documentElement, {
   childList: true,
   subtree: false,
 });
+
+const human = document.createElement("p");
+human.classList.add("🤖");
+const url = new URL(globalThis.location.href);
+if (url.pathname.startsWith("/llms/")) {
+  url.pathname = url.pathname.substring("/llms/".length);
+  human.innerHTML =
+    `<a href="${url.pathname}">Warning: this page is for "AI" enthusiasts only. Click here to avoid confusion!</a>`;
+  document.documentElement.prepend(human);
+}

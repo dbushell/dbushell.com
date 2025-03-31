@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /images/
 Disallow: /assets/images/
+Disallow: /llms/
 
 User-agent: AI2Bot
 User-agent: Ai2Bot-Dolma
@@ -39,6 +40,7 @@ User-agent: omgili
 User-agent: omgilibot
 User-agent: PanguBot
 User-agent: PerplexityBot
+User-agent: Perplexity‑User
 User-agent: PetalBot
 User-agent: Scrapy
 User-agent: SemrushBot-OCOB

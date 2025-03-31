@@ -189,6 +189,10 @@ h3 {
   text-wrap: balance;
 }
 
+.Small {
+  --font-size: var(--font-size-0);
+}
+
 .Large {
   --font-size: var(--font-size-2);
 }
