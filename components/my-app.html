@@ -2,6 +2,7 @@
   const href = props.href ?? '/';
   const isArticle = /\d{4}(\/|-)\d{2}\1\d{2}/.test(href);
   const isBlog = /^(?:\/llms)?\/\d{4}(\/|-)\d{2}\1\d{2}/.test(href);
+  const isLLM = href.startsWith("/llms/");
 
   var className = "Layout";
   if (isBlog) {
@@ -26,20 +27,24 @@
   if (isArticle) {
     ogType = "article";
   }
+  let ogUrl = href;
+  if (isLLM) {
+    ogUrl = ogUrl.replaceAll("/llms/", "/");
+  }
   if (isBlog && new Date(props.date).getFullYear() >= 2020) {
-    const image = href.slice(1, -1).replaceAll("/", "-") + ".png";
+    const image = ogUrl.slice(1, -1).replaceAll("/", "-") + ".png";
     ogImage = `https://dbushell.com/images/articles/${image}?v=${deployHash}`;
   }
 </script>
 
 <ssr-fragment portal="head">
   <title>{{longTitle}}</title>
-  <link rel="canonical" href="https://dbushell.com{{href}}" />
+  <ssr-if condition="isLLM !== true"><link rel="canonical" href="https://dbushell.com{{href}}" /></ssr-if>
   <meta name="author" content="David Bushell" />
   <meta name="description" content="{{pageDescription}}" />
   <meta name="fediverse:creator" content="@dbushell@fosstodon.org" />
   <meta property="og:title" content="{{shortTitle}}" />
-  <meta property="og:url" content="https://dbushell.com{{href}}" />
+  <meta property="og:url" content="https://dbushell.com{{ogUrl}}" />
   <meta property="og:description" content="{{pageDescription}}" />
   <meta property="og:image" content="{{ogImage}}" />
   <meta property="og:site_name" content="dbushell.com" />

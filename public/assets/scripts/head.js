@@ -138,10 +138,10 @@ observer.observe(document.documentElement, {
   subtree: false,
 });
 
-const human = document.createElement("p");
-human.classList.add("🤖");
 const url = new URL(globalThis.location.href);
 if (url.pathname.startsWith("/llms/")) {
+  const human = document.createElement("p");
+  human.classList.add("🤖");
   url.pathname = url.pathname.substring("/llms/".length);
   human.innerHTML =
     `<a href="${url.pathname}">Warning: this page is for "AI" enthusiasts only. Click here to avoid confusion!</a>`;
