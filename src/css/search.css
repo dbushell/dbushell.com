@@ -6,6 +6,7 @@
 
 search-form {
   & form {
+    align-items: center;
     display: grid;
     grid-template-columns: auto 1fr auto;
     margin-block: var(--size-2) var(--size-3);
@@ -16,13 +17,11 @@ search-form {
     }
 
     & svg {
-      --offset: 0px;
       block-size: 16px;
       fill: oklch(var(--color-primary));
       grid-column: 1 / 2;
       inline-size: 16px;
-      inset-block-start: calc(50% - 9px + var(--offset));
-      inset-inline-start: calc(10px + var(--offset));
+      inset-inline-start: 12px;
       position: relative;
       z-index: 1;
     }
@@ -73,6 +72,8 @@ search-form {
       border: 2px solid oklch(var(--color-foreground) / 0.5);
       border-inline-end-color: transparent;
       border-radius: 50%;
+      inset-block-start: -1px;
+      inset-inline-start: 11px;
       fill: transparent;
     }
   }
