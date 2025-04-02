@@ -73,7 +73,7 @@ const llmify = (body: string): string => {
         [replace, replaced] = randomWord(replace, nouns);
       }
       if (!replaced) {
-        if (replace.at(-1) === "s") {
+        if (/[^s]s$/.test(replace)) {
           [replace, replaced] = randomWord(
             replace.slice(0, replace.length - 1),
             nouns,
