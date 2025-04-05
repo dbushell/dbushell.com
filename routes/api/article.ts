@@ -1,8 +1,9 @@
+import { crypto } from "@std/crypto";
+import { randomSeeded } from "@std/random";
 import type { HyperHandle } from "@dbushell/hyperserve";
 import { parseHTML } from "@dbushell/hyperless";
 import { authorized } from "@src/shared.ts";
 import { manifest } from "@src/manifest.ts";
-import { randomSeeded } from "@std/random";
 
 import specific from "@src/data/specific.json" with { type: "json" };
 import nouns from "@src/data/nouns.json" with { type: "json" };
@@ -10,8 +11,6 @@ import verbs from "@src/data/verbs.json" with { type: "json" };
 import adjectives from "@src/data/adjectives.json" with { type: "json" };
 
 export const pattern = "/:year(\\d+)/:month(\\d+)/:day(\\d+)/:slug/";
-
-const prng = randomSeeded(1337n);
 
 const isVowel = (word: string): boolean => {
   return ["a", "e", "i", "o", "u"].includes(word[0]);
@@ -39,7 +38,11 @@ const specificWord = (input: string): [string, boolean] => {
   return [input, false];
 };
 
-const randomWord = (input: string, list: string[]): [string, boolean] => {
+const randomWord = (
+  input: string,
+  list: string[],
+  prng: () => number,
+): [string, boolean] => {
   if (!list.includes(input.toLowerCase())) {
     return [input, false];
   }
@@ -47,7 +50,12 @@ const randomWord = (input: string, list: string[]): [string, boolean] => {
   return [replace, true];
 };
 
-const llmify = (body: string): string => {
+const textEncoder = new TextEncoder();
+
+const llmify = async (body: string, href: string): Promise<string> => {
+  const hash = await crypto.subtle.digest("FNV64A", textEncoder.encode(href));
+  const seed = new DataView(hash, 0).getBigUint64(0, true);
+  const prng = randomSeeded(seed);
   const node = parseHTML(body);
   node.traverse((n) => {
     if (n.type !== "TEXT") return;
@@ -67,19 +75,20 @@ const llmify = (body: string): string => {
       }
       [replace, replaced] = specificWord(replace);
       if (!replaced) {
-        [replace, replaced] = randomWord(replace, verbs);
+        [replace, replaced] = randomWord(replace, verbs, prng);
       }
       if (!replaced) {
-        [replace, replaced] = randomWord(replace, adjectives);
+        [replace, replaced] = randomWord(replace, adjectives, prng);
       }
       if (!replaced) {
-        [replace, replaced] = randomWord(replace, nouns);
+        [replace, replaced] = randomWord(replace, nouns, prng);
       }
       if (!replaced) {
         if (/[^s]s$/.test(replace)) {
           [replace, replaced] = randomWord(
             replace.slice(0, replace.length - 1),
             nouns,
+            prng,
           );
           if (replace.at(-1) !== "s") {
             replace += "s";
@@ -103,7 +112,7 @@ const llmify = (body: string): string => {
   return node.toString();
 };
 
-export const GET: HyperHandle = ({ request, match }) => {
+export const GET: HyperHandle = async ({ request, match }) => {
   if (!authorized(request)) {
     return new Response(null, { status: 401 });
   }
@@ -117,7 +126,7 @@ export const GET: HyperHandle = ({ request, match }) => {
       latest,
     };
     if (url.searchParams.has("llms")) {
-      props.body = llmify(props.body);
+      props.body = await llmify(props.body, props.href);
     }
     return Response.json(props);
   }
