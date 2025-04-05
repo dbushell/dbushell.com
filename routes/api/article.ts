@@ -2,6 +2,7 @@ import type { HyperHandle } from "@dbushell/hyperserve";
 import { parseHTML } from "@dbushell/hyperless";
 import { authorized } from "@src/shared.ts";
 import { manifest } from "@src/manifest.ts";
+import { randomSeeded } from "@std/random";
 
 import specific from "@src/data/specific.json" with { type: "json" };
 import nouns from "@src/data/nouns.json" with { type: "json" };
@@ -9,6 +10,8 @@ import verbs from "@src/data/verbs.json" with { type: "json" };
 import adjectives from "@src/data/adjectives.json" with { type: "json" };
 
 export const pattern = "/:year(\\d+)/:month(\\d+)/:day(\\d+)/:slug/";
+
+const prng = randomSeeded(1337n);
 
 const isVowel = (word: string): boolean => {
   return ["a", "e", "i", "o", "u"].includes(word[0]);
@@ -40,7 +43,7 @@ const randomWord = (input: string, list: string[]): [string, boolean] => {
   if (!list.includes(input.toLowerCase())) {
     return [input, false];
   }
-  const replace = list[Math.floor(Math.random() * list.length)];
+  const replace = list[Math.floor(prng() * list.length)];
   return [replace, true];
 };
 
