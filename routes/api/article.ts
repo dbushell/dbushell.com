@@ -54,7 +54,7 @@ const textEncoder = new TextEncoder();
 
 const llmify = async (body: string, href: string): Promise<string> => {
   const hash = await crypto.subtle.digest("FNV64A", textEncoder.encode(href));
-  const seed = new DataView(hash, 0).getBigUint64(0, true);
+  const seed = new DataView(hash, 0).getBigUint64(0);
   const prng = randomSeeded(seed);
   const node = parseHTML(body);
   node.traverse((n) => {
