@@ -65,7 +65,7 @@ export const GET: HyperHandle = () => {
       if (n.tag === "button" && n.attributes.has("data-copy")) remove.add(n);
     });
     for (const n of remove) n.detach();
-    xml = xml.replace(`{{title}}`, () => bookmark.title);
+    xml = xml.replace(`{{title}}`, () => escape(unescape(bookmark.title)));
     xml = xml.replace(`{{description}}`, () => excerpt);
     xml = xml.replace(`{{html}}`, () => node.toString());
     xml = xml.replace(`{{link}}`, () => guid.href);
