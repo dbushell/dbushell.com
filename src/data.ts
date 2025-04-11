@@ -36,7 +36,15 @@ export const readProps = async (srcPath: string): Promise<Props> => {
   // Check cached props
   const pathname = path.join(cachePath, `${hash}.json`);
   if (DEV && (await fs.exists(pathname))) {
-    return JSON.parse(await Deno.readTextFile(pathname));
+    return JSON.parse(
+      await Deno.readTextFile(pathname),
+      (key: string, value: unknown) => {
+        if (key === "date" && typeof value === "string") {
+          return new Date(value);
+        }
+        return value;
+      },
+    );
   }
 
   // Parse front matter
@@ -68,10 +76,7 @@ export const readProps = async (srcPath: string): Promise<Props> => {
   // Pass body through Marked for full HTML
   props.body = await markdown(props.body);
   // Escape Hypermore props
-  props.body = props.body.replace(
-    /{{([^{].*?)}}/gs,
-    (...m) => (`{{!${m[1]}}}`),
-  );
+  props.body = props.body.replace(/{{([^{].*?)}}/gs, (...m) => `{{!${m[1]}}}`);
   props.excerpt = excerpt(props.body);
 
   // Blog date and slug
@@ -93,10 +98,7 @@ export const readProps = async (srcPath: string): Promise<Props> => {
   if (Deno.args.includes("--snapshot")) {
     let snap = `${props.href.slice(1, -1).replaceAll("/", "-")}.html`;
     snap = path.join(snapshotPath, snap);
-    await Deno.writeTextFile(
-      snap,
-      props.body.replace(/syntax-\d+/g, ""),
-    );
+    await Deno.writeTextFile(snap, props.body.replace(/syntax-\d+/g, ""));
   }
 
   // Save cached props
@@ -126,11 +128,9 @@ export const readGlob = async (glob: string): Promise<Props[]> => {
 
 export const readArticles = async (): Promise<Props[]> => {
   const arr = await readGlob(path.join(dataPath, `blog/**/*.md`));
-  arr.sort((
-    a,
-    b,
-  ) => ((a.date?.valueOf() ?? 0) < (b.date?.valueOf() ?? 0) ? 1 : -1));
-  return arr;
+  return arr.toSorted((a, b) => {
+    return b.date!.getTime() - a.date!.getTime();
+  });
 };
 
 export const readPages = async (): Promise<Props[]> => {
@@ -169,10 +169,7 @@ export const readNotes = async (): Promise<NoteProps[]> => {
       promises.push(
         markdown(lines.join("\n")).then((body) => {
           // Escape Hypermore props
-          body = body.replace(
-            /{{([^{].*?)}}/gs,
-            (...m) => (`{{!${m[1]}}}`),
-          );
+          body = body.replace(/{{([^{].*?)}}/gs, (...m) => `{{!${m[1]}}}`);
           props.push({
             date,
             body,
