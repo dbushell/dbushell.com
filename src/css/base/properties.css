@@ -1,65 +1,65 @@
 @property --font-size {
-  syntax: '<length>';
+  syntax: "<length>";
   inherits: true;
   initial-value: 16px;
 }
 
 @property --line-height {
-  syntax: '<number>';
+  syntax: "<number>";
   inherits: true;
   initial-value: 1.4;
 }
 
 @property --color1 {
-  syntax: '<color>';
+  syntax: "<color>";
   inherits: false;
   initial-value: oklch(0% 0 0);
 }
 
 @property --color2 {
-  syntax: '<color>';
+  syntax: "<color>";
   inherits: false;
   initial-value: oklch(0% 0 0);
 }
 
 :root {
   --🤡: 0.0625rem;
-  --fluid1: calc((100vi - (400 * var(--🤡))) / (1920 - 400));
-  --fluid2: calc((100vi - (400 * var(--🤡))) / (1220 - 400));
+  --fluid1: calc((100vi - 400 * var(--🤡)) / (1920 - 400));
+  --fluid2: calc((100vi - 400 * var(--🤡)) / (1220 - 400));
 
   --font-size-0: clamp(
     calc(14 * var(--🤡)),
-    calc((14 * var(--🤡)) + (16 - 14) * var(--fluid2)),
+    calc(14 * var(--🤡) + (16 - 14) * var(--fluid2)),
     calc(16 * var(--🤡))
   );
 
   --font-size-1: clamp(
     calc(17 * var(--🤡)),
-    calc((17 * var(--🤡)) + (20 - 17) * var(--fluid2)),
+    calc(17 * var(--🤡) + (20 - 17) * var(--fluid2)),
     calc(20 * var(--🤡))
   );
 
   --font-size-2: clamp(
     calc(19 * var(--🤡)),
-    calc((19 * var(--🤡)) + (26 - 19) * var(--fluid1)),
+    calc(19 * var(--🤡) + (26 - 19) * var(--fluid1)),
     calc(26 * var(--🤡))
   );
 
   --font-size-3: clamp(
     calc(21 * var(--🤡)),
-    calc((21 * var(--🤡)) + (32 - 21) * var(--fluid1)),
+    calc(21 * var(--🤡) + (32 - 21) * var(--fluid1)),
     calc(32 * var(--🤡))
   );
 
   --font-size-4: clamp(
     calc(31 * var(--🤡)),
-    calc((31 * var(--🤡)) + (80 - 31) * var(--fluid1)),
+    calc(31 * var(--🤡) + (80 - 31) * var(--fluid1)),
     calc(80 * var(--🤡))
   );
 
   --font-size: var(--font-size-1);
 
-  --font-family: 'Atkinson Hyperlegible Next', sans-serif;
+  --font-family: "Atkinson Hyperlegible Next", sans-serif;
 
   --font-weight-base: 0;
   --font-weight-1: calc(var(--font-weight-base) + 400);
@@ -84,7 +84,7 @@
 
   --page-margin: clamp(
     calc(20 * var(--🤡)),
-    calc((20 * var(--🤡)) + (100 - 20) * var(--fluid1)),
+    calc(20 * var(--🤡) + (100 - 20) * var(--fluid1)),
     calc(100 * var(--🤡))
   );
 
@@ -94,7 +94,8 @@
 }
 
 :root {
-  --db-light: 98.2% 0.014 85; /* 98.62% 0.014 84.58; /* 40, 100%, 97%; /* 255, 250, 240; */
+  --db-light: 98.2% 0.014
+    85; /* 98.62% 0.014 84.58; /* 40, 100%, 97%; /* 255, 250, 240; */
   --db-dark: 40.05% 0.014 17.74; /* 0, 7%, 29%; /* 80, 70, 70; */
   --db-pink: 70.27% 0.192 13.7; /* 350, 100%, 69%; /* 255, 100, 125; */
   --db-red: 57.82% 0.19 16.36; /* 350, 63%, 52%; /* 210, 55, 80; */
@@ -116,8 +117,15 @@
   }
 }
 
+@media (prefers-contrast: more) {
+  * {
+    /* background: white !important;
+    color: red !important; */
+  }
+}
+
 @media screen {
-  :root[data-theme='light'] {
+  :root[data-theme="light"] {
     --color-background: var(--db-light);
     --color-background2: var(--db-white);
     --color-foreground: var(--db-dark);
@@ -133,7 +141,7 @@
     --masthead-secondary: var(--db-blue);
   }
 
-  :root[data-theme='dark'] {
+  :root[data-theme="dark"] {
     --color-background: var(--db-black);
     --color-background2: var(--db-dark);
     --color-foreground: var(--db-light);

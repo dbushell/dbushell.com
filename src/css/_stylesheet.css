@@ -1,43 +1,43 @@
 @layer base, components, modifiers;
 
-@import 'base/fonts.css' layer(base);
-@import 'base/properties.css' layer(base);
-@import 'base/reset.css' layer(base);
-@import 'base/body.css' layer(base);
-@import 'base/hidden.css' layer(base);
-@import 'base/typography.css' layer(base);
-@import 'base/code.css' layer(base);
+@import "base/fonts.css" layer(base);
+@import "base/properties.css" layer(base);
+@import "base/reset.css" layer(base);
+@import "base/body.css" layer(base);
+@import "base/hidden.css" layer(base);
+@import "base/typography.css" layer(base);
+@import "base/code.css" layer(base);
 
-@import 'button.css';
-@import 'checkbox.css';
-@import 'field.css';
-@import 'image.css';
-@import 'list.css';
-@import 'pagination.css';
-@import 'prose.css';
-@import 'rule.css';
-@import 'star.css';
-@import 'card.css';
-@import 'box.css';
-@import 'note.css';
-@import 'table.css';
-@import 'search.css';
-@import 'footer.css';
-@import 'settings.css';
+@import "button.css";
+@import "checkbox.css";
+@import "field.css";
+@import "image.css";
+@import "list.css";
+@import "pagination.css";
+@import "prose.css";
+@import "rule.css";
+@import "star.css";
+@import "card.css";
+@import "box.css";
+@import "note.css";
+@import "table.css";
+@import "search.css";
+@import "footer.css";
+@import "settings.css";
 
-@import 'crane.css';
-@import 'form.css';
-@import 'social.css';
-@import 'masthead.css';
-@import 'nav.css';
-@import 'bio.css';
-@import 'featured.css';
-@import 'aside.css';
-@import 'main.css';
-@import 'layout.css';
+@import "crane.css";
+@import "form.css";
+@import "social.css";
+@import "masthead.css";
+@import "nav.css";
+@import "bio.css";
+@import "featured.css";
+@import "aside.css";
+@import "main.css";
+@import "layout.css";
 
-[class*='🤖'],
-[class*='🤡'] {
+[class*="🤖"],
+[class*="🤡"] {
   background: oklch(var(--db-red));
   color: oklch(var(--db-white));
   display: block;
@@ -57,7 +57,7 @@
     --anchor-color: var(--db-white);
 
     &::after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       inset: 0;
@@ -69,7 +69,7 @@
   }
 }
 
-[class*='🤖'] {
+[class*="🤖"] {
   inset-block-end: auto;
   inset-block-start: 0;
 }
