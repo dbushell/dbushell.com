@@ -4,11 +4,13 @@ import { middleware as csp_middleware } from "./src/middleware/csp.ts";
 import { middleware as debug_middleware } from "./src/middleware/debug.ts";
 import { middleware as redirect_middleware } from "./src/middleware/redirect.ts";
 import { middleware as static_middleware } from "./src/middleware/static.ts";
+import { middleware as hypermore_middleware } from "./src/middleware/hypermore.ts";
 
 const config: DConfig = {
   dev_mode: true,
   root_dir: new URL("./", import.meta.url),
   public_dir: "./public",
+  template_dir: "./components",
 };
 
 const options: Deno.ServeTcpOptions = {
@@ -22,9 +24,13 @@ debug_middleware(app, config);
 redirect_middleware(app, config);
 csp_middleware(app, config);
 static_middleware(app, config);
+await hypermore_middleware(app, config);
 
-app.get("/hello/", (ctx) => {
-  return ctx.text("Hello, World!");
+app.get("/hello/", async (ctx) => {
+  const html = await ctx.var.render(
+    `<my-button href="/">Home</my-button>`,
+  );
+  return ctx.html(html);
 });
 
 app.notFound((ctx) => {
