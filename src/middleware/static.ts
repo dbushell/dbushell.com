@@ -1,10 +1,9 @@
-import type { Hono } from "@hono/hono";
 import * as fs from "@std/fs";
 import * as path from "@std/path";
 import { serveDir } from "@std/http/file-server";
-import type { Config } from "@src/types.ts";
+import type { DConfig, DHono } from "../types.ts";
 
-export const middleware = (hono: Hono, config: Config) => {
+export const middleware = (hono: DHono, config: DConfig) => {
   hono.use("/*", async (ctx, next) => {
     const public_dir = path.resolve(
       config.root_dir.pathname,

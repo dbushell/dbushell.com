@@ -1,11 +1,11 @@
 import { Hono } from "@hono/hono";
-import type { Config } from "@src/types.ts";
-import { middleware as csp_middleware } from "@src/middleware/csp.ts";
-import { middleware as debug_middleware } from "@src/middleware/debug.ts";
-import { middleware as redirect_middleware } from "@src/middleware/redirect.ts";
-import { middleware as static_middleware } from "@src/middleware/static.ts";
+import type { DConfig, DEnv, DHono } from "./src/types.ts";
+import { middleware as csp_middleware } from "./src/middleware/csp.ts";
+import { middleware as debug_middleware } from "./src/middleware/debug.ts";
+import { middleware as redirect_middleware } from "./src/middleware/redirect.ts";
+import { middleware as static_middleware } from "./src/middleware/static.ts";
 
-const config: Config = {
+const config: DConfig = {
   dev_mode: true,
   root_dir: new URL("./", import.meta.url),
   public_dir: "./public",
@@ -16,7 +16,7 @@ const options: Deno.ServeTcpOptions = {
   hostname: "localhost",
 };
 
-const app = new Hono();
+const app: DHono = new Hono<DEnv>();
 
 debug_middleware(app, config);
 redirect_middleware(app, config);
@@ -36,6 +36,6 @@ app.onError((err, ctx) => {
   return ctx.text("Internal Server Error", 500);
 });
 
-Deno.serve(options, (request, _info) => {
-  return app.fetch(request);
+Deno.serve(options, (request, info) => {
+  return app.fetch(request, { info });
 });

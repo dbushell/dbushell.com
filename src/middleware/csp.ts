@@ -1,5 +1,4 @@
-import type { Hono } from "@hono/hono";
-import type { Config } from "@src/types.ts";
+import type { DConfig, DHono } from "../types.ts";
 
 const default_policies = {
   "child-src": ["'self'"],
@@ -43,7 +42,7 @@ const getPolicies = (response: Response) => {
   return csp;
 };
 
-export const middleware = (hono: Hono, _config: Config) => {
+export const middleware = (hono: DHono, _config: DConfig) => {
   hono.use("/*", async (ctx, next) => {
     await next();
     try {

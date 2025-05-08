@@ -1,8 +1,7 @@
-import type { Hono } from "@hono/hono";
 import { assert } from "@std/assert";
-import type { Config } from "@src/types.ts";
+import type { DConfig, DHono } from "../types.ts";
 
-export const middleware = (hono: Hono, _config: Config) => {
+export const middleware = (hono: DHono, _config: DConfig) => {
   hono.use("/*", (ctx, next) => {
     const { url } = ctx.req;
     // Append trailing slashes
