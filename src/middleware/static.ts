@@ -17,8 +17,11 @@ export const middleware = (hono: DHono, config: DConfig) => {
       fsRoot: public_dir,
       quiet: true,
     });
-    if (response.ok || response.status === 304) {
+    if (response.status === 304) {
       return response;
+    }
+    if (response.ok) {
+      ctx.res = response;
     }
     await next();
   });

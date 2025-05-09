@@ -3,6 +3,7 @@
 !**/*.ts
 !data
 !public
+!routes
 !src
 !.gitattributes
 !.gitignore

@@ -5,6 +5,7 @@ export type DConfig = {
   devMode: boolean;
   rootDir: URL;
   publicDir: string;
+  routesDir: string;
   templateDir: string;
   deployHash: string;
 };
