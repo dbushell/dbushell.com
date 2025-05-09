@@ -1,6 +1,9 @@
 /*
 **/*.*
 !**/*.ts
+!data
 !src
+!.gitattributes
 !.gitignore
+!.gitmodules
 !deno.jsonc
