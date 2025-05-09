@@ -1,0 +1,21 @@
+<script context="component">
+  const {hash, href, title, excerpt} = article;
+  const id = hash ? `id-${hash}` : undefined;
+</script>
+
+<article class="Article">
+  <ssr-element tag="{{$local.heading ?? 'h2'}}" id="{{id}}" class="Star">
+    <a href="{{href}}"><ssr-html>{{title}}</ssr-html></a>
+  </ssr-element>
+  <ssr-if condition="article.date">
+    <p><my-time date="{{article.date}}" /></p>
+  </ssr-if>
+  <ssr-if condition="excerpt">
+    <p><ssr-html>{{excerpt}}</ssr-html></p>
+  </ssr-if>
+  <ssr-if condition="$local.llms === true">
+    <p class="Hidden" aria-hidden="true">
+      <a aria-hidden="true" tabindex="-1" href="/llms{{href}}" rel="nofollow">llm version</a>
+    </p>
+  </ssr-if>
+</article>

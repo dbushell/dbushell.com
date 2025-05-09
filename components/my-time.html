@@ -1,0 +1,34 @@
+<script context="component">
+  const newDate = new Date(date);
+  const iso = newDate.toISOString();
+  const d = newDate.getDate().toString();
+  const dddd = newDate.toLocaleString('en-GB', {weekday: 'long'});
+  const dd = newDate.toLocaleString('en-GB', {weekday: 'short'});
+  const mmmm = newDate.toLocaleString('en-GB', {month: 'long'});
+  const mmm = newDate.toLocaleString('en-GB', {month: 'short'});
+  const yyyy = newDate.getFullYear().toString();
+  const hh = newDate.getUTCHours().toString().padStart(2, '0');
+  const mm = newDate.getUTCMinutes().toString().padStart(2, '0');
+</script>
+
+<time class="Time" datetime="{{iso}}" title="{{iso}}">
+  <ssr-if condition="$local.href">
+    <a href="{{$local.href}}">
+      <ssr-if condition="$local.time !== undefined">
+        {{hh}}:{{mm}} <abbr title="{{dddd}}">{{dd}}</abbr>
+      <ssr-else>
+        {{dddd}}
+      </ssr-if>
+      {{d}} <abbr title="{{mmmm}}">{{mmm}}</abbr>
+      {{yyyy}}
+    </a>
+  <ssr-else>
+    <ssr-if condition="$local.time !== undefined">
+      {{hh}}:{{mm}} <abbr title="{{dddd}}">{{dd}}</abbr>
+    <ssr-else>
+      {{dddd}}
+    </ssr-if>
+    {{d}} <abbr title="{{mmmm}}">{{mmm}}</abbr>
+    {{yyyy}}
+  </ssr-if>
+</time>

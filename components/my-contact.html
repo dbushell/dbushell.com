@@ -1,0 +1,73 @@
+<form aria-labelledby="contact-heading" method="post" action="https://contact.dbushell.com">
+  <h2 id="contact-heading" class="Hidden">Contact Form</h2>
+  <ul class="Form">
+    <li>
+      <label class="Cursive" for="contact-name">Name</label>
+      <input required type="text" class="Field" id="contact-name" name="name" maxlength="100" />
+    </li>
+    <li>
+      <label class="Cursive" for="contact-email">Email Address</label>
+      <input
+        required
+        type="email"
+        class="Field"
+        id="contact-email"
+        name="email"
+        placeholder="me@example.com…"
+        maxlength="200"
+      />
+    </li>
+    <li>
+      <label class="Cursive" for="contact-enquiry">Enquiry</label>
+      <textarea
+        required
+        class="Field"
+        id="contact-enquiry"
+        name="enquiry"
+        rows="5"
+        maxlength="10000"
+        placeholder="Tell me about your project…"
+      ></textarea>
+    </li>
+    <li>
+      <h3 class="Privacy">
+        <svg role="presentation" width="24" height="24" viewbox="0 0 24 24">
+          <path
+            d="M14 9v2h-4V9c0-1.104.897-2 2-2s2 .896 2 2zm10 3c0 6.627-5.373
+              12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12zm-8-1h-1V9a3 3
+              0 0 0-6 0v2H8v6h8v-6z"
+          />
+        </svg>
+        <span>Your data and privacy</span>
+      </h3>
+      <p>
+        <small>
+          This form securely emails your data to my encrypted inbox for the purpose of responding to
+          your enquiry and conducting business with you.
+        </small>
+      </p>
+      <p>
+        <small>
+          See my <a href="/privacy/" target="_blank">Privacy Policy</a> for more information.
+        </small>
+      </p>
+      <label for="contact-privacy">
+        <input
+          required
+          type="checkbox"
+          class="Hidden | Checkbox"
+          id="contact-privacy"
+          name="privacy"
+          value="consent"
+          autocomplete="off"
+        />
+        <span>I consent to my data being used as outlined above</span>
+      </label>
+    </li>
+    <li>
+      <button class="Button" type="submit">
+        <span>Send Message</span>
+      </button>
+    </li>
+  </ul>
+</form>

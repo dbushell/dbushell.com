@@ -1,0 +1,12 @@
+<script context="component">
+  let classname = 'Comic';
+  if (typeof balance === 'undefined' || balance !== false) {
+    classname += ' Balance';
+  }
+  const html = title.replaceAll('-', '<span class="Hyphen">-</span>');
+  const id = $local.hash ? `id-${$local.hash}` : undefined;
+</script>
+
+<h1 class="{{classname}}" id="{{id}}">
+  <ssr-html>{{html}}</ssr-html>
+</h1>

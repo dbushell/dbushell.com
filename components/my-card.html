@@ -1,0 +1,17 @@
+<ssr-element tag="{{$local.tag ?? 'article'}}" class="Card">
+  <ssr-element tag="{{$local.heading ?? 'h3'}}">
+    <span class="Star">
+      <ssr-if condition="href">
+        <a href="{{href}}">{{title}}</a>
+        <ssr-else>
+        {{title}}
+      </ssr-if>
+    </span>
+    <ssr-if condition="$local.subtitle">
+      <span class="Cursive">{{subtitle}}</span>
+    </ssr-if>
+  </ssr-element>
+  <div>
+    <ssr-slot />
+  </div>
+</ssr-element>

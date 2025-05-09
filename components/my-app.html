@@ -1,0 +1,83 @@
+<script context="component">
+  const href = props.href ?? '/';
+  const isArticle = /\d{4}(\/|-)\d{2}\1\d{2}/.test(href);
+  const isBlog = /^\/\d{4}(\/|-)\d{2}\1\d{2}/.test(href);
+
+  var className = "Layout";
+  if (isBlog) {
+    className += " Layout--focus";
+  }
+
+  let siteTitle = "David Bushell – ";
+  if (href === '/') {
+    siteTitle += "Freelance Web Design & Front-end Development (UK)";
+  } else {
+    siteTitle += isArticle ? "Web Dev (UK)" : "Freelance Web Development (UK)";
+  }
+
+  let shortTitle = props.title ?? siteTitle;
+  let pageDescription = props.description ?? shortTitle;
+  let longTitle = siteTitle;
+  if (props.title) {
+    longTitle = `${props.title} – ${longTitle}`;
+  }
+  let ogType = "";
+  let ogImage = `https://dbushell.com/assets/icons/512x512.png`;
+  if (isArticle) {
+    ogType = "article";
+  }
+  let ogUrl = href;
+  if (isBlog && new Date(props.date).getFullYear() >= 2020) {
+    const image = ogUrl.slice(1, -1).replaceAll("/", "-") + ".png";
+    ogImage = `https://dbushell.com/images/articles/${image}`;
+  }
+</script>
+
+<ssr-fragment portal="head">
+  <title>{{longTitle}}</title>
+  <link rel="canonical" href="https://dbushell.com{{href}}" />
+  <meta name="author" content="David Bushell" />
+  <meta name="description" content="{{pageDescription}}" />
+  <meta name="fediverse:creator" content="@db@social.lol" />
+  <link rel="me" href="https://social.lol/@db" />
+  <meta property="og:title" content="{{shortTitle}}" />
+  <meta property="og:url" content="https://dbushell.com{{ogUrl}}" />
+  <meta property="og:description" content="{{pageDescription}}" />
+  <meta property="og:image" content="{{ogImage}}" />
+  <meta property="og:site_name" content="dbushell.com" />
+  <ssr-if condition="ogType"><meta property="og:type" content="{{ogType}}" /></ssr-if>
+<script>
+const themes = ["dark", "light", "system"];
+globalThis.__setTheme = (value) => {
+  if (!themes.includes(value)) value = "light";
+  localStorage.setItem("theme", value);
+  if (value === "system") {
+    value = globalThis.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  }
+  document.documentElement.dataset.theme = value;
+};
+globalThis.__setTheme(localStorage.getItem("theme"));
+</script>
+  <script type="module" src="/assets/scripts/head.js"></script>
+  <script fetchpriority="low" type="module" src="/assets/scripts/search-form.js"></script>
+</ssr-fragment>
+
+<div class="{{className}}">
+  <ssr-cache name="masthead">
+    <my-masthead />
+  </ssr-cache>
+  <main class="Main">
+    <ssr-slot name="main" />
+  </main>
+  <ssr-slot name="aside">
+    <ssr-cache name="aside">
+      <my-aside articles="{{props.latest}}" />
+    </ssr-cache>
+  </ssr-slot>
+</div>
+<ssr-cache name="footer">
+  <my-lightbulb />
+  <my-footer />
+</ssr-cache>

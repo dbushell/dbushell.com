@@ -1,0 +1,10 @@
+<article class="Note">
+  <div class="Prose">
+    <ssr-html>{{note.body}}</ssr-html>
+  </div>
+  <ssr-if condition="note.date">
+    <footer>
+      <my-time time href="{{note.href}}" date="{{note.date}}" />
+    </footer>
+  </ssr-if>
+</article>
