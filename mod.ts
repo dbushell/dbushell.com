@@ -9,6 +9,11 @@ import { middleware as hypermore_middleware } from "@src/middleware/hypermore.ts
 import { encodeHash } from "@src/utils.ts";
 import { rebuildCSS } from "@src/content/css.ts";
 import { rebuildManifest } from "@src/content/manifest.ts";
+import { build } from "@src/build.ts";
+
+const DEV = Deno.args.includes("--dev");
+// const PROD = Deno.args.includes("--prod");
+const BUILD = Deno.args.includes("--build");
 
 // @todo Use .env file
 Deno.env.set("ORIGIN", "https://dbushell.com");
@@ -22,7 +27,7 @@ const config: DConfig = {
   origin: new URL(
     Deno.env.get("ORIGIN") ?? `http://${options}:${options.port}`,
   ),
-  devMode: Deno.args.includes("--dev"),
+  devMode: DEV,
   rootDir: new URL("./", import.meta.url),
   publicDir: "./public",
   routeDir: "./routes",
@@ -44,7 +49,7 @@ debug_middleware(app, config);
 redirect_middleware(app, config);
 csp_middleware(app, config);
 await hypermore_middleware(app, config);
-routes_middleware(app, config);
+await routes_middleware(app, config);
 static_middleware(app, config);
 
 app.notFound(async (ctx) => {
@@ -64,6 +69,11 @@ app.onError((err, ctx) => {
   console.error(err);
   return ctx.text("Internal Server Error", 500);
 });
+
+if (BUILD) {
+  await build(app, config);
+  Deno.exit(0);
+}
 
 Deno.serve(options, (request, info) => {
   return app.fetch(request, {

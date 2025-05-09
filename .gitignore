@@ -8,6 +8,7 @@
 !routes
 !routes/**/*.html
 !src
+!test
 !.gitattributes
 !.gitignore
 !.gitmodules
