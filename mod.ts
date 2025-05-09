@@ -107,7 +107,7 @@ const directories = [
   "data",
   "components",
   "routes",
-  "public/assets/css",
+  "public",
 ];
 
 const update = debounce(async (ev: Deno.FsEvent) => {
@@ -123,7 +123,7 @@ const update = debounce(async (ev: Deno.FsEvent) => {
     if (!directories.includes(dir.split("/")[0])) continue;
     if (event_path.includes(".min.")) continue;
     if (dir.startsWith("data/")) data = true;
-    if (dir.startsWith("public/assets/css")) css = true;
+    if (dir.startsWith("public/assets/css/")) css = true;
     refresh = true;
   }
   if (refresh !== true) {

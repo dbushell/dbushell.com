@@ -3,7 +3,14 @@
   <ul class="Form">
     <li>
       <label class="Cursive" for="contact-name">Name</label>
-      <input required type="text" class="Field" id="contact-name" name="name" maxlength="100" />
+      <input
+        required
+        type="text"
+        class="Field"
+        id="contact-name"
+        name="name"
+        autocomplete="off"
+        maxlength="100"/>
     </li>
     <li>
       <label class="Cursive" for="contact-email">Email Address</label>
@@ -13,6 +20,7 @@
         class="Field"
         id="contact-email"
         name="email"
+        autocomplete="off"
         placeholder="me@example.com…"
         maxlength="200"
       />

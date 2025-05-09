@@ -1,13 +1,21 @@
 import { crypto } from "@std/crypto";
 import { encodeBase64 } from "@std/encoding";
 import { Queue } from "@dbushell/carriageway";
-import { hmmarkdown, hmmtypography } from "@dbushell/hmmarkdown";
-import { AttributeMap, Node, unescape } from "@dbushell/hyperless";
-import { parseHTML } from "@dbushell/hypermore";
+import _hmmarkdown, { hmmtypography } from "@dbushell/hmmarkdown";
+import { AttributeMap, Node, parseHTML, unescape } from "@dbushell/hyperless";
 import { enhanceAnchor } from "./glossary.ts";
 import { encodeHash } from "../utils.ts";
 
-export { hmmarkdown, hmmtypography };
+export { hmmtypography };
+
+// Add custom elements
+export const hmmarkdown = (input: Parameters<typeof _hmmarkdown>[0]) => {
+  return _hmmarkdown(input, {
+    inlineTags: new Set([
+      "smart-arse",
+    ]),
+  });
+};
 
 const DEV = Deno.args.includes("--dev");
 

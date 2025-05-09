@@ -18,8 +18,8 @@ Deno.test("contact", async (test) => {
   await test.step("contact.js", () => {
     assert(
       root.find((n) =>
-        n.tag === "script" && n.attributes.get("type") === "module" &&
-        (n.attributes.get("src") ?? "").includes("/contact.js")
+        n.tag === "link" && n.attributes.get("rel") === "preload" &&
+        (n.attributes.get("href") ?? "").includes("/contact-form.js")
       ) !== null,
     );
   });

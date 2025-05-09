@@ -7,9 +7,9 @@
   },
   "imports": {
     "@dbushell/carriageway": "jsr:@dbushell/carriageway@^1.1.0",
-    "@dbushell/hmmarkdown": "jsr:@dbushell/hmmarkdown@^0.18.0",
-    "@dbushell/hyperless": "jsr:@dbushell/hyperless@^0.29.0",
-    "@dbushell/hypermore": "jsr:@dbushell/hypermore@^0.30.0",
+    "@dbushell/hmmarkdown": "jsr:@dbushell/hmmarkdown@^0.19.0",
+    "@dbushell/hyperless": "jsr:@dbushell/hyperless@^0.30.0",
+    "@dbushell/hypermore": "jsr:@dbushell/hypermore@^0.31.0",
     "@hono/hono": "jsr:@hono/hono@^4.7.9",
     "@shikijs/transformers": "npm:@shikijs/transformers@^3.4.0",
     "@src/": "./src/",

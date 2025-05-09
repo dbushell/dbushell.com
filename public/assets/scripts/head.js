@@ -70,10 +70,21 @@ onReady(() => {
     });
   });
 
-  const script = document.createElement("script");
-  script.type = "module";
-  script.src = "/assets/scripts/glossary-term.js";
-  document.body.append(script);
+  const elements = [
+    "contact-form",
+    "glossary-term",
+    "smart-arse",
+  ];
+  for (const name of elements) {
+    if (document.querySelector(name) === null) {
+      continue;
+    }
+    const script = document.createElement("script");
+    script.type = "module";
+    script.fetchPriority = "low";
+    script.src = `/assets/scripts/${name}.js`;
+    document.body.append(script);
+  }
 });
 
 if (document.querySelector("code")) {

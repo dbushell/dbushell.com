@@ -11,7 +11,7 @@
   const mm = newDate.getUTCMinutes().toString().padStart(2, '0');
 </script>
 
-<time class="Time" datetime="{{iso}}" title="{{iso}}">
+<time class="Time" datetime="{{iso}}">
   <ssr-if condition="$local.href">
     <a href="{{$local.href}}">
       <ssr-if condition="$local.time !== undefined">

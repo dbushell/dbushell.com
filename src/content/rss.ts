@@ -5,7 +5,6 @@ import {
   stripTags,
   unescape,
 } from "@dbushell/hyperless";
-// import { escape, unescape } from "@std/html/entities";
 import { NoteProps, Props } from "./types.ts";
 
 export type RssMeta = {

@@ -21,10 +21,8 @@
 @import "components/box.css";
 @import "components/note.css";
 @import "components/table.css";
-@import "components/search.css";
 @import "components/footer.css";
 @import "components/settings.css";
-@import "components/glossary.css";
 
 @import "components/crane.css";
 @import "components/form.css";
@@ -36,6 +34,10 @@
 @import "components/aside.css";
 @import "components/main.css";
 @import "components/layout.css";
+
+@import "custom-elements/search-form.css";
+@import "custom-elements/glossary-term.css";
+@import "custom-elements/smart-arse.css";
 
 [class*="🤖"],
 [class*="🤡"] {
