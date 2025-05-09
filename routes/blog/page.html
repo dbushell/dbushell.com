@@ -1,0 +1,29 @@
+<script context="module">
+  export const pattern = '/:page{\\d+}/';
+
+  export const load = async ({ctx, fetch}) => {
+    const { page } = ctx.req.param();
+    const data = await fetch(`/api/blog/${page}/`);
+    if (data.ok) {
+      return {
+        props: await data.json(),
+      }
+    }
+  };
+</script>
+
+<my-layout>
+  <my-app>
+    <ssr-fragment slot="main">
+      <my-nav current="/blog/" />
+      <my-heading title="{{props.title}}" />
+      <cta-rss />
+      <ssr-for item="item" of="props.articles">
+        <my-article article="{{item}}" llms="{{true}}" />
+      </ssr-for>
+      <ssr-if condition="props.next || props.prev">
+        <my-pagination next="{{props.next}}" prev="{{props.prev}}" />
+      </ssr-if>
+    </ssr-fragment>
+  </my-app>
+</my-layout>

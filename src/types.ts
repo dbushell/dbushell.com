@@ -23,10 +23,12 @@ export type DLoad = {
 export type DModule = {
   load?: (props: DLoad) => Promise<JSONObject | null | undefined | void>;
   pattern?: string;
+  order?: number;
 };
 
 export type DConfig = {
   devMode: boolean;
+  origin: URL;
   rootDir: URL;
   publicDir: string;
   routeDir: string;
@@ -37,6 +39,8 @@ export type DConfig = {
 export type DEnv = Env & {
   Bindings: {
     info: Deno.ServeHandlerInfo<Deno.NetAddr>;
+    origin: URL;
+    devMode: boolean;
     deployHash: string;
   };
   // Variables: {

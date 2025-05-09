@@ -10,7 +10,18 @@ import { encodeHash } from "@src/utils.ts";
 import { rebuildCSS } from "@src/content/css.ts";
 import { rebuildManifest } from "@src/content/manifest.ts";
 
+// @todo Use .env file
+Deno.env.set("ORIGIN", "https://dbushell.com");
+
+const options: Deno.ServeTcpOptions = {
+  port: 7777,
+  hostname: "localhost",
+};
+
 const config: DConfig = {
+  origin: new URL(
+    Deno.env.get("ORIGIN") ?? `http://${options}:${options.port}`,
+  ),
   devMode: true,
   rootDir: new URL("./", import.meta.url),
   publicDir: "./public",
@@ -36,8 +47,17 @@ await hypermore_middleware(app, config);
 routes_middleware(app, config);
 static_middleware(app, config);
 
-app.notFound((ctx) => {
-  return ctx.text("Page Not Found", 404);
+app.notFound(async (ctx) => {
+  const response = await app.fetch(
+    new Request(new URL("/404/", ctx.req.url)),
+    ctx.env,
+  );
+  // @todo Fix 404 status?
+  // return ctx.html(await response.text(), 404);
+  return new Response(response.body, {
+    status: 404,
+    headers: response.headers,
+  });
 });
 
 app.onError((err, ctx) => {
@@ -45,14 +65,11 @@ app.onError((err, ctx) => {
   return ctx.text("Internal Server Error", 500);
 });
 
-const options: Deno.ServeTcpOptions = {
-  port: 7777,
-  hostname: "localhost",
-};
-
 Deno.serve(options, (request, info) => {
   return app.fetch(request, {
     info,
+    origin: config.origin,
+    devMode: config.devMode,
     deployHash: config.deployHash,
   });
 });

@@ -1,0 +1,38 @@
+<script context="module">
+  export const pattern = '/';
+
+  export const load = async ({fetch}) => {
+    const data = await fetch("/api/page/contact/");
+    if (data.ok) {
+      return {
+        props: await data.json(),
+      }
+    }
+  };
+</script>
+
+<my-layout>
+  <my-app>
+    <ssr-fragment slot="main">
+      <my-nav current="/contact/" />
+      <my-heading title="Contact" />
+      <div class="Prose">
+        <h2 class="Cursive">Let’s chat!</h2>
+        <p>Need professional help with your website?</p>
+        <p class="Large">
+          <a href="mailto:hi@dbushell.com"><b>hi@dbushell.com</b></a>
+        </p>
+        <cta-social />
+        <p>Email me above or use the form below.</p>
+        <p><b>Please note:</b> due to spam the phrase "SEO" is blocked.</p>
+        <contact-form id="contact-form">
+          <my-contact />
+        </contact-form>
+      </div>
+    </ssr-fragment>
+  </my-app>
+</my-layout>
+
+<ssr-fragment portal="head">
+  <script fetchpriority="low" type="module" src="/assets/scripts/contact.js"></script>
+</ssr-fragment>

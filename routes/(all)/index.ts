@@ -24,6 +24,8 @@ const headers = [
   ["x-connect-src", `https://contact.dbushell.com`],
 ];
 
+export const order = 999;
+
 export const middleware = (hono: DHono, route: DRoute) => {
   hono.use(route.pattern, async (ctx, next) => {
     await next();
@@ -46,6 +48,14 @@ export const middleware = (hono: DHono, route: DRoute) => {
         stylesHTML += `<style data-hash="${hash}">${css}</style>\n`;
       }
       body = body.replace("%STYLES%", () => stylesHTML);
+
+      if (ctx.env.devMode) {
+        body = body.replaceAll(ctx.env.origin.href, "/");
+        // @todo Is this still necessary?
+        // body = body.replaceAll('decoding="async"', 'decoding="sync"');
+        // body = body.replaceAll('fetchpriority="low"', 'fetchpriority="high"');
+        // body = body.replaceAll('loading="lazy"', 'loading="eager"');
+      }
 
       // Replace response
       const bytes = new TextEncoder().encode(body);

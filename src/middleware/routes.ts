@@ -52,9 +52,9 @@ const importRoute = async (
   const mod = {
     ...(await importModule<DModule>(code)),
   };
-  // if (typeof mod.pattern !== "string") {
-  //   delete mod.pattern;
-  // }
+  if (typeof mod.pattern !== "string") {
+    delete mod.pattern;
+  }
   if (typeof mod.load !== "function") {
     delete mod.load;
   }
@@ -70,6 +70,9 @@ export const middleware = async (hono: DHono, config: DConfig) => {
     console.warn(`Missing route directory: "${route_dir}"`);
     return;
   }
+
+  const routes: { path: string; order: number; callback: () => void }[] = [];
+
   for await (
     const entry of fs.walk(route_dir, {
       exts: [...html_extensions, ...js_extensions],
@@ -105,14 +108,26 @@ export const middleware = async (hono: DHono, config: DConfig) => {
         console.warn(`Missing route middleware: "${entry.path}"`);
         continue;
       }
-      try {
-        await Promise.resolve(
-          mod.middleware(hono, { hash, pattern }),
-        );
-      } catch (err) {
-        console.error(err);
-        console.warn(`Bad route middleware: "${entry.path}"`);
+      if (typeof mod.pattern === "string") {
+        pattern = pattern.replace(/\/$/, "");
+        pattern += mod.pattern;
       }
+
+      const callback = async () => {
+        try {
+          await Promise.resolve(
+            mod.middleware(hono, { hash, pattern }),
+          );
+        } catch (err) {
+          console.error(err);
+          console.warn(`Bad route middleware: "${entry.path}"`);
+        }
+      };
+      routes.push({
+        path: entry.path,
+        order: mod.order ?? 0,
+        callback,
+      });
       continue;
     }
 
@@ -130,38 +145,56 @@ export const middleware = async (hono: DHono, config: DConfig) => {
             pattern = path.join(pattern, mod.pattern);
           }
         }
-        hono.get(pattern, async (ctx, next) => {
-          let props: JSONObject | undefined = {};
-          if (mod.load) {
-            props = await mod.load({
-              ctx: ctx,
-              fetch: (...props: Parameters<typeof fetch>) => {
-                const input = props[0];
-                if (typeof input === "string") {
-                  if (input.startsWith("/")) {
-                    props[0] = new URL(input, ctx.req.url);
+        const callback = () => {
+          hono.get(pattern, async (ctx, next) => {
+            let props: JSONObject | undefined = {};
+            if (mod.load) {
+              props = await mod.load({
+                ctx: ctx,
+                fetch: (...props: Parameters<typeof fetch>) => {
+                  const input = props[0];
+                  if (typeof input === "string") {
+                    if (input.startsWith("/")) {
+                      props[0] = new URL(input, ctx.req.url);
+                    }
                   }
-                }
-                return Promise.resolve(
-                  hono.fetch(new Request(...props), ctx.env),
-                );
-              },
-            }) ?? undefined;
-          }
-          if (props === undefined) {
-            return next();
-          }
-          const html = await ctx.render(
-            code,
-            props,
-          );
-          return ctx.html(html);
+                  return Promise.resolve(
+                    hono.fetch(new Request(...props), ctx.env),
+                  );
+                },
+              }) ?? undefined;
+            }
+            if (props === undefined) {
+              return next();
+            }
+            const html = await ctx.render(
+              code,
+              props,
+            );
+            return ctx.html(html);
+          });
+        };
+        routes.push({
+          path: entry.path,
+          order: mod.order ?? 0,
+          callback,
         });
       } catch (err) {
         console.error(err);
         console.warn(`Bad route module: "${entry.path}"`);
       }
       continue;
+    }
+  }
+
+  // Higher order middleware is applied first
+  routes.sort((a, b) => b.order - a.order);
+  for (const mod of routes) {
+    try {
+      Promise.resolve(mod.callback());
+    } catch (err) {
+      console.log(err);
+      console.warn(`Bad route: "${mod.path}"`);
     }
   }
 };

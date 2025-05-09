@@ -1,15 +1,8 @@
 <script context="module">
-  export const pattern = '/:slug{[a-zA-Z0-9-]+}/';
+  export const pattern = '/';
 
-  const ignore = ['blog', 'contact', 'notes'];
-
-  export const load = async ({ctx, fetch}) => {
-    const { slug } = ctx.req.param();
-    if (ignore.includes(slug)) {
-      console.log(`IGNORE`,slug);
-      return;
-    }
-    const data = await fetch(`/api/page/${slug}/`);
+  export const load = async ({fetch}) => {
+    const data = await fetch("/api/page/404/");
     if (data.ok) {
       return {
         props: await data.json(),

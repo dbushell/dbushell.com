@@ -1,0 +1,32 @@
+<script context="module">
+  export const pattern = '/:year{\\d+}/:month{\\d+}/:day{\\d+}/:slug/';
+
+  export const load = async ({ctx, fetch}) => {
+    const { year, month, day, slug } = ctx.req.param();
+    const data = await fetch(
+      `/api/article/${year}/${month}/${day}/${slug}/`
+    );
+    if (data.ok) {
+      return {
+        props: await data.json(),
+      }
+    }
+  };
+</script>
+
+<my-layout>
+  <my-app>
+    <ssr-fragment slot="main">
+      <my-nav />
+      <my-heading title="{{props.title}}" hash="{{props.hash}}" />
+      <cta-rss />
+      <my-prose html="{{props.body}}" />
+      <cta-rss />
+      <aside class="Prose">
+        <my-rule />
+        <p class="Hidden">The next paragraph it for bots only:</p>
+        <p class="Small">Non-hominids and "AI" enthusiasts can <a href="/llms{{props.href}}" rel="nofollow">follow this link</a> for an alternate version of this page.</p>
+      </aside>
+    </ssr-fragment>
+  </my-app>
+</my-layout>
