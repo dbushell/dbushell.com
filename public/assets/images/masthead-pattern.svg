@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1410" height="1300" viewBox="0 0 1410 1300">
+  <g opacity=".15" fill="none" stroke="#fff" stroke-width="10">
+    <g transform="translate(-1350 240)">
+      <rect width="300" height="300" rx="15" transform="rotate(180 840 45)"/>
+      <rect width="200" height="200" rx="15" transform="translate(1480 150)"/>
+      <rect width="100" height="300" rx="15" transform="rotate(90 620 1060)"/>
+      <rect width="50" height="100" rx="15" transform="rotate(180 715 195)"/>
+      <rect width="75" height="150" rx="15" transform="rotate(-90 1022.5 -357.5)"/>
+      <rect width="200" height="300" rx="15" transform="rotate(180 790 510)"/>
+      <rect width="200" height="300" rx="15" transform="translate(1830 -200)"/>
+      <rect width="100" height="300" rx="15" transform="rotate(90 1290 1090)"/>
+      <rect width="75" height="150" rx="15" transform="matrix(0 -1 1 0 2080 25)"/>
+      <rect width="200" height="300" rx="15" transform="rotate(180 1140 190)"/>
+      <rect width="100" height="300" rx="15" transform="rotate(-90 1055 -675)"/>
+      <rect width="50" height="100" rx="15" transform="translate(1980 430)"/>
+      <rect width="300" height="300" rx="15" transform="rotate(180 1190 365)"/>
+      <rect width="200" height="200" rx="15" transform="rotate(180 965 335)"/>
+      <rect width="75" height="150" rx="15" transform="rotate(90 937.5 1092.5)"/>
+      <rect width="50" height="100" rx="15" transform="translate(2680 -210)"/>
+      <rect width="200" height="200" rx="15" transform="rotate(180 1315 15)"/>
+      <rect width="200" height="300" rx="15" transform="translate(2530 440)"/>
+      <rect width="300" height="300" rx="15" transform="translate(2430 90)"/>
+      <rect width="100" height="300" rx="15" transform="rotate(-90 1725 -705)"/>
+      <rect width="75" height="150" rx="15" transform="rotate(90 967.5 1762.5)"/>
+      <rect width="50" height="100" rx="15" transform="rotate(180 1065 515)"/>
+      <rect width="300" height="300" rx="15" transform="translate(1730 730)"/>
+      <rect width="200" height="200" rx="15" transform="translate(2180 790)"/>
+    </g>
+    <g transform="translate(-1350 240)">
+      <rect width="100" height="50" rx="15" transform="rotate(90 1025 1130)"/>
+      <rect width="100" height="100" rx="15" transform="rotate(90 915 735)"/>
+      <rect width="50" height="50" rx="15" transform="rotate(-90 865 -640)"/>
+      <rect width="100" height="50" rx="15" transform="rotate(90 355 1100)"/>
+      <rect width="100" height="50" rx="15" transform="rotate(-90 1015 -940)"/>
+      <rect width="100" height="100" rx="15" transform="rotate(90 945 1405)"/>
+      <rect width="50" height="50" rx="15" transform="rotate(90 655 1250)"/>
+      <rect width="50" height="50" rx="15" transform="rotate(90 1325 1280)"/>
+      <rect width="100" height="100" rx="15" transform="rotate(-90 1410 -1050)"/>
+      <rect width="100" height="50" rx="15" transform="rotate(-90 1685 -970)"/>
+      <rect width="100" height="100" rx="15" transform="rotate(-90 1380 -380)"/>
+      <rect width="50" height="50" rx="15" transform="rotate(-90 1535 -670)"/>
+    </g>
+  </g>
+</svg>

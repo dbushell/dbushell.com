@@ -2,6 +2,7 @@
 **/*.*
 !**/*.ts
 !data
+!public
 !src
 !.gitattributes
 !.gitignore
