@@ -24,3 +24,15 @@ export const encodeCryptoBase64 = async (
   value: string,
   algorithm?: DigestAlgorithm,
 ): Promise<string> => encodeBase64(await encodeCrypto(value, algorithm));
+
+class AssertionError extends Error {
+  constructor(message: string, options?: ErrorOptions) {
+    super(message, options);
+    this.name = "AssertionError";
+  }
+}
+
+// https://jsr.io/@std/assert
+export function assert(expr: unknown, msg = ""): asserts expr {
+  if (!expr) throw new AssertionError(msg);
+}

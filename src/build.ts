@@ -1,9 +1,9 @@
 import * as fs from "@std/fs";
 import * as path from "@std/path";
-import { assert } from "@std/assert";
 import { toText } from "@std/streams";
 import { decodeHex } from "@std/encoding";
 import { Node, parseHTML, stripTags } from "@dbushell/hyperless";
+import { assert } from "./utils.ts";
 import type { DConfig, DHono } from "./types.ts";
 
 performance.mark("b-start");

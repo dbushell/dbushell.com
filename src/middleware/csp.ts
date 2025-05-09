@@ -46,12 +46,11 @@ const getPolicies = (ctx: Context<DEnv>) => {
 export const middleware = (hono: DHono, _config: DConfig) => {
   hono.use("/*", async (ctx, next) => {
     await next();
-    if (ctx.env.devMode) {
-      return;
-    }
     try {
-      // if (!ctx.res) return;
       const csp = getPolicies(ctx);
+      if (ctx.env.devMode) {
+        return;
+      }
       // Remove redundant policies
       if (csp["default-src"].includes("'self'")) {
         for (const [k, v] of Object.entries(csp)) {

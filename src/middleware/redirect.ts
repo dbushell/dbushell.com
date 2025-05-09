@@ -1,4 +1,4 @@
-import { assert } from "@std/assert";
+import { assert } from "../utils.ts";
 import type { DConfig, DHono } from "../types.ts";
 
 export const middleware = (hono: DHono, _config: DConfig) => {

@@ -1,7 +1,7 @@
 import * as fs from "@std/fs";
-import { assert } from "@std/assert";
 import { Node } from "@dbushell/hyperless";
 import { hmmarkdown } from "./markdown.ts";
+import { assert } from "../utils.ts";
 import type { TermProps } from "./types.ts";
 
 export const glossary = new Map<string, TermProps>();
