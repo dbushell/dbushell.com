@@ -1,0 +1,84 @@
+.Settings-Tab {
+  display: flex;
+  inset-block-start: 0;
+  position: absolute;
+  z-index: 1;
+
+  & .Button {
+    border-start-end-radius: 0;
+    border-start-start-radius: 0;
+    margin-block-start: calc(-1 * var(--border-size-2));
+
+    & svg {
+      transform: scale(1.25);
+    }
+  }
+}
+
+@media not (scripting: enabled) {
+  .Settings-Tab {
+    display: none;
+  }
+}
+
+@container body (inline-size < 30rem) {
+  .Settings-Tab {
+    & .Button {
+      --min-size: 34px;
+      --padding-block: 10px;
+      --padding-inline: 12px;
+
+      & svg {
+        display: none;
+      }
+    }
+  }
+}
+
+.Settings {
+  background: oklch(var(--color-background2));
+  border: var(--border-size-2) solid oklch(var(--color-primary));
+  border-radius: 9px;
+  box-shadow: 2px 2px 10px 0 oklch(0% 0 0 / 0.2);
+  inline-size: clamp(300px, calc(100vi - 20px), 500px);
+  inset: 0;
+  padding: var(--size-3);
+
+  view-transition-name: settings;
+
+  &[open] {
+    display: block;
+  }
+
+  &::backdrop {
+    background: oklch(0% 0 0 / 0.2);
+    view-transition-name: settings-backdrop;
+  }
+
+  & header {
+    align-items: start;
+    display: flex;
+    justify-content: space-between;
+    margin-block-end: var(--size-1);
+  }
+
+  & [popoveraction="hide"] {
+    position: absolute;
+    inset-block-start: 9px;
+    inset-inline-end: 9px;
+
+    & svg {
+      transform: scale(1.25);
+    }
+  }
+
+  & legend {
+    margin-block-end: var(--size-1);
+  }
+
+  & fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-0);
+  }
+}

@@ -1,0 +1,99 @@
+.Button {
+  --color1: oklch(var(--color-quaternary) / 1);
+  --color2: oklch(var(--color-primary) / 0.5);
+  --font-size: var(--font-size-0);
+  --min-size: 42px;
+  --padding-block: 14px;
+  --padding-inline: 16px;
+  --shadow-size: 2px;
+  align-items: center;
+  background: oklch(var(--color-background2));
+  border: var(--border-size-2) solid transparent;
+  background-image:
+    linear-gradient(
+      oklch(var(--color-background2)),
+      oklch(var(--color-background2))
+    ),
+    linear-gradient(135deg, var(--color1), var(--color2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: var(--radius-1);
+  box-shadow: var(--shadow-size) var(--shadow-size) 0 0 oklch(0% 0 0 / 0.1);
+  color: oklch(var(--color-primary2));
+  display: flex;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-3);
+  gap: var(--size-1);
+  line-height: 1;
+  min-block-size: var(--min-size);
+  min-inline-size: var(--min-size);
+  max-inline-size: max-content;
+  padding: var(--padding-block) var(--padding-inline);
+  text-box: trim-both cap alphabetic;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 200ms, --color1 200ms, --color2 200ms;
+  user-select: none;
+
+  &:hover {
+    --color1: oklch(var(--color-tertiary));
+    --color2: oklch(var(--color-tertiary));
+    color: oklch(var(--color-tertiary));
+    cursor: pointer;
+  }
+
+  &:focus-visible {
+    outline: var(--outline);
+    outline-offset: 4px;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  & span {
+    text-box: inherit;
+  }
+
+  & svg {
+    --size: 12px;
+    fill: currentColor;
+    block-size: var(--size);
+    stroke: currentColor;
+    inline-size: var(--size);
+  }
+}
+
+@supports not (text-box: trim-both cap alphabetic) {
+  .Button {
+    --padding-block: 11px;
+  }
+}
+
+[data-copy^="pre"] {
+  color: oklch(var(--color-primary2));
+  font-size: 14px;
+  font-weight: var(--font-weight-3);
+  float: inline-end;
+  margin-block: calc(-1 * var(--size-4) + 2px) 0 !important;
+  margin-inline: var(--border-size-2);
+  position: relative;
+  padding: 0;
+  text-transform: uppercase;
+  transition: color 200ms;
+
+  &:after,
+  &:hover {
+    color: oklch(var(--color-tertiary));
+  }
+
+  &:focus-visible {
+    outline: var(--outline);
+    outline-offset: 0;
+  }
+
+  &:disabled {
+    display: none;
+  }
+}

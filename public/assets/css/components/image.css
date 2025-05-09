@@ -1,0 +1,44 @@
+.Image {
+  display: block;
+  max-inline-size: none;
+
+  &[href] {
+    display: block;
+    inline-size: fit-content;
+  }
+
+  & p {
+    display: contents;
+  }
+
+  & img,
+  & video {
+    background-color: oklch(var(--db-black) / 0.2);
+    border: var(--border-size-2) solid oklch(var(--color-background));
+    border-radius: var(--radius-2);
+    box-shadow:
+      -4px 0 0 -2px oklch(var(--color-secondary)),
+      3px 3px 0 0 oklch(0% 0 0 / 0.15);
+    overflow: clip;
+    position: relative;
+  }
+
+  & figcaption {
+    margin-block-start: var(--size-1);
+  }
+}
+
+.Image--basic {
+  & img {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+:is(img, picture, svg, video) {
+  &[aria-hidden="true"] {
+    display: none;
+  }
+}

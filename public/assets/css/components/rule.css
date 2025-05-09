@@ -1,0 +1,8 @@
+.Rule,
+:where(.Prose) > hr {
+  background: oklch(var(--color-quaternary));
+  border: none;
+  block-size: var(--border-size-1);
+  outline: none;
+  inline-size: 100%;
+}

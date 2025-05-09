@@ -1,0 +1,45 @@
+.Nav {
+  --font-size: var(--font-size-0);
+
+  & ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--size-0);
+    margin: calc(-1 * var(--size-0));
+  }
+
+  & li {
+    flex: 0 0 auto;
+  }
+
+  & a {
+    align-items: center;
+    display: flex;
+    font-size: var(--font-size);
+    font-weight: 600;
+    min-block-size: 100%;
+    padding: var(--size-0);
+    text-box: trim-both cap alphabetic;
+    text-transform: uppercase;
+    outline-offset: -2px;
+
+    &[aria-current="page"] {
+      --anchor-color: var(--color-secondary2);
+      --anchor-opacity: 0;
+    }
+  }
+}
+
+@container main (inline-size < 25rem) {
+  .Nav {
+    max-width: 250px;
+  }
+}
+
+@container body (inline-size >= 50rem) {
+  .Nav {
+    & ul {
+      column-gap: var(--size-1);
+    }
+  }
+}

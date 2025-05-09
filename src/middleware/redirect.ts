@@ -9,8 +9,12 @@ export const middleware = (hono: DHono, _config: DConfig) => {
       const parts = url.split("/");
       const last = parts.at(-1);
       assert(last?.length);
-      // Ignore file extension paths
+      // Ignore file extensions
       if (last.includes(".")) {
+        return next();
+      }
+      // Ignore query strings
+      if (last.includes("?")) {
         return next();
       }
       return Promise.resolve(

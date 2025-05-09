@@ -1,0 +1,33 @@
+.Note {
+  align-items: center;
+  display: grid;
+  gap: var(--size-2);
+  grid-template-columns: 1fr;
+  margin-block: var(--size-4);
+  max-inline-size: var(--prose-max);
+  position: relative;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  &:last-of-type {
+    & + .Rule {
+      display: none;
+    }
+  }
+
+  & + .Rule {
+    margin-block: calc(-1 * var(--size-1));
+  }
+
+  & > * {
+    grid-column: 1 / -1;
+    min-inline-size: 0;
+    margin: 0;
+  }
+
+  & > footer {
+    order: -1;
+  }
+}

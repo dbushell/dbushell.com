@@ -1,0 +1,18 @@
+.Pagination {
+  display: flex;
+  justify-content: space-between;
+
+  & .Button {
+    gap: var(--size-0);
+
+    & svg {
+      &:first-child {
+        margin-inline-start: calc(-0.5 * var(--size-0));
+      }
+
+      &:last-child {
+        margin-inline-end: calc(-0.5 * var(--size-0));
+      }
+    }
+  }
+}

@@ -1,0 +1,147 @@
+glossary-term {
+  display: inline;
+
+  & > span:first-of-type {
+    visibility: hidden;
+  }
+
+  & [popover] {
+    background: oklch(var(--color-background2));
+    border-radius: var(--radius-2);
+    filter: drop-shadow(0 2px var(--size-1) oklch(0% 0 0 / 0.2));
+    inline-size: clamp(
+      300px,
+      calc(100dvi - var(--page-margin) * 2),
+      450px
+    );
+    inset: auto;
+    margin: var(--size-2) 0;
+    overflow: visible;
+    padding: var(--size-2);
+    padding-inline-start: calc(var(--size-2) + var(--size-0));
+    inset-inline-start: calc(
+      1px * (var(--inline-start) + var(--inline-offset))
+    );
+
+    &::backdrop {
+      display: none;
+    }
+
+    &[data-opening] {
+      visibility: hidden;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &::before {
+      inset: calc(-1 * var(--size-2)) 0;
+      z-index: -1;
+    }
+
+    &::after {
+      --r: 3px;
+      background: oklch(var(--color-background2));
+      block-size: var(--size-2);
+      inline-size: var(--size-3);
+      inset-inline-end: calc(
+        (100% - var(--size-3)) / 2 + 1px * var(--inline-offset)
+      );
+      clip-path: shape(
+        from 0 0,
+        line to 100% 0,
+        line to calc(50% + var(--r)) calc(100% - var(--r)),
+        curve to calc(50% - var(--r)) calc(100% - var(--r)) with 50% 100%,
+        line to 0 0
+      );
+    }
+
+    :where(glossary-term[data-block="start"]) & {
+      inset-block-end: calc(1px * var(--block-end));
+
+      &::after {
+        inset-block-start: calc(100% - 2px);
+      }
+    }
+
+    :where(glossary-term[data-block="end"]) & {
+      inset-block-start: calc(1px * var(--block-start));
+
+      &::after {
+        transform: scaleY(-1);
+        inset-block-end: calc(100% - 2px);
+      }
+    }
+  }
+
+  & h2 {
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-1);
+    margin-block-end: var(--size-0);
+  }
+
+  & h3 {
+    position: absolute;
+    inset-block-start: 3px;
+    inset-inline-start: calc(-1 * var(--size-1));
+    min-inline-size: 0;
+
+    &::before {
+      --size: var(--size-2);
+      content: "";
+      display: block;
+      background: oklch(var(--color-secondary));
+      block-size: var(--size);
+      inline-size: var(--size);
+      mask: var(--star) center center / 16px auto no-repeat;
+    }
+  }
+
+  & :is(p, h3) {
+    --font-size: var(--font-size-0);
+    line-height: var(--line-height-1);
+
+    &:hover {
+      background: none;
+    }
+  }
+
+  & p:has(h3) {
+    gap: var(--size-0);
+    margin-block-start: var(--size-1);
+    padding-inline-start: calc(var(--size-1) + var(--size-0));
+    position: relative;
+
+    & a {
+      &:not(:last-of-type) {
+        margin-inline-end: var(--size-1);
+      }
+    }
+  }
+
+  & .Button {
+    --min-size: 30px;
+    --shadow-size: 1px;
+    border-width: var(--border-size-1);
+    justify-content: center;
+    inset-block-start: var(--size-1);
+    inset-inline-end: var(--size-1);
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+@supports not (clip-path: shape(from 0 0, line to 0 0)) {
+  glossary-term {
+    & [popover] {
+      &::after {
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+      }
+    }
+  }
+}

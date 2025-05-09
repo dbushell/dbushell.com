@@ -1,0 +1,25 @@
+:root {
+  background: oklch(var(--color-background));
+  scrollbar-color: oklch(var(--color-primary)) oklch(var(--color-background));
+  color-scheme: light;
+
+  &:where([data-theme="dark"]) {
+    color-scheme: dark;
+  }
+}
+
+body {
+  accent-color: oklch(var(--color-primary));
+  container: body / inline-size;
+  color: oklch(var(--color-foreground));
+  font-family: var(--font-family);
+  font-synthesis: none;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-1);
+  line-height: var(--line-height-1);
+  margin-inline: auto;
+  max-inline-size: calc(1920 * var(--🤡));
+  overflow-x: clip;
+  padding-inline: var(--page-margin);
+  position: relative;
+}

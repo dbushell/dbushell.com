@@ -3,16 +3,22 @@
     "dev": "deno run --allow-all mod.ts --dev"
   },
   "imports": {
+    "@dbushell/carriageway": "jsr:@dbushell/carriageway@^1.1.0",
+    "@dbushell/hmmarkdown": "jsr:@dbushell/hmmarkdown@^0.18.0",
     "@dbushell/hyperless": "jsr:@dbushell/hyperless@^0.29.0",
     "@dbushell/hypermore": "jsr:@dbushell/hypermore@^0.30.0",
-    "@hono/hono": "jsr:@hono/hono@^4.7.8",
+    "@hono/hono": "jsr:@hono/hono@^4.7.9",
+    "@shikijs/transformers": "npm:@shikijs/transformers@^3.4.0",
     "@src/": "./src/",
     "@std/assert": "jsr:@std/assert@^1.0.13",
     "@std/crypto": "jsr:@std/crypto@^1.0.4",
     "@std/encoding": "jsr:@std/encoding@^1.0.10",
+    "@std/front-matter": "jsr:@std/front-matter@^1.0.9",
     "@std/fs": "jsr:@std/fs@^1.0.17",
     "@std/http": "jsr:@std/http@^1.0.15",
     "@std/path": "jsr:@std/path@^1.0.9",
-    "@std/streams": "jsr:@std/streams@^1.0.9"
+    "@std/streams": "jsr:@std/streams@^1.0.9",
+    "lightningcss": "npm:lightningcss@^1.29.3",
+    "shiki": "npm:shiki@^3.4.0"
   }
 }

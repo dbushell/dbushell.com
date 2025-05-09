@@ -1,0 +1,91 @@
+.Masthead {
+  position: relative;
+  contain: layout;
+  &::before {
+    content: "";
+    display: block;
+    inline-size: 100%;
+    padding-block-end: 50%;
+  }
+
+  &::after {
+    background: oklch(var(--masthead-primary));
+    background-image: url("/assets/images/masthead-pattern.svg");
+    background-size: calc(300 / 16 * 1rem) auto;
+    border-radius: 100%;
+    content: "";
+    display: block;
+    block-size: 140%;
+    left: 50%;
+    position: absolute;
+    inset-block-start: 50%;
+    transform: translateX(-45%) translateY(-67%) rotateZ(-8deg);
+    inline-size: 110%;
+    z-index: 1;
+  }
+}
+
+.Logo {
+  display: block;
+  position: absolute;
+  inline-size: 75%;
+  inset-block-start: 21%;
+  right: 17%;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.Sign {
+  display: block;
+  position: absolute;
+  inline-size: 30%;
+  inset-block-start: 5%;
+  right: 0;
+  text-decoration: none;
+  z-index: 3;
+}
+
+.Logo {
+  & img,
+  & svg {
+    max-inline-size: none;
+    inline-size: 100%;
+  }
+}
+
+@container body (inline-size >= 50rem) {
+  .Layout--focus {
+    & .Logo {
+      --logo-text: var(--db-pink);
+      --logo-star: var(--logo-text);
+      --logo-outline: var(--db-white);
+      aspect-ratio: 544.77 / 216.89;
+      block-size: 70px;
+      inset-block-start: calc(50% - 35px);
+      inline-size: auto;
+      right: 0;
+
+      & path {
+        transition: fill 200ms;
+      }
+
+      &:hover {
+        --logo-text: var(--db-red);
+      }
+
+      :where(:root[data-theme="dark"]) & {
+        --logo-text: var(--db-yellow);
+        --logo-star: var(--logo-text);
+        --logo-outline: var(--db-black);
+
+        &:hover {
+          --logo-text: var(--db-white);
+        }
+      }
+    }
+
+    & .Sign {
+      display: none;
+    }
+  }
+}

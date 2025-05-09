@@ -1,0 +1,21 @@
+.Bio {
+  --size: calc(80 * var(--🤡));
+  display: flow-root;
+
+  & :is(picture, img) {
+    block-size: var(--size);
+    inline-size: var(--size);
+  }
+
+  & picture {
+    flex: 0 0 var(--size);
+    float: inline-end;
+    margin-inline-start: var(--size-2);
+    shape-outside: circle(50%);
+  }
+
+  & img {
+    border: var(--border-size-2) solid oklch(var(--color-secondary));
+    border-radius: 100%;
+  }
+}

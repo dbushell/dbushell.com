@@ -1,0 +1,106 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: light dark;
+  hanging-punctuation: first allow-end last;
+  interpolate-size: allow-keywords;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+
+  &:where(.translated-rtl) {
+    direction: rtl;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  min-block-size: 100svb;
+  min-inline-size: 300px;
+}
+
+:where(canvas, img, picture, svg, video) {
+  block-size: auto;
+  border: none;
+  display: block;
+  max-inline-size: 100%;
+}
+
+:where(button, input, progress, select, textarea) {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  hanging-punctuation: none;
+  line-height: inherit;
+  text-align: start;
+  touch-action: manipulation;
+}
+
+:where(button) {
+  cursor: pointer;
+  user-select: none;
+}
+
+:where(textarea) {
+  resize: vertical;
+}
+
+:where(p, li, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+:where(abbr[title]) {
+  border: none;
+  text-decoration: none;
+}
+
+:where(cite) {
+  font-style: inherit;
+}
+
+:where(small) {
+  font-size: inherit;
+}
+
+:where(ul, ol, li) {
+  list-style: none;
+}
+
+:where(dialog, [popover]) {
+  background: transparent;
+  border: none;
+  color: inherit;
+  margin: auto;
+  max-block-size: none;
+  max-inline-size: none;
+  position: fixed;
+}
+
+:where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
+  display: none;
+}
+
+:where([popover]) {
+  inset: auto;
+}
+
+:where(fieldset) {
+  border: none;
+}

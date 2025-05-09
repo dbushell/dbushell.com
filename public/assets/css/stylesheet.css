@@ -1,0 +1,134 @@
+@layer base, components, modifiers;
+
+@import "base/fonts.css" layer(base);
+@import "base/properties.css" layer(base);
+@import "base/reset.css" layer(base);
+@import "base/body.css" layer(base);
+@import "base/hidden.css" layer(base);
+@import "base/typography.css" layer(base);
+@import "base/code.css" layer(base);
+
+@import "components/button.css";
+@import "components/checkbox.css";
+@import "components/field.css";
+@import "components/image.css";
+@import "components/list.css";
+@import "components/pagination.css";
+@import "components/prose.css";
+@import "components/rule.css";
+@import "components/star.css";
+@import "components/card.css";
+@import "components/box.css";
+@import "components/note.css";
+@import "components/table.css";
+@import "components/search.css";
+@import "components/footer.css";
+@import "components/settings.css";
+@import "components/glossary.css";
+
+@import "components/crane.css";
+@import "components/form.css";
+@import "components/social.css";
+@import "components/masthead.css";
+@import "components/nav.css";
+@import "components/bio.css";
+@import "components/featured.css";
+@import "components/aside.css";
+@import "components/main.css";
+@import "components/layout.css";
+
+[class*="🤖"],
+[class*="🤡"] {
+  background: oklch(var(--db-red));
+  color: oklch(var(--db-white));
+  display: block;
+  font-size: var(--font-size-0);
+  font-family: var(--font-family);
+  font-weight: 700;
+  inset-block-end: 0;
+  inset-inline: 0;
+  inline-size: 100%;
+  padding: var(--size-2) var(--size-3);
+  position: fixed;
+  text-align: center;
+  z-index: 999;
+
+  & a,
+  & a:hover {
+    --anchor-color: var(--db-white);
+    font-weight: inherit;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  & a:focus-visible {
+    --outline: var(--border-size-2) dashed oklch(var(--anchor-color));
+  }
+}
+
+[class*="🤖"] {
+  inset-block-end: auto;
+  inset-block-start: 0;
+}
+
+:has([class*="🤖"]) {
+  & body {
+    overflow: hidden;
+    height: 100dvh;
+  }
+}
+
+:is(.Footer, .Layout, [class^="Settings"]) {
+  &[inert] {
+    filter: grayscale(0.5) blur(2px);
+    opacity: 0.8;
+  }
+}
+
+@media not (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  .Logo {
+    view-transition-name: logo;
+  }
+
+  [class*="🤖"] {
+    view-transition-name: alert;
+  }
+
+  ::view-transition-group(.heading) {
+    block-size: 100%;
+  }
+
+  ::view-transition-group(alert) {
+    z-index: 999;
+  }
+
+  ::view-transition-group(.search-item) {
+    animation-duration: 500ms;
+    block-size: 100%;
+  }
+
+  :is(h1, h2) {
+    view-transition-name: auto;
+    view-transition-name: attr(id type(<custom-ident>), none);
+    view-transition-class: heading;
+  }
+
+  search-form {
+    &:state(searching) {
+      & li {
+        view-transition-name: auto;
+        view-transition-name: attr(id type(<custom-ident>), none);
+        view-transition-class: search-item;
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+.List,
+.Prose :where(ul:not([class]), ol:not([class])) {
+  --font-size: var(--font-size-1);
+
+  & li {
+    font-size: var(--font-size);
+    margin-block-end: var(--size-1);
+    /* max-inline-size: 70ch; */
+
+    &:last-child {
+      margin-block-end: 0;
+    }
+  }
+
+  & a {
+    font-weight: var(--font-weight-2);
+  }
+}
+
+.Prose :where(ol:not([class])) {
+  counter-reset: ol-counter;
+
+  & > li {
+    &::before {
+      background: none;
+      content: counter(ol-counter) ".";
+      counter-increment: ol-counter;
+      color: oklch(var(--color-secondary));
+      display: inline-block;
+      font-family: "Comic Neue", sans-serif;
+      font-style: italic;
+      font-size: var(--font-size);
+      font-weight: 600;
+      margin-inline-start: calc(-1 * var(--size-4));
+      padding-inline-end: var(--size-1);
+      text-align: right;
+      inline-size: var(--size-4);
+    }
+
+    &:nth-child(n+10)::before {
+      font-size: 70%;
+    }
+  }
+}
+
+@container body (inline-size < 37.5rem) {
+  .Prose :where(ol:not([class])) {
+    & > li {
+      &::before {
+        margin-inline-start: calc(-1 * var(--size-1));
+        inline-size: var(--size-3);
+      }
+    }
+  }
+}
+
+.List--large {
+  &:not(:first-child) {
+    margin-block-start: var(--size-4);
+  }
+
+  &:not(:last-child) {
+    margin-block-end: var(--size-4);
+  }
+
+  & a {
+    --color-primary2: var(--color-primary);
+    font-weight: var(--font-weight-3);
+  }
+}
+
+.List--columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: var(--size-4);
+  margin-block: var(--size-4);
+}
+
+.List--folio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: var(--size-2);
+  grid-row-gap: var(--size-2);
+  margin-block: 45px;
+  max-inline-size: calc((320 + 320 + 18) / 16 * 1rem);
+
+  & li {
+    background: transparent !important;
+    margin: 0;
+    padding: 0 !important;
+    max-inline-size: max-content;
+
+    &::before {
+      display: none;
+    }
+
+    &:nth-child(odd) img {
+      transform: scale(0.9) rotateY(-15deg) rotateX(2deg);
+    }
+    &:nth-child(even) img {
+      transform: scale(0.9) rotateY(15deg) rotateX(2deg);
+    }
+  }
+
+  & a {
+    display: block;
+    perspective: 500px;
+    text-decoration: none;
+    background: none !important;
+
+    &:hover {
+      & img {
+        transform: translateZ(0);
+      }
+    }
+  }
+
+  & img {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+    transition: transform 300ms;
+  }
+}
+
+@container main (inline-size >= 37.5rem) {
+  .List--large {
+    --font-size: var(--font-size-2);
+
+    & li {
+      margin-block-end: var(--size-2);
+    }
+  }
+}
+
+@container main (inline-size >= 25rem) {
+  .List--columns {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .List--folio {
+    grid-row-gap: var(--size-4);
+    grid-template-columns: 1fr 1fr 1fr;
+    max-inline-size: none;
+  }
+}
+
+@container body (inline-size < 50rem) {
+  .List--columns {
+    grid-column-gap: var(--size-3);
+  }
+}

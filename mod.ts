@@ -1,12 +1,14 @@
 import { Hono } from "@hono/hono";
-import type { DConfig, DEnv, DHono } from "./src/types.ts";
-import { middleware as csp_middleware } from "./src/middleware/csp.ts";
-import { middleware as debug_middleware } from "./src/middleware/debug.ts";
-import { middleware as redirect_middleware } from "./src/middleware/redirect.ts";
-import { middleware as routes_middleware } from "./src/middleware/routes.ts";
-import { middleware as static_middleware } from "./src/middleware/static.ts";
-import { middleware as hypermore_middleware } from "./src/middleware/hypermore.ts";
-import { encodeHash } from "./src/utils.ts";
+import type { DConfig, DEnv, DHono } from "@src/types.ts";
+import { middleware as csp_middleware } from "@src/middleware/csp.ts";
+import { middleware as debug_middleware } from "@src/middleware/debug.ts";
+import { middleware as redirect_middleware } from "@src/middleware/redirect.ts";
+import { middleware as routes_middleware } from "@src/middleware/routes.ts";
+import { middleware as static_middleware } from "@src/middleware/static.ts";
+import { middleware as hypermore_middleware } from "@src/middleware/hypermore.ts";
+import { encodeHash } from "@src/utils.ts";
+import { rebuildCSS } from "@src/content/css.ts";
+import { rebuildManifest } from "@src/content/manifest.ts";
 
 const config: DConfig = {
   devMode: true,
@@ -22,10 +24,8 @@ const config: DConfig = {
   ),
 };
 
-const options: Deno.ServeTcpOptions = {
-  port: 7777,
-  hostname: "localhost",
-};
+await rebuildCSS(config.deployHash);
+await rebuildManifest();
 
 const app: DHono = new Hono<DEnv>();
 
@@ -44,6 +44,11 @@ app.onError((err, ctx) => {
   console.error(err);
   return ctx.text("Internal Server Error", 500);
 });
+
+const options: Deno.ServeTcpOptions = {
+  port: 7777,
+  hostname: "localhost",
+};
 
 Deno.serve(options, (request, info) => {
   return app.fetch(request, {

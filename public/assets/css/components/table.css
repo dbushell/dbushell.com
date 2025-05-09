@@ -1,0 +1,28 @@
+.Table {
+  overflow: hidden;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+table {
+  border-collapse: collapse;
+  inline-size: 100%;
+}
+
+td,
+th {
+  border-inline: var(--border-size-1) solid
+    oklch(var(--color-foreground) / 0.5);
+  font-size: var(--font-size-0);
+  line-height: var(--line-height);
+  padding: var(--size-0);
+  text-align: start;
+}
+
+th {
+  font-weight: var(--font-weight-3);
+}
+
+tr {
+  border-block: var(--border-size-1) solid oklch(var(--color-foreground) / 0.5);
+}

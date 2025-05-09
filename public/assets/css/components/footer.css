@@ -1,0 +1,15 @@
+.Footer {
+  margin-block: var(--size-4);
+
+  & small {
+    --padding: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline-start: calc(-1 * var(--padding));
+
+    & > * {
+      outline-offset: calc(-1 * var(--padding));
+      padding: var(--padding);
+    }
+  }
+}

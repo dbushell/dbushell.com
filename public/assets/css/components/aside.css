@@ -1,0 +1,8 @@
+.Aside {
+  container: aside / inline-size;
+  width: 100%;
+
+  & > .Rule {
+    margin-block-end: var(--size-4);
+  }
+}

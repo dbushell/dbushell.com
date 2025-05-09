@@ -1,0 +1,285 @@
+::selection {
+  background: oklch(var(--color-primary));
+  color: oklch(var(--color-background));
+}
+
+[contenteditable]::spelling-error {
+  background-color: oklch(var(--db-red) / 0.2);
+  text-decoration: underline wavy oklch(var(--db-red)) 1.5px;
+  text-decoration-skip-ink: none;
+}
+
+a:where([href]) {
+  --anchor-color: var(--color-primary2);
+  --anchor-opacity: 0.5;
+  color: oklch(var(--anchor-color));
+  text-decoration-line: underline;
+  text-decoration-thickness: 5%;
+  text-decoration-skip-ink: all;
+  text-decoration-color: oklch(var(--anchor-color) / var(--anchor-opacity));
+  text-underline-offset: 0.15em;
+  transition:
+    color 200ms,
+    background 200ms,
+    text-decoration-color 200ms,
+    text-decoration 200ms;
+
+  &:hover {
+    --anchor-color: var(--color-tertiary);
+    --anchor-opacity: 0;
+  }
+
+  &:focus-visible {
+    --anchor-opacity: 0;
+    outline: var(--outline);
+    outline-offset: var(--border-size-2);
+  }
+
+  &:active {
+    outline: none;
+  }
+}
+
+:where(h2, h3, .Large, .Social) {
+  & a:not(.Button, :hover) {
+    --anchor-color: var(--color-primary);
+  }
+}
+
+:where(.Card p, .List, .Prose, .Star) {
+  & a:not([class]) {
+    background-image: linear-gradient(
+      to right,
+      oklch(var(--color-primary) / 0.2),
+      oklch(var(--color-primary) / 0.2)
+    );
+    background-position: left bottom 5%;
+    background-repeat: repeat-x;
+    background-size: 100% 0;
+
+    &:hover {
+      background-position: center bottom;
+      background-size: 100% 0.25em;
+    }
+  }
+}
+
+p {
+  --font-size: var(--font-size-1);
+  font-size: var(--font-size);
+
+  & a {
+    font-weight: var(--font-weight-2);
+  }
+
+  &:has(small:only-child) {
+    --font-size: var(--font-size-0);
+  }
+
+  &:has(.Button:only-child) {
+    &:not(:first-child) {
+      margin-block-start: var(--size-3);
+    }
+
+    &:not(:last-child) {
+      margin-block: var(--size-3);
+    }
+  }
+}
+
+:where(b, strong, legend) {
+  font-weight: var(--font-weight-3);
+}
+
+:where(i, em) {
+  font-style: italic;
+  font-variation-settings: "ital" 1;
+}
+
+small {
+  font-size: inherit;
+}
+
+:where(cite, figcaption, label, legend, sup, time) {
+  --font-size: var(--font-size-0);
+  font-size: var(--font-size);
+}
+
+sup {
+  line-height: 1;
+  vertical-align: top;
+}
+
+blockquote {
+  margin: 0;
+  margin-inline-start: var(--size-2);
+  padding-inline-start: var(--size-2);
+  border-inline-start: var(--border-size-1) solid oklch(var(--color-tertiary));
+
+  & > :not(:last-child) {
+    margin-block-end: var(--size-2);
+  }
+
+  & :is(p, li) {
+    font-style: italic;
+    font-variation-settings: "ital" 1;
+  }
+
+  & cite {
+    font-weight: var(--font-weight-2);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --font-size: var(--font-size-2);
+  --line-height: var(--line-height-2);
+  color: oklch(var(--color-primary));
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-3);
+  line-height: var(--line-height);
+  position: relative;
+}
+
+h1 {
+  --font-size: var(--font-size-4);
+  --line-height: 1;
+  margin-block: var(--size-3);
+  text-box: trim-both cap alphabetic;
+
+  & + h2 {
+    margin-block: var(--size-3) var(--size-2);
+  }
+}
+
+@container main (inline-size >= 25rem) {
+  h1 {
+    margin-block: calc(var(--size-4) + var(--size-1));
+  }
+
+  @supports not (text-box: trim-both cap alphabetic) {
+    h1 {
+      margin-block: var(--size-4);
+    }
+  }
+}
+
+h2 {
+  --font-size: var(--font-size-2);
+
+  :where(.Main) & {
+    --font-size: var(--font-size-3);
+    --line-height: var(--line-height-2);
+  }
+}
+
+h3 {
+  --font-size: var(--font-size-2);
+}
+
+:is(h2, h3) {
+  &.Cursive {
+    --font-size: var(--font-size-2);
+    --line-height: var(--line-height-2);
+  }
+}
+
+.Balance {
+  text-wrap: balance;
+}
+
+.Small {
+  --font-size: var(--font-size-0);
+}
+
+.Large {
+  --font-size: var(--font-size-2);
+}
+
+.Comic {
+  font-family: "Komika", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+
+  & .Hyphen {
+    display: inline-block;
+    transform: translateX(20%) translateY(5%);
+  }
+}
+
+.Cursive {
+  --font-size: var(--font-size-1);
+  font-size: var(--font-size);
+}
+
+:is(.Cursive, .Time) {
+  color: oklch(var(--color-secondary2));
+  font-family: "Comic Neue", sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: calc(-0.5 * var(--🤡));
+
+  &:has(svg) {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
+
+    & > svg {
+      aspect-ratio: 1 / 1;
+      block-size: 1em;
+      inline-size: auto;
+      fill: currentColor;
+      flex: 0 0 auto;
+    }
+
+    & > span {
+      flex: 0 1 auto;
+    }
+  }
+}
+
+.Time {
+  --font-size: var(--font-size-1);
+  display: inline-block;
+  vertical-align: top;
+
+  & a {
+    &:not([href]) {
+      display: contents;
+    }
+
+    &[href] {
+      &:not(:hover) {
+        --anchor-color: var(--color-secondary2);
+        --anchor-opacity: 0;
+      }
+    }
+  }
+}
+
+.Error {
+  color: oklch(var(--db-red));
+}
+
+.Icon {
+  align-items: center;
+  display: inline-flex;
+  gap: 1px;
+  margin-inline-end: 2px;
+  vertical-align: top;
+
+  &:hover {
+    background: none;
+  }
+
+  & svg {
+    --size: calc(var(--font-size) * var(--line-height));
+    inline-size: calc(0.8 * var(--size));
+    fill: currentColor;
+  }
+}

@@ -1,0 +1,9 @@
+.Main {
+  container: main / inline-size;
+  margin-block-end: var(--size-4);
+  inline-size: 100%;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+}

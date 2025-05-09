@@ -1,0 +1,55 @@
+.Crane {
+  align-items: center;
+  display: grid;
+  grid-gap: var(--size-2);
+  grid-template-columns: 100%;
+  margin-block-end: var(--size-4);
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  & img {
+    margin: auto;
+    transform: translateX(-5%);
+    inline-size: auto;
+
+    :where(:root[data-theme="dark"]) & {
+      filter: saturate(1.1) brightness(1.1) contrast(1.1);
+    }
+  }
+}
+
+@container main (inline-size < 25rem) {
+  .Crane {
+    & img {
+      max-inline-size: 50%;
+      transform: translateX(-10%);
+    }
+
+    & > div {
+      display: grid;
+      justify-content: center;
+    }
+
+    & .List {
+      margin-block: 0 var(--size-3);
+    }
+
+    & .Button {
+      margin-inline-start: var(--size-2);
+    }
+  }
+}
+
+@container main (inline-size >= 25rem) {
+  .Crane {
+    grid-template-columns: minmax(auto, 50%) auto;
+  }
+}
+
+@container main (inline-size >= 37.5rem) {
+  .Crane {
+    grid-gap: var(--size-4);
+  }
+}

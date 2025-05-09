@@ -1,0 +1,45 @@
+.Field {
+  --color2: oklch(var(--color-quaternary) / 1);
+  --color1: oklch(var(--color-primary) / 0.5);
+  --font-size: var(--font-size-0);
+  background: oklch(var(--color-background2));
+  border: var(--border-size-2) solid transparent;
+  background-image:
+    linear-gradient(
+      oklch(var(--color-background2)) 50%,
+      oklch(var(--color-background2))
+    ),
+    linear-gradient(135deg, var(--color1), var(--color2));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: var(--radius-1);
+  box-shadow: 2px 2px 0 0 oklch(0% 0 0 / 0.1);
+  color: oklch(var(--color-foreground));
+  display: block;
+  font-size: clamp(16px, var(--font-size), var(--font-size));
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-2);
+  line-height: 1;
+  min-block-size: 42px;
+  padding: 6px 10px;
+  transition: color 200ms, --color1 200ms, --color2 200ms;
+  inline-size: 100%;
+
+  &:focus-visible {
+    --color1: oklch(var(--color-primary));
+    --color2: oklch(var(--color-primary));
+    color: oklch(var(--color-primary));
+    outline: var(--outline);
+    outline-offset: 4px;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &:where([rows]) {
+    line-height: var(--line-height-1);
+    padding-block: 8px;
+  }
+}

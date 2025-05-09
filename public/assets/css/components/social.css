@@ -1,0 +1,43 @@
+.Social {
+  --social-size: calc(24 * var(--🤡));
+  --social-color: oklch(var(--color-background));
+  --social-transform: rotateY(5deg) rotateX(10deg) rotateZ(5deg);
+  align-items: center;
+  display: flex;
+  margin-block-start: var(--size-2);
+  margin-inline-end: calc(-1 * var(--size-0));
+
+  & svg {
+    backface-visibility: hidden;
+    border-radius: var(--radius-1);
+    box-shadow: 2px 2px 0 0 oklch(0% 0 0 / 0.1);
+    fill: currentColor;
+    block-size: var(--social-size);
+    inline-size: var(--social-size);
+    transform: var(--social-transform);
+    transition: transform 150ms;
+  }
+
+  & .Button {
+    margin-inline-end: auto;
+    white-space: nowrap;
+  }
+
+  & a:not(.Button) {
+    display: block;
+    flex-shrink: 0;
+    overflow: clip;
+    padding: var(--size-0);
+    perspective: 50px;
+    position: relative;
+    text-decoration: none;
+
+    &:hover {
+      --social-transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      outline-offset: 0;
+    }
+  }
+}

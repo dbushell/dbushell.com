@@ -1,0 +1,167 @@
+@property --font-size {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 16px;
+}
+
+@property --line-height {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1.4;
+}
+
+@property --color1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(0% 0 0);
+}
+
+@property --color2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(0% 0 0);
+}
+
+:root {
+  --🤡: 0.0625rem;
+  --fluid1: calc((100vi - 400 * var(--🤡)) / (1920 - 400));
+  --fluid2: calc((100vi - 400 * var(--🤡)) / (1220 - 400));
+
+  --font-size-0: clamp(
+    calc(14 * var(--🤡)),
+    calc(14 * var(--🤡) + (16 - 14) * var(--fluid2)),
+    calc(16 * var(--🤡))
+  );
+
+  --font-size-1: clamp(
+    calc(17 * var(--🤡)),
+    calc(17 * var(--🤡) + (20 - 17) * var(--fluid2)),
+    calc(20 * var(--🤡))
+  );
+
+  --font-size-2: clamp(
+    calc(19 * var(--🤡)),
+    calc(19 * var(--🤡) + (26 - 19) * var(--fluid1)),
+    calc(26 * var(--🤡))
+  );
+
+  --font-size-3: clamp(
+    calc(21 * var(--🤡)),
+    calc(21 * var(--🤡) + (32 - 21) * var(--fluid1)),
+    calc(32 * var(--🤡))
+  );
+
+  --font-size-4: clamp(
+    calc(31 * var(--🤡)),
+    calc(31 * var(--🤡) + (80 - 31) * var(--fluid1)),
+    calc(80 * var(--🤡))
+  );
+
+  --font-size: var(--font-size-1);
+
+  --font-family: "Atkinson Hyperlegible Next", sans-serif;
+
+  --font-weight-base: 0;
+  --font-weight-1: calc(var(--font-weight-base) + 400);
+  --font-weight-2: calc(var(--font-weight-base) + 450);
+  --font-weight-3: 500;
+
+  --size-0: 4.5px;
+  --size-1: 9px;
+  --size-2: 18px;
+  --size-3: 27px;
+  --size-4: 36px;
+  --size-5: 40.5px;
+
+  --border-size-1: 1px;
+  --border-size-2: 2px;
+
+  --radius-1: var(--size-0);
+  --radius-2: var(--size-1);
+
+  --line-height-1: 1.6;
+  --line-height-2: 1.3;
+
+  --page-margin: clamp(
+    calc(20 * var(--🤡)),
+    calc(20 * var(--🤡) + (100 - 20) * var(--fluid1)),
+    calc(100 * var(--🤡))
+  );
+
+  --prose-max: 42em;
+
+  --outline: var(--border-size-2) dashed oklch(var(--color-secondary));
+}
+
+:root {
+  --db-light: 98.2% 0.014
+    85; /* 98.62% 0.014 84.58; /* 40, 100%, 97%; /* 255, 250, 240; */
+  --db-dark: 40.05% 0.014 17.74; /* 0, 7%, 29%; /* 80, 70, 70; */
+  --db-pink: 70.27% 0.192 13.7; /* 350, 100%, 69%; /* 255, 100, 125; */
+  --db-red: 57.82% 0.19 16.36; /* 350, 63%, 52%; /* 210, 55, 80; */
+  --db-green: 86.59% 0.088 168.12; /* 157, 61%, 75%; /* 150, 230, 200; */
+  --db-blue: 62.78% 0.12 226; /* 194, 82%, 41%; /* 20, 150, 190; */
+  --db-blue2: 52.78% 0.1 226; /* 194, 82%, 31%; /* 15, 110, 155; */
+  /* --db-blue3: 72.78% 0.12 226; */
+  --db-yellow: 97.25% 0.0767 103; /* 55, 100%, 87%; /* 255, 250, 190; */
+  --db-white: 100% 0 0; /* 0, 0%, 100%; /* 255, 255, 255; */
+  --db-black: 31.55% 0.009 17.62; /* 0, 5%, 20%; /* 55, 50, 50; */
+  --db-midnight: 30.05% 0.014 17.74;
+}
+
+@media (color-gamut: p3) {
+  :root {
+    --db-pink-p3: 72.27% 0.222 13.7;
+    --db-blue: 62.78% 0.158 226;
+    --db-blue2: 52.78% 0.12 226;
+  }
+}
+
+@media (prefers-contrast: more) {
+  * {
+    /* background: white !important;
+    color: red !important; */
+  }
+}
+
+@media screen {
+  :root[data-theme="light"] {
+    --color-background: var(--db-light);
+    --color-background2: var(--db-white);
+    --color-foreground: var(--db-dark);
+
+    --color-primary: var(--db-blue);
+    --color-primary2: var(--db-blue2);
+    --color-secondary: var(--db-pink-p3, var(--db-pink));
+    --color-secondary2: var(--db-red);
+    --color-tertiary: var(--db-pink-p3, var(--db-pink));
+    --color-quaternary: var(--db-green);
+
+    --masthead-primary: var(--db-green);
+    --masthead-secondary: var(--db-blue);
+  }
+
+  :root[data-theme="dark"] {
+    --color-background: var(--db-black);
+    --color-background2: var(--db-dark);
+    --color-foreground: var(--db-light);
+
+    --color-primary: var(--db-green);
+    --color-primary2: var(--db-green);
+    --color-secondary: var(--db-pink-p3, var(--db-pink));
+    --color-secondary2: var(--db-pink-p3, var(--db-pink));
+    --color-tertiary: var(--db-pink-p3, var(--db-pink));
+    --color-quaternary: var(--db-blue);
+
+    --masthead-primary: var(--db-blue);
+    --masthead-secondary: var(--db-green);
+
+    --font-weight-base: 50;
+  }
+}
+
+:root {
+  --star: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path d="M9.625 5.375L15 7.5 9.625 9.625 7.5 15 5.375 9.625 0 7.5l5.375-2.125L7.5 0z"/></svg>');
+  --check: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.75" viewBox="0 0 14 10.75"><path d="M12.28 0a1.71 1.71 0 00-1.22.5L5 6.59l-2-2A1.73 1.73 0 00.56 7.03l3.25 3.25a1.73 1.73 0 002.44 0l7.31-7.31a1.73 1.73 0 000-2.44A1.71 1.71 0 0012.28 0z"/></svg>');
+  --external: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18.885 2a1 1 0 0 0-1-1h-6a1 1 0 1 0 0 2h3.586L9.178 9.293a1 1 0 1 0 1.414 1.414l6.293-6.293V8a1 1 0 1 0 2 0zM3.009 3a2.012 2.012 0 0 0-1.998 2.218c.148 1.453.374 3.978.374 5.782 0 1.746-.212 4.17-.36 5.642a2.028 2.028 0 0 0 2.218 2.218c1.473-.148 3.896-.36 5.642-.36 1.804 0 4.33.226 5.782.374a2.012 2.012 0 0 0 2.218-1.998V12a1 1 0 1 0-2 0v4.878l-.003.003a.018.018 0 0 1-.006.003h-.006c-1.451-.147-4.068-.384-5.985-.384-1.857 0-4.37.222-5.842.37h-.008a.034.034 0 0 1-.012-.008.033.033 0 0 1-.008-.012.01.01 0 0 1 0-.002v-.006c.148-1.473.37-3.985.37-5.842 0-1.917-.237-4.534-.385-5.985v-.006l.004-.006A.016.016 0 0 1 3.007 5h4.878a1 1 0 0 0 0-2z"/></svg>');
+}

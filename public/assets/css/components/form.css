@@ -1,0 +1,47 @@
+.Form {
+  display: grid;
+  row-gap: var(--size-4);
+
+  & label {
+    --font-size: var(--font-size-1);
+    display: block;
+    max-inline-size: max-content;
+
+    &:not(:last-child) {
+      margin-block-end: var(--size-1);
+    }
+  }
+
+  & li {
+    &:not(:last-child) {
+      & > p {
+        margin-block: var(--size-2);
+      }
+    }
+  }
+}
+
+.Privacy {
+  align-items: center;
+  display: flex;
+
+  & svg {
+    fill: currentColor;
+    margin-inline-end: var(--size-1);
+  }
+}
+
+@container main (inline-size >= 25rem) {
+  & .Form {
+    column-gap: var(--size-3);
+    grid-template-columns: 1fr 1fr;
+
+    & li {
+      grid-column: auto / span 1;
+
+      &:nth-of-type(n+3) {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}

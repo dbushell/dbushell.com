@@ -1,0 +1,32 @@
+.Star,
+.List li,
+.Prose :where(ul:not([class*="List"], [class*="Form"])) li {
+  --star-size: var(--size-4);
+  --star-inset: calc(-1 * var(--size-4));
+  position: relative;
+  padding-inline-start: var(--star-padding, 0);
+
+  &::before {
+    content: "•";
+    color: transparent;
+    background: oklch(var(--color-secondary));
+    inline-size: var(--star-size);
+    inset-inline-start: var(--star-inset);
+    mask: var(--star) center center / 16px auto no-repeat;
+    position: absolute;
+  }
+}
+
+@container body (inline-size < 37.5rem) {
+  .Star,
+  .List li,
+  .Prose :where(ul:not([class*="List"], [class*="Form"])) li {
+    --star-size: var(--size-3);
+    --star-inset: calc(-0.5 * var(--size-3));
+    --star-padding: var(--size-2);
+
+    &::before {
+      mask-size: 12px auto;
+    }
+  }
+}

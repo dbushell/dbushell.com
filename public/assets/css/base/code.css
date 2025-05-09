@@ -1,0 +1,169 @@
+:is(code, kbd, pre) {
+  --font-size: var(--font-size-0);
+  font-family: "0xProto", monospace;
+  font-size: var(--font-size);
+  font-weight: 400;
+  -webkit-text-size-adjust: 100%;
+}
+
+:is(:where(:not(pre)) > code, kbd) {
+  --font-size: var(--font-size-0);
+  background: oklch(var(--color-background2));
+  border: var(--border-size-1) solid oklch(var(--color-quaternary));
+  color: oklch(var(--color-secondary2));
+  display: inline;
+  font-size: var(--font-size);
+  font-weight: 450;
+  line-height: 1;
+  padding: 2px 4px;
+  text-decoration: none;
+}
+
+kbd {
+  border-radius: var(--radius-1);
+  background-color: transparent;
+  color: oklch(var(--color-foreground));
+  border: var(--border-size-1) solid oklch(var(--color-primary) / 0.5);
+  font-weight: var(--font-weight-1);
+}
+
+pre {
+  --background-color: var(--db-dark);
+  --background-alt: var(--db-midnight);
+  --block-padding: 12px;
+  --inline-padding: var(--size-2);
+  background: oklch(var(--background-color));
+  color: oklch(var(--db-light));
+  counter-reset: line-counter;
+  direction: ltr;
+  block-size: auto;
+  -webkit-hyphens: none;
+  hyphens: none;
+  inline-size: calc(100% + var(--inline-padding));
+  line-height: var(--line-height-2);
+  margin-inline: calc(-1 * var(--inline-padding)) 0;
+  margin-block: var(--size-4);
+  overflow: auto;
+  overscroll-behavior-inline: contain;
+  padding: var(--block-padding) var(--inline-padding);
+  position: relative;
+  -moz-tab-size: 2;
+  tab-size: 2;
+  text-align: left;
+  text-shadow: none;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+
+  &[data-lang] {
+    &::before {
+      content: attr(data-lang);
+      color: oklch(var(--db-yellow));
+      display: block;
+      font-family: "Comic Neue", sans-serif;
+      font-size: 12px;
+      font-style: italic;
+      inset-inline-start: 0;
+      line-height: 1;
+      transform: translateX(var(--inline-padding))
+        translateY(calc(-1 * var(--block-padding)));
+      margin-block-end: -24px;
+      padding: 6px;
+      position: sticky;
+      pointer-events: none;
+      text-align: end;
+      text-transform: uppercase;
+      z-index: 1;
+    }
+  }
+
+  & > code {
+    display: grid;
+    grid-template-columns: auto;
+
+    & :is(.space, .tab) {
+      display: inline-block;
+      position: relative;
+
+      &:nth-child(2n+1) {
+        &::before {
+          border-inline: var(--border-size-1) solid transparent;
+          border-inline-start-color: currentColor;
+        }
+      }
+
+      &::before {
+        content: "·";
+        inset: 0;
+        opacity: 0.15;
+        position: absolute;
+        pointer-events: none;
+        user-select: none;
+      }
+    }
+
+    & :not(.space) ~ .space::before {
+      border-inline-start-color: transparent;
+    }
+
+    & :is(.tab) {
+      &::before {
+        content: "→";
+      }
+    }
+
+    &:has(:nth-child(3 of .line)) {
+      & .line {
+        counter-increment: line-counter;
+        position: relative;
+        z-index: 1;
+
+        &::after {
+          background: oklch(var(--background-alt) / 0.15);
+          content: "";
+          display: none;
+          inset: 0 calc(-1 * var(--size-2));
+          position: absolute;
+          z-index: -1;
+        }
+
+        &::before {
+          content: counter(line-counter);
+          color: oklch(var(--db-yellow));
+          display: inline-block;
+          inline-size: 2ch;
+          margin-inline-end: 14px;
+          margin-inline-start: -6px;
+          text-align: end;
+          user-select: none;
+        }
+
+        &:nth-child(odd) {
+          &::after {
+            display: block;
+          }
+        }
+
+        &:hover {
+          &::after {
+            background: oklch(var(--db-yellow) / 0.05);
+            display: block;
+          }
+
+          &::before {
+            color: oklch(var(--db-light));
+          }
+        }
+      }
+    }
+  }
+}
+
+@container body (inline-size < 25rem) {
+  pre {
+    --inline-padding: var(--page-margin);
+    inline-size: calc(100% + var(--inline-padding) * 2);
+    margin-inline: calc(-1 * var(--inline-padding));
+  }
+}

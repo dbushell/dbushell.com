@@ -1,0 +1,26 @@
+.Box {
+  align-items: center;
+  background: oklch(var(--color-background2));
+  border: var(--border-size-2) solid oklch(var(--color-quaternary));
+  border-radius: var(--radius-2);
+
+  margin-block: var(--size-3);
+  padding: var(--size-2);
+  position: relative;
+
+  &:first-child {
+    margin-block-start: 0;
+  }
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  & > .Button {
+    margin-block-start: var(--size-2);
+  }
+}
+
+.Box--cta {
+  text-align: center;
+}
