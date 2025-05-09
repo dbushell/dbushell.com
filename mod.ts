@@ -12,7 +12,7 @@ const config: DConfig = {
   devMode: true,
   rootDir: new URL("./", import.meta.url),
   publicDir: "./public",
-  routesDir: "./routes",
+  routeDir: "./routes",
   templateDir: "./components",
   deployHash: await encodeHash(
     // Use build environment variable
@@ -32,16 +32,9 @@ const app: DHono = new Hono<DEnv>();
 debug_middleware(app, config);
 redirect_middleware(app, config);
 csp_middleware(app, config);
+await hypermore_middleware(app, config);
 routes_middleware(app, config);
 static_middleware(app, config);
-await hypermore_middleware(app, config);
-
-app.get("/hello/", async (ctx) => {
-  const html = await ctx.var.render(
-    `<my-button href="/">Home</my-button>`,
-  );
-  return ctx.html(html);
-});
 
 app.notFound((ctx) => {
   return ctx.text("Page Not Found", 404);

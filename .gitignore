@@ -4,6 +4,7 @@
 !data
 !public
 !routes
+!routes/**/*.html
 !src
 !.gitattributes
 !.gitignore

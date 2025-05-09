@@ -1,8 +1,8 @@
-import { DHono } from "@src/types.ts";
+import { DHono, DRoute } from "@src/types.ts";
 import { toText } from "@std/streams";
 
-export const middleware = (hono: DHono) => {
-  hono.use("/*", async (ctx, next) => {
+export const middleware = (hono: DHono, route: DRoute) => {
+  hono.use(route.pattern, async (ctx, next) => {
     await next();
     if (ctx.res.body === null) {
       return;
@@ -16,7 +16,7 @@ export const middleware = (hono: DHono) => {
       body = body.replaceAll("%DEPLOY_HASH%", () => ctx.env.deployHash);
       const bytes = new TextEncoder().encode(body);
       ctx.res = new Response(bytes);
-      ctx.header("content-type", "content_type");
+      ctx.header("content-type", content_type);
       ctx.header("content-length", String(bytes.byteLength));
     }
   });

@@ -1,11 +1,35 @@
-import { Env, Hono } from "@hono/hono";
-import { JSONObject } from "@dbushell/hypermore";
+import type { Context, Env, Hono } from "@hono/hono";
+import type { JSONObject } from "@dbushell/hypermore";
+
+declare module "@hono/hono" {
+  interface ContextRenderer {
+    (
+      html: string | Promise<string>,
+      props?: JSONObject,
+    ): Promise<string>;
+  }
+}
+
+export type DRoute = {
+  pattern: string;
+  hash: string;
+};
+
+export type DLoad = {
+  ctx: Context<DEnv>;
+  fetch: typeof fetch;
+};
+
+export type DModule = {
+  load?: (props: DLoad) => Promise<JSONObject | null | undefined | void>;
+  pattern?: string;
+};
 
 export type DConfig = {
   devMode: boolean;
   rootDir: URL;
   publicDir: string;
-  routesDir: string;
+  routeDir: string;
   templateDir: string;
   deployHash: string;
 };
@@ -15,9 +39,9 @@ export type DEnv = Env & {
     info: Deno.ServeHandlerInfo<Deno.NetAddr>;
     deployHash: string;
   };
-  Variables: {
-    render: (html: string, props?: JSONObject) => Promise<string>;
-  };
+  // Variables: {
+  //   render: (html: string, props?: JSONObject) => Promise<string>;
+  // };
 };
 
 export type DHono = Hono<DEnv>;

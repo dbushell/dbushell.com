@@ -15,7 +15,7 @@ export const middleware = async (hono: DHono, config: DConfig) => {
     const message = "Missing template directory";
     console.warn(`${message}: "${template_dir}"`);
     hono.use("/*", async (ctx, next) => {
-      ctx.set("render", () => {
+      ctx.setRenderer(() => {
         return Promise.resolve(message);
       });
       await next();
@@ -36,14 +36,16 @@ export const middleware = async (hono: DHono, config: DConfig) => {
     }
   }
   hono.use("/*", async (ctx, next) => {
-    ctx.set("render", (html: string, props?: JSONObject) => {
-      return hypermore.render(html, props ?? {}, {
-        globalProps: {
-          url: ctx.req.url,
-          deployHash: config.deployHash,
-        },
-      });
-    });
+    ctx.setRenderer(
+      async (html: string | Promise<string>, props?: JSONObject) => {
+        return hypermore.render(await Promise.resolve(html), props ?? {}, {
+          globalProps: {
+            url: ctx.req.url,
+            deployHash: config.deployHash,
+          },
+        });
+      },
+    );
     await next();
   });
 };

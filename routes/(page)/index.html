@@ -1,0 +1,19 @@
+<script context="module">
+  export const pattern = '/:slug{[a-zA-Z0-9-]+}/';
+
+  const ignore = ['contact'];
+
+  export const load = async ({ctx, fetch}) => {
+    if (ignore.includes(ctx.req.param('slug'))) {
+      return;
+    }
+    const data = await fetch("/api/home/");
+    if (data.ok) {
+      return await data.json();
+    }
+  };
+</script>
+
+<my-button href="/">{{welcome}}</my-button>
+
+%DEPLOY_HASH%
