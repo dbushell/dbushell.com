@@ -5,12 +5,19 @@ import { middleware as debug_middleware } from "./src/middleware/debug.ts";
 import { middleware as redirect_middleware } from "./src/middleware/redirect.ts";
 import { middleware as static_middleware } from "./src/middleware/static.ts";
 import { middleware as hypermore_middleware } from "./src/middleware/hypermore.ts";
+import { encodeHash } from "./src/utils.ts";
 
 const config: DConfig = {
-  dev_mode: true,
-  root_dir: new URL("./", import.meta.url),
-  public_dir: "./public",
-  template_dir: "./components",
+  devMode: true,
+  rootDir: new URL("./", import.meta.url),
+  publicDir: "./public",
+  templateDir: "./components",
+  deployHash: await encodeHash(
+    // Use build environment variable
+    Deno.env.get("DEPLOY_HASH") ??
+      // Use unique startup date
+      Date.now().toString(),
+  ),
 };
 
 const options: Deno.ServeTcpOptions = {
@@ -43,5 +50,8 @@ app.onError((err, ctx) => {
 });
 
 Deno.serve(options, (request, info) => {
-  return app.fetch(request, { info });
+  return app.fetch(request, {
+    info,
+    deployHash: config.deployHash,
+  });
 });

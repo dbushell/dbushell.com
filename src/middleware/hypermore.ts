@@ -1,15 +1,15 @@
 import * as fs from "@std/fs";
 import * as path from "@std/path";
-import { componentName, Hypermore } from "@dbushell/hypermore";
-import type { DConfig, DEnv, DHono } from "../types.ts";
+import { componentName, Hypermore, JSONObject } from "@dbushell/hypermore";
+import type { DConfig, DHono } from "../types.ts";
 
 let hypermore: Hypermore;
 
 export const middleware = async (hono: DHono, config: DConfig) => {
   hypermore = new Hypermore();
   const template_dir = path.resolve(
-    config.root_dir.pathname,
-    config.template_dir,
+    config.rootDir.pathname,
+    config.templateDir,
   );
   if (fs.existsSync(template_dir) === false) {
     const message = "Missing template directory";
@@ -36,8 +36,13 @@ export const middleware = async (hono: DHono, config: DConfig) => {
     }
   }
   hono.use("/*", async (ctx, next) => {
-    ctx.set("render", (...props: Parameters<DEnv["Variables"]["render"]>) => {
-      return hypermore.render(...props);
+    ctx.set("render", (html: string, props?: JSONObject) => {
+      return hypermore.render(html, props ?? {}, {
+        globalProps: {
+          url: ctx.req.url,
+          deployHash: config.deployHash,
+        },
+      });
     });
     await next();
   });

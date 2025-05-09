@@ -1,19 +1,21 @@
 import { Env, Hono } from "@hono/hono";
-import { Hypermore } from "@dbushell/hypermore";
+import { JSONObject } from "@dbushell/hypermore";
 
 export type DConfig = {
-  dev_mode: boolean;
-  root_dir: URL;
-  public_dir: string;
-  template_dir: string;
+  devMode: boolean;
+  rootDir: URL;
+  publicDir: string;
+  templateDir: string;
+  deployHash: string;
 };
 
 export type DEnv = Env & {
   Bindings: {
     info: Deno.ServeHandlerInfo<Deno.NetAddr>;
+    deployHash: string;
   };
   Variables: {
-    render: (...props: Parameters<Hypermore["render"]>) => Promise<string>;
+    render: (html: string, props?: JSONObject) => Promise<string>;
   };
 };
 

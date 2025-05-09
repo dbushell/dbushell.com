@@ -1,7 +1,7 @@
 import type { DConfig, DHono } from "../types.ts";
 
 export const middleware = (hono: DHono, config: DConfig) => {
-  if (config.dev_mode !== true) {
+  if (config.devMode !== true) {
     return;
   }
   hono.use("/*", async (ctx, next) => {
