@@ -22,7 +22,7 @@ const config: DConfig = {
   origin: new URL(
     Deno.env.get("ORIGIN") ?? `http://${options}:${options.port}`,
   ),
-  devMode: true,
+  devMode: Deno.args.includes("--dev"),
   rootDir: new URL("./", import.meta.url),
   publicDir: "./public",
   routeDir: "./routes",

@@ -1,4 +1,5 @@
-import type { DConfig, DHono } from "../types.ts";
+import { Context } from "@hono/hono";
+import type { DConfig, DEnv, DHono } from "../types.ts";
 
 const default_policies = {
   "child-src": ["'self'"],
@@ -20,16 +21,16 @@ const default_policies = {
 };
 
 // Merge default CSP with `x-[policy]` response headers
-const getPolicies = (response: Response) => {
+const getPolicies = (ctx: Context<DEnv>) => {
   // @ts-ignore: all properties will be set
   const csp: typeof default_policies = {};
   for (const [k, v] of Object.entries(default_policies)) {
     const key = k as keyof typeof default_policies;
     csp[key] = [...v];
     const xkey = `x-${key}`;
-    if (response.headers.has(xkey)) {
-      const value = response.headers.get(xkey) as string;
-      response.headers.delete(xkey);
+    if (ctx.res.headers.has(xkey)) {
+      const value = ctx.res.headers.get(xkey) as string;
+      ctx.res.headers.delete(xkey);
       csp[key].push(...value.split(",").map((s) => `${s.trim()}`));
     }
   }
@@ -45,9 +46,12 @@ const getPolicies = (response: Response) => {
 export const middleware = (hono: DHono, _config: DConfig) => {
   hono.use("/*", async (ctx, next) => {
     await next();
+    if (ctx.env.devMode) {
+      return;
+    }
     try {
       // if (!ctx.res) return;
-      const csp = getPolicies(ctx.res);
+      const csp = getPolicies(ctx);
       // Remove redundant policies
       if (csp["default-src"].includes("'self'")) {
         for (const [k, v] of Object.entries(csp)) {

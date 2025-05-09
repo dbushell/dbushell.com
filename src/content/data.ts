@@ -125,7 +125,7 @@ export const readArticles = async (dir: string): Promise<Props[]> => {
   const arr = await readGlob(path.join(dir, `blog/**/*.md`));
   return arr
     .filter((props) => {
-      if (BUILD && Array.isArray(props.features)) {
+      if (DEV !== true && Array.isArray(props.features)) {
         return props.features.includes("draft") === false;
       }
       return true;

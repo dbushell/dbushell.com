@@ -1,6 +1,7 @@
 {
   "tasks": {
-    "dev": "deno run --allow-all mod.ts --dev"
+    "dev": "deno run --allow-all mod.ts --dev",
+    "prod": "deno run --allow-all mod.ts --prod"
   },
   "imports": {
     "@dbushell/carriageway": "jsr:@dbushell/carriageway@^1.1.0",

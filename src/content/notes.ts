@@ -1,6 +1,6 @@
 import * as fs from "@std/fs";
 import { TextLineStream } from "@std/streams";
-import { hmmarkdown } from "./markdown.ts";
+import { markdown } from "./markdown.ts";
 import type { NoteProps } from "./types.ts";
 
 export const notes: NoteProps[] = [];
@@ -31,7 +31,7 @@ export const rebuildNotes = async (
       const date = new Date(dateStr);
       if (isNaN(date.getTime())) continue;
       promises.push(
-        hmmarkdown(lines.join("\n")).then((body) => {
+        markdown(lines.join("\n")).then((body) => {
           // Escape Hypermore props
           body = body.replace(/{{([^{].*?)}}/gs, (...m) => `{{!${m[1]}}}`);
           notes.push({

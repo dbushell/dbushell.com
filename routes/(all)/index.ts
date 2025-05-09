@@ -51,10 +51,9 @@ export const middleware = (hono: DHono, route: DRoute) => {
 
       if (ctx.env.devMode) {
         body = body.replaceAll(ctx.env.origin.href, "/");
-        // @todo Is this still necessary?
-        // body = body.replaceAll('decoding="async"', 'decoding="sync"');
-        // body = body.replaceAll('fetchpriority="low"', 'fetchpriority="high"');
-        // body = body.replaceAll('loading="lazy"', 'loading="eager"');
+        body = body.replaceAll('decoding="async"', 'decoding="sync"');
+        body = body.replaceAll('fetchpriority="low"', 'fetchpriority="high"');
+        body = body.replaceAll('loading="lazy"', 'loading="eager"');
       }
 
       // Replace response
