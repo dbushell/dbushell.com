@@ -18,6 +18,7 @@
     "@std/fs": "jsr:@std/fs@^1.0.17",
     "@std/http": "jsr:@std/http@^1.0.15",
     "@std/path": "jsr:@std/path@^1.0.9",
+    "@std/random": "jsr:@std/random@^0.1.0",
     "@std/streams": "jsr:@std/streams@^1.0.9",
     "lightningcss": "npm:lightningcss@^1.29.3",
     "shiki": "npm:shiki@^3.4.0"

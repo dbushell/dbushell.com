@@ -10,7 +10,6 @@ import { hmmtypography, markdown } from "./markdown.ts";
 import type { FrontProps, Props } from "./types.ts";
 
 const DEV = Deno.args.includes("--dev");
-const BUILD = Deno.args.includes("--build");
 
 const cachePath = path.join(Deno.cwd(), ".cache");
 const snapshotPath = path.join(Deno.cwd(), ".snapshot");
