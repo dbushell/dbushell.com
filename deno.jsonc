@@ -13,6 +13,7 @@
     "@hono/hono": "jsr:@hono/hono@^4.7.9",
     "@shikijs/transformers": "npm:@shikijs/transformers@^3.4.0",
     "@src/": "./src/",
+    "@std/async": "jsr:@std/async@^1.0.12",
     "@std/crypto": "jsr:@std/crypto@^1.0.4",
     "@std/encoding": "jsr:@std/encoding@^1.0.10",
     "@std/front-matter": "jsr:@std/front-matter@^1.0.9",

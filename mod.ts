@@ -1,4 +1,6 @@
 import { Hono } from "@hono/hono";
+import * as path from "@std/path";
+import { debounce } from "@std/async";
 import type { DConfig, DEnv, DHono } from "@src/types.ts";
 import { middleware as csp_middleware } from "@src/middleware/csp.ts";
 import { middleware as debug_middleware } from "@src/middleware/debug.ts";
@@ -40,46 +42,103 @@ const config: DConfig = {
   ),
 };
 
+let controller: AbortController;
+
+const start = async () => {
+  const app: DHono = new Hono<DEnv>();
+  controller = new AbortController();
+
+  debug_middleware(app, config);
+  redirect_middleware(app, config);
+  csp_middleware(app, config);
+  await hypermore_middleware(app, config);
+  await routes_middleware(app, config);
+  static_middleware(app, config);
+
+  app.notFound(async (ctx) => {
+    const response = await app.fetch(
+      new Request(new URL("/404/", ctx.req.url)),
+      ctx.env,
+    );
+    // @todo Fix 404 status?
+    // return ctx.html(await response.text(), 404);
+    return new Response(response.body, {
+      status: 404,
+      headers: response.headers,
+    });
+  });
+
+  app.onError((err, ctx) => {
+    console.error(err);
+    return ctx.text("Internal Server Error", 500);
+  });
+
+  if (BUILD) {
+    await build(app, config);
+    Deno.exit(0);
+  }
+
+  Deno.serve({
+    ...options,
+    signal: controller.signal,
+  }, (request, info) => {
+    return app.fetch(request, {
+      info,
+      origin: config.origin,
+      devMode: config.devMode,
+      deployHash: config.deployHash,
+    });
+  });
+};
+
 await rebuildCSS(config.deployHash);
 await rebuildManifest();
+await start();
 
-const app: DHono = new Hono<DEnv>();
+const watcher = Deno.watchFs(config.rootDir.pathname);
 
-debug_middleware(app, config);
-redirect_middleware(app, config);
-csp_middleware(app, config);
-await hypermore_middleware(app, config);
-await routes_middleware(app, config);
-static_middleware(app, config);
+const events = [
+  "create",
+  "modify",
+  "remove",
+];
 
-app.notFound(async (ctx) => {
-  const response = await app.fetch(
-    new Request(new URL("/404/", ctx.req.url)),
-    ctx.env,
-  );
-  // @todo Fix 404 status?
-  // return ctx.html(await response.text(), 404);
-  return new Response(response.body, {
-    status: 404,
-    headers: response.headers,
-  });
-});
+const directories = [
+  "data",
+  "components",
+  "routes",
+  "public/assets/css",
+];
 
-app.onError((err, ctx) => {
-  console.error(err);
-  return ctx.text("Internal Server Error", 500);
-});
+const update = debounce(async (ev: Deno.FsEvent) => {
+  if (controller.signal.aborted) return;
+  if (!events.includes(ev.kind)) return;
+  let refresh = false;
+  let data = false;
+  let css = false;
+  for (const event_path of ev.paths) {
+    const dir = path.dirname(
+      event_path.replace(config.rootDir.pathname, ""),
+    );
+    if (!directories.includes(dir.split("/")[0])) continue;
+    if (event_path.includes(".min.")) continue;
+    if (dir.startsWith("data/")) data = true;
+    if (dir.startsWith("public/assets/css")) css = true;
+    refresh = true;
+  }
+  if (refresh !== true) {
+    return;
+  }
+  controller.abort();
+  if (css) {
+    await rebuildCSS(config.deployHash);
+  }
+  if (css || data) {
+    await rebuildManifest();
+  }
+  start();
+}, 1000);
 
-if (BUILD) {
-  await build(app, config);
-  Deno.exit(0);
+for await (const event of watcher) {
+  update(event);
 }
-
-Deno.serve(options, (request, info) => {
-  return app.fetch(request, {
-    info,
-    origin: config.origin,
-    devMode: config.devMode,
-    deployHash: config.deployHash,
-  });
-});
