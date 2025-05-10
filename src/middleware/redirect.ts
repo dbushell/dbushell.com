@@ -17,11 +17,7 @@ export const middleware = (hono: DHono, _config: DConfig) => {
       if (last.includes("?")) {
         return next();
       }
-      return Promise.resolve(
-        ctx.newResponse(null, 308, {
-          location: `${url}/`,
-        }),
-      );
+      ctx.res = ctx.redirect(`${url}/`, 308);
     }
     return next();
   });
