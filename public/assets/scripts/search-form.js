@@ -1,6 +1,7 @@
 /// <reference lib="dom" />
 
 import { viewTransition } from "./head.js";
+import { normalizeWords } from "./normalize.js";
 
 const raf = globalThis.requestAnimationFrame;
 
@@ -135,18 +136,9 @@ export class Component extends HTMLElement {
     }
     await this.#loading.promise;
 
-    const words = this.searchInput.value
-      .substring(0, 50)
-      .replaceAll(/[’]/g, "")
-      .replaceAll(/[-–—,_“”!?\.…]/g, " ")
-      .split(/\b/)
-      .map((w) => w.trim())
-      .filter((w) => w.length > 2 && /\w+/.test(w))
-      .map((w) =>
-        w.normalize("NFD")
-          .replace(/\p{Diacritic}/gu, "")
-          .toLowerCase()
-      );
+    const words = normalizeWords(
+      this.searchInput.value.substring(0, 50),
+    ).filter((w) => w.length > 2);
 
     if (words.length) {
       this.#internals.states.add("active");

@@ -8,6 +8,7 @@ const PRECACHE = [
   "/assets/fonts/comic-neue-bold-italic.woff2",
   "/assets/images/dbushell-for-hire.svg",
   "/assets/scripts/head.js",
+  "/assets/scripts/normalize.js",
   "/assets/scripts/search-form.js",
   "/assets/scripts/search-worker.js",
   "/assets/scripts/contact-form.js",

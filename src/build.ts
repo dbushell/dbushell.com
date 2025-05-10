@@ -2,7 +2,12 @@ import * as fs from "@std/fs";
 import * as path from "@std/path";
 import { toText } from "@std/streams";
 import { decodeHex } from "@std/encoding";
-import { Node, parseHTML, stripTags } from "@dbushell/hyperless";
+import {
+  Node,
+  normalizeWords,
+  parseHTML,
+  stripTags,
+} from "@dbushell/hyperless";
 import { assert } from "./utils.ts";
 import type { DConfig, DHono } from "./types.ts";
 
@@ -35,20 +40,6 @@ const word_index = new Map<string, {
   }[];
 }>();
 
-const normalizeWords = (input: string): string[] => {
-  return input
-    .replaceAll(/[’]/g, "")
-    .replaceAll(/[-–—,_“”!?\.…]/g, " ")
-    .split(/\b/)
-    .map((w) => w.trim())
-    .filter((w) => w.length > 2 && /\w+/.test(w))
-    .map((w) =>
-      w.normalize("NFD")
-        .replace(/\p{Diacritic}/gu, "")
-        .toLowerCase()
-    );
-};
-
 const parseWords = (node: Node, hash: string) => {
   const remove: Node[] = [];
   node.traverse((n) => {
@@ -60,7 +51,8 @@ const parseWords = (node: Node, hash: string) => {
   });
   remove.forEach((n) => n.detach());
 
-  const words = normalizeWords(stripTags(node));
+  const words = normalizeWords(stripTags(node))
+    .filter((w) => w.length > 2);
 
   // Count unique words
   const word_count = new Map<string, number>();
