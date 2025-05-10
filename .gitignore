@@ -13,3 +13,4 @@
 !.gitignore
 !.gitmodules
 !deno.jsonc
+!README.md
