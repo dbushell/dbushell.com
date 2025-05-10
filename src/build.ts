@@ -146,16 +146,6 @@ export const build = async (hono: DHono, config: DConfig) => {
     routePath = path.join(buildPath, routePath);
     const url = new URL(key, "http://127.0.0.1:8000");
     const request = new Request(url);
-    request.headers.set(
-      "authorization",
-      `Bearer ${Deno.env.get("SSR_API_KEY")}`,
-    );
-    // const response = await fetch(request);
-    // const response = await server.router.handle(request, {
-    //   info,
-    //   deployHash: config.deployHash,
-    //   platformProps: {},
-    // });
     const response = await hono.fetch(request, {
       info,
       origin: config.origin,
@@ -163,8 +153,7 @@ export const build = async (hono: DHono, config: DConfig) => {
       devMode: false,
     });
     if (response.status !== 200 || !response.body) {
-      console.log("\n");
-      console.log(url.href);
+      console.log(`\n${url.href}`);
       console.log(response);
       throw new Error(`[${response.status}] ${response.url}`);
     }
@@ -174,6 +163,15 @@ export const build = async (hono: DHono, config: DConfig) => {
     }
     const [tee1, tee2] = response.body.tee();
     await Deno.writeFile(routePath, tee1);
+
+    if (key === "/") {
+      await Deno.writeTextFile(
+        path.join(buildPath, "_headers"),
+        `content-security-policy: ${
+          response.headers.get("content-security-policy")
+        }\n`,
+      );
+    }
 
     // Build search index
     if (/^\/\d{4}(\/|-)\d{2}\1\d{2}/.test(key)) {
