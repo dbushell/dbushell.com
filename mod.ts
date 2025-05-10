@@ -55,17 +55,8 @@ const start = async () => {
   await routes_middleware(app, config);
   static_middleware(app, config);
 
-  app.notFound(async (ctx) => {
-    const response = await app.fetch(
-      new Request(new URL("/404/", ctx.req.url)),
-      ctx.env,
-    );
-    // @todo Fix 404 status?
-    // return ctx.html(await response.text(), 404);
-    return new Response(response.body, {
-      status: 404,
-      headers: response.headers,
-    });
+  app.notFound((ctx) => {
+    return ctx.redirect("/404/");
   });
 
   app.onError((err, ctx) => {
