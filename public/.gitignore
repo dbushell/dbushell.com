@@ -11,7 +11,6 @@
 !/assets/css/*.xsl
 !/assets/fonts/*.woff2
 !/assets/scripts/*.js
-!/assets/wasm/*.wasm
 !/*.ico
 !/*.js
 !/*.webmanifest
