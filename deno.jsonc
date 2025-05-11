@@ -3,6 +3,7 @@
     "dev": "deno run -A mod.ts --dev",
     "prod": "deno run -A mod.ts --prod",
     "build": "deno run -A mod.ts --build",
+    "images": "deno run -A src/images.ts",
     "zig": "cd src/search && rm -rf .zig-cache && zig build && cp zig-out/bin/search.wasm ../../public/assets/wasm/search.wasm"
   },
   "imports": {
@@ -22,7 +23,7 @@
     "@std/path": "jsr:@std/path@^1.0.9",
     "@std/random": "jsr:@std/random@^0.1.0",
     "@std/streams": "jsr:@std/streams@^1.0.9",
-    "lightningcss": "npm:lightningcss@^1.29.3",
+    "lightningcss": "npm:lightningcss@^1.30.0",
     "shiki": "npm:shiki@^3.4.0"
   }
 }

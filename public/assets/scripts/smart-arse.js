@@ -13,6 +13,10 @@ export class Component extends HTMLElement {
     if (this.#internals.states.has("connected")) {
       return;
     }
+    this.#internals.states.add("connected");
+    if (globalThis.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
     const words = this.textContent.split(/\b/);
     const text = document.createElement("span");
     text.innerHTML = this.innerHTML;
@@ -30,7 +34,6 @@ export class Component extends HTMLElement {
       }
       this.append(w);
     }
-    this.#internals.states.add("connected");
   }
 
   attributeChangedCallback(name, _oldValue, newValue) {

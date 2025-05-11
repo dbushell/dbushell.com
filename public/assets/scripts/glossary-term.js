@@ -204,7 +204,7 @@ export class Component extends HTMLElement {
     start = Math.round(start);
     // Snap to left side of viewport
     let offset = Math.max(0, 0 - start);
-    if (start < 0) start += 20;
+    if (start < 20) start += 20;
     // Snap to right side of viewport
     if ((start - offset) + card_width > innerWidth) {
       offset += innerWidth -

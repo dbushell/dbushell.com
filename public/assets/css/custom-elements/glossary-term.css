@@ -1,6 +1,10 @@
 glossary-term {
   display: inline;
 
+  & > [href] {
+    text-decoration-style: wavy;
+  }
+
   & > span:first-of-type {
     visibility: hidden;
   }

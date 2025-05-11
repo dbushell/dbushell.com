@@ -7,7 +7,7 @@
   padding-inline-start: var(--star-padding, 0);
 
   &::before {
-    content: "•";
+    content: "•" / "";
     color: transparent;
     background: oklch(var(--color-secondary));
     inline-size: var(--star-size);
