@@ -1,4 +1,10 @@
 export class Component extends HTMLElement {
+  static tag = "smart-arse";
+
+  static {
+    globalThis.customElements.define(this.tag, Component);
+  }
+
   static observedAttributes = ["duration"];
 
   /** @type {ElementInternals} */
@@ -47,5 +53,3 @@ export class Component extends HTMLElement {
     }
   }
 }
-
-globalThis.customElements.define("smart-arse", Component);

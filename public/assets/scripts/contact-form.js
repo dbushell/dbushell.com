@@ -1,6 +1,12 @@
 /// <reference lib="dom" />
 
 export class Component extends HTMLElement {
+  static tag = "contact-form";
+
+  static {
+    globalThis.customElements.define(this.tag, Component);
+  }
+
   static observedAttributes = ["disabled"];
   /** @type {ElementInternals} */
   #internals;
@@ -38,7 +44,7 @@ export class Component extends HTMLElement {
     this.#form?.addEventListener("submit", (ev) => this.#onSubmit(ev));
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback(name, _oldValue, _newValue) {
     if (name === "disabled") {
       /** @type {Set<string>} */
       const states = this.#internals.states;
@@ -96,5 +102,3 @@ export class Component extends HTMLElement {
     }
   }
 }
-
-globalThis.customElements.define("contact-form", Component);

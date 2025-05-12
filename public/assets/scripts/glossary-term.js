@@ -44,6 +44,12 @@ onReady(() => {
 });
 
 export class Component extends HTMLElement {
+  static tag = "glossary-term";
+
+  static {
+    globalThis.customElements.define(this.tag, Component);
+  }
+
   /** @type {HTMLAnchorElement} */
   #anchor;
 
@@ -280,5 +286,3 @@ export class Component extends HTMLElement {
     }
   }
 }
-
-globalThis.customElements.define("glossary-term", Component);

@@ -6,6 +6,12 @@ import { normalizeWords } from "./normalize.js";
 const raf = globalThis.requestAnimationFrame;
 
 export class Component extends HTMLElement {
+  static tag = "search-form";
+
+  static {
+    globalThis.customElements.define(this.tag, Component);
+  }
+
   /** @type {HTMLLIElement[]} */
   #defaultItems;
 
@@ -178,5 +184,3 @@ export class Component extends HTMLElement {
     });
   }
 }
-
-globalThis.customElements.define("search-form", Component);
