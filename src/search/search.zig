@@ -49,8 +49,7 @@ const wasm_allocator = std.heap.wasm_allocator;
 
 /// Output buffer
 var scratch: []u8 = undefined;
-var scratch_len: usize = 0;
-const scratch_max_len: usize = 1024 * 10;
+const scratch_len: usize = 1024 * 10;
 
 /// Parsed  JSON
 var index: Index = .{
@@ -61,8 +60,7 @@ var index: Index = .{
 
 /// Formatted print to browser console
 fn print(comptime fmt: []const u8, args: anytype) void {
-    var buf: [1024]u8 = undefined;
-    const slice = std.fmt.bufPrint(&buf, fmt, args) catch unreachable;
+    const slice = std.fmt.bufPrint(scratch, fmt, args) catch unreachable;
     console(@intFromPtr(slice.ptr), slice.len);
 }
 
@@ -272,7 +270,7 @@ export fn getScratch() [*]const u8 {
 /// Search comma separated string in the scratch buffer
 export fn getSearch(len: usize) void {
     if (len < 3) return;
-    if (len > scratch_max_len) return;
+    if (len > scratch_len) return;
     var words: std.ArrayListUnmanaged([]const u8) = .empty;
     defer words.deinit(wasm_allocator);
     var iter = std.mem.splitScalar(u8, scratch[0..len], ',');
@@ -331,7 +329,7 @@ export fn init() void {
     }
 
     // Buffer for input
-    scratch = wasm_allocator.alloc(u8, scratch_max_len) catch |err| {
+    scratch = wasm_allocator.alloc(u8, scratch_len) catch |err| {
         panic(err, "scratch alloc");
     };
 
