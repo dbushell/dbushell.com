@@ -11,6 +11,6 @@
 !test
 !.gitattributes
 !.gitignore
-!.gitmodules
+# !.gitmodules
 !deno.jsonc
 !README.md
