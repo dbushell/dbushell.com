@@ -15,6 +15,7 @@ smart-arse {
   --margin-inline-end: 0.2ch;
   font-style: italic;
   font-variation-settings: "ital" 1;
+  hanging-punctuation: none;
 
   &:not(:state(connected)) {
     margin-inline-end: var(--margin-inline-end);
