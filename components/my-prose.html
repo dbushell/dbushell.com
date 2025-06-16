@@ -1,8 +1,19 @@
-
+<script context="component">
+  let ageInYears = 0;
+  if (props.date) {
+    ageInYears = new Date().getFullYear() - new Date(props.date).getFullYear();
+  }
+</script>
 
 <div class="Prose">
   <ssr-if condition="props.date">
     <p><my-time date="{{props.date}}" /></p>
+  </ssr-if>
+  <ssr-if condition="ageInYears &gt;= 5">
+    <aside class="Box">
+      <p>⚠️ This post was written <strong>{{new Intl.RelativeTimeFormat("en", { style: "long" }).format(-ageInYears, "year")}}!</strong>
+        <br>⚠️ Personal opinions and technical details may have changed since writing.</p>
+    </aside>
   </ssr-if>
   <ssr-html>{{html}}</ssr-html>
 </div>
