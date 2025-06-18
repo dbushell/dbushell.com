@@ -1,6 +1,7 @@
 .Masthead {
   position: relative;
   contain: layout;
+
   &::before {
     content: "";
     display: block;
@@ -45,6 +46,31 @@
   z-index: 3;
 }
 
+.Noai {
+  aspect-ratio: 400 / 220;
+  display: block;
+  max-inline-size: 400px;
+
+  & img {
+    mask-image: url("/assets/images/ai-policy-mask.png");
+    mask-size: 100% 100%;
+  }
+
+  :where(.Masthead) & {
+    inline-size: clamp(
+      60px,
+      calc(60 * var(--🤡) + (140 - 60) * var(--fluid1)),
+      140px
+    );
+    inset-block-start: 76%;
+    inset-inline-end: 1%;
+    position: absolute;
+    rotate: 10deg;
+    transform-origin: 0 0;
+    z-index: 4;
+  }
+}
+
 .Logo {
   & img,
   & svg {
@@ -55,6 +81,10 @@
 
 @container body (inline-size >= 50rem) {
   .Layout--focus {
+    & .Masthead {
+      z-index: 1;
+    }
+
     & .Logo {
       --logo-text: var(--db-pink);
       --logo-star: var(--logo-text);
@@ -86,6 +116,14 @@
 
     & .Sign {
       display: none;
+    }
+
+    & :where(.Masthead) .Noai {
+      inline-size: 70px;
+      inset-block-start: 50%;
+      inset-inline-end: 70%;
+      transform: translateY(-50%) rotate(-20deg);
+      transform-origin: 50% 50%;
     }
   }
 }

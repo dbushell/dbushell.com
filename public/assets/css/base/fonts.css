@@ -13,7 +13,7 @@
   font-weight: 700;
   font-style: normal;
   /* Basic Latin */
-  unicode-range: U+0020-007F;
+  unicode-range: U+0020-007F, U+2019;
 }
 
 @font-face {

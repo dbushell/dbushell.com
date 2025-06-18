@@ -101,6 +101,10 @@
     view-transition-name: logo;
   }
 
+  :where(.Masthead) .Noai {
+    view-transition-name: noai;
+  }
+
   [class*="🤖"] {
     view-transition-name: alert;
   }

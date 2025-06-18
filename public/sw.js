@@ -7,6 +7,7 @@ const PRECACHE = [
   "/assets/fonts/AtkinsonHyperlegibleNextVF-Variable.woff2",
   "/assets/fonts/comic-neue-bold-italic.woff2",
   "/assets/images/dbushell-for-hire.svg",
+  "/assets/images/ai-policy.svg",
   "/assets/scripts/head.js",
   "/assets/scripts/normalize.js",
   "/assets/scripts/search-form.js",
