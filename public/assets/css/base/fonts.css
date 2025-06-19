@@ -12,8 +12,6 @@
   font-display: swap;
   font-weight: 700;
   font-style: normal;
-  /* Basic Latin */
-  unicode-range: U+0020-007F, U+2019;
 }
 
 @font-face {
@@ -22,6 +20,4 @@
   font-display: swap;
   font-weight: 600;
   font-style: italic;
-  /* Basic Latin */
-  unicode-range: U+0020-007F;
 }
