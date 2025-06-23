@@ -127,6 +127,9 @@ export const readArticles = async (dir: string): Promise<Props[]> => {
       if (DEV !== true && Array.isArray(props.features)) {
         return props.features.includes("draft") === false;
       }
+      if (DEV && props.features?.includes("draft")) {
+        props.title = `🚫 ${props.title}`;
+      }
       return true;
     })
     .toSorted((a, b) => {
