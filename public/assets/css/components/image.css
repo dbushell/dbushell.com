@@ -36,9 +36,3 @@
     box-shadow: none;
   }
 }
-
-:is(img, picture, svg, video) {
-  &[aria-hidden="true"] {
-    display: none;
-  }
-}
